@@ -1,37 +1,41 @@
-import { useState, useEffect } from 'react';
-import Header from './components/Header';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import VideoModal from './components/VideoModal';
+import ConfirmacionPage from './pages/ConfirmacionPage';
 import HomePage from './pages/HomePage';
 import ProgramaPage from './pages/ProgramaPage';
-import ConfirmacionPage from './pages/ConfirmacionPage';
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
+function AppContent() {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
-    if (selectedVideo) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = selectedVideo ? 'hidden' : '';
   }, [selectedVideo]);
+
+  const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
+    : location.pathname === '/confirmacion' ? 'confirmacion'
+    : 'home';
 
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: 'var(--white)', color: 'var(--black)', overflowX: 'hidden' }}>
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <ScrollToTop />
+      <Header currentPage={currentPage} />
 
       <main>
-        {currentPage === 'home' && (
-          <HomePage setCurrentPage={setCurrentPage} onVideoClick={setSelectedVideo} />
-        )}
-        {currentPage === 'programa' && (
-          <ProgramaPage setCurrentPage={setCurrentPage} />
-        )}
-        {currentPage === 'confirmacion' && (
-          <ConfirmacionPage setCurrentPage={setCurrentPage} />
-        )}
+        <Routes>
+          <Route path="/" element={<HomePage onVideoClick={setSelectedVideo} />} />
+          <Route path="/programa-4-semanas" element={<ProgramaPage />} />
+          <Route path="/confirmacion" element={<ConfirmacionPage />} />
+        </Routes>
       </main>
 
       <Footer />
@@ -40,5 +44,13 @@ export default function App() {
         <VideoModal video={selectedVideo} onClose={() => setSelectedVideo(null)} />
       )}
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

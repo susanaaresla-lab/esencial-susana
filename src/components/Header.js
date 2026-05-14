@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { X, Menu } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-export default function Header({ currentPage, setCurrentPage }) {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPage = location.pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -13,14 +17,14 @@ export default function Header({ currentPage, setCurrentPage }) {
 
   const goHome = (e) => {
     e.preventDefault();
-    setCurrentPage('home');
+    navigate('/');
     setMenuOpen(false);
     window.scrollTo(0, 0);
   };
 
   const goPrograma = (e) => {
     e.preventDefault();
-    setCurrentPage('programa');
+    navigate('/programa-4-semanas');
     setMenuOpen(false);
     window.scrollTo(0, 0);
   };
@@ -28,8 +32,8 @@ export default function Header({ currentPage, setCurrentPage }) {
   const scrollTo = (e, id) => {
     e.preventDefault();
     setMenuOpen(false);
-    if (currentPage !== 'home') {
-      setCurrentPage('home');
+    if (currentPage !== '/') {
+      navigate('/');
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       }, 120);
@@ -48,7 +52,7 @@ export default function Header({ currentPage, setCurrentPage }) {
 
         <nav className="nav-desktop">
           <a href="/" onClick={goHome}>Inicio</a>
-          <a href="/programa" onClick={goPrograma} className="active" style={{ color: 'var(--coral)' }}>Programa 4 semanas</a>
+          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa 4 semanas</a>
           <a href="#ejercicios" onClick={(e) => scrollTo(e, 'ejercicios')}>Ejercicios gratis</a>
           <a href="#testimonios" onClick={(e) => scrollTo(e, 'testimonios')}>Testimonios</a>
           <a href="#programa-integral" onClick={(e) => scrollTo(e, 'programa-integral')}>Programa Integral</a>
@@ -64,7 +68,7 @@ export default function Header({ currentPage, setCurrentPage }) {
       {menuOpen && (
         <div className="nav-mobile-menu">
           <a href="/" onClick={goHome}>Inicio</a>
-          <a href="/programa" onClick={goPrograma} className="active" style={{ color: 'var(--coral)' }}>Programa 4 semanas</a>
+          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa 4 semanas</a>
           <a href="#ejercicios" onClick={(e) => scrollTo(e, 'ejercicios')}>Ejercicios gratis</a>
           <a href="#testimonios" onClick={(e) => scrollTo(e, 'testimonios')}>Testimonios</a>
           <a href="#programa-integral" onClick={(e) => scrollTo(e, 'programa-integral')}>Programa Integral</a>

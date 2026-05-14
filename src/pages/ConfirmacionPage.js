@@ -1,8 +1,18 @@
 import { ArrowLeft, Check, Mail, CheckCircle, PartyPopper } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
-export default function ConfirmacionPage({ setCurrentPage }) {
+export default function ConfirmacionPage() {
+  const navigate = useNavigate();
+
   return (
     <div style={{ paddingTop: 80, minHeight: '100vh', background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 30%)' }}>
+
+      <Helmet>
+        <title>¡Compra confirmada! | Esencial Susana Ares</title>
+        <meta name="description" content="Tu acceso al programa está en camino. Revisa tu email para empezar tu recuperación." />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
 
       {/* ── SUCCESS HERO ── */}
       <section className="section text-center">
@@ -51,6 +61,9 @@ export default function ConfirmacionPage({ setCurrentPage }) {
                 'Ejercicios de suelo pélvico',
                 'Ejercicios para todo el cuerpo adaptados a madres',
                 'Videos on-demand: accede cuando quieras',
+                '🧠 Vídeo de motivación y confianza (Semana 2)',
+                '🎧 Audio de creencias: somos merecedoras (Semana 2)',
+                '💬 Sesión grupal en directo para resolver dudas y ver los siguientes pasos',
                 'BONUS: Recupera tu abdomen en tu día a día',
                 'Acceso de por vida al contenido'
               ].map((t, i) => (
@@ -75,7 +88,7 @@ export default function ConfirmacionPage({ setCurrentPage }) {
             </a>
           </div>
           <div style={{ marginTop: '2rem' }}>
-            <button className="btn-back" onClick={() => { setCurrentPage('home'); window.scrollTo(0,0); }}>
+            <button className="btn-back" onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
               <ArrowLeft size={15} /> Volver al inicio
             </button>
           </div>
