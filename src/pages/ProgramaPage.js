@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock, Video, Users, Check, X, Gift } from 'lucide-react';
+import { ArrowLeft, Clock, Video, Users, Check, X, Gift, Calendar, ChevronDown, Brain, Heart, ShieldCheck, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
