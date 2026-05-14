@@ -108,7 +108,7 @@ export default function ProgramaPage() {
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-photo-bleed">
           <img
-            src="/images/susana-hero.jpg"
+            src="/images/susana-hero.JPG"
             alt="Susana Ares — Programa Recupera tu cuerpo desde cero"
           />
         </div>
@@ -180,7 +180,7 @@ export default function ProgramaPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
             <div>
               <img
-                src="/images/susana-ejercicio.jpg"
+                src="/images/susana-ejercicio.JPG"
                 alt="Susana Ares - Ejercicios postparto"
                 style={{ width: '100%', maxHeight: 500, objectFit: 'cover', objectPosition: 'top', borderRadius: 4, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}
               />
@@ -388,7 +388,7 @@ export default function ProgramaPage() {
 
             {/* Foto + cita */}
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
-              <img src="/images/susana-cercana.jpg" alt="Susana Ares" style={{ width: 110, height: 110, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 2px 12px rgba(0,0,0,0.12)' }} />
+              <img src="/images/susana-cercana.JPG" alt="Susana Ares" style={{ width: 110, height: 110, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 2px 12px rgba(0,0,0,0.12)' }} />
               <p className="t-serif-italic" style={{ fontSize: '1.2rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.7 }}>
                 "He acompañado a más de 3.000 mamás a recuperarse. Sé que tú también puedes."
                 <span style={{ display: 'block', fontStyle: 'normal', fontWeight: 700, fontSize: '1rem', marginTop: '0.5rem', color: 'var(--coral)' }}>— Susana Ares</span>
