@@ -2,9 +2,9 @@ import { Clock, Users, Calendar, Video, Target, Heart, Gift, Play, Check } from 
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const HERO_IMG     = 'https://customer-assets.emergentagent.com/job_esencial-program/artifacts/8ksaa7j2_2E13618B-B38C-4C37-A0C8-C468F6AC4C2C.JPG';
-const EXERCISE_IMG = 'https://customer-assets.emergentagent.com/job_esencial-program/artifacts/01som58l_IMG_1602.jpg';
-const ABOUT_IMG    = 'https://customer-assets.emergentagent.com/job_esencial-program/artifacts/l72hysyc_IMG_9726.JPG';
+const HERO_IMG     = '/images/susana-hero.JPG';
+const EXERCISE_IMG = '/images/susana-ejercicio.JPG';
+const ABOUT_IMG    = '/images/susana-cercana.JPG';
 
 const TESTIMONIALS = [
   { name: 'Patricia A.', image: 'https://customer-assets.emergentagent.com/job_esencial-program/artifacts/3b654wji_IMG_6348.jpg', text: 'Llegué a Susana en un momento donde no sabía por dónde empezar aunque tenía claro que quería recuperarme sin lastimarme. Sus rutinas me dieron claridad, seguridad y estructura. Son sesiones cortas, completas y fáciles de integrar en el día a día.' },
