@@ -6,6 +6,7 @@ import VideoModal from './components/VideoModal';
 import ConfirmacionPage from './pages/ConfirmacionPage';
 import HomePage from './pages/HomePage';
 import ProgramaPage from './pages/ProgramaPage';
+import ListaEsperaPage from './pages/ListaEsperaPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ function AppContent() {
 
   const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
     : location.pathname === '/confirmacion' ? 'confirmacion'
+    : location.pathname === '/lista-espera' ? 'lista-espera'
     : 'home';
 
   return (
@@ -35,6 +37,7 @@ function AppContent() {
           <Route path="/" element={<HomePage onVideoClick={setSelectedVideo} />} />
           <Route path="/programa-4-semanas" element={<ProgramaPage />} />
           <Route path="/confirmacion" element={<ConfirmacionPage />} />
+          <Route path="/lista-espera" element={<ListaEsperaPage />} />
         </Routes>
       </main>
 
