@@ -34,12 +34,12 @@ export default function ListaEsperaPage() {
           <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
             <ArrowLeft size={15} /> Volver al inicio
           </button>
-          <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '1rem' }}>Próxima edición</div>
+          <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '1rem' }}>Próxima edición · Octubre 2025</div>
           <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'var(--black)', marginBottom: '1.5rem', fontWeight: 400 }}>
             Apúntate a la lista de espera
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, maxWidth: 540, margin: '0 auto 2rem' }}>
-            El programa <strong>"Recupera tu cuerpo desde cero"</strong> abrirá de nuevo sus puertas muy pronto. Apúntate y serás la primera en saberlo — con acceso prioritario y precio especial.
+            El programa <strong>"Recupera tu cuerpo desde cero"</strong> abrirá de nuevo sus puertas a principios de octubre. Apúntate y serás la primera en saberlo — con acceso prioritario y precio especial exclusivo para la lista de espera.
           </p>
           <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '3rem' }}>
             <span className="pill"><Clock />4 semanas</span>
@@ -49,7 +49,7 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2.5rem 2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 520, margin: '0 auto' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.5rem', fontWeight: 400 }}>Reserva tu plaza</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-              Las personas en lista de espera tienen acceso prioritario y precio especial de lanzamiento.
+              Las personas en lista de espera tienen acceso prioritario y precio especial exclusivo.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
