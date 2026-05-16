@@ -137,8 +137,9 @@ export default function ListaEsperaPage() {
               { name: 'Patricia A.', text: 'Sus rutinas me dieron claridad, seguridad y estructura. Son sesiones cortas, completas y fáciles de integrar en el día a día.' },
               { name: 'Estefanía L.', text: 'No fue solo recuperar fuerza… fue volver a confiar en mí, en mi cuerpo y en lo que es capaz de hacer.' },
               { name: 'Gema S.', text: 'Hacer el calendario y encontrar a Susana ha sido un regalo. Lo recomiendo 100%.' },
-              { name: 'María J.', text: 'He notado mucho cambio al vestirme. Son pequeños logros pero es así como se consiguen las metas.' }
-            ].map((t, i) => (
+              { name: 'María J.', text: 'He notado mucho cambio al vestirme. Son pequeños logros pero es así como se consiguen las metas.' },
+              { name: 'Laura M.', text: 'Nunca pensé que en solo 4 semanas notaría tanto cambio. Las rutinas son cortas pero muy efectivas. Me enganché desde el primer día.' },
+              { name: 'Ana B.', text: 'Lo que más me gustó es que está todo pensado para madres reales. Sin excusas, sin equipamiento, desde casa. Repito seguro.' },
               <div key={i} className="testimonial-card">
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7, marginBottom: '1rem', fontStyle: 'italic' }}>"{t.text}"</p>
                 <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--coral)' }}>— {t.name}</span>
