@@ -34,7 +34,7 @@ export default function ListaEsperaPage() {
           <button className="btn-back" style={{ marginBottom: '1.5rem' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
             <ArrowLeft size={15} /> Volver al inicio
           </button>
-          <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2025</div>
+          <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
           <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'var(--black)', marginBottom: '1rem', fontWeight: 400 }}>
             Apúntate a la lista de espera
           </h1>
