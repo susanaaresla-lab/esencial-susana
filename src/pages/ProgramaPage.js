@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const CHECKOUT_URL = 'https://pay.hotmart.com/G105828362U';
-
 const FAQS = [
   { q: '¿Cuándo puedo empezar después del parto?', a: 'Puedes empezar desde las 6 semanas después de un parto vaginal, o desde las 8 semanas tras una cesárea. Si tienes dudas, consulta antes con tu médico o matrona.' },
   { q: '¿Funciona si tuve cesárea?', a: 'Sí. El programa está diseñado específicamente para adaptarse tanto a partos vaginales como a cesáreas. Los ejercicios de las primeras semanas son especialmente suaves y progresivos.' },
@@ -27,48 +25,6 @@ const label = (color) => ({
   marginBottom: '0.75rem'
 });
 
-// ── BANNER DE DISPONIBILIDAD LIMITADA ──
-function AvailabilityBanner() {
-  return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '0.6rem',
-      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1f1f 100%)',
-      border: '1px solid rgba(230, 100, 80, 0.4)',
-      borderRadius: 6,
-      padding: '0.9rem 1.25rem',
-      marginTop: '1rem',
-    }}>
-      <Calendar size={16} style={{ color: 'var(--coral)', flexShrink: 0 }} />
-      <p style={{ margin: 0, fontSize: '0.9rem', color: 'white', lineHeight: 1.4, textAlign: 'center' }}>
-        <strong style={{ color: 'var(--coral)' }}>Disponible solo del 15 al 17 de mayo.</strong>{' '}
-        <span style={{ color: 'rgba(255,255,255,0.8)' }}>Después de esa fecha, el programa cerrará sus puertas.</span>
-      </p>
-    </div>
-  );
-}
-
-// ── AVISO COMPACTO (para usar junto a los botones de compra) ──
-function UrgencyNote() {
-  return (
-    <p style={{
-      fontSize: '0.85rem',
-      color: 'var(--coral)',
-      fontWeight: 600,
-      marginTop: '0.75rem',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '0.4rem',
-    }}>
-      <Calendar size={13} />
-      Solo disponible del 15 al 17 de mayo
-    </p>
-  );
-}
-
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
   return (
@@ -85,34 +41,30 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goCheckout = () => window.open(CHECKOUT_URL, '_blank');
+  const goListaEspera = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
 
   return (
     <div style={{ paddingTop: 80 }}>
 
       <Helmet>
         <title>Programa Recupera tu cuerpo desde cero | Esencial Susana Ares</title>
-        <meta name="description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre. Ejercicios de abdomen, suelo pélvico y trabajo de mente. 58€ · Acceso de por vida · +3.000 mamás." />
+        <meta name="description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre. Ejercicios de abdomen, suelo pélvico y trabajo de mente. +3.000 mamás." />
         <meta name="keywords" content="programa recuperación postparto, ejercicios postparto online, recuperar abdomen después del parto, suelo pélvico postparto, rutinas postparto en casa" />
         <link rel="canonical" href="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:title" content="Programa Recupera tu cuerpo desde cero | Esencial Susana Ares" />
-        <meta property="og:description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre. Ejercicios de abdomen, suelo pélvico y trabajo de mente. 58€ · Acceso de por vida." />
+        <meta property="og:description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre. Ejercicios de abdomen, suelo pélvico y trabajo de mente." />
         <meta property="og:url" content="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:type" content="product" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Programa Recupera tu cuerpo desde cero | Esencial Susana Ares" />
-        <meta name="twitter:description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre. Ejercicios de abdomen, suelo pélvico y trabajo de mente. 58€ · Acceso de por vida." />
+        <meta name="twitter:description" content="4 semanas de rutinas cortas y guiadas para recuperar tu cuerpo después de ser madre." />
       </Helmet>
 
       {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-photo-bleed">
-          <img
-            src="/images/susana-hero.JPG"
-            alt="Susana Ares — Programa Recupera tu cuerpo desde cero"
-          />
+          <img src="/images/susana-hero.JPG" alt="Susana Ares — Programa Recupera tu cuerpo desde cero" />
         </div>
-
         <div className="container-mid" style={{ position: 'relative', zIndex: 2, paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div className="hero-text-wrap">
             <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={goBack}>
@@ -130,14 +82,12 @@ export default function ProgramaPage() {
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />Videos on-demand</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
-            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goCheckout}>
-              Quiero empezar mi recuperación — 58€
+            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
+              Apúntate a la lista de espera — Octubre 2026
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Precio de lanzamiento · Antes 97€ · Acceso de por vida
+              Próxima edición en octubre · Acceso prioritario para lista de espera
             </p>
-            {/* ── AVISO DISPONIBILIDAD HERO ── */}
-            <AvailabilityBanner />
           </div>
         </div>
       </section>
@@ -174,16 +124,12 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── FOTO + SOLUCIÓN lado a lado ── */}
+      {/* ── FOTO + SOLUCIÓN ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
             <div>
-              <img
-                src="/images/susana-ejercicio.JPG"
-                alt="Susana Ares - Ejercicios postparto"
-                style={{ width: '100%', maxHeight: 500, objectFit: 'cover', objectPosition: 'top', borderRadius: 4, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}
-              />
+              <img src="/images/susana-ejercicio.JPG" alt="Susana Ares - Ejercicios postparto" style={{ width: '100%', maxHeight: 500, objectFit: 'cover', objectPosition: 'top', borderRadius: 4, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }} />
             </div>
             <div>
               <div style={label('var(--coral)')}>La solución</div>
@@ -205,9 +151,7 @@ export default function ProgramaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={goCheckout}>Quiero este programa — 58€</button>
-              {/* ── AVISO DISPONIBILIDAD ── */}
-              <UrgencyNote />
+              <button className="btn-coral" onClick={goListaEspera}>Apúntate a la lista de espera</button>
             </div>
           </div>
         </div>
@@ -229,18 +173,14 @@ export default function ProgramaPage() {
                 <Brain size={20} color="white" />
               </div>
               <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Vídeo de motivación y confianza</h3>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
-                Para trabajar la confianza en ti misma y en tu cuerpo. Porque el primer paso es creer que lo mereces.
-              </p>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>Para trabajar la confianza en ti misma y en tu cuerpo. Porque el primer paso es creer que lo mereces.</p>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
               <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                 <Heart size={20} color="white" />
               </div>
               <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Audio de creencias</h3>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
-                Para reforzar que somos merecedoras y válidas para crear y perseguir todo lo que queremos.
-              </p>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>Para reforzar que somos merecedoras y válidas para crear y perseguir todo lo que queremos.</p>
             </div>
           </div>
         </div>
@@ -309,24 +249,15 @@ export default function ProgramaPage() {
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div className="text-center" style={{ marginBottom: '1.75rem' }}>
             <div style={label()}>Ellas te lo cuentan</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>
-              Lo que dicen las mamás que ya lo han hecho
-            </h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Lo que dicen las mamás que ya lo han hecho</h2>
           </div>
           <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 6, overflow: 'hidden', boxShadow: '0 6px 28px rgba(0,0,0,0.12)' }}>
-            <iframe
-              src="https://www.youtube.com/embed/Ni7HROuAIq8"
-              title="Testimonios del programa"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-            />
+            <iframe src="https://www.youtube.com/embed/Ni7HROuAIq8" title="Testimonios del programa" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
           </div>
         </div>
       </section>
 
-      {/* ── TESTIMONIOS WHATSAPP ── */}
+      {/* ── TESTIMONIOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
@@ -344,7 +275,7 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── WHO IS IT FOR ── */}
+      {/* ── PARA QUIÉN ── */}
       <section className="section" style={{ background: 'var(--beige)' }}>
         <div className="container-narrow">
           <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '2.5rem' }}>¿Para quién es este programa?</h2>
@@ -377,16 +308,14 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── PRICING ── */}
+      {/* ── LISTA DE ESPERA CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Todo lo que incluye</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Programa "Recupera tu cuerpo desde cero"</h2>
+            <div style={label('var(--coral)')}>Próxima edición · Octubre 2026</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate a la lista de espera</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
-
-            {/* Foto + cita */}
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
               <img src="/images/susana-cercana.JPG" alt="Susana Ares" style={{ width: 110, height: 110, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 2px 12px rgba(0,0,0,0.12)' }} />
               <p className="t-serif-italic" style={{ fontSize: '1.2rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.7 }}>
@@ -394,77 +323,40 @@ export default function ProgramaPage() {
                 <span style={{ display: 'block', fontStyle: 'normal', fontWeight: 700, fontSize: '1rem', marginTop: '0.5rem', color: 'var(--coral)' }}>— Susana Ares</span>
               </p>
             </div>
-
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
               {[
                 '4 semanas de programa con videos nuevos cada semana',
                 'Rutinas cortas y sencillas para hacer desde casa',
-                'Ejercicios de tonificación del abdomen',
+                'Ejercicios exclusivos de tonificación del abdomen',
                 'Ejercicios de suelo pélvico',
                 'Ejercicios para todo el cuerpo adaptados a madres',
                 'Videos on-demand: accede cuando quieras',
-                'Explicaciones claras y guiadas paso a paso',
                 '🧠 Vídeo de motivación y confianza (Semana 2)',
                 '🎧 Audio de creencias: somos merecedoras (Semana 2)',
-                '💬 Sesión grupal en directo para resolver dudas y ver los siguientes pasos',
+                '💬 Sesión grupal en directo',
                 'BONUS: Recupera tu abdomen en tu día a día',
                 'Acceso de por vida al contenido'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>
               ))}
             </ul>
-
-            {/* Garantía */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
-              <ShieldCheck size={20} style={{ color: '#16a34a', flexShrink: 0, marginTop: 2 }} />
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
+              <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: '#16a34a', marginBottom: '0.25rem' }}>Garantía de satisfacción 7 días</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Si en los primeros 7 días no estás satisfecha, te devolvemos el dinero. Sin preguntas.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial exclusivo para lista de espera</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Las personas apuntadas a la lista de espera tendrán acceso prioritario y un precio especial antes de que abra al público.</p>
               </div>
             </div>
-
-            {/* Precio */}
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '1rem' }}>
-                <div>
-                  <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginBottom: '0.1rem' }}>Precio normal</p>
-                  <p style={{ fontSize: '1.35rem', color: 'rgba(26,26,26,0.3)', textDecoration: 'line-through' }}>97€</p>
-                </div>
-                <div style={{ width: 1, height: 44, background: 'rgba(26,26,26,0.1)' }} />
-                <div>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--coral)', fontWeight: 700, marginBottom: '0.1rem' }}>🎉 Precio de lanzamiento</p>
-                  <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem, 7vw, 3.5rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>58€</p>
-                </div>
-              </div>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginBottom: '1.5rem' }}>Pago único · Acceso de por vida · Sin suscripción</p>
-
-              {/* ── AVISO DISPONIBILIDAD PRICING ── */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                background: 'rgba(230, 100, 80, 0.06)',
-                border: '1px solid rgba(230, 100, 80, 0.25)',
-                borderRadius: 4,
-                padding: '0.75rem 1rem',
-                marginBottom: '1.5rem',
-              }}>
-                <Calendar size={15} style={{ color: 'var(--coral)', flexShrink: 0 }} />
-                <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600 }}>
-                  Disponible para comprar solo del 15 al 17 de mayo
-                </p>
-              </div>
-
-              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goCheckout}>
-                Sí, quiero empezar mi recuperación
+              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
+                Quiero apuntarme a la lista de espera
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  <ShieldCheck size={13} /> Pago seguro
+                  <Calendar size={13} /> Octubre 2026
                 </span>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  <Zap size={13} /> Acceso inmediato
+                  <Zap size={13} /> Acceso prioritario
                 </span>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                   <Users size={13} /> +3.000 mamás
@@ -499,20 +391,13 @@ export default function ProgramaPage() {
       {/* ── FINAL CTA ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>En 4 semanas empezarás a notar los primeros resultados.</p>
-          <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2.25rem', color: 'white', marginBottom: '0.25rem' }}>58€</div>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', marginBottom: '0.75rem', textDecoration: 'line-through' }}>Antes 97€</p>
-          {/* ── AVISO DISPONIBILIDAD FINAL CTA ── */}
-          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-            <Calendar size={14} />
-            Solo disponible del 15 al 17 de mayo
-          </p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goCheckout}>
-            Sí, quiero empezar ahora
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para la próxima edición?</h2>
+          <p style={{ fontSize: '1.15rem', marginBottom: '2rem', opacity: 0.9 }}>Apúntate ahora y serás la primera en saberlo — con precio especial exclusivo.</p>
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
+            Quiero apuntarme a la lista de espera
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            Garantía de devolución 7 días · Acceso inmediato
+            Próxima edición · Octubre 2026
           </p>
         </div>
       </div>
