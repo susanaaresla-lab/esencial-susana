@@ -39,7 +39,7 @@ export default function ListaEsperaPage() {
             alt="Susana Ares"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.1) 0%, rgba(26,26,26,0.45) 55%, rgba(26,26,26,0.82) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.25) 0%, rgba(26,26,26,0.6) 55%, rgba(26,26,26,0.88) 100%)' }} />
         </div>
 
         {/* Botón volver */}
