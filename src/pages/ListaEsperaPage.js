@@ -29,64 +29,79 @@ export default function ListaEsperaPage() {
   return (
     <div style={{ paddingTop: 80 }}>
 
-      <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '3rem 1.5rem 3rem' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
-          <button className="btn-back" style={{ marginBottom: '1.5rem' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
-            <ArrowLeft size={15} /> Volver al inicio
-          </button>
+      {/* ── HERO con imagen a pantalla completa ── */}
+      <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
 
-          {/* ── FOTO SUSANA ── */}
+        {/* Imagen de fondo */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <img
             src="/images/susana-listaespera.JPG"
             alt="Susana Ares"
-            style={{
-              width: 140,
-              height: 140,
-              borderRadius: '50%',
-              objectFit: 'cover',
-              objectPosition: 'top',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
-              marginBottom: '1.5rem',
-              display: 'block',
-              margin: '0 auto 1.5rem'
-            }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
           />
+          {/* Gradiente oscuro en la parte inferior para que el texto sea legible */}
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.15) 0%, rgba(26,26,26,0.5) 60%, rgba(26,26,26,0.85) 100%)' }} />
+        </div>
 
-          <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
-          <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'var(--black)', marginBottom: '1rem', fontWeight: 400 }}>
-            Apúntate a la lista de espera
-          </h1>
-          <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, maxWidth: 540, margin: '0 auto 1.5rem' }}>
-            El programa <strong>"Recupera tu cuerpo desde cero"</strong> abrirá de nuevo sus puertas a principios de octubre. Apúntate y serás la primera en saberlo — con acceso prioritario y precio especial exclusivo para la lista de espera.
-          </p>
-          <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '1.5rem' }}>
-            <span className="pill"><Clock />4 semanas</span>
-            <span className="pill"><Video />Videos on-demand</span>
-            <span className="pill"><Users />+3.000 mamás</span>
+        {/* Botón volver */}
+        <div style={{ position: 'relative', zIndex: 1, padding: '1.5rem 1.5rem 0' }}>
+          <button className="btn-back" style={{ color: 'rgba(255,255,255,0.85)' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
+            <ArrowLeft size={15} /> Volver al inicio
+          </button>
+        </div>
+
+        {/* Texto sobre la imagen */}
+        <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
+          <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
+            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
+            <h1 className="t-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
+              Apúntate a la lista de espera
+            </h1>
+            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 520, margin: '0 auto 1.5rem' }}>
+              El programa <strong style={{ color: 'white' }}>"Recupera tu cuerpo desde cero"</strong> abrirá de nuevo sus puertas a principios de octubre. Sé la primera en saberlo — con acceso prioritario y precio especial exclusivo.
+            </p>
+            <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
+              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas</span>
+              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Video />Videos on-demand</span>
+              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Users />+3.000 mamás</span>
+            </div>
+            <button
+              className="btn-coral"
+              style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Quiero apuntarme
+            </button>
           </div>
+        </div>
+      </section>
 
-          {/* ── REGALO ── */}
-          <div style={{ background: 'rgba(232,115,90,0.08)', border: '1px solid rgba(232,115,90,0.25)', borderRadius: 6, padding: '1rem 1.25rem', maxWidth: 520, margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      {/* ── FORMULARIO ── */}
+      <section id="formulario" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
+
+          {/* Regalo */}
+          <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
             <span style={{ fontSize: '1.5rem' }}>🎁</span>
-            <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, textAlign: 'left', margin: 0 }}>
+            <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
               <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios para empezar ya.
             </p>
           </div>
 
-          {/* ── FORMULARIO ── */}
-          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 520, margin: '0 auto' }}>
+          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu plaza</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
               Al apuntarte recibirás gratis un calendario de 1 semana de ejercicios para empezar ya.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-              <Shield size={12} /> Sin spam. Solo te avisaré cuando abra la próxima edición — con precio especial exclusivo para lista de espera.
+              <Shield size={12} /> Sin spam. Solo te avisaré cuando abra la próxima edición — con precio especial exclusivo.
             </p>
           </div>
         </div>
       </section>
 
+      {/* ── QUÉ INCLUYE ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '3rem' }}>
@@ -114,6 +129,7 @@ export default function ListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── PARA QUIÉN ── */}
       <section className="section" style={{ background: 'var(--beige)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem' }}>
           <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '2.5rem' }}>Este programa es para ti si…</h2>
@@ -132,6 +148,7 @@ export default function ListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── TESTIMONIOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
@@ -149,11 +166,12 @@ export default function ListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2>¿Lista para la próxima edición?</h2>
           <p>Apúntate ahora y te avisamos antes que nadie — con precio especial.</p>
-          <button className="btn-white" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Apuntarme a la lista de espera
           </button>
         </div>
