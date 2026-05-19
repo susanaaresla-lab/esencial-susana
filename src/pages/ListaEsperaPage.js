@@ -29,7 +29,7 @@ export default function ListaEsperaPage() {
   return (
     <div style={{ paddingTop: 80 }}>
 
-      {/* ── HERO con imagen a pantalla completa ── */}
+      {/* ── HERO imagen completa ── */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
 
         {/* Imagen de fondo */}
@@ -37,10 +37,9 @@ export default function ListaEsperaPage() {
           <img
             src="/images/susana-listaespera.JPG"
             alt="Susana Ares"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }}
           />
-          {/* Gradiente oscuro en la parte inferior para que el texto sea legible */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.15) 0%, rgba(26,26,26,0.5) 60%, rgba(26,26,26,0.85) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.1) 0%, rgba(26,26,26,0.45) 55%, rgba(26,26,26,0.82) 100%)' }} />
         </div>
 
         {/* Botón volver */}
@@ -79,15 +78,12 @@ export default function ListaEsperaPage() {
       {/* ── FORMULARIO ── */}
       <section id="formulario" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
         <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
-
-          {/* Regalo */}
           <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
             <span style={{ fontSize: '1.5rem' }}>🎁</span>
             <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
               <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios para empezar ya.
             </p>
           </div>
-
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu plaza</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
