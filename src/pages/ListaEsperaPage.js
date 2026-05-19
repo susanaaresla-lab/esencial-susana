@@ -34,6 +34,24 @@ export default function ListaEsperaPage() {
           <button className="btn-back" style={{ marginBottom: '1.5rem' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
             <ArrowLeft size={15} /> Volver al inicio
           </button>
+
+          {/* ── FOTO SUSANA ── */}
+          <img
+            src="/images/susana-listaespera.JPG"
+            alt="Susana Ares"
+            style={{
+              width: 140,
+              height: 140,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
+              marginBottom: '1.5rem',
+              display: 'block',
+              margin: '0 auto 1.5rem'
+            }}
+          />
+
           <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
           <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'var(--black)', marginBottom: '1rem', fontWeight: 400 }}>
             Apúntate a la lista de espera
