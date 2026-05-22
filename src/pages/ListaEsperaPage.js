@@ -50,10 +50,10 @@ export default function ListaEsperaPage() {
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
             <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Recupera tu cuerpo después del parto o cesárea — y también tu confianza
+              Recupera tu cuerpo después del parto o cesárea - y también tu confianza
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas con ejercicios exclusivos adaptados a parto vaginal y cesárea: abdomen, suelo pélvico y trabajo de mente. Próxima edición en octubre. Apúntate y recibe gratis una semana de ejercicios para empezar ya.
+              Programa online de 4 semanas con ejercicios exclusivos adaptados a parto vaginal y cesárea: abdomen, suelo pélvico y trabajo de mente.
             </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas</span>
@@ -77,7 +77,7 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
             <span style={{ fontSize: '1.5rem' }}>🎁</span>
             <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-              <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya — tanto si tuviste parto como cesárea.
+              <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya - tanto si tuviste parto como cesárea.
             </p>
           </div>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
@@ -108,7 +108,7 @@ export default function ListaEsperaPage() {
               <div>
                 <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>3 rutinas de ejercicio</h4>
                 <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  De 15 a 30 minutos cada una. Adaptadas a tu semana de recuperación — progresivas y seguras para cesárea y parto vaginal.
+                  De 15 a 30 minutos cada una. Adaptadas a tu semana de recuperación, progresivas y seguras para cesárea y parto vaginal.
                 </p>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function ListaEsperaPage() {
               <div>
                 <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>1 vídeo cada domingo</h4>
                 <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  Para trabajar tu mente o acelerar tu recuperación física. Exclusivo — no lo encontrarás en YouTube.
+                  Para trabajar tu mente o acelerar tu recuperación física. Exclusivo, no lo encontrarás en YouTube.
                 </p>
               </div>
             </div>
