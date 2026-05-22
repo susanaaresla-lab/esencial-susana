@@ -50,7 +50,7 @@ export default function ListaEsperaPage() {
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
             <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Recupera tu cuerpo después del parto o cesárea - y también tu confianza
+              Recupera tu cuerpo después de cesárea - y también tu confianza
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
               Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente.
