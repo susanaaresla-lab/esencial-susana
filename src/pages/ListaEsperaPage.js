@@ -31,8 +31,6 @@ export default function ListaEsperaPage() {
 
       {/* ── HERO imagen completa ── */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
-
-        {/* Imagen de fondo */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <img
             src="/images/susana-listaespera.JPG"
@@ -42,14 +40,12 @@ export default function ListaEsperaPage() {
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.25) 0%, rgba(26,26,26,0.6) 55%, rgba(26,26,26,0.88) 100%)' }} />
         </div>
 
-        {/* Botón volver */}
         <div style={{ position: 'relative', zIndex: 1, padding: '1.5rem 1.5rem 0' }}>
           <button className="btn-back" style={{ color: 'rgba(255,255,255,0.85)' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
             <ArrowLeft size={15} /> Volver al inicio
           </button>
         </div>
 
-        {/* Texto sobre la imagen */}
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
             <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
@@ -71,6 +67,40 @@ export default function ListaEsperaPage() {
             >
               Quiero apuntarme
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DIFERENCIADOR: CUERPO + MENTE ── */}
+      <section className="section" style={{ background: 'var(--coral)' }}>
+        <div className="container-mid text-center">
+          <div className="t-label" style={{ color: 'rgba(255,255,255,0.75)', marginBottom: '0.75rem' }}>Lo que hace único este programa</div>
+          <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'white', marginBottom: '1.25rem', lineHeight: 1.2, fontWeight: 400 }}>
+            No es solo recuperar el cuerpo.<br />Es recuperarte a ti.
+          </h2>
+          <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', maxWidth: 560, margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
+            La mayoría de programas trabajan solo el físico. Este va más allá: la Semana 2 incluye trabajo emocional y mental porque recuperar la confianza en ti misma es tan importante como recuperar el abdomen.
+          </p>
+          <div className="grid-2" style={{ gap: '1rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🧠</div>
+              <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Vídeo de motivación y confianza</h3>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
+                Incluido en la Semana 2. Para trabajar la confianza en ti misma y en tu cuerpo. Porque el primer paso es creer que lo mereces — y que puedes.
+              </p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🎧</div>
+              <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Audio de creencias</h3>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
+                También en la Semana 2. Un audio para reforzar que eres merecedora y válida para conseguir todo lo que te propones. Porque recuperarte empieza en la mente.
+              </p>
+            </div>
+          </div>
+          <div style={{ marginTop: '2rem', background: 'rgba(255,255,255,0.12)', borderRadius: 4, padding: '1.25rem 1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
+              ✦ Estos contenidos son <strong>exclusivos del programa</strong> — no los encontrarás en ningún otro sitio ni en mis vídeos de YouTube.
+            </p>
           </div>
         </div>
       </section>
@@ -106,7 +136,7 @@ export default function ListaEsperaPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
             {[
-              { Icon: Target, title: 'Tonificación del abdomen', desc: 'Ejercicios progresivos y seguros diseñados específicamente para el abdomen postparto.' },
+              { Icon: Target, title: 'Tonificación del abdomen', desc: 'Ejercicios exclusivos y progresivos diseñados específicamente para el abdomen postparto.' },
               { Icon: Heart, title: 'Suelo pélvico', desc: 'Trabajo adaptado para recuperar y fortalecer el suelo pélvico de forma correcta.' },
               { Icon: Video, title: 'Videos on-demand', desc: 'Accede cuando quieras, desde casa, sin horarios. Rutinas de 15-30 minutos.' },
               { Icon: Clock, title: '4 semanas guiadas', desc: 'Un plan claro semana a semana: conexión, activación, fortalecimiento y consolidación.' },
