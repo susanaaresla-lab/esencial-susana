@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Video, Users, Check, Heart, Target, Gift, Shield, Brain, Headphones, PlayCircle, Sun } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function ListaEsperaPage() {
   const navigate = useNavigate();
@@ -29,6 +30,20 @@ export default function ListaEsperaPage() {
   return (
     <div style={{ paddingTop: 80 }}>
 
+      <Helmet>
+        <title>Lista de espera · Recupera tu cuerpo desde cero | Esencial Susana Ares</title>
+        <meta name="description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios para empezar ya." />
+        <meta property="og:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
+        <meta property="og:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios." />
+        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-listaespera.JPG" />
+        <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
+        <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera." />
+        <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-listaespera.JPG" />
+      </Helmet>
+
       {/* ── HERO imagen completa ── */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -50,7 +65,7 @@ export default function ListaEsperaPage() {
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
             <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Recupera tu cuerpo después de cesárea - y también tu confianza
+              Recupera tu cuerpo después de cesárea — y también tu confianza
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
               Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente.
@@ -77,7 +92,7 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
             <span style={{ fontSize: '1.5rem' }}>🎁</span>
             <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-              <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya - tanto si tuviste parto como cesárea.
+              <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya — tanto si tuviste parto como cesárea.
             </p>
           </div>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
@@ -165,7 +180,6 @@ export default function ListaEsperaPage() {
               </div>
             ))}
           </div>
-
           <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
               ✦ El único programa que trabaja <strong style={{ color: 'var(--coral)' }}>cuerpo y mente</strong> — el vídeo y el audio son contenidos exclusivos, no disponibles en ningún otro sitio ni en mis vídeos de YouTube.
