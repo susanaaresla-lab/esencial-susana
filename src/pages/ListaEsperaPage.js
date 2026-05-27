@@ -35,13 +35,13 @@ export default function ListaEsperaPage() {
         <meta name="description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios para empezar ya." />
         <meta property="og:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
         <meta property="og:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios." />
-        <meta property="og:image" content="https://customer-assets.emergentagent.com/job_esencial-program/artifacts/8ksaa7j2_2E13618B-B38C-4C37-A0C8-C468F6AC4C2C.JPG" />
+        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-listaespera2.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
         <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera." />
-        <meta name="twitter:image" content="https://customer-assets.emergentagent.com/job_esencial-program/artifacts/8ksaa7j2_2E13618B-B38C-4C37-A0C8-C468F6AC4C2C.JPG" />
+        <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-listaespera2.jpg" />
       </Helmet>
 
       {/* ── HERO imagen completa ── */}
