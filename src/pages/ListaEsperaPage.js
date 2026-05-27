@@ -41,7 +41,7 @@ export default function ListaEsperaPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
         <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera." />
-        <meta name="twitter:image" ccontent="https://customer-assets.emergentagent.com/job_esencial-program/artifacts/8ksaa7j2_2E13618B-B38C-4C37-A0C8-C468F6AC4C2C.JPG" />
+        <meta name="twitter:image" content="https://customer-assets.emergentagent.com/job_esencial-program/artifacts/8ksaa7j2_2E13618B-B38C-4C37-A0C8-C468F6AC4C2C.JPG" />
       </Helmet>
 
       {/* ── HERO imagen completa ── */}
