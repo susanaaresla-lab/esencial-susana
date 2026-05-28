@@ -68,7 +68,7 @@ export default function ListaEsperaPage() {
               Recupera tu cuerpo después de cesárea — y también tu confianza
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente. Las inscripciones abren el 1 de octubre — apúntate y sé la primera en saberlo.
+              Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente. Apúntate y sé la primera en saberlo.
             </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas</span>
