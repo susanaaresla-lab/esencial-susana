@@ -32,16 +32,16 @@ export default function ListaEsperaPage() {
 
       <Helmet>
         <title>Lista de espera · Recupera tu cuerpo desde cero | Esencial Susana Ares</title>
-        <meta name="description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios para empezar ya." />
+        <meta name="description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones abiertas el 1 de octubre. Apúntate y recibe gratis una semana de ejercicios." />
         <meta property="og:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
-        <meta property="og:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera y recibe gratis una semana de ejercicios." />
-        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-listaespera2.jpg"  />
+        <meta property="og:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones el 1 de octubre. Apúntate y recibe gratis una semana de ejercicios." />
+        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
-        <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Apúntate a la lista de espera." />
-        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-listaespera2.jpg" />
+        <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones el 1 de octubre." />
+        <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
       </Helmet>
 
       {/* ── HERO imagen completa ── */}
@@ -63,12 +63,12 @@ export default function ListaEsperaPage() {
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
-            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Octubre 2026</div>
+            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Inscripciones abiertas el 1 de octubre de 2026</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
               Recupera tu cuerpo después de cesárea — y también tu confianza
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente.
+              Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente. Las inscripciones abren el 1 de octubre — apúntate y sé la primera en saberlo.
             </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas</span>
@@ -98,11 +98,11 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu plaza</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Las personas en lista de espera tienen acceso prioritario y precio especial exclusivo.
+              Las personas en lista de espera tienen acceso prioritario y precio especial exclusivo cuando abran las inscripciones el 1 de octubre.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-              <Shield size={12} /> Sin spam. Solo te avisaré cuando abra la próxima edición.
+              <Shield size={12} /> Sin spam. Solo te avisaré cuando abran las inscripciones el 1 de octubre.
             </p>
           </div>
         </div>
@@ -231,8 +231,8 @@ export default function ListaEsperaPage() {
       {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2>¿Lista para recuperarte en octubre?</h2>
-          <p>Apúntate ahora, recibe gratis tu primera semana de ejercicios y sé la primera en saber cuándo abre el programa.</p>
+          <h2>¿Lista para el 1 de octubre?</h2>
+          <p>Apúntate ahora, recibe gratis tu primera semana de ejercicios y sé la primera en saber cuándo abren las inscripciones.</p>
           <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Apuntarme a la lista de espera
           </button>
