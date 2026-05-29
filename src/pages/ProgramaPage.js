@@ -50,16 +50,16 @@ export default function ProgramaPage() {
 
       <Helmet>
         <title>Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre</title>
-        <meta name="description" content="Método Esencial Madre: Actívate. Las primeras rutinas adaptadas a tu cuerpo de madre para volver a reconocerte y sentirte fuerte. €97. Acceso 4 meses." />
+        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97. Acceso 4 meses." />
         <meta name="keywords" content="recuperación postcesárea, ejercicios después cesárea, recuperación postparto, rutinas madres sin experiencia, método esencial madre" />
         <link rel="canonical" href="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
-        <meta property="og:description" content="Las primeras rutinas adaptadas a tu cuerpo de madre para volver a reconocerte y sentirte fuerte. €97. Acceso 4 meses." />
+        <meta property="og:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97." />
         <meta property="og:url" content="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:type" content="product" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
-        <meta name="twitter:description" content="Las primeras rutinas adaptadas a tu cuerpo de madre para volver a reconocerte y sentirte fuerte. €97. Acceso 4 meses." />
+        <meta name="twitter:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97." />
       </Helmet>
 
       {/* ── HERO ── */}
@@ -80,10 +80,10 @@ export default function ProgramaPage() {
               "Para volver a reconocerte, sentirte fuerte y empezar desde donde estás"
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              Especialmente diseñado para cesárea — y también para parto vaginal. Perfecto aunque nunca hayas hecho ejercicio antes.
+              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para empezar a trabajar tu cuerpo — y también tu confianza y motivación. El primer paso para reconectar contigo misma.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 vídeos por semana</span>
+              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Online</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />Sin impacto</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
@@ -150,12 +150,12 @@ export default function ProgramaPage() {
               </p>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
-                  'Rutinas sin impacto adaptadas al cuerpo de madre',
+                  '4 semanas · Online · Sin equipamiento',
+                  'Ejercicios específicos para cesárea y parto vaginal',
                   'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                   'Perfecto si nunca has hecho ejercicio o llevas años sin hacer nada',
-                  'Vídeos on-demand, hazlos cuando puedas',
-                  '4 meses de acceso para empezar cuando estés lista',
-                  'Sin equipamiento, desde casa'
+                  'Trabaja tu cuerpo, tu confianza y tu motivación',
+                  '4 meses de acceso para empezar cuando estés lista'
                 ].map((t, i) => (
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
@@ -214,7 +214,7 @@ export default function ProgramaPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
             {[
-              { emoji: '💪', title: 'Rutina 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
+              { emoji: '💪', title: 'Rutinas 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
               { emoji: '🌟', title: 'Vídeo 4 — Tu mejor versión', desc: 'Estiramientos, hábitos de recuperación o trabajo de mente para construir tu mejor versión.' },
               { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. Exclusivo, el diferencial único del método.' },
               { emoji: '🎙️', title: '1 directo mensual', desc: 'En vivo con Susana para resolver tus dudas personalmente.' }
@@ -378,9 +378,9 @@ export default function ProgramaPage() {
             </div>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
               {[
-                '4 vídeos por semana durante 4 semanas',
+                'Programa online de 4 semanas · Ejercicios específicos para cesárea y parto',
+                '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
                 '3 rutinas semanales sin impacto, adaptadas al cuerpo de madre',
-                '1 vídeo semanal para trabajar tu mente y construir tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
                 '🎙️ 1 directo mensual en vivo de resolución de dudas',

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Video, Users, Check, Heart, Target, Gift, Shield, Brain, Headphones, PlayCircle, Sun } from 'lucide-react';
+import { ArrowLeft, Clock, Video, Users, Check, Heart, Target, Gift, Shield, Brain, Headphones } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function ListaEsperaPage() {
@@ -31,16 +31,16 @@ export default function ListaEsperaPage() {
     <div style={{ paddingTop: 80 }}>
 
       <Helmet>
-        <title>Empieza gratis | Método Esencial Madre | Esencial Susana Ares</title>
-        <meta name="description" content="Empieza hoy con una semana de ejercicios gratuitos adaptados a tu cuerpo de madre. Da tu primer paso cuando estés lista — con cesárea, parto vaginal o aunque nunca hayas hecho ejercicio." />
-        <meta property="og:title" content="Recupera tu cuerpo siendo madre — empieza gratis hoy" />
-        <meta property="og:description" content="Una semana de ejercicios gratuitos adaptados a tu cuerpo de madre. Sin equipamiento, desde casa, a tu ritmo." />
+        <title>Acceso prioritario | Método Esencial Madre | Esencial Susana Ares</title>
+        <meta name="description" content="Regístrate para tener acceso prioritario a la próxima edición del Método Esencial Madre: Actívate — disponible solo del 11 al 14 de junio. Recibe gratis una semana de ejercicios adaptados." />
+        <meta property="og:title" content="Acceso prioritario — Método Esencial Madre: Actívate" />
+        <meta property="og:description" content="Próxima edición disponible solo del 11 al 14 de junio. Regístrate para acceso prioritario y recibe gratis una semana de ejercicios adaptados a cesárea y parto." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Recupera tu cuerpo siendo madre — empieza gratis hoy" />
-        <meta name="twitter:description" content="Una semana de ejercicios gratuitos adaptados a tu cuerpo de madre." />
+        <meta name="twitter:title" content="Acceso prioritario — Método Esencial Madre: Actívate" />
+        <meta name="twitter:description" content="Próxima edición disponible solo del 11 al 14 de junio." />
         <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
       </Helmet>
 
@@ -63,15 +63,15 @@ export default function ListaEsperaPage() {
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
-            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Método Esencial Madre · Empieza gratis</div>
+            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Solo del 11 al 14 de junio</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Empieza hoy a recuperar tu cuerpo siendo madre
+              Sé la primera en acceder al Método Esencial Madre: Actívate
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Recibe gratis una semana de ejercicios adaptados a tu cuerpo de madre y da tu primer paso cuando estés lista — con cesárea, parto vaginal, o aunque nunca hayas hecho ejercicio antes.
+              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para trabajar tu cuerpo, tu confianza y tu motivación. La próxima edición estará disponible <strong style={{ color: 'white' }}>solo del 11 al 14 de junio</strong>. Regístrate ahora para tener acceso prioritario y recibir gratis una semana de ejercicios para empezar ya.
             </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />Sin impacto</span>
+              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas · Online</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Video />Parto y cesárea</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Users />+3.000 mamás</span>
             </div>
@@ -80,7 +80,7 @@ export default function ListaEsperaPage() {
               style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
               onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Quiero mi semana gratis
+              Quiero acceso prioritario
             </button>
           </div>
         </div>
@@ -89,59 +89,33 @@ export default function ListaEsperaPage() {
       {/* ── FORMULARIO ── */}
       <section id="formulario" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
         <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
-            <span style={{ fontSize: '1.5rem' }}>🎁</span>
-            <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-              <strong>Recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya — tanto si tuviste parto como cesárea, o aunque nunca hayas hecho ejercicio.
-            </p>
+
+          {/* Qué consigues al registrarte */}
+          <div style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
+              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🔔</span>
+              <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
+                <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la próxima edición, disponible solo del 11 al 14 de junio.
+              </p>
+            </div>
+            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
+              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🎁</span>
+              <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
+                <strong>Una semana de ejercicios gratis</strong> — rutinas de mis vídeos de YouTube adaptadas a cesárea y parto para que pruebes mi metodología y empieces a moverte ya.
+              </p>
+            </div>
           </div>
+
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
-            <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Tu primera semana, gratis</h2>
+            <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu acceso prioritario</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Conoce el método antes de comprar. Sin compromiso.
+              Al registrarte serás la primera en saber cuándo abre — solo del 11 al 14 de junio.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-              <Shield size={12} /> Sin spam. Solo contenido útil para tu recuperación.
+              <Shield size={12} /> Sin spam. Solo te avisaremos cuando abra la próxima edición del 11 al 14 de junio.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* ── CÓMO ES UNA SEMANA ── */}
-      <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Lo que recibirás gratis</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>Una semana para conocer el método</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
-            <div style={{ background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-              <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(232,115,90,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <PlayCircle size={20} style={{ color: 'var(--coral)' }} />
-              </div>
-              <div>
-                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>Rutinas de ejercicio</h4>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  Sin impacto, adaptadas a tu cuerpo de madre. Seguras para cesárea y parto vaginal. Perfectas para empezar desde cero.
-                </p>
-              </div>
-            </div>
-            <div style={{ background: 'rgba(232,115,90,0.08)', borderRadius: 4, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start', border: '1px solid rgba(232,115,90,0.2)' }}>
-              <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(232,115,90,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Sun size={20} style={{ color: 'var(--coral)' }} />
-              </div>
-              <div>
-                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>Hábitos de recuperación</h4>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  Pequeñas acciones para integrar en tu día a día y seguir recuperándote aunque no hagas ejercicio ese día.
-                </p>
-              </div>
-            </div>
-          </div>
-          <p style={{ textAlign: 'center', fontSize: '0.875rem', color: 'rgba(26,26,26,0.5)', marginTop: '1.25rem' }}>
-            Es una muestra del método completo. Para seguir, accede al programa.
-          </p>
         </div>
       </section>
 
@@ -264,10 +238,10 @@ export default function ListaEsperaPage() {
       {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2>¿Lista para dar tu primer paso?</h2>
-          <p>Empieza gratis hoy con tu semana de ejercicios. Cuando estés lista, da el siguiente paso.</p>
+          <h2>¿Lista para la próxima edición?</h2>
+          <p>Disponible solo del 11 al 14 de junio. Regístrate ahora para acceso prioritario y recibe gratis tu semana de ejercicios.</p>
           <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
-            Quiero mi semana gratis
+            Quiero acceso prioritario
           </button>
         </div>
       </div>
