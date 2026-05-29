@@ -31,16 +31,16 @@ export default function ListaEsperaPage() {
     <div style={{ paddingTop: 80 }}>
 
       <Helmet>
-        <title>Lista de espera · Recupera tu cuerpo desde cero | Esencial Susana Ares</title>
-        <meta name="description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones abiertas el 1 de octubre. Apúntate y recibe gratis una semana de ejercicios." />
-        <meta property="og:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
-        <meta property="og:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones el 1 de octubre. Apúntate y recibe gratis una semana de ejercicios." />
+        <title>Empieza gratis | Método Esencial Madre | Esencial Susana Ares</title>
+        <meta name="description" content="Empieza hoy con una semana de ejercicios gratuitos adaptados a tu cuerpo de madre. Da tu primer paso cuando estés lista — con cesárea, parto vaginal o aunque nunca hayas hecho ejercicio." />
+        <meta property="og:title" content="Recupera tu cuerpo siendo madre — empieza gratis hoy" />
+        <meta property="og:description" content="Una semana de ejercicios gratuitos adaptados a tu cuerpo de madre. Sin equipamiento, desde casa, a tu ritmo." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Recupera tu cuerpo después de cesárea — y también tu confianza" />
-        <meta name="twitter:description" content="Programa online de 4 semanas adaptado a parto y cesárea. Inscripciones el 1 de octubre." />
+        <meta name="twitter:title" content="Recupera tu cuerpo siendo madre — empieza gratis hoy" />
+        <meta name="twitter:description" content="Una semana de ejercicios gratuitos adaptados a tu cuerpo de madre." />
         <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
       </Helmet>
 
@@ -63,15 +63,15 @@ export default function ListaEsperaPage() {
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
-            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Inscripciones abiertas el 1 de octubre de 2026</div>
+            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Método Esencial Madre · Empieza gratis</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Recupera tu cuerpo después de cesárea — y también tu confianza
+              Empieza hoy a recuperar tu cuerpo siendo madre
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas con ejercicios exclusivos adaptados a cesárea: abdomen, suelo pélvico y trabajo de mente. Apúntate y sé la primera en saberlo.
+              Recibe gratis una semana de ejercicios adaptados a tu cuerpo de madre y da tu primer paso cuando estés lista — con cesárea, parto vaginal, o aunque nunca hayas hecho ejercicio antes.
             </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas</span>
+              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />Sin impacto</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Video />Parto y cesárea</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Users />+3.000 mamás</span>
             </div>
@@ -80,7 +80,7 @@ export default function ListaEsperaPage() {
               style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
               onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Quiero apuntarme
+              Quiero mi semana gratis
             </button>
           </div>
         </div>
@@ -92,18 +92,32 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
             <span style={{ fontSize: '1.5rem' }}>🎁</span>
             <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-              <strong>Al apuntarte recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya — tanto si tuviste parto como cesárea.
+              <strong>Recibirás gratis</strong> un calendario de 1 semana de ejercicios adaptados para empezar ya — tanto si tuviste parto como cesárea, o aunque nunca hayas hecho ejercicio.
             </p>
           </div>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
-            <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu plaza</h2>
+            <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Tu primera semana, gratis</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Las personas en lista de espera tienen acceso prioritario y precio especial exclusivo cuando abran las inscripciones el 1 de octubre.
+              Conoce el método antes de comprar. Sin compromiso.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-              <Shield size={12} /> Sin spam. Solo te avisaré cuando abran las inscripciones el 1 de octubre.
+              <Shield size={12} /> Sin spam. Solo contenido útil para tu recuperación.
             </p>
+          </div>
+
+          {/* CTA secundario hacia el programa */}
+          <div style={{ marginTop: '2rem', padding: '1.25rem', background: 'var(--white)', borderRadius: 6, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.7)', marginBottom: '0.75rem', lineHeight: 1.6 }}>
+              ¿Ya sabes que quieres empezar? Accede directamente al método completo.
+            </p>
+            <button
+              className="btn-coral"
+              style={{ fontSize: '0.95rem', padding: '0.9rem 2rem', width: '100%' }}
+              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
+            >
+              Ver el Método Esencial Madre — €97
+            </button>
           </div>
         </div>
       </section>
@@ -112,8 +126,8 @@ export default function ListaEsperaPage() {
       <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Una pregunta frecuente</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>¿Cómo es una semana típica del programa?</h2>
+            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Lo que recibirás gratis</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>Una semana para conocer el método</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
             <div style={{ background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -121,9 +135,9 @@ export default function ListaEsperaPage() {
                 <PlayCircle size={20} style={{ color: 'var(--coral)' }} />
               </div>
               <div>
-                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>3 rutinas de ejercicio</h4>
+                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>Rutinas de ejercicio</h4>
                 <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  De 15 a 30 minutos cada una. Adaptadas a tu semana de recuperación, progresivas y seguras para cesárea y parto vaginal.
+                  Sin impacto, adaptadas a tu cuerpo de madre. Seguras para cesárea y parto vaginal. Perfectas para empezar desde cero.
                 </p>
               </div>
             </div>
@@ -132,39 +146,39 @@ export default function ListaEsperaPage() {
                 <Sun size={20} style={{ color: 'var(--coral)' }} />
               </div>
               <div>
-                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>1 vídeo cada domingo</h4>
+                <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>Hábitos de recuperación</h4>
                 <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                  Para trabajar tu mente o acelerar tu recuperación física. Exclusivo, no lo encontrarás en YouTube.
+                  Pequeñas acciones para integrar en tu día a día y seguir recuperándote aunque no hagas ejercicio ese día.
                 </p>
               </div>
             </div>
           </div>
           <p style={{ textAlign: 'center', fontSize: '0.875rem', color: 'rgba(26,26,26,0.5)', marginTop: '1.25rem' }}>
-            Todo on-demand. Lo haces cuando puedes, a tu ritmo, sin presión.
+            Es una muestra del método completo. Para seguir, accede al programa.
           </p>
         </div>
       </section>
 
-      {/* ── QUÉ INCLUYE ── */}
+      {/* ── QUÉ INCLUYE EL MÉTODO COMPLETO ── */}
       <section className="section" style={{ background: 'var(--beige)', paddingTop: '2rem' }}>
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '3rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Lo que conseguirás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)' }}>Todo lo que incluye el programa</h2>
+            <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>El método completo</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)' }}>Método Esencial Madre: Actívate</h2>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem', maxWidth: 520, margin: '0.75rem auto 0' }}>
-              Especialmente diseñado para cesárea — y también para parto vaginal.
+              Especialmente diseñado para cesárea y para madres que empiezan desde cero.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
             {[
-              { Icon: Target, title: 'Tonificación del abdomen', desc: 'Ejercicios exclusivos adaptados a la recuperación postcesárea y postparto. Progresivos y seguros desde el principio.', highlight: false },
-              { Icon: Heart, title: 'Suelo pélvico', desc: 'Trabajo adaptado a cesárea y parto vaginal para recuperar y fortalecer correctamente.', highlight: false },
-              { Icon: Video, title: 'Videos on-demand', desc: 'Accede cuando quieras, desde casa, sin horarios. Rutinas de 15-30 minutos.', highlight: false },
-              { Icon: Clock, title: '4 semanas guiadas', desc: 'Un plan progresivo semana a semana: conexión, activación, fortalecimiento y consolidación.', highlight: false },
-              { Icon: Brain, title: '🧠 Vídeo de motivación y confianza', desc: 'Semana 2 · Exclusivo. Para trabajar la confianza en ti misma y en tu cuerpo después de la cesárea. Porque creer que puedes es el primer paso.', highlight: true },
-              { Icon: Headphones, title: '🎧 Audio de creencias', desc: 'Semana 2 · Exclusivo. Para reforzar que eres merecedora y válida para recuperarte y conseguir todo lo que te propones.', highlight: true },
-              { Icon: Gift, title: 'Bonus incluido', desc: 'Consejos prácticos para integrar en tu día a día como madre y seguir recuperándote sin hacer ejercicio.', highlight: false },
-              { Icon: Users, title: '+3.000 mamás recuperadas', desc: 'Una comunidad real de mujeres que ya han pasado por lo mismo que tú — muchas de ellas con cesárea.', highlight: false }
+              { Icon: Target, title: '3 rutinas semanales sin impacto', desc: 'Grabadas, adaptadas al cuerpo de madre. Seguras desde los 40 días (parto) o 2 meses (cesárea).', highlight: false },
+              { Icon: Heart, title: 'Suelo pélvico y abdomen', desc: 'Trabajo específico para recuperar y fortalecer de forma correcta y segura.', highlight: false },
+              { Icon: Video, title: 'Vídeo dominical', desc: 'Estiramientos y hábitos de recuperación para integrar en tu día a día.', highlight: false },
+              { Icon: Clock, title: '4 meses de acceso', desc: 'Para empezar cuando tu cuerpo esté listo, sin prisas ni presión.', highlight: false },
+              { Icon: Brain, title: '🧠 Módulo de fortaleza mental', desc: 'Exclusivo. Vídeo de motivación y confianza para trabajar la seguridad en ti misma. No está en YouTube.', highlight: true },
+              { Icon: Headphones, title: '🎧 Audio de creencias', desc: 'Exclusivo. Para reforzar que eres merecedora y válida para recuperarte y conseguir lo que te propones.', highlight: true },
+              { Icon: Gift, title: 'Bonus incluido', desc: 'Consejos prácticos para seguir recuperándote en tu día a día como madre.', highlight: false },
+              { Icon: Users, title: '1 directo mensual en vivo', desc: 'Con Susana para resolver tus dudas personalmente cada mes.', highlight: false }
             ].map(({ Icon, title, desc, highlight }, i) => (
               <div key={i} style={{
                 background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--white)',
@@ -180,10 +194,20 @@ export default function ListaEsperaPage() {
               </div>
             ))}
           </div>
-          <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
+          <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center', marginBottom: '1.5rem' }}>
             <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
-              ✦ El único programa que trabaja <strong style={{ color: 'var(--coral)' }}>cuerpo y mente</strong> — el vídeo y el audio son contenidos exclusivos, no disponibles en ningún otro sitio ni en mis vídeos de YouTube.
+              ✦ El único método que trabaja <strong style={{ color: 'var(--coral)' }}>cuerpo y mente</strong> — exclusivo, no disponible en YouTube.
             </p>
+          </div>
+          <div className="text-center">
+            <button
+              className="btn-coral"
+              style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
+              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
+            >
+              Ver el método completo — €97
+            </button>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>Antes €147 · 4 meses de acceso · Sin equipamiento</p>
           </div>
         </div>
       </section>
@@ -191,17 +215,17 @@ export default function ListaEsperaPage() {
       {/* ── PARA QUIÉN ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem' }}>
-          <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '0.75rem' }}>Este programa es para ti si…</h2>
+          <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '0.75rem' }}>Este método es para ti si…</h2>
           <p style={{ textAlign: 'center', fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2.5rem' }}>
-            Especialmente si tuviste cesárea — aunque también funciona para parto vaginal.
+            Para madres que quieren empezar desde donde están, sin importar su punto de partida.
           </p>
           <ul className="check-list" style={{ maxWidth: 520, margin: '0 auto' }}>
             {[
               'Tuviste cesárea y no sabes cómo empezar a recuperarte sin hacerte daño',
               'Tu cicatriz de cesárea te genera inseguridad o no sabes cómo trabajarla',
               'Tuviste parto vaginal y quieres ejercicios seguros y adaptados',
+              'Nunca has hecho ejercicio o llevas años sin hacer nada',
               'Tu bebé tiene meses o años y todavía no te has recuperado del todo',
-              'Buscas rutinas cortas que puedas hacer desde casa, sin equipamiento',
               'Quieres recuperar tu cuerpo y también tu confianza'
             ].map((t, i) => (
               <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.5rem' }}><Check size={16} />{t}</li>
@@ -231,11 +255,19 @@ export default function ListaEsperaPage() {
       {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2>¿Lista para el 1 de octubre?</h2>
-          <p>Apúntate ahora, recibe gratis tu primera semana de ejercicios y sé la primera en saber cuándo abren las inscripciones.</p>
-          <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
-            Apuntarme a la lista de espera
+          <h2>¿Lista para dar tu primer paso?</h2>
+          <p>Empieza gratis hoy con tu semana de ejercicios. Cuando estés lista, da el siguiente paso.</p>
+          <button className="btn-white" style={{ marginBottom: '1rem' }} onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
+            Quiero mi semana gratis
           </button>
+          <div>
+            <button
+              style={{ background: 'none', border: '1px solid rgba(255,255,255,0.5)', color: 'white', fontFamily: 'var(--sans)', fontWeight: 600, fontSize: '0.95rem', padding: '0.8rem 2rem', borderRadius: 4, cursor: 'pointer' }}
+              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
+            >
+              Ver el método completo — €97
+            </button>
+          </div>
         </div>
       </div>
 
