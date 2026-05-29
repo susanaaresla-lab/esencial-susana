@@ -176,7 +176,7 @@ export default function ListaEsperaPage() {
               { Icon: Brain, title: '🧠 Módulo de fortaleza mental', desc: 'Exclusivo. Vídeo de motivación y confianza para trabajar la seguridad en ti misma. No está en YouTube.', highlight: true },
               { Icon: Headphones, title: '🎧 Audio de creencias', desc: 'Exclusivo. Para reforzar que eres merecedora y válida para recuperarte y conseguir lo que te propones.', highlight: true },
               { Icon: Gift, title: 'Bonus incluido', desc: 'Consejos prácticos para seguir recuperándote en tu día a día como madre.', highlight: false },
-              { Icon: Users, title: '1 directo mensual en vivo', desc: 'Con Susana para resolver tus dudas personalmente cada mes.', highlight: false }
+              { Icon: Users, title: '1 directo en vivo', desc: 'Con Susana para resolver tus dudas personalmente cada mes.', highlight: false }
             ].map(({ Icon, title, desc, highlight }, i) => (
               <div key={i} style={{
                 background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--beige)',
