@@ -68,8 +68,13 @@ export default function ListaEsperaPage() {
               Sé la primera en acceder al Método Esencial Madre: Actívate
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para trabajar tu cuerpo, tu confianza y tu motivación. La próxima edición estará disponible <strong style={{ color: 'white' }}>solo del 11 al 14 de junio</strong>. Regístrate ahora para tener acceso prioritario y recibir gratis una semana de ejercicios para empezar ya.
-            </p>
+  Programa online de 4 semanas adaptado a cesárea y parto vaginal.<br />
+  <span style={{ color: 'rgba(255,255,255,0.7)' }}>Cuerpo · Confianza · Motivación</span>
+</p>
+<p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, maxWidth: 480, margin: '0 auto 1.5rem' }}>
+  Próxima edición <strong style={{ color: 'white' }}>solo del 11 al 14 de junio</strong>.<br />
+  Regístrate para acceso prioritario + semana de ejercicios gratis.
+</p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas · Online</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Video />Parto y cesárea</span>
