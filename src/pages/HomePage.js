@@ -52,7 +52,7 @@ export default function HomePage({ onVideoClick }) {
             <div style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '2rem' }}>Susana Ares</div>
             <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Método Esencial Madre · Actívate</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 400, lineHeight: 1.1, marginBottom: '1.25rem', color: 'var(--black)' }}>
-              Recupera tu cuerpo después de la cesárea — y también tu confianza
+              Recupera tu cuerpo después de la cesárea, y tu confianza
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.78)', lineHeight: 1.65, marginBottom: '1.75rem' }}>
               Las primeras rutinas adaptadas a tu cuerpo de madre para volver a reconocerte, sentirte fuerte y empezar desde donde estás. Aunque nunca hayas hecho ejercicio antes.
