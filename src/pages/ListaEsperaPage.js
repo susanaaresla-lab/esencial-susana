@@ -105,20 +105,6 @@ export default function ListaEsperaPage() {
               <Shield size={12} /> Sin spam. Solo contenido útil para tu recuperación.
             </p>
           </div>
-
-          {/* CTA secundario hacia el programa */}
-          <div style={{ marginTop: '2rem', padding: '1.25rem', background: 'var(--white)', borderRadius: 6, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.7)', marginBottom: '0.75rem', lineHeight: 1.6 }}>
-              ¿Ya sabes que quieres empezar? Accede directamente al método completo.
-            </p>
-            <button
-              className="btn-coral"
-              style={{ fontSize: '0.95rem', padding: '0.9rem 2rem', width: '100%' }}
-              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
-            >
-              Ver el Método Esencial Madre — €97
-            </button>
-          </div>
         </div>
       </section>
 
@@ -159,12 +145,45 @@ export default function ListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── LAS 4 SEMANAS ── */}
+      <section className="section" style={{ background: 'var(--beige)' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
+          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+            <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Cómo está construido el método</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)' }}>Un plan progresivo semana a semana</h2>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem', maxWidth: 520, margin: '0.75rem auto 0' }}>
+              Cada semana tiene un objetivo claro. Sin saltar pasos, sin agobios.
+            </p>
+          </div>
+          <div className="week-steps">
+            {[
+              { week: 'Semana 1', title: 'Conexión', desc: 'Reconecta con tu cuerpo y tu cicatriz. Rutinas muy suaves para empezar desde donde estás, sin forzar nada.', highlight: false },
+              { week: 'Semana 2', title: 'Activación + Mente', desc: 'Activa abdomen y suelo pélvico de forma progresiva. Incluye el módulo de fortaleza mental exclusivo: vídeo de motivación y audio de creencias.', highlight: true },
+              { week: 'Semana 3', title: 'Fortalecimiento', desc: 'Aumenta la intensidad respetando tu recuperación. Empiezas a notar los cambios en tu cuerpo.', highlight: false },
+              { week: 'Semana 4', title: 'Consolidación', desc: 'Integra todo lo aprendido y celebra los resultados en tu cuerpo y tu confianza.', highlight: false }
+            ].map((item, i) => (
+              <div key={i} className="week-step" style={item.highlight ? { border: '2px solid var(--coral)', borderRadius: 4, position: 'relative' } : {}}>
+                {item.highlight && (
+                  <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: 'var(--coral)', color: 'white', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', padding: '0.2rem 0.65rem', borderRadius: 20, whiteSpace: 'nowrap' }}>
+                    CUERPO + MENTE
+                  </div>
+                )}
+                <div className="week-number">{i + 1}</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.4rem' }}>{item.week}</div>
+                <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>{item.title}</div>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── QUÉ INCLUYE EL MÉTODO COMPLETO ── */}
-      <section className="section" style={{ background: 'var(--beige)', paddingTop: '2rem' }}>
+      <section className="section" style={{ background: 'var(--white)', paddingTop: '2rem' }}>
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '3rem' }}>
             <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>El método completo</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)' }}>Método Esencial Madre: Actívate</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)' }}>Todo lo que incluye</h2>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem', maxWidth: 520, margin: '0.75rem auto 0' }}>
               Especialmente diseñado para cesárea y para madres que empiezan desde cero.
             </p>
@@ -173,7 +192,7 @@ export default function ListaEsperaPage() {
             {[
               { Icon: Target, title: '3 rutinas semanales sin impacto', desc: 'Grabadas, adaptadas al cuerpo de madre. Seguras desde los 40 días (parto) o 2 meses (cesárea).', highlight: false },
               { Icon: Heart, title: 'Suelo pélvico y abdomen', desc: 'Trabajo específico para recuperar y fortalecer de forma correcta y segura.', highlight: false },
-              { Icon: Video, title: 'Vídeo dominical', desc: 'Estiramientos y hábitos de recuperación para integrar en tu día a día.', highlight: false },
+              { Icon: Video, title: '1 vídeo semanal para tu mejor versión', desc: 'Estiramientos y hábitos de recuperación para integrar en tu día a día.', highlight: false },
               { Icon: Clock, title: '4 meses de acceso', desc: 'Para empezar cuando tu cuerpo esté listo, sin prisas ni presión.', highlight: false },
               { Icon: Brain, title: '🧠 Módulo de fortaleza mental', desc: 'Exclusivo. Vídeo de motivación y confianza para trabajar la seguridad en ti misma. No está en YouTube.', highlight: true },
               { Icon: Headphones, title: '🎧 Audio de creencias', desc: 'Exclusivo. Para reforzar que eres merecedora y válida para recuperarte y conseguir lo que te propones.', highlight: true },
@@ -181,7 +200,7 @@ export default function ListaEsperaPage() {
               { Icon: Users, title: '1 directo mensual en vivo', desc: 'Con Susana para resolver tus dudas personalmente cada mes.', highlight: false }
             ].map(({ Icon, title, desc, highlight }, i) => (
               <div key={i} style={{
-                background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--white)',
+                background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--beige)',
                 borderRadius: 4,
                 padding: '1.5rem',
                 border: highlight ? '1px solid rgba(232,115,90,0.3)' : 'none'
@@ -194,26 +213,16 @@ export default function ListaEsperaPage() {
               </div>
             ))}
           </div>
-          <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center', marginBottom: '1.5rem' }}>
+          <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
               ✦ El único método que trabaja <strong style={{ color: 'var(--coral)' }}>cuerpo y mente</strong> — exclusivo, no disponible en YouTube.
             </p>
-          </div>
-          <div className="text-center">
-            <button
-              className="btn-coral"
-              style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
-              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
-            >
-              Ver el método completo — €97
-            </button>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>Antes €147 · 4 meses de acceso · Sin equipamiento</p>
           </div>
         </div>
       </section>
 
       {/* ── PARA QUIÉN ── */}
-      <section className="section" style={{ background: 'var(--white)' }}>
+      <section className="section" style={{ background: 'var(--beige)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem' }}>
           <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '0.75rem' }}>Este método es para ti si…</h2>
           <p style={{ textAlign: 'center', fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2.5rem' }}>
@@ -257,17 +266,9 @@ export default function ListaEsperaPage() {
         <div className="container-narrow text-center">
           <h2>¿Lista para dar tu primer paso?</h2>
           <p>Empieza gratis hoy con tu semana de ejercicios. Cuando estés lista, da el siguiente paso.</p>
-          <button className="btn-white" style={{ marginBottom: '1rem' }} onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Quiero mi semana gratis
           </button>
-          <div>
-            <button
-              style={{ background: 'none', border: '1px solid rgba(255,255,255,0.5)', color: 'white', fontFamily: 'var(--sans)', fontWeight: 600, fontSize: '0.95rem', padding: '0.8rem 2rem', borderRadius: 4, cursor: 'pointer' }}
-              onClick={() => { navigate('/programa-4-semanas'); window.scrollTo(0,0); }}
-            >
-              Ver el método completo — €97
-            </button>
-          </div>
         </div>
       </div>
 
