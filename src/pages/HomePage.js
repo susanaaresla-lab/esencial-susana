@@ -1,4 +1,4 @@
-import { Clock, Users, Calendar, Video, Target, Heart, Gift, Play, Check } from 'lucide-react';
+import { Clock, Users, Video, Target, Heart, Gift, Play, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
