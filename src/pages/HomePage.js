@@ -58,7 +58,7 @@ export default function HomePage({ onVideoClick }) {
               Las primeras rutinas adaptadas a tu cuerpo de madre para volver a reconocerte, sentirte fuerte y empezar desde donde estás. Aunque nunca hayas hecho ejercicio antes.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill"><Clock />4 meses de acceso</span>
+              <span className="pill"><Video />4 vídeos por semana</span>
               <span className="pill"><Users />+3.000 mamás</span>
             </div>
             <button className="btn-coral" onClick={() => navigate('/programa-4-semanas')}>
@@ -103,18 +103,21 @@ export default function HomePage({ onVideoClick }) {
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
             <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>El Método</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1rem' }}>Método Esencial Madre: Actívate</h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.78)', maxWidth: 540, margin: '0 auto' }}>
-              Las primeras rutinas adaptadas a tu cuerpo de madre — especialmente diseñado para cesárea, también para parto vaginal, y perfecto si nunca has hecho ejercicio antes.
+            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.78)', maxWidth: 560, margin: '0 auto 0.5rem' }}>
+              4 semanas de vídeos on-demand. Cada semana 4 vídeos: 3 rutinas de ejercicio sin impacto + 1 vídeo para trabajar tu mente y construir tu mejor versión.
+            </p>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', maxWidth: 480, margin: '0 auto' }}>
+              Especialmente diseñado para cesárea, también para parto vaginal, perfecto si nunca has hecho ejercicio antes. Acceso durante 4 meses.
             </p>
           </div>
           <div className="grid-2" style={{ marginBottom: '2.5rem' }}>
             {[
-              { Icon: Calendar, text: '4 meses de acceso completo' },
-              { Icon: Video,    text: 'Rutinas sin impacto on-demand' },
-              { Icon: Target,   text: 'Abdomen postcesárea y postparto' },
-              { Icon: Heart,    text: 'Suelo pélvico adaptado' },
-              { Icon: Clock,    text: 'Desde 40 días (parto) o 2 meses (cesárea)' },
-              { Icon: Gift,     text: 'Módulo de fortaleza mental incluido' }
+              { Icon: Video,  text: '3 rutinas de ejercicio por semana' },
+              { Icon: Target, text: '1 vídeo semanal para tu mente y mejor versión' },
+              { Icon: Heart,  text: 'Abdomen y suelo pélvico adaptados' },
+              { Icon: Check,  text: 'Sin impacto · Sin equipamiento · Desde casa' },
+              { Icon: Clock,  text: 'Desde 40 días (parto) o 2 meses (cesárea)' },
+              { Icon: Gift,   text: 'Módulo de fortaleza mental incluido' }
             ].map(({ Icon, text }, i) => (
               <div key={i} className="feature-item"><Icon size={18} />{text}</div>
             ))}
@@ -124,7 +127,7 @@ export default function HomePage({ onVideoClick }) {
               Ver el método completo — €97
             </button>
             <p className="text-sm text-muted" style={{ marginTop: '0.75rem' }}>
-              <span style={{ textDecoration: 'line-through', marginRight: '0.5rem' }}>€147</span>€97 · 4 meses de acceso · Sin equipamiento
+              <span style={{ textDecoration: 'line-through', marginRight: '0.5rem' }}>€147</span>€97 · Próxima edición 11-14 de junio
             </p>
           </div>
         </div>
@@ -271,10 +274,10 @@ export default function HomePage({ onVideoClick }) {
         <div className="container-narrow">
           <h2>¿Lista para empezar tu recuperación?</h2>
           <p>Empieza desde donde estás — con cesárea, parto vaginal, o aunque nunca hayas hecho ejercicio antes.</p>
-          <button className="btn-white" onClick={() => navigate('/programa-4-semanas')}>
-            Quiero empezar ahora — €97
+          <button className="btn-white" onClick={() => navigate('/lista-espera')}>
+            Quiero empezar ahora
           </button>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', marginTop: '0.75rem', textDecoration: 'line-through' }}>Antes €147</p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', marginTop: '0.75rem' }}>Próxima edición 11-14 de junio · €97</p>
         </div>
       </div>
     </>

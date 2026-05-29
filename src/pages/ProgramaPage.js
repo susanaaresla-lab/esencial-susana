@@ -43,7 +43,7 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goComprar = () => window.open('https://pay.hotmart.com/G105828362U', '_blank');
+  const goListaEspera = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
 
   return (
     <div style={{ paddingTop: 80 }}>
@@ -83,19 +83,19 @@ export default function ProgramaPage() {
               Especialmente diseñado para cesárea — y también para parto vaginal. Perfecto aunque nunca hayas hecho ejercicio antes.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />4 meses de acceso</span>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />Sin impacto</span>
+              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 vídeos por semana</span>
+              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />Sin impacto</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
             </div>
-            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-              Quiero empezar mi recuperación — €97
+            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
+              Apúntate — próxima edición 11-14 junio
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              4 meses de acceso · Sin equipamiento · Desde casa
+              Sin equipamiento · Desde casa · 4 meses de acceso
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function ProgramaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={goComprar}>Quiero este método — €97</button>
+              <button className="btn-coral" onClick={goListaEspera}>Apúntate a la próxima edición</button>
             </div>
           </div>
         </div>
@@ -202,21 +202,21 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
+      {/* ── HOW IT WORKS: SEMANA TÍPICA ── */}
       <section className="section" style={{ background: 'var(--beige)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
             <div style={label()}>Cómo funciona</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Una semana típica del método</h2>
             <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.7)', maxWidth: 480, margin: '0.75rem auto 0', lineHeight: 1.7 }}>
-              Diseñado para encajar en tu vida de madre, sin agobios ni presión.
+              Cada semana 4 vídeos on-demand. Hazlos cuando puedas, a tu ritmo.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
             {[
-              { emoji: '💪', title: '3 rutinas semanales', desc: 'Grabadas, sin impacto, adaptadas al cuerpo de madre. De 15 a 30 minutos.' },
-              { emoji: '🌅', title: '1 vídeo cada domingo', desc: 'Estiramientos y hábitos de recuperación para tu día a día.' },
-              { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. El diferencial único.' },
+              { emoji: '💪', title: 'Rutina 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
+              { emoji: '🌟', title: 'Vídeo 4 — Tu mejor versión', desc: 'Estiramientos, hábitos de recuperación o trabajo de mente para construir tu mejor versión.' },
+              { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. Exclusivo, el diferencial único del método.' },
               { emoji: '🎙️', title: '1 directo mensual', desc: 'En vivo con Susana para resolver tus dudas personalmente.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--white)', borderRadius: 4, padding: '1.5rem', textAlign: 'center' }}>
@@ -230,6 +230,39 @@ export default function ProgramaPage() {
             <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
               ✦ <strong style={{ color: 'var(--coral)' }}>4 meses de acceso completo</strong> para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LAS 4 SEMANAS ── */}
+      <section className="section" style={{ background: 'var(--white)' }}>
+        <div className="container-mid">
+          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+            <div style={label()}>Las 4 semanas</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Un plan progresivo semana a semana</h2>
+            <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.7)', maxWidth: 480, margin: '0.75rem auto 0', lineHeight: 1.7 }}>
+              Cada semana tiene un objetivo claro. Sin agobios, sin saltar pasos.
+            </p>
+          </div>
+          <div className="week-steps">
+            {[
+              { week: 'Semana 1', title: 'Conexión', desc: 'Reconecta con tu cuerpo y tu cicatriz. Rutinas muy suaves para empezar desde donde estás, sin forzar.', highlight: false },
+              { week: 'Semana 2', title: 'Activación + Mente', desc: 'Activa abdomen y suelo pélvico de forma progresiva. Incluye módulo de fortaleza mental exclusivo.', highlight: true },
+              { week: 'Semana 3', title: 'Fortalecimiento', desc: 'Aumenta la intensidad respetando tu recuperación. Empiezas a notar los cambios en tu cuerpo.', highlight: false },
+              { week: 'Semana 4', title: 'Consolidación', desc: 'Integra todo lo aprendido y celebra los resultados en tu cuerpo y tu confianza.', highlight: false }
+            ].map((item, i) => (
+              <div key={i} className="week-step" style={item.highlight ? { border: '2px solid var(--coral)', borderRadius: 4, position: 'relative' } : {}}>
+                {item.highlight && (
+                  <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: 'var(--coral)', color: 'white', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', padding: '0.2rem 0.65rem', borderRadius: 20, whiteSpace: 'nowrap' }}>
+                    CUERPO + MENTE
+                  </div>
+                )}
+                <div className="week-number">{i + 1}</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.4rem' }}>{item.week}</div>
+                <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>{item.title}</div>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6 }}>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -263,7 +296,7 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── VÍDEO ── */}
+      {/* ── VÍDEO TESTIMONIOS ── */}
       <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div className="text-center" style={{ marginBottom: '1.75rem' }}>
@@ -276,7 +309,7 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIOS ── */}
+      {/* ── TESTIMONIOS FOTOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
@@ -332,8 +365,8 @@ export default function ProgramaPage() {
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Método Esencial Madre: Actívate</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Todo lo que incluye</h2>
+            <div style={label('var(--coral)')}>Próxima edición · 11-14 de junio</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate y reserva tu plaza</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -345,8 +378,9 @@ export default function ProgramaPage() {
             </div>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
               {[
+                '4 vídeos por semana durante 4 semanas',
                 '3 rutinas semanales sin impacto, adaptadas al cuerpo de madre',
-                'Vídeo dominical de estiramientos y hábitos de recuperación',
+                '1 vídeo semanal para trabajar tu mente y construir tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
                 '🎙️ 1 directo mensual en vivo de resolución de dudas',
@@ -362,8 +396,8 @@ export default function ProgramaPage() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>4 meses de acceso completo</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Próxima edición disponible del 11 al 14 de junio</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Apúntate ahora a la lista de espera para recibir acceso prioritario y precio especial.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
@@ -372,8 +406,8 @@ export default function ProgramaPage() {
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
               </div>
-              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
-                Quiero empezar mi recuperación — €97
+              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
+                Apúntame a la próxima edición — €97
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -415,15 +449,15 @@ export default function ProgramaPage() {
       {/* ── FINAL CTA ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar desde donde estás?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Da tu primer paso hoy. Tu cuerpo te lo agradecerá.</p>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para la próxima edición?</h2>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Disponible del 11 al 14 de junio. Apúntate ahora.</p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Antes €147</p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-            Quiero empezar mi recuperación
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
+            Apúntame a la próxima edición
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            4 meses de acceso · Sin equipamiento · Desde casa
+            11-14 de junio · Sin equipamiento · Desde casa
           </p>
         </div>
       </div>
