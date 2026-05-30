@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTOS DATOS EN CADA LANZAMIENTO ──────────────────
 const MASTERCLASS_TITULO = 'Cesárea: lo que tu cuerpo necesita para recuperarse y cómo empezar desde casa';
-const MASTERCLASS_FECHA  = 'Domingo 8 de junio a las 21:00h (hora España)';
+const MASTERCLASS_FECHA  = 'Lunes 8 de junio a las 21:00h (hora España)';
 const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass';
 // ───────────────────────────────────────────────────────────
 
