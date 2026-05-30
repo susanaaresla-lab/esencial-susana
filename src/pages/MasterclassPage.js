@@ -11,8 +11,15 @@ const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass';
 export default function MasterclassPage() {
 
   useEffect(() => {
-    // Aquí puedes añadir el script del formulario cuando lo tengas listo
-    // (EmailOctopus, ConvertKit, etc.)
+    const script = document.createElement('script');
+    script.src = 'https://eocampaign1.com/form/d20aeb38-5bfb-11f1-8f8b-d988b9c04363.js';
+    script.setAttribute('data-form', 'd20aeb38-5bfb-11f1-8f8b-d988b9c04363');
+    script.async = true;
+    document.getElementById('eo-form-masterclass')?.appendChild(script);
+    return () => {
+      const container = document.getElementById('eo-form-masterclass');
+      if (container) container.innerHTML = '';
+    };
   }, []);
 
   return (
@@ -39,30 +46,20 @@ export default function MasterclassPage() {
       {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '3rem 1.5rem 3.5rem' }}>
         <div style={{ maxWidth: 660, margin: '0 auto', textAlign: 'center' }}>
-
-          {/* Badge */}
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '1.5rem' }}>
             <span>✦</span> Masterclass gratuita en directo
           </div>
-
-          {/* Título principal — editable */}
           <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1.25rem' }}>
             {MASTERCLASS_TITULO}
           </h1>
-
-          {/* Fecha — editable */}
           <p style={{ fontSize: '1.05rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
             <Calendar size={17} /> {MASTERCLASS_FECHA}
           </p>
-
-          {/* Pills */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem', marginBottom: '2.5rem' }}>
             <span className="pill"><Clock size={14} />Online · En directo</span>
             <span className="pill">Gratuita</span>
             <span className="pill">Adaptada a cesárea</span>
           </div>
-
-          {/* CTA */}
           <button
             className="btn-coral"
             style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
@@ -77,7 +74,6 @@ export default function MasterclassPage() {
       <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
         <div style={{ maxWidth: 660, margin: '0 auto' }}>
           <p style={{ textAlign: 'center', fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Susana te lo explica</p>
-          {/* ── SUSTITUYE este div por tu vídeo cuando lo tengas ── */}
           <div style={{ background: 'var(--beige)', borderRadius: 8, aspectRatio: '16/9', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
             <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--coral)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
@@ -121,24 +117,8 @@ export default function MasterclassPage() {
           <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2rem', lineHeight: 1.6 }}>
             {MASTERCLASS_FECHA}
           </p>
-
-          {/* ── FORMULARIO ── Sustituir por el script de EmailOctopus/ConvertKit cuando esté listo */}
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.25rem' }}>
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                style={{ padding: '0.9rem 1rem', borderRadius: 4, border: '1px solid rgba(26,26,26,0.15)', fontFamily: 'var(--sans)', fontSize: '1rem', outline: 'none', color: 'var(--black)' }}
-              />
-              <input
-                type="email"
-                placeholder="Tu email"
-                style={{ padding: '0.9rem 1rem', borderRadius: 4, border: '1px solid rgba(26,26,26,0.15)', fontFamily: 'var(--sans)', fontSize: '1rem', outline: 'none', color: 'var(--black)' }}
-              />
-            </div>
-            <button className="btn-coral" style={{ width: '100%', fontSize: '1.05rem', padding: '1.1rem' }}>
-              Quiero mi plaza gratuita
-            </button>
+            <div id="eo-form-masterclass" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
               Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
             </p>
