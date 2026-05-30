@@ -120,7 +120,7 @@ export default function MasterclassPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <div id="eo-form-masterclass" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
-              Solo te enviaremos el enlace de acceso a la masterclass y programas que te ayuden.
+              Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
             </p>
           </div>
         </div>
@@ -193,3 +193,4 @@ export default function MasterclassPage() {
 
     </div>
   );
+}
