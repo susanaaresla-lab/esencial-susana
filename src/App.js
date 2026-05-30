@@ -7,6 +7,7 @@ import ConfirmacionPage from './pages/ConfirmacionPage';
 import HomePage from './pages/HomePage';
 import ProgramaPage from './pages/ProgramaPage';
 import ListaEsperaPage from './pages/ListaEsperaPage';
+import MasterclassPage from './pages/MasterclassPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,8 @@ function AppContent() {
     document.body.style.overflow = selectedVideo ? 'hidden' : '';
   }, [selectedVideo]);
 
+  const isMasterclass = location.pathname === '/masterclass';
+
   const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
     : location.pathname === '/confirmacion' ? 'confirmacion'
     : location.pathname === '/lista-espera' ? 'lista-espera'
@@ -30,7 +33,7 @@ function AppContent() {
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: 'var(--white)', color: 'var(--black)', overflowX: 'hidden' }}>
       <ScrollToTop />
-      <Header currentPage={currentPage} />
+      {!isMasterclass && <Header currentPage={currentPage} />}
 
       <main>
         <Routes>
@@ -38,10 +41,11 @@ function AppContent() {
           <Route path="/programa-4-semanas" element={<ProgramaPage />} />
           <Route path="/confirmacion" element={<ConfirmacionPage />} />
           <Route path="/lista-espera" element={<ListaEsperaPage />} />
+          <Route path="/masterclass" element={<MasterclassPage />} />
         </Routes>
       </main>
 
-      <Footer />
+      {!isMasterclass && <Footer />}
 
       {selectedVideo && (
         <VideoModal video={selectedVideo} onClose={() => setSelectedVideo(null)} />
