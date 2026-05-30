@@ -70,6 +70,25 @@ export default function MasterclassPage() {
         </div>
       </section>
 
+      {/* ── FORMULARIO DE REGISTRO ── */}
+      <section id="registro" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
+        <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</p>
+          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.5rem' }}>
+            Reserva tu plaza
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2rem', lineHeight: 1.6 }}>
+            {MASTERCLASS_FECHA}
+          </p>
+          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
+            <div id="eo-form-masterclass" />
+            <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
+              Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── VÍDEO PLACEHOLDER ── */}
       <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
         <div style={{ maxWidth: 660, margin: '0 auto' }}>
@@ -103,25 +122,6 @@ export default function MasterclassPage() {
                 <p style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.65, margin: 0 }}>{item.text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FORMULARIO DE REGISTRO ── */}
-      <section id="registro" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
-        <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</p>
-          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.5rem' }}>
-            Reserva tu plaza
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2rem', lineHeight: 1.6 }}>
-            {MASTERCLASS_FECHA}
-          </p>
-          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
-            <div id="eo-form-masterclass" />
-            <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
-              Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
-            </p>
           </div>
         </div>
       </section>
