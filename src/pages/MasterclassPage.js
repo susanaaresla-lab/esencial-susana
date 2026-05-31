@@ -89,19 +89,22 @@ export default function MasterclassPage() {
         </div>
       </section>
 
-      {/* ── VÍDEO PLACEHOLDER ── */}
-      <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
-        <div style={{ maxWidth: 660, margin: '0 auto' }}>
-          <p style={{ textAlign: 'center', fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Susana te lo explica</p>
-          <div style={{ background: 'var(--beige)', borderRadius: 8, aspectRatio: '16/9', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
-            <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--coral)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.5)', fontStyle: 'italic' }}>Vídeo de Susana — próximamente</p>
-            <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.35)' }}>60-90 segundos · Añadir antes del lanzamiento</p>
-          </div>
-        </div>
-      </section>
+     {/* ── VÍDEO ── */}
+<section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
+  <div style={{ maxWidth: 660, margin: '0 auto' }}>
+    <p style={{ textAlign: 'center', fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Susana te lo explica</p>
+    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}>
+      <iframe
+        src="https://www.youtube.com/embed/iaCe76RE2e4"
+        title="Susana Ares - Masterclass cesárea"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+      />
+    </div>
+  </div>
+</section>
 
       {/* ── QUÉ VAS A APRENDER ── */}
       <section style={{ background: 'var(--beige)', padding: '3.5rem 1.5rem' }}>
