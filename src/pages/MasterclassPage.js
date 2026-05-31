@@ -103,6 +103,15 @@ export default function MasterclassPage() {
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
       />
     </div>
+    <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+      <button
+        className="btn-coral"
+        style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }}
+        onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        Apúntate aquí — es gratuita
+      </button>
+    </div>
   </div>
 </section>
 
