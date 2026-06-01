@@ -29,6 +29,13 @@ export default function Header() {
     window.scrollTo(0, 0);
   };
 
+  const goMasterclass = (e) => {
+    e.preventDefault();
+    navigate('/masterclass');
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   const scrollTo = (e, id) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -52,11 +59,9 @@ export default function Header() {
 
         <nav className="nav-desktop">
           <a href="/" onClick={goHome}>Inicio</a>
-          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa 4 semanas</a>
-          <a href="#ejercicios" onClick={(e) => scrollTo(e, 'ejercicios')}>Ejercicios gratis</a>
-          <a href="#testimonios" onClick={(e) => scrollTo(e, 'testimonios')}>Testimonios</a>
-          <a href="#programa-integral" onClick={(e) => scrollTo(e, 'programa-integral')}>Programa Integral</a>
-          <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Quién soy</a>
+          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
+          <a href="/masterclass" onClick={goMasterclass} style={{ color: currentPage === '/masterclass' ? 'var(--coral)' : '' }}>Masterclass</a>
+          <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </nav>
 
         <button className="nav-mobile-btn" onClick={() => setMenuOpen(!menuOpen)}>
@@ -68,11 +73,9 @@ export default function Header() {
       {menuOpen && (
         <div className="nav-mobile-menu">
           <a href="/" onClick={goHome}>Inicio</a>
-          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa 4 semanas</a>
-          <a href="#ejercicios" onClick={(e) => scrollTo(e, 'ejercicios')}>Ejercicios gratis</a>
-          <a href="#testimonios" onClick={(e) => scrollTo(e, 'testimonios')}>Testimonios</a>
-          <a href="#programa-integral" onClick={(e) => scrollTo(e, 'programa-integral')}>Programa Integral</a>
-          <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Quién soy</a>
+          <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
+          <a href="/masterclass" onClick={goMasterclass} style={{ color: currentPage === '/masterclass' ? 'var(--coral)' : '' }}>Masterclass</a>
+          <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </div>
       )}
     </header>

@@ -224,47 +224,12 @@ export default function HomePage({ onVideoClick }) {
               <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Sobre mí</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1.25rem' }}>Soy Susana Ares</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.925rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7 }}>
-                <p>Mamá de tres hijos, y sé de primera mano los desafíos del postparto y la recuperación postcesárea. He vivido personalmente lo que supone recuperar tu cuerpo, tu energía y tu confianza.</p>
-                <p>Soy <strong style={{ color: 'var(--black)' }}>especialista en recuperación postcesárea y postparto</strong>, instructora de pilates terapéutico y me he formado para poder ayudarte desde un enfoque profesional.</p>
+                <p>Mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces. Sé exactamente cómo se siente porque yo también lo viví.</p>
+                <p>No soy solo una instructora. Soy una madre real que se transformó, que se formó como <strong style={{ color: 'var(--black)' }}>instructora de pilates terapéutico</strong> y que ha trabajado profundamente la fortaleza mental — no para darte teoría, sino para acompañarte desde dentro.</p>
+                <p>Mi forma de trabajar no es la de un gimnasio ni la de una psicóloga. Es algo diferente: un acompañamiento cálido, real, adaptado a ti, donde el objetivo no es que seas la de antes sino que descubras que ahora eres más.</p>
                 <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a recuperarse — muchas de ellas sin experiencia previa en ejercicio y tras una cesárea.</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── INTEGRAL PROGRAM ── */}
-      <section id="programa-integral" className="section" style={{ background: 'var(--beige)' }}>
-        <div className="container-mid">
-          <div className="text-center" style={{ marginBottom: '3rem' }}>
-            <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Próximamente</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '0.75rem' }}>Programa Integral ESENCIAL</h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.78)' }}>Acompañamiento completo: cuerpo + mente + motivación</p>
-          </div>
-          <div className="grid-2" style={{ marginBottom: '2.5rem' }}>
-            <div className="card">
-              <h4 style={{ fontWeight: 600, fontSize: '1.05rem', marginBottom: '1rem' }}>Módulo del Cuerpo</h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.875rem', color: 'rgba(26,26,26,0.8)' }}>
-                <li>• Videos On-Demand Online</li>
-                <li>• Calendario adaptado a tu parto/cesárea</li>
-                <li>• Curso de motivación para madres</li>
-                <li>• Curso de organización</li>
-              </ul>
-            </div>
-            <div className="card">
-              <h4 style={{ fontWeight: 600, fontSize: '1.05rem', marginBottom: '1rem' }}>Módulo de la Mente</h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.875rem', color: 'rgba(26,26,26,0.8)' }}>
-                <li>• Sanación de Madre</li>
-                <li>• Conecta con tu nueva versión</li>
-                <li>• Sesiones en Directo</li>
-                <li>• Comunidad privada de mamás</li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center">
-            <span style={{ display: 'inline-block', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 600, fontSize: '0.875rem', padding: '0.6rem 1.5rem', borderRadius: 4 }}>
-              ✦ Próximamente disponible
-            </span>
           </div>
         </div>
       </section>
