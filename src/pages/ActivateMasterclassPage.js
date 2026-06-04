@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 const FECHA_CIERRE = '13 de junio a las 23:59h';
 // ───────────────────────────────────────────────────────────
 
-const CHECKOUT_URL = 'https://pay.hotmart.com/G105828362U?src=masterclass-junio';
+const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje';
 
 const FAQS = [
   { q: '¿Cuándo puedo empezar después de la cesárea?', a: 'Puedes empezar desde los 2 meses después de una cesárea. Los ejercicios de las primeras semanas son especialmente suaves y están pensados para respetar tu cicatriz y tu recuperación.' },
