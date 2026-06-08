@@ -64,18 +64,25 @@ export default function ListaEsperaAvanzaPage() {
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, marginBottom: '2rem' }}>
               La continuación natural de Actívate. Más profundidad, más fuerza, más trabajo de mente. Para la madre que ya sabe que puede — y quiere más.
             </p>
-            <div className="flex flex-wrap gap-3" style={{ marginBottom: '2.5rem' }}>
+            <div className="flex flex-wrap gap-3" style={{ marginBottom: '1.25rem' }}>
               <span className="pill"><Clock />8 semanas · Online</span>
-              <span className="pill"><Zap />Cuerpo + Mente</span>
-              <span className="pill"><Users />Nivel avanzado</span>
+              <span className="pill"><Zap />Con y sin impacto</span>
+              <span className="pill"><Users />Nivel medio</span>
             </div>
-            <button
-              className="btn-coral"
-              style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
-              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Apúntame a la lista de espera
-            </button>
+            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.25)', borderRadius: 6, padding: '0.75rem 1rem', marginBottom: '1.75rem', display: 'inline-block' }}>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.7)', margin: 0 }}>
+                ⏱ Rutinas de 15-30 min · Desde 6 meses tras cesárea · Desde 3 meses tras parto vaginal
+              </p>
+            </div>
+            <div style={{ display: 'block' }}>
+              <button
+                className="btn-coral"
+                style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
+                onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Apúntame a la lista de espera
+              </button>
+            </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
               Disponible en octubre · Precio especial para la lista de espera
             </p>
@@ -105,7 +112,7 @@ export default function ListaEsperaAvanzaPage() {
           <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 8, padding: '2rem', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
             <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.75rem' }}>Qué es Avanza</p>
             <p style={{ fontSize: '1.1rem', color: 'white', lineHeight: 1.75, maxWidth: 580, margin: '0 auto 1.25rem', fontWeight: 400 }}>
-              Un programa online de <strong style={{ color: 'var(--coral)' }}>8 semanas</strong> para madres con poco tiempo que quieren ir más lejos — con rutinas de mayor intensidad, ejercicios con impacto y un trabajo de mente más profundo para construir su mejor versión.
+              Un programa online de <strong style={{ color: 'var(--coral)' }}>8 semanas</strong> para madres con poco tiempo que quieren transformarse — con rutinas cortas de 15-30 min, ejercicios con impacto, trabajo profundo de mente, y todo guiado paso a paso desde casa.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem' }}>
               {['8 semanas · Online', 'Rutinas con impacto', 'Abdomen y core', 'Suelo pélvico avanzado', 'Módulos de mente', 'Tu mejor versión'].map((tag, i) => (
@@ -170,7 +177,7 @@ export default function ListaEsperaAvanzaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
               {[
-                { emoji: '💪', title: 'Rutinas con y sin impacto', desc: 'Subimos el nivel de forma segura y progresiva. Mayor variedad, mayor intensidad, mejores resultados.' },
+                { emoji: '💪', title: 'Rutinas con y sin impacto', desc: 'Sesiones cortas de 15-30 minutos, guiadas y fáciles de seguir. Más intensas que Actívate, pero sin ser extremas — pensadas para madres reales con poco tiempo.' },
                 { emoji: '🎯', title: 'Abdomen profundo y diástasis', desc: 'Trabajo específico para reducir la diástasis y construir un core verdaderamente fuerte.' },
                 { emoji: '🌸', title: 'Suelo pélvico avanzado', desc: 'Ejercicios más precisos y profundos para un suelo pélvico fuerte y funcional.' }
               ].map((item, i) => (
@@ -193,9 +200,9 @@ export default function ListaEsperaAvanzaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
               {[
-                { emoji: '🧠', title: 'Procesa y suelta', desc: 'La culpa, la frustración, la cesárea no deseada. Módulos exclusivos para soltar lo que pesa y avanzar libre.', highlight: true },
-                { emoji: '✨', title: 'Construye tu mejor versión', desc: 'Seguridad, confianza y una mente fuerte. No para volver a ser la de antes — para descubrir que ahora eres más.', highlight: true },
-                { emoji: '🔑', title: 'Identidad y propósito', desc: 'Recupera quién eres siendo madre. Redefine tu historia y construye desde la fortaleza.', highlight: true }
+                { emoji: '🔍', title: 'Fase 1 · Identifica', desc: 'Descubre qué miedos, limitaciones y bloqueos se han quedado contigo — en tu parto, en tu maternidad, en ti como mujer. El primer paso para cambiar algo es verlo.' },
+                { emoji: '🧠', title: 'Fase 2 · Procesa y suelta', desc: 'La culpa, la frustración, todo lo que tu parto o tu cesárea dejó dentro sin que lo vieras venir. Módulos exclusivos para trabajar lo que pesa y soltarlo de verdad.' },
+                { emoji: '✨', title: 'Fase 3 · Construye tu mejor versión', desc: 'Seguridad, confianza y una mente fuerte. No para volver a ser la de antes — para descubrir que siendo madre eres más de lo que creías.' }
               ].map((item, i) => (
                 <div key={i} style={{ background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 8, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                   <span style={{ fontSize: '1.75rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
@@ -218,17 +225,27 @@ export default function ListaEsperaAvanzaPage() {
             El cuerpo y la mente<br />van siempre juntos.
           </h2>
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: '3rem' }}>
-            La mayoría de programas trabajan solo el físico. Avanza va más allá: porque después de ser madre — especialmente si tuviste una cesárea no deseada — hay cosas que el cuerpo no puede sanar solo.
+            La mayoría de programas trabajan solo el físico. Avanza va más allá: porque después de ser madre — sea cual sea tu experiencia de parto o cesárea — hay cosas que el cuerpo no puede sanar solo.
           </p>
           <div className="grid-2" style={{ gap: '1rem', textAlign: 'left' }}>
             <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '0.5rem' }}>Fase 1</div>
+              <Brain size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
+              <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Identifica</h3>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+                Qué miedos y limitaciones se han quedado en ti como madre, como mujer, como persona. No puedes soltar lo que no has visto.
+              </p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '0.5rem' }}>Fase 2</div>
               <Brain size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Procesa y suelta</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
-                La culpa. La cesárea no deseada. La frustración de no reconocerte. Aquí lo trabajamos para que puedas soltar y avanzar de verdad.
+                La culpa, la frustración, todo lo que tu parto o tu cesárea dejó dentro. Aquí lo trabajamos para que puedas soltarlo y avanzar libre.
               </p>
             </div>
-            <div style={{ background: 'rgba(232,115,90,0.15)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(232,115,90,0.3)' }}>
+            <div style={{ background: 'rgba(232,115,90,0.15)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(232,115,90,0.3)', gridColumn: 'span 1' }}>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '0.5rem' }}>Fase 3</div>
               <Heart size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Construye tu mejor versión</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
@@ -249,10 +266,10 @@ export default function ListaEsperaAvanzaPage() {
           <ul className="check-list" style={{ maxWidth: 540, margin: '0 auto' }}>
             {[
               'Ya completaste el Método Esencial Madre: Actívate o llevas tiempo recuperándote',
-              'Quieres subir la intensidad de forma segura y progresiva',
+              'Han pasado al menos 6 meses desde tu cesárea, o 3 meses desde un parto vaginal',
+              'Quieres subir la intensidad con rutinas de impacto de forma segura y progresiva',
               'Sientes que todavía tienes diástasis o que tu core no está del todo fuerte',
-              'Hay cosas pendientes de procesar emocionalmente tras la maternidad o la cesárea',
-              'Quieres trabajar la confianza, la seguridad y construir tu mejor versión',
+              'Hay experiencias de tu parto o cesárea que todavía no has procesado del todo',
               'Estás lista para ir más profundo — en el cuerpo y en la mente'
             ].map((t, i) => (
               <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.5rem' }}><Check size={16} />{t}</li>
