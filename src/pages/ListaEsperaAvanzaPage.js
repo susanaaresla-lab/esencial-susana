@@ -27,15 +27,13 @@ export default function ListaEsperaAvanzaPage() {
   <meta name="keywords" content="programa postparto avanzado, ejercicios impacto postparto, recuperación cesárea avanzada, mejor versión siendo madre, método esencial madre avanza" />
   <meta property="og:title" content="Método Esencial Madre: Avanza — El siguiente nivel" />
   <meta property="og:description" content="8 semanas para ir más lejos. Más fuerza, más intensidad, más trabajo de mente. La continuación natural de Actívate. Disponible en octubre." />
-  <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
-  <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
+<meta property="og:image" content="https://esencialsusanaares.com/images/susana-ejercicio.JPG" />  <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Método Esencial Madre: Avanza — El siguiente nivel" />
   <meta name="twitter:description" content="8 semanas para transformar tu cuerpo y tu mente siendo madre. Disponible en octubre." />
-  <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
-</Helmet>
+<meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-ejercicio.JPG" /></Helmet>
 
       {/* ── HERO ── */}
       <section style={{ background: 'var(--beige)', position: 'relative', overflow: 'hidden', minHeight: '85vh', display: 'flex', alignItems: 'center' }}>
