@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { Calendar, Clock, Check } from 'lucide-react';
+import { Clock, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-// ── EDITA ESTOS DATOS EN CADA LANZAMIENTO ──────────────────
+// ── EDITA ESTE DATO EN CADA LANZAMIENTO ──────────────────
 const MASTERCLASS_TITULO = 'Cesárea: lo que tu cuerpo necesita para recuperarse y cómo empezar desde casa';
-const MASTERCLASS_FECHA  = 'Lunes 8 de junio a las 21:00h (hora España)';
 const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass';
 // ───────────────────────────────────────────────────────────
 
@@ -27,9 +26,9 @@ export default function MasterclassPage() {
 
       <Helmet>
         <title>{MASTERCLASS_TITULO} | Esencial Susana Ares</title>
-        <meta name="description" content={`Masterclass gratuita en directo — ${MASTERCLASS_FECHA}. Aprende cómo empezar a recuperarte de la cesárea desde casa con Susana Ares.`} />
+        <meta name="description" content="Masterclass gratuita. Aprende cómo empezar a recuperarte de la cesárea desde casa con Susana Ares." />
         <meta property="og:title" content={MASTERCLASS_TITULO} />
-        <meta property="og:description" content={`Masterclass gratuita — ${MASTERCLASS_FECHA}`} />
+        <meta property="og:description" content="Masterclass gratuita. Aprende cómo empezar a recuperarte de la cesárea desde casa." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content={MASTERCLASS_URL} />
         <meta property="og:type" content="website" />
@@ -47,16 +46,13 @@ export default function MasterclassPage() {
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '3rem 1.5rem 3.5rem' }}>
         <div style={{ maxWidth: 660, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '1.5rem' }}>
-            <span>✦</span> Masterclass gratuita en directo
+            <span>✦</span> Masterclass gratuita
           </div>
           <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1.25rem' }}>
             {MASTERCLASS_TITULO}
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            <Calendar size={17} /> {MASTERCLASS_FECHA}
-          </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem', marginBottom: '2.5rem' }}>
-            <span className="pill"><Clock size={14} />Online · En directo</span>
+            <span className="pill"><Clock size={14} />Online · Grabada</span>
             <span className="pill">Gratuita</span>
             <span className="pill">Adaptada a cesárea</span>
           </div>
@@ -65,7 +61,7 @@ export default function MasterclassPage() {
             style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
             onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Quiero mi plaza gratuita
+            Quiero acceder gratis
           </button>
         </div>
       </section>
@@ -75,10 +71,10 @@ export default function MasterclassPage() {
         <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</p>
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.5rem' }}>
-            Reserva tu plaza
+            Accede gratis ahora
           </h2>
           <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2rem', lineHeight: 1.6 }}>
-            {MASTERCLASS_FECHA}
+            Déjame tu email y te envío el acceso inmediatamente.
           </p>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <div id="eo-form-masterclass" />
@@ -89,31 +85,31 @@ export default function MasterclassPage() {
         </div>
       </section>
 
-     {/* ── VÍDEO ── */}
-<section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
-  <div style={{ maxWidth: 660, margin: '0 auto' }}>
-    <p style={{ textAlign: 'center', fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Susana te lo explica</p>
-    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}>
-      <iframe
-        src="https://www.youtube.com/embed/iaCe76RE2e4"
-        title="Susana Ares - Masterclass cesárea"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-      />
-    </div>
-    <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-      <button
-        className="btn-coral"
-        style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }}
-        onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
-      >
-        Apúntate aquí — es gratuita
-      </button>
-    </div>
-  </div>
-</section>
+      {/* ── VÍDEO ── */}
+      <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
+        <div style={{ maxWidth: 660, margin: '0 auto' }}>
+          <p style={{ textAlign: 'center', fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Susana te lo explica</p>
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}>
+            <iframe
+              src="https://www.youtube.com/embed/iaCe76RE2e4"
+              title="Susana Ares - Masterclass cesárea"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+            <button
+              className="btn-coral"
+              style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }}
+              onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Apúntate aquí — es gratuita
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* ── QUÉ VAS A APRENDER ── */}
       <section style={{ background: 'var(--beige)', padding: '3.5rem 1.5rem' }}>
@@ -186,20 +182,17 @@ export default function MasterclassPage() {
       <section style={{ background: 'var(--coral)', padding: '3.5rem 1.5rem', textAlign: 'center' }}>
         <div style={{ maxWidth: 520, margin: '0 auto' }}>
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: 'white', fontWeight: 400, marginBottom: '0.75rem' }}>
-            ¿Te apuntas?
+            ¿Lista para empezar?
           </h2>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)', marginBottom: '2rem', lineHeight: 1.65 }}>
-            Es gratuita. Solo necesitas reservar tu plaza.
+            Es gratuita. Accede ahora mismo.
           </p>
           <button
             style={{ background: 'white', color: 'var(--coral)', fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '1.05rem', padding: '1.1rem 2.5rem', borderRadius: 4, border: 'none', cursor: 'pointer' }}
             onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Quiero mi plaza gratuita
+            Quiero acceder gratis
           </button>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', marginTop: '1rem' }}>
-            {MASTERCLASS_FECHA}
-          </p>
         </div>
       </section>
 
