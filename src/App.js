@@ -9,6 +9,7 @@ import ProgramaPage from './pages/ProgramaPage';
 import ListaEsperaPage from './pages/ListaEsperaPage';
 import MasterclassPage from './pages/MasterclassPage';
 import ActivateMasterclassPage from './pages/ActivateMasterclassPage';
+import ListaEsperaAvanzaPage from './pages/ListaEsperaAvanzaPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,6 +45,7 @@ function AppContent() {
           <Route path="/lista-espera" element={<ListaEsperaPage />} />
           <Route path="/masterclass" element={<MasterclassPage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
+          <Route path="/lista-espera-avanza" element={<ListaEsperaAvanzaPage />} />
         </Routes>
       </main>
 
