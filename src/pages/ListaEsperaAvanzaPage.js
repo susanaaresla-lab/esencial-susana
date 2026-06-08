@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Users, Check, Shield, Brain, Heart, Zap, Target } from 'lucide-react';
+import { ArrowLeft, Clock, Users, Check, Shield, Brain, Heart, Zap } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function ListaEsperaAvanzaPage() {
