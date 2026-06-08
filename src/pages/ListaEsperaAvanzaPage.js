@@ -84,22 +84,37 @@ export default function ListaEsperaAvanzaPage() {
       </section>
 
       {/* ── PUENTE ENTRE PROGRAMAS ── */}
-      <section style={{ background: 'var(--black)', padding: '2.5rem 1.5rem' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 6, padding: '0.75rem 1.5rem' }}>
-              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Paso 1</p>
-              <p style={{ fontWeight: 600, color: 'white', fontSize: '0.95rem' }}>Método Esencial Madre: Actívate</p>
+      <section style={{ background: 'var(--black)', padding: '3rem 1.5rem' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          {/* Flecha de continuación */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 6, padding: '1rem 1.75rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>Paso 1 · 4 semanas</p>
+              <p style={{ fontWeight: 600, color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem' }}>Actívate</p>
+              <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.2rem' }}>Reconecta con tu cuerpo</p>
             </div>
-            <ArrowRight size={20} style={{ color: 'var(--coral)', flexShrink: 0 }} />
-            <div style={{ background: 'var(--coral)', borderRadius: 6, padding: '0.75rem 1.5rem' }}>
-              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Paso 2 — Tú estás aquí</p>
-              <p style={{ fontWeight: 700, color: 'white', fontSize: '0.95rem' }}>Método Esencial Madre: Avanza</p>
+            <ArrowRight size={22} style={{ color: 'var(--coral)', flexShrink: 0 }} />
+            <div style={{ background: 'var(--coral)', borderRadius: 6, padding: '1rem 1.75rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>Paso 2 · 8 semanas</p>
+              <p style={{ fontWeight: 700, color: 'white', fontSize: '0.95rem' }}>Avanza</p>
+              <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.85)', marginTop: '0.2rem' }}>Transforma tu cuerpo y tu mente</p>
             </div>
           </div>
-          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', marginTop: '1.25rem', lineHeight: 1.6 }}>
-            Actívate te devolvió la conexión. Avanza te da la transformación.
-          </p>
+
+          {/* Descripción del programa */}
+          <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 8, padding: '2rem', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.75rem' }}>Qué es Avanza</p>
+            <p style={{ fontSize: '1.1rem', color: 'white', lineHeight: 1.75, maxWidth: 580, margin: '0 auto 1.25rem', fontWeight: 400 }}>
+              Un programa online de <strong style={{ color: 'var(--coral)' }}>8 semanas</strong> para madres con poco tiempo que quieren ir más lejos — con rutinas de mayor intensidad, ejercicios con impacto y un trabajo de mente más profundo para construir su mejor versión.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem' }}>
+              {['8 semanas · Online', 'Rutinas con impacto', 'Abdomen y core', 'Suelo pélvico avanzado', 'Módulos de mente', 'Tu mejor versión'].map((tag, i) => (
+                <span key={i} style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', padding: '0.35rem 0.85rem', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)' }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -134,43 +149,63 @@ export default function ListaEsperaAvanzaPage() {
         </div>
       </section>
 
-      {/* ── QUÉ HACE DIFERENTE A AVANZA ── */}
+      {/* ── QUÉ INCLUYE AVANZA ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '3rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Por qué Avanza</div>
+            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Todo lo que incluye</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1rem' }}>
               No es más de lo mismo.<br />Es ir más profundo.
             </h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>
-              Actívate fue el primer paso para reconectar con tu cuerpo. Avanza es donde ocurre la verdadera transformación — física y mental.
+              Actívate fue el primer paso. Avanza es donde ocurre la transformación real — en el cuerpo y en la mente.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
-            {[
-              { emoji: '💪', title: 'Ejercicios con y sin impacto', desc: 'Subimos el nivel de forma progresiva y segura. Tu cuerpo ya está preparado para más intensidad y más variedad.', highlight: false },
-              { emoji: '🎯', title: 'Abdomen, core y diástasis', desc: 'Trabajo específico y profundo para reducir la diástasis y construir un núcleo fuerte de verdad.', highlight: false },
-              { emoji: '🌸', title: 'Suelo pélvico avanzado', desc: 'Continuamos el trabajo pélvico a mayor profundidad, con ejercicios más precisos y efectivos.', highlight: false },
-              { emoji: '🧠', title: 'Módulos de mente ampliados', desc: 'Procesamos la culpa, la frustración y todo lo que quedó pendiente. Para que puedas soltar y avanzar de verdad.', highlight: true },
-              { emoji: '✨', title: 'Tu mejor versión siendo madre', desc: 'Construimos seguridad, confianza y una mente fuerte. El objetivo no es volver a ser la de antes — es descubrir que ahora eres más.', highlight: true },
-              { emoji: '🔄', title: 'La continuación perfecta', desc: 'Diseñado para encajar exactamente donde Actívate termina. El siguiente capítulo natural de tu transformación.', highlight: false }
-            ].map((item, i) => (
-              <div key={i} style={{
-                background: item.highlight ? 'rgba(232,115,90,0.06)' : 'var(--beige)',
-                border: item.highlight ? '1px solid rgba(232,115,90,0.25)' : 'none',
-                borderRadius: 8,
-                padding: '1.75rem',
-                display: 'flex',
-                gap: '1.25rem',
-                alignItems: 'flex-start'
-              }}>
-                <span style={{ fontSize: '2rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
-                <div>
-                  <h4 style={{ fontWeight: 600, fontSize: '1.05rem', marginBottom: '0.5rem', color: item.highlight ? 'var(--coral)' : 'var(--black)' }}>{item.title}</h4>
-                  <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.65 }}>{item.desc}</p>
+
+          {/* Bloque cuerpo */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ width: 36, height: 2, background: 'var(--coral)' }} />
+              <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)' }}>Trabajo físico</p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+              {[
+                { emoji: '💪', title: 'Rutinas con y sin impacto', desc: 'Subimos el nivel de forma segura y progresiva. Mayor variedad, mayor intensidad, mejores resultados.' },
+                { emoji: '🎯', title: 'Abdomen profundo y diástasis', desc: 'Trabajo específico para reducir la diástasis y construir un core verdaderamente fuerte.' },
+                { emoji: '🌸', title: 'Suelo pélvico avanzado', desc: 'Ejercicios más precisos y profundos para un suelo pélvico fuerte y funcional.' }
+              ].map((item, i) => (
+                <div key={i} style={{ background: 'var(--beige)', borderRadius: 8, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: '1.75rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
+                  <div>
+                    <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem', color: 'var(--black)' }}>{item.title}</h4>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Bloque mente */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ width: 36, height: 2, background: 'var(--coral)' }} />
+              <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)' }}>Trabajo mental</p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+              {[
+                { emoji: '🧠', title: 'Procesa y suelta', desc: 'La culpa, la frustración, la cesárea no deseada. Módulos exclusivos para soltar lo que pesa y avanzar libre.', highlight: true },
+                { emoji: '✨', title: 'Construye tu mejor versión', desc: 'Seguridad, confianza y una mente fuerte. No para volver a ser la de antes — para descubrir que ahora eres más.', highlight: true },
+                { emoji: '🔑', title: 'Identidad y propósito', desc: 'Recupera quién eres siendo madre. Redefine tu historia y construye desde la fortaleza.', highlight: true }
+              ].map((item, i) => (
+                <div key={i} style={{ background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 8, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: '1.75rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
+                  <div>
+                    <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem', color: 'var(--coral)' }}>{item.title}</h4>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
