@@ -69,11 +69,9 @@ export default function ListaEsperaAvanzaPage() {
               <span className="pill"><Zap />Con y sin impacto</span>
               <span className="pill"><Users />Nivel medio</span>
             </div>
-            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.25)', borderRadius: 6, padding: '0.75rem 1rem', marginBottom: '1.75rem', display: 'inline-block' }}>
-              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.7)', margin: 0 }}>
-                ⏱ Rutinas de 15-30 min · Desde 6 meses tras cesárea · Desde 3 meses tras parto vaginal
-              </p>
-            </div>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
+              ⏱ Rutinas de 15-30 min &nbsp;·&nbsp; Desde 6 meses tras cesárea &nbsp;·&nbsp; Desde 3 meses tras parto vaginal
+            </p>
             <div style={{ display: 'block' }}>
               <button
                 className="btn-coral"
@@ -227,7 +225,7 @@ export default function ListaEsperaAvanzaPage() {
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: '3rem' }}>
             La mayoría de programas trabajan solo el físico. Avanza va más allá: porque después de ser madre — sea cual sea tu experiencia de parto o cesárea — hay cosas que el cuerpo no puede sanar solo.
           </p>
-          <div className="grid-2" style={{ gap: '1rem', textAlign: 'left' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', textAlign: 'left' }}>
             <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '0.5rem' }}>Fase 1</div>
               <Brain size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
@@ -244,7 +242,7 @@ export default function ListaEsperaAvanzaPage() {
                 La culpa, la frustración, todo lo que tu parto o tu cesárea dejó dentro. Aquí lo trabajamos para que puedas soltarlo y avanzar libre.
               </p>
             </div>
-            <div style={{ background: 'rgba(232,115,90,0.15)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(232,115,90,0.3)', gridColumn: 'span 1' }}>
+            <div style={{ background: 'rgba(232,115,90,0.15)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(232,115,90,0.3)' }}>
               <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '0.5rem' }}>Fase 3</div>
               <Heart size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Construye tu mejor versión</h3>
