@@ -69,9 +69,13 @@ export default function ListaEsperaAvanzaPage() {
               <span className="pill"><Zap />Con y sin impacto</span>
               <span className="pill"><Users />Nivel medio</span>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-              ⏱ Rutinas de 15-30 min &nbsp;·&nbsp; Desde 6 meses tras cesárea &nbsp;·&nbsp; Desde 3 meses tras parto vaginal
-            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.75rem' }}>
+  {['⏱ 15-30 min por rutina', '📅 Desde 6 meses tras cesárea', '📅 Desde 3 meses tras parto vaginal'].map((tag, i) => (
+    <span key={i} style={{ background: 'var(--white)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 999, padding: '0.35rem 0.85rem', fontSize: '0.8rem', color: 'rgba(26,26,26,0.65)', fontWeight: 500 }}>
+      {tag}
+    </span>
+  ))}
+</div>
             <div style={{ display: 'block' }}>
               <button
                 className="btn-coral"
