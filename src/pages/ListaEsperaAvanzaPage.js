@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Users, Check, Shield, Brain, Heart, Zap } from 'lucide-react';
+import { ArrowLeft, Clock, Users, Check, Shield, Brain, Heart, Zap, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function ListaEsperaAvanzaPage() {
@@ -23,9 +23,9 @@ export default function ListaEsperaAvanzaPage() {
 
       <Helmet>
         <title>Lista de espera | Método Esencial Madre: Avanza | Esencial Susana Ares</title>
-        <meta name="description" content="Apúntate a la lista de espera del Método Esencial Madre: Avanza. El siguiente nivel — 8 semanas para seguir transformando tu cuerpo y tu mente después de ser madre." />
+        <meta name="description" content="El siguiente nivel después de Actívate. 8 semanas para transformar tu cuerpo y tu mente siendo madre. Apúntate a la lista de espera." />
         <meta property="og:title" content="Método Esencial Madre: Avanza — Lista de espera" />
-        <meta property="og:description" content="El siguiente nivel. 8 semanas para fortalecer tu cuerpo, reducir la diástasis y construir tu mejor versión siendo madre." />
+        <meta property="og:description" content="El siguiente nivel. Más fuerza, más profundidad, más tú. La continuación natural de Actívate." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
         <meta property="og:type" content="website" />
@@ -34,47 +34,72 @@ export default function ListaEsperaAvanzaPage() {
       </Helmet>
 
       {/* ── HERO ── */}
-      <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+      <section style={{ background: 'var(--beige)', position: 'relative', overflow: 'hidden', minHeight: '85vh', display: 'flex', alignItems: 'center' }}>
+        {/* Imagen a la derecha */}
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '50%', zIndex: 0 }}>
           <img
-            src="/images/susana-listaespera.JPG"
-            alt="Susana Ares"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }}
+            src="/images/susana-ejercicio.JPG"
+            alt="Susana Ares — Método Esencial Madre Avanza"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.25) 0%, rgba(26,26,26,0.6) 55%, rgba(26,26,26,0.92) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--beige) 0%, transparent 40%)' }} />
         </div>
 
-        <div style={{ position: 'relative', zIndex: 1, padding: '1.5rem 1.5rem 0' }}>
-          <button className="btn-back" style={{ color: 'rgba(255,255,255,0.85)' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: '3rem 1.5rem', maxWidth: 1100, margin: '0 auto', width: '100%' }}>
+          <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={() => { navigate('/'); window.scrollTo(0,0); }}>
             <ArrowLeft size={15} /> Volver al inicio
           </button>
-        </div>
 
-        <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
-          <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 1rem', borderRadius: 999, marginBottom: '1.25rem' }}>
-              ✦ Próximamente · Octubre 2026
+          <div style={{ maxWidth: 520 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 1rem', borderRadius: 999, marginBottom: '1.25rem' }}>
+              ✦ Octubre 2026 · El siguiente nivel
             </div>
-            <div className="t-label" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '0.5rem' }}>El siguiente nivel</div>
-            <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
-              Método Esencial Madre: Avanza
+            <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Método Esencial Madre</div>
+            <h1 className="t-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--black)', marginBottom: '1.25rem', fontWeight: 400 }}>
+              Avanza
             </h1>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              8 semanas para subir el nivel. Más fuerza, más confianza, más tú. Porque después de reconectar con tu cuerpo, es hora de transformarlo.
+            <p style={{ fontSize: '1.2rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7, marginBottom: '0.75rem', fontStyle: 'italic' }}>
+              "Porque reconectar fue el inicio. Ahora es el momento de transformarte."
             </p>
-            <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />8 semanas · Online</span>
-              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Zap />Con y sin impacto</span>
-              <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Users />Cuerpo + Mente</span>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, marginBottom: '2rem' }}>
+              La continuación natural de Actívate. Más profundidad, más fuerza, más trabajo de mente. Para la madre que ya sabe que puede — y quiere más.
+            </p>
+            <div className="flex flex-wrap gap-3" style={{ marginBottom: '2.5rem' }}>
+              <span className="pill"><Clock />8 semanas · Online</span>
+              <span className="pill"><Zap />Cuerpo + Mente</span>
+              <span className="pill"><Users />Nivel avanzado</span>
             </div>
             <button
               className="btn-coral"
-              style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }}
+              style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
               onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Apúntame a la lista de espera
             </button>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
+              Disponible en octubre · Precio especial para la lista de espera
+            </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── PUENTE ENTRE PROGRAMAS ── */}
+      <section style={{ background: 'var(--black)', padding: '2.5rem 1.5rem' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 6, padding: '0.75rem 1.5rem' }}>
+              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Paso 1</p>
+              <p style={{ fontWeight: 600, color: 'white', fontSize: '0.95rem' }}>Método Esencial Madre: Actívate</p>
+            </div>
+            <ArrowRight size={20} style={{ color: 'var(--coral)', flexShrink: 0 }} />
+            <div style={{ background: 'var(--coral)', borderRadius: 6, padding: '0.75rem 1.5rem' }}>
+              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Paso 2 — Tú estás aquí</p>
+              <p style={{ fontWeight: 700, color: 'white', fontSize: '0.95rem' }}>Método Esencial Madre: Avanza</p>
+            </div>
+          </div>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', marginTop: '1.25rem', lineHeight: 1.6 }}>
+            Actívate te devolvió la conexión. Avanza te da la transformación.
+          </p>
         </div>
       </section>
 
@@ -85,13 +110,13 @@ export default function ListaEsperaAvanzaPage() {
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
               <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🔔</span>
               <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la inscripción en octubre, con precio especial para la lista de espera.
+                <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la inscripción, con precio especial exclusivo para la lista de espera.
               </p>
             </div>
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
               <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>✦</span>
               <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Ideal si ya hiciste Actívate</strong> — o si llevas tiempo recuperándote y estás lista para dar el siguiente paso.
+                <strong>Diseñado para ti</strong> — si ya hiciste Actívate o llevas tiempo en tu recuperación y estás lista para ir más lejos.
               </p>
             </div>
           </div>
@@ -99,7 +124,7 @@ export default function ListaEsperaAvanzaPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu sitio</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Disponible en octubre. Apúntate ahora y sé la primera en saberlo.
+              Disponible en octubre. Apúntate y sé la primera en saberlo.
             </p>
             <div id="eo-form-avanza" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
@@ -109,32 +134,40 @@ export default function ListaEsperaAvanzaPage() {
         </div>
       </section>
 
-      {/* ── QUÉ ES AVANZA ── */}
+      {/* ── QUÉ HACE DIFERENTE A AVANZA ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>El siguiente nivel</div>
+        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
+          <div className="text-center" style={{ marginBottom: '3rem' }}>
+            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Por qué Avanza</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1rem' }}>
-              Después de reconectar, es hora de transformar
+              No es más de lo mismo.<br />Es ir más profundo.
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, maxWidth: 580, margin: '0 auto' }}>
-              El Método Esencial Madre: Actívate te devolvió la conexión con tu cuerpo. Avanza va más lejos: 8 semanas para fortalecer, tonificar y construir la mejor versión de ti siendo madre — por dentro y por fuera.
+            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>
+              Actívate fue el primer paso para reconectar con tu cuerpo. Avanza es donde ocurre la verdadera transformación — física y mental.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
             {[
-              { emoji: '💪', title: 'Ejercicios con y sin impacto', desc: 'Subimos el nivel de forma progresiva y segura. Tu cuerpo ya está listo para más.' },
-              { emoji: '🎯', title: 'Abdomen, core y diástasis', desc: 'Trabajo específico y profundo para reducir la diástasis y fortalecer el núcleo de tu cuerpo.' },
-              { emoji: '🌸', title: 'Suelo pélvico avanzado', desc: 'Continuamos el trabajo pélvico con ejercicios de mayor intensidad y precisión.' },
-              { emoji: '🧠', title: 'Módulos de mente ampliados', desc: 'Trabajamos la culpa, la frustración y todo lo que quedó sin procesar después de la maternidad y la cesárea.' },
-              { emoji: '✨', title: 'Tu mejor versión siendo madre', desc: 'Construimos seguridad, confianza y una mente fuerte. No volvemos a ser las de antes — somos más.' },
-              { emoji: '📅', title: '8 semanas · Online', desc: 'Vídeos on-demand para hacer cuando puedas, con acceso completo durante 6 meses.' }
+              { emoji: '💪', title: 'Ejercicios con y sin impacto', desc: 'Subimos el nivel de forma progresiva y segura. Tu cuerpo ya está preparado para más intensidad y más variedad.', highlight: false },
+              { emoji: '🎯', title: 'Abdomen, core y diástasis', desc: 'Trabajo específico y profundo para reducir la diástasis y construir un núcleo fuerte de verdad.', highlight: false },
+              { emoji: '🌸', title: 'Suelo pélvico avanzado', desc: 'Continuamos el trabajo pélvico a mayor profundidad, con ejercicios más precisos y efectivos.', highlight: false },
+              { emoji: '🧠', title: 'Módulos de mente ampliados', desc: 'Procesamos la culpa, la frustración y todo lo que quedó pendiente. Para que puedas soltar y avanzar de verdad.', highlight: true },
+              { emoji: '✨', title: 'Tu mejor versión siendo madre', desc: 'Construimos seguridad, confianza y una mente fuerte. El objetivo no es volver a ser la de antes — es descubrir que ahora eres más.', highlight: true },
+              { emoji: '🔄', title: 'La continuación perfecta', desc: 'Diseñado para encajar exactamente donde Actívate termina. El siguiente capítulo natural de tu transformación.', highlight: false }
             ].map((item, i) => (
-              <div key={i} style={{ background: 'var(--beige)', borderRadius: 6, padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '1.75rem', flexShrink: 0 }}>{item.emoji}</span>
+              <div key={i} style={{
+                background: item.highlight ? 'rgba(232,115,90,0.06)' : 'var(--beige)',
+                border: item.highlight ? '1px solid rgba(232,115,90,0.25)' : 'none',
+                borderRadius: 8,
+                padding: '1.75rem',
+                display: 'flex',
+                gap: '1.25rem',
+                alignItems: 'flex-start'
+              }}>
+                <span style={{ fontSize: '2rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
                 <div>
-                  <h4 style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.35rem' }}>{item.title}</h4>
-                  <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>{item.desc}</p>
+                  <h4 style={{ fontWeight: 600, fontSize: '1.05rem', marginBottom: '0.5rem', color: item.highlight ? 'var(--coral)' : 'var(--black)' }}>{item.title}</h4>
+                  <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.65 }}>{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -142,83 +175,50 @@ export default function ListaEsperaAvanzaPage() {
         </div>
       </section>
 
-      {/* ── DIFERENCIADOR MENTE ── */}
-      <section className="section" style={{ background: 'var(--coral)' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-          <div style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)', marginBottom: '0.75rem' }}>Lo que hace único este método</div>
+      {/* ── TRANSFORMACIÓN MENTE ── */}
+      <section className="section" style={{ background: 'var(--black)' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.75rem' }}>El diferencial de Avanza</div>
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'white', marginBottom: '1.25rem', lineHeight: 1.2, fontWeight: 400 }}>
-            No es solo ponerse en forma.<br />Es convertirte en quien ya eres.
+            El cuerpo y la mente<br />van siempre juntos.
           </h2>
-          <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.75, marginBottom: '2.5rem' }}>
-            Avanza incluye módulos exclusivos para trabajar todo lo que la maternidad deja por dentro: la culpa, la frustración, la identidad perdida. Porque el cuerpo y la mente van juntos siempre.
+          <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: '3rem' }}>
+            La mayoría de programas trabajan solo el físico. Avanza va más allá: porque después de ser madre — especialmente si tuviste una cesárea no deseada — hay cosas que el cuerpo no puede sanar solo.
           </p>
-          <div className="grid-2" style={{ gap: '1rem' }}>
-            <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
-              <Brain size={22} color="white" style={{ marginBottom: '0.75rem' }} />
+          <div className="grid-2" style={{ gap: '1rem', textAlign: 'left' }}>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <Brain size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Procesa y suelta</h3>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
-                Trabajamos la culpa, la cesárea no deseada, la frustración y todo lo que todavía pesa. Para que puedas avanzar de verdad.
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+                La culpa. La cesárea no deseada. La frustración de no reconocerte. Aquí lo trabajamos para que puedas soltar y avanzar de verdad.
               </p>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
-              <Heart size={22} color="white" style={{ marginBottom: '0.75rem' }} />
+            <div style={{ background: 'rgba(232,115,90,0.15)', borderRadius: 8, padding: '1.75rem', border: '1px solid rgba(232,115,90,0.3)' }}>
+              <Heart size={22} style={{ color: 'var(--coral)', marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white', marginBottom: '0.5rem' }}>Construye tu mejor versión</h3>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
-                Seguridad, confianza y una mente fuerte. No para volver a ser la de antes — para descubrir que ahora eres más.
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+                Seguridad, confianza y una mente fuerte. No para volver a ser la de antes — para descubrir que siendo madre eres más de lo que creías.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── LAS 8 SEMANAS ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>El programa</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', color: 'var(--black)' }}>8 semanas de transformación</h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
-              Progresivo, seguro y adaptado a tu cuerpo de madre.
-            </p>
-          </div>
-          <div className="week-steps">
-            {[
-              { week: 'Semanas 1-2', title: 'Activación profunda', desc: 'Retomamos la conexión con el cuerpo y subimos la intensidad de forma segura. Abdomen y suelo pélvico como base.', highlight: false },
-              { week: 'Semanas 3-4', title: 'Fortalecimiento + Mente', desc: 'Introducimos ejercicios de mayor impacto. Módulo de mente: procesamos la culpa y la frustración postcesárea.', highlight: true },
-              { week: 'Semanas 5-6', title: 'Potencia y tonificación', desc: 'Trabajamos todo el cuerpo con mayor intensidad. Reducción de diástasis y fortalecimiento del core.', highlight: false },
-              { week: 'Semanas 7-8', title: 'Tu mejor versión', desc: 'Consolidamos la fuerza física y mental. Construimos seguridad, confianza y la mejor versión de ti siendo madre.', highlight: true }
-            ].map((item, i) => (
-              <div key={i} className="week-step" style={item.highlight ? { border: '2px solid var(--coral)', borderRadius: 4, position: 'relative' } : {}}>
-                {item.highlight && (
-                  <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: 'var(--coral)', color: 'white', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', padding: '0.2rem 0.65rem', borderRadius: 20, whiteSpace: 'nowrap' }}>
-                    CUERPO + MENTE
-                  </div>
-                )}
-                <div className="week-number">{i + 1}</div>
-                <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.4rem' }}>{item.week}</div>
-                <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.4rem' }}>{item.title}</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6 }}>{item.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* ── PARA QUIÉN ── */}
-      <section className="section" style={{ background: 'var(--white)' }}>
+      <section className="section" style={{ background: 'var(--beige)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem' }}>
           <h2 className="t-serif text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginBottom: '0.75rem' }}>Avanza es para ti si…</h2>
           <p style={{ textAlign: 'center', fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2.5rem' }}>
-            Ya has dado el primer paso. Ahora es el momento de ir más lejos.
+            Ya diste el primer paso. Este es el siguiente.
           </p>
           <ul className="check-list" style={{ maxWidth: 540, margin: '0 auto' }}>
             {[
               'Ya completaste el Método Esencial Madre: Actívate o llevas tiempo recuperándote',
-              'Quieres subir el nivel de tus rutinas de forma segura y progresiva',
+              'Quieres subir la intensidad de forma segura y progresiva',
               'Sientes que todavía tienes diástasis o que tu core no está del todo fuerte',
-              'Quieres trabajar el suelo pélvico a un nivel más profundo',
-              'Tienes cosas pendientes de procesar emocionalmente después de la maternidad o la cesárea',
-              'Estás lista para construir tu mejor versión — cuerpo y mente juntos'
+              'Hay cosas pendientes de procesar emocionalmente tras la maternidad o la cesárea',
+              'Quieres trabajar la confianza, la seguridad y construir tu mejor versión',
+              'Estás lista para ir más profundo — en el cuerpo y en la mente'
             ].map((t, i) => (
               <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.5rem' }}><Check size={16} />{t}</li>
             ))}
@@ -227,7 +227,7 @@ export default function ListaEsperaAvanzaPage() {
       </section>
 
       {/* ── SOBRE SUSANA ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
+      <section className="section" style={{ background: 'var(--white)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem' }}>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <img
@@ -240,8 +240,8 @@ export default function ListaEsperaAvanzaPage() {
               <h3 className="t-serif" style={{ fontSize: 'clamp(1.4rem, 3vw, 1.75rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>Susana Ares</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7 }}>
                 <p>Mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces. Sé exactamente cómo se siente porque yo también lo viví.</p>
-                <p>Soy <strong style={{ color: 'var(--black)' }}>especialista en recuperación postcesárea y postparto</strong>, instructora de pilates terapéutico, y he trabajado profundamente la fortaleza mental para acompañarte desde dentro.</p>
-                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a recuperarse y transformarse. Avanza es el siguiente capítulo de ese camino.</p>
+                <p>Avanza nace de ese camino: de saber que recuperarse no es solo volver a moverte, sino transformarte. Trabajar el cuerpo y la mente juntos, con profundidad y con cariño.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong>. Avanza es el siguiente capítulo de ese camino.</p>
               </div>
             </div>
           </div>
@@ -251,8 +251,8 @@ export default function ListaEsperaAvanzaPage() {
       {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2>¿Lista para el siguiente nivel?</h2>
-          <p>Método Esencial Madre: Avanza — disponible en octubre. Apúntate ahora y sé la primera en saberlo.</p>
+          <h2>Tu transformación no ha terminado.<br />Acaba de empezar.</h2>
+          <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Método Esencial Madre: Avanza — disponible en octubre. Apúntate ahora y sé la primera en saberlo.</p>
           <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Apúntame a la lista de espera
           </button>
