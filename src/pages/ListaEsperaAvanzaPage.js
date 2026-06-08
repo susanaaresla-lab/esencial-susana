@@ -22,16 +22,20 @@ export default function ListaEsperaAvanzaPage() {
     <div style={{ paddingTop: 80 }}>
 
       <Helmet>
-        <title>Lista de espera | Método Esencial Madre: Avanza | Esencial Susana Ares</title>
-        <meta name="description" content="El siguiente nivel después de Actívate. 8 semanas para transformar tu cuerpo y tu mente siendo madre. Apúntate a la lista de espera." />
-        <meta property="og:title" content="Método Esencial Madre: Avanza — Lista de espera" />
-        <meta property="og:description" content="El siguiente nivel. Más fuerza, más profundidad, más tú. La continuación natural de Actívate." />
-        <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
-        <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
-      </Helmet>
+  <title>Método Esencial Madre: Avanza | El siguiente nivel | Esencial Susana Ares</title>
+  <meta name="description" content="8 semanas online para transformar tu cuerpo y tu mente siendo madre. Rutinas con impacto, trabajo profundo de mente y construcción de tu mejor versión. Apúntate a la lista de espera — disponible en octubre." />
+  <meta name="keywords" content="programa postparto avanzado, ejercicios impacto postparto, recuperación cesárea avanzada, mejor versión siendo madre, método esencial madre avanza" />
+  <meta property="og:title" content="Método Esencial Madre: Avanza — El siguiente nivel" />
+  <meta property="og:description" content="8 semanas para ir más lejos. Más fuerza, más intensidad, más trabajo de mente. La continuación natural de Actívate. Disponible en octubre." />
+  <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
+  <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Método Esencial Madre: Avanza — El siguiente nivel" />
+  <meta name="twitter:description" content="8 semanas para transformar tu cuerpo y tu mente siendo madre. Disponible en octubre." />
+  <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
+</Helmet>
 
       {/* ── HERO ── */}
       <section style={{ background: 'var(--beige)', position: 'relative', overflow: 'hidden', minHeight: '85vh', display: 'flex', alignItems: 'center' }}>
