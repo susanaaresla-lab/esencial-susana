@@ -87,11 +87,14 @@ export default function ProgramaPage() {
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />Sin impacto</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-              <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
-              <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', textDecoration: 'line-through', marginBottom: '0.15rem' }}>Valor total del programa: €527</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.25rem' }}>
+                <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+                <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600 }}>⚡ €97 solo para las 50 primeras · Después €147 hasta completar 80 plazas</p>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '1.5rem' }}>⚡ Solo para las primeras 80 madres</p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
               Apúntate — próxima edición 11-14 junio
             </button>
@@ -403,10 +406,11 @@ export default function ProgramaPage() {
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through', marginBottom: '0.25rem' }}>Valor total del programa: €527</p>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial solo para las primeras 80 madres</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ €97 solo para las 50 primeras plazas · Después €147 hasta completar 80</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
                 Apúntame a la próxima edición — €97
@@ -454,8 +458,9 @@ export default function ProgramaPage() {
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para la próxima edición?</h2>
           <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Disponible del 11 al 14 de junio. Apúntate ahora.</p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>⚡ Solo para las primeras 80 madres</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Antes €147</p>
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>⚡ Solo para las 50 primeras plazas</p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Después €147 hasta completar 80 plazas</p>
+          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Valor total €527</p>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
             Apúntame a la próxima edición
           </button>
