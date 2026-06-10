@@ -43,7 +43,7 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goListaEspera = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
+  const goComprar = () => window.open('https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312', '_blank');
 
   return (
     <div style={{ paddingTop: 80 }}>
@@ -95,8 +95,8 @@ export default function ProgramaPage() {
               </div>
               <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600 }}>⚡ €97 solo para las 50 primeras · Después €147 hasta completar 80 plazas</p>
             </div>
-            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
-              Apúntate — próxima edición 11-14 junio
+            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+              Empezar mi recuperación — €97
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
               Sin equipamiento · Desde casa · 4 meses de acceso
@@ -164,7 +164,7 @@ export default function ProgramaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={goListaEspera}>Apúntate a la próxima edición</button>
+              <button className="btn-coral" onClick={goComprar}>Empezar mi recuperación</button>
             </div>
           </div>
         </div>
@@ -412,7 +412,7 @@ export default function ProgramaPage() {
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ €97 solo para las 50 primeras plazas · Después €147 hasta completar 80</p>
               </div>
-              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
+              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
                 Apúntame a la próxima edición — €97
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
@@ -461,7 +461,7 @@ export default function ProgramaPage() {
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>⚡ Solo para las 50 primeras plazas</p>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Después €147 hasta completar 80 plazas</p>
           <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Valor total €527</p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
             Apúntame a la próxima edición
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
