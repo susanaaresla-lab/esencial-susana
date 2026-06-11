@@ -65,7 +65,7 @@ export default function ProgramaPage() {
       {/* ── BARRA DE URGENCIA FIJA ── */}
       <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
         <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
-          🔒 Inscripción abierta solo del <strong style={{ color: 'var(--coral)' }}>11 al 14 de junio</strong> · Después se cierra hasta la próxima edición
+          🔒 Inscripción abierta solo del <strong style={{ color: 'var(--coral)' }}>11 al 14 de junio</strong> · Después se cierra hasta septiembre
         </p>
       </div>
 
@@ -383,7 +383,7 @@ export default function ProgramaPage() {
               🔒 Cierra el 14 de junio a las 23:59h
             </div>
             <div style={label('var(--coral)')}>Próxima edición · 11-14 de junio</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate y reserva tu plaza</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza ahora</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -414,7 +414,7 @@ export default function ProgramaPage() {
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Próxima edición disponible del 11 al 14 de junio</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Apúntate ahora a la lista de espera para recibir acceso prioritario y precio especial.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Solo disponible del 11 al 14 de junio — después se cierra hasta septiembre.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
@@ -426,7 +426,7 @@ export default function ProgramaPage() {
                 <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ €97 solo para las 50 primeras plazas · Después €147 hasta completar 80</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
-                Apúntame a la próxima edición — €97
+                Empezar mi recuperación — €97
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -468,17 +468,17 @@ export default function ProgramaPage() {
       {/* ── FINAL CTA ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para la próxima edición?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Disponible del 11 al 14 de junio. Apúntate ahora.</p>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Solo disponible del 11 al 14 de junio. Después se cierra hasta septiembre.</p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>⚡ Solo para las 50 primeras plazas</p>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Después €147 hasta completar 80 plazas</p>
           <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Valor total €527</p>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-            Apúntame a la próxima edición
+            Empezar mi recuperación
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            11-14 de junio · Sin equipamiento · Desde casa
+            Cierra el 14 de junio · Sin equipamiento · Desde casa
           </p>
         </div>
       </div>
