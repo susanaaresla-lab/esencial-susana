@@ -62,6 +62,13 @@ export default function ProgramaPage() {
         <meta name="twitter:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97." />
       </Helmet>
 
+      {/* ── BARRA DE URGENCIA FIJA ── */}
+      <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
+        <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
+          🔒 Inscripción abierta solo del <strong style={{ color: 'var(--coral)' }}>11 al 14 de junio</strong> · Después se cierra hasta la próxima edición
+        </p>
+      </div>
+
       {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-photo-bleed">
@@ -100,6 +107,9 @@ export default function ProgramaPage() {
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
               Sin equipamiento · Desde casa · 4 meses de acceso
+            </p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>
+              🔒 Cierre de inscripción: 14 de junio a las 23:59h
             </p>
           </div>
         </div>
@@ -369,6 +379,9 @@ export default function ProgramaPage() {
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
+              🔒 Cierra el 14 de junio a las 23:59h
+            </div>
             <div style={label('var(--coral)')}>Próxima edición · 11-14 de junio</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate y reserva tu plaza</h2>
           </div>
