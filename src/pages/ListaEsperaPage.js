@@ -32,15 +32,15 @@ export default function ListaEsperaPage() {
 
       <Helmet>
         <title>Acceso prioritario | Método Esencial Madre | Esencial Susana Ares</title>
-        <meta name="description" content="Regístrate para tener acceso prioritario a la próxima edición del Método Esencial Madre: Actívate — disponible solo del 11 al 14 de junio. Recibe gratis una semana de ejercicios adaptados." />
+        <meta name="description" content="Regístrate para tener acceso prioritario a la próxima edición del Método Esencial Madre: Actívate — disponible del 10 al 13 de septiembre. Recibe gratis una semana de ejercicios adaptados." />
         <meta property="og:title" content="Acceso prioritario — Método Esencial Madre: Actívate" />
-        <meta property="og:description" content="Próxima edición disponible solo del 11 al 14 de junio. Regístrate para acceso prioritario y recibe gratis una semana de ejercicios adaptados a cesárea y parto." />
+        <meta property="og:description" content="Próxima edición disponible del 10 al 13 de septiembre. Regístrate para acceso prioritario y recibe gratis una semana de ejercicios adaptados a cesárea y parto." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Acceso prioritario — Método Esencial Madre: Actívate" />
-        <meta name="twitter:description" content="Próxima edición disponible solo del 11 al 14 de junio." />
+        <meta name="twitter:description" content="Próxima edición disponible del 10 al 13 de septiembre." />
         <meta name="twitter:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
       </Helmet>
 
@@ -63,18 +63,18 @@ export default function ListaEsperaPage() {
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', alignItems: 'flex-end', padding: '0 1.5rem 4rem' }}>
           <div style={{ maxWidth: 680, margin: '0 auto', width: '100%', textAlign: 'center' }}>
-            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · Solo del 11 al 14 de junio</div>
+            <div className="t-label" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem' }}>Próxima edición · 10-13 de septiembre</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1, color: 'white', marginBottom: '1rem', fontWeight: 400 }}>
               Sé la primera en acceder al Método Esencial Madre: Actívate
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-  Programa online de 4 semanas adaptado a cesárea y parto vaginal.<br />
-  <span style={{ color: 'rgba(255,255,255,0.7)' }}>Cuerpo · Confianza · Motivación</span>
-</p>
-<p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, maxWidth: 480, margin: '0 auto 1.5rem' }}>
-  Próxima edición <strong style={{ color: 'white' }}>solo del 11 al 14 de junio</strong>.<br />
-  Regístrate para acceso prioritario + semana de ejercicios gratis.
-</p>
+              Programa online de 4 semanas adaptado a cesárea y parto vaginal.<br />
+              <span style={{ color: 'rgba(255,255,255,0.7)' }}>Cuerpo · Confianza · Motivación</span>
+            </p>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, maxWidth: 480, margin: '0 auto 1.5rem' }}>
+              Próxima edición <strong style={{ color: 'white' }}>del 10 al 13 de septiembre</strong>.<br />
+              Regístrate para acceso prioritario + semana de ejercicios gratis.
+            </p>
             <div className="flex justify-center flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Clock />4 semanas · Online</span>
               <span className="pill" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', backdropFilter: 'blur(8px)' }}><Video />Parto y cesárea</span>
@@ -94,13 +94,11 @@ export default function ListaEsperaPage() {
       {/* ── FORMULARIO ── */}
       <section id="formulario" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
         <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
-
-          {/* Qué consigues al registrarte */}
           <div style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
               <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🔔</span>
               <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la próxima edición, disponible solo del 11 al 14 de junio.
+                <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la próxima edición, disponible del 10 al 13 de septiembre.
               </p>
             </div>
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
@@ -114,11 +112,11 @@ export default function ListaEsperaPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Reserva tu acceso prioritario</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Al registrarte serás la primera en saber cuándo abre — solo del 11 al 14 de junio.
+              Al registrarte serás la primera en saber cuándo abre — del 10 al 13 de septiembre.
             </p>
             <div id="eo-form-container" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-              <Shield size={12} /> Sin spam. Solo te avisaremos cuando abra la próxima edición del 11 al 14 de junio.
+              <Shield size={12} /> Sin spam. Solo te avisaremos cuando abra la próxima edición del 10 al 13 de septiembre.
             </p>
           </div>
         </div>
@@ -157,7 +155,7 @@ export default function ListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── QUÉ INCLUYE EL MÉTODO COMPLETO ── */}
+      {/* ── QUÉ INCLUYE ── */}
       <section className="section" style={{ background: 'var(--white)', paddingTop: '2rem' }}>
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center" style={{ marginBottom: '3rem' }}>
@@ -178,12 +176,7 @@ export default function ListaEsperaPage() {
               { Icon: Gift, title: 'Bonus incluido', desc: 'Consejos prácticos para seguir recuperándote en tu día a día como madre.', highlight: false },
               { Icon: Users, title: '1 Directo en vivo', desc: 'Con Susana para resolver tus dudas personalmente.', highlight: false }
             ].map(({ Icon, title, desc, highlight }, i) => (
-              <div key={i} style={{
-                background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--beige)',
-                borderRadius: 4,
-                padding: '1.5rem',
-                border: highlight ? '1px solid rgba(232,115,90,0.3)' : 'none'
-              }}>
+              <div key={i} style={{ background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--beige)', borderRadius: 4, padding: '1.5rem', border: highlight ? '1px solid rgba(232,115,90,0.3)' : 'none' }}>
                 <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(232,115,90,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                   <Icon size={18} style={{ color: 'var(--coral)' }} />
                 </div>
@@ -243,8 +236,8 @@ export default function ListaEsperaPage() {
       {/* ── CTA FINAL ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2>¿Lista para la próxima edición?</h2>
-          <p>Disponible solo del 11 al 14 de junio. Regístrate ahora para acceso prioritario y recibe gratis tu semana de ejercicios.</p>
+          <h2>¿Lista para septiembre?</h2>
+          <p>Próxima edición disponible del 10 al 13 de septiembre. Regístrate ahora para acceso prioritario y recibe gratis tu semana de ejercicios.</p>
           <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Quiero acceso prioritario
           </button>
