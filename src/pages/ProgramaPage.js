@@ -100,7 +100,7 @@ export default function ProgramaPage() {
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
               </div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600 }}>⚡ €97 solo para las 50 primeras · Después €147 hasta completar 80 plazas</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600 }}>⚡ €97 solo para las 50 primeras · Después €147</p>
             </div>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
               Apúntame — próxima edición 10-13 septiembre
@@ -469,7 +469,7 @@ export default function ProgramaPage() {
           <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Próxima edición disponible del 10 al 13 de septiembre. Apúntate ahora para acceso prioritario.</p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>⚡ Solo para las 50 primeras plazas</p>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Después €147 hasta completar 80 plazas</p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Después €147</p>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
             Apúntame — acceso prioritario
           </button>
