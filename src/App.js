@@ -10,6 +10,9 @@ import ListaEsperaPage from './pages/ListaEsperaPage';
 import MasterclassPage from './pages/MasterclassPage';
 import ActivateMasterclassPage from './pages/ActivateMasterclassPage';
 import ListaEsperaAvanzaPage from './pages/ListaEsperaAvanzaPage';
+import GraciasMasterclassPage from './pages/GraciasMasterclassPage';
+import GraciasListaEsperaPage from './pages/GraciasListaEsperaPage';
+import GraciasAvanzaPage from './pages/GraciasAvanzaPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,7 +28,7 @@ function AppContent() {
     document.body.style.overflow = selectedVideo ? 'hidden' : '';
   }, [selectedVideo]);
 
-  const isMasterclass = location.pathname === '/masterclass';
+  const noHeaderFooter = ['/masterclass', '/gracias-masterclass', '/gracias-lista-espera', '/gracias-avanza'].includes(location.pathname);
 
   const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
     : location.pathname === '/confirmacion' ? 'confirmacion'
@@ -35,7 +38,7 @@ function AppContent() {
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: 'var(--white)', color: 'var(--black)', overflowX: 'hidden' }}>
       <ScrollToTop />
-      {!isMasterclass && <Header currentPage={currentPage} />}
+      {!noHeaderFooter && <Header currentPage={currentPage} />}
 
       <main>
         <Routes>
@@ -46,10 +49,13 @@ function AppContent() {
           <Route path="/masterclass" element={<MasterclassPage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
           <Route path="/lista-espera-avanza" element={<ListaEsperaAvanzaPage />} />
+          <Route path="/gracias-masterclass" element={<GraciasMasterclassPage />} />
+          <Route path="/gracias-lista-espera" element={<GraciasListaEsperaPage />} />
+          <Route path="/gracias-avanza" element={<GraciasAvanzaPage />} />
         </Routes>
       </main>
 
-      {!isMasterclass && <Footer />}
+      {!noHeaderFooter && <Footer />}
 
       {selectedVideo && (
         <VideoModal video={selectedVideo} onClose={() => setSelectedVideo(null)} />
