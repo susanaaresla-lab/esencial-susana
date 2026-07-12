@@ -61,7 +61,7 @@ export default function ListaEsperaAvanzaPage() {
               "Porque reconectar fue el inicio. Ahora es el momento de transformarte."
             </p>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, marginBottom: '2rem' }}>
-              12 semanas de transformación profunda — cuerpo y mente juntos. Para la madre que ya sabe que puede, y quiere más. <strong style={{ color: 'var(--black)' }}>Programa exclusivo con selección previa. Solo 30 plazas.</strong>
+              12 semanas de transformación profunda — cuerpo y mente juntos. <strong style={{ color: 'var(--black)' }}>Especialmente diseñado para recuperación postcesárea</strong>, aunque también para parto vaginal. Para la madre que ya sabe que puede, y quiere más. Programa exclusivo con selección previa. Solo 30 plazas.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '1.25rem' }}>
               <span className="pill"><Clock />12 semanas · Online</span>
@@ -69,7 +69,7 @@ export default function ListaEsperaAvanzaPage() {
               <span className="pill"><Users />Solo 30 plazas</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-              ⏱ 3-4 sesiones por semana · Desde 5 meses tras cesárea · Desde 2 meses tras parto vaginal
+              ⏱ 3-4 sesiones por semana · Especializado en cesárea · Desde 5 meses postcesárea · Desde 2 meses parto vaginal
             </p>
             <button
               className="btn-coral"
@@ -108,7 +108,7 @@ export default function ListaEsperaAvanzaPage() {
               Un programa online de <strong style={{ color: 'var(--coral)' }}>12 semanas</strong> con 3-4 sesiones por semana — entrenamientos guiados progresivos y trabajo de mente semanal — para madres que quieren transformarse de verdad, por dentro y por fuera.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem' }}>
-              {['12 semanas · Online', 'Con y sin impacto', 'Abdomen y core', 'Suelo pélvico', 'Domingo de Mente', 'Sesiones Avanza en directo', 'Solo 30 plazas'].map((tag, i) => (
+              {['12 semanas · Online', 'Especializado en cesárea', 'Con y sin impacto', 'Abdomen y core', 'Suelo pélvico', 'Domingo de Mente', 'Sesiones Avanza en directo', 'Solo 30 plazas'].map((tag, i) => (
                 <span key={i} style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', padding: '0.35rem 0.85rem', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)' }}>
                   {tag}
                 </span>
@@ -125,14 +125,19 @@ export default function ListaEsperaAvanzaPage() {
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1.25rem' }}>
             Un programa exclusivo.<br />No es para todo el mundo.
           </h2>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-            Avanza es un programa de alto nivel con acompañamiento real. Para garantizar la calidad y la atención que cada madre merece, las plazas son limitadas y hay una selección previa para asegurarnos de que es el momento adecuado para ti.
+          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+            Avanza es un programa de alto nivel con acompañamiento real, <strong style={{ color: 'var(--black)' }}>especialmente diseñado para la recuperación postcesárea</strong>. Para garantizar la calidad y la atención que cada madre merece, las plazas son limitadas y hay una selección previa para asegurarnos de que es el momento adecuado para ti.
           </p>
+          <div style={{ background: 'rgba(232,115,90,0.08)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 6, padding: '0.75rem 1.25rem', display: 'inline-block', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--coral)', fontWeight: 600, margin: 0 }}>
+              ✦ El único programa online que trabaja la recuperación postcesárea desde dentro — cuerpo y mente juntos durante 12 semanas
+            </p>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
             {[
               { emoji: '🎯', title: 'Solo 30 plazas', desc: 'Para garantizar la calidad del acompañamiento y la comunidad.' },
               { emoji: '✅', title: 'Selección previa', desc: 'Una conversación breve para asegurarnos de que Avanza es lo que necesitas ahora.' },
-              { emoji: '🌟', title: 'Acompañamiento real', desc: '6 Sesiones Avanza en directo, email semanales y comunidad privada durante 12 semanas.' }
+              { emoji: '🌟', title: 'Acompañamiento real', desc: '6 Sesiones Avanza en directo, email semanal y comunidad privada durante 12 semanas.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--beige)', borderRadius: 8, padding: '1.75rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -184,7 +189,7 @@ export default function ListaEsperaAvanzaPage() {
               No es más de lo mismo.<br />Es ir más profundo.
             </h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>
-              Actívate fue el primer paso. Avanza es donde ocurre la transformación real — durante 12 semanas, en el cuerpo y en la mente.
+              Actívate fue el primer paso. Avanza es donde ocurre la transformación real — 12 semanas con ejercicios específicamente adaptados a la recuperación postcesárea, que también funcionan para parto vaginal.
             </p>
           </div>
 
@@ -238,7 +243,7 @@ export default function ListaEsperaAvanzaPage() {
               <div style={{ width: 36, height: 2, background: 'var(--coral)' }} />
               <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)' }}>Acompañamiento</p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
               {[
                 { emoji: '🎙️', title: '6 Sesiones Avanza en directo', desc: 'Cada 2 semanas — formación, dudas y check-in de progreso integrado.' },
                 { emoji: '👥', title: 'Comunidad privada', desc: 'Un espacio de apoyo entre madres durante las 12 semanas del programa.' },
@@ -252,6 +257,41 @@ export default function ListaEsperaAvanzaPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Bloque 1:1 opcional */}
+            <div style={{ background: 'var(--black)', borderRadius: 10, padding: '2rem', border: '2px solid var(--coral)', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, right: 0, background: 'var(--coral)', color: 'white', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderBottomLeftRadius: 8 }}>
+                Opcional
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'rgba(232,115,90,0.2)', border: '1px solid rgba(232,115,90,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.5rem' }}>
+                  🌟
+                </div>
+                <div style={{ flex: 1, minWidth: 220 }}>
+                  <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: 'white', marginBottom: '0.5rem' }}>2 sesiones personalizadas 1:1 con Susana</h4>
+                  <p style={{ fontSize: '0.925rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '1rem' }}>
+                    Para las madres que quieren ir aún más lejos y personalizar el programa a su situación concreta.
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: 'var(--coral)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>①</span>
+                      <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
+                        <strong style={{ color: 'white' }}>Sesión de inicio</strong> — para conocer tu situación, adaptar el programa a ti y empezar con un plan 100% personalizado.
+                      </p>
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: 'var(--coral)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>②</span>
+                      <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
+                        <strong style={{ color: 'white' }}>Sesión de seguimiento</strong> — durante el programa para revisar tu progreso, ajustar y asegurarnos de que vas en la dirección correcta.
+                      </p>
+                    </div>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '1rem', fontStyle: 'italic' }}>
+                    ✦ Esta opción se comentará durante la entrevista de selección.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -331,10 +371,11 @@ export default function ListaEsperaAvanzaPage() {
             <div style={{ flex: 1, minWidth: 240 }}>
               <div className="t-label text-muted" style={{ marginBottom: '0.4rem' }}>Tu instructora</div>
               <h3 className="t-serif" style={{ fontSize: 'clamp(1.4rem, 3vw, 1.75rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>Susana Ares</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7 }}>
-                <p>Mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces. Sé exactamente cómo se siente porque yo también lo viví.</p>
-                <p>Avanza nace de ese camino: de saber que recuperarse no es solo volver a moverte, sino transformarte. Trabajar el cuerpo y la mente juntos, con profundidad y con cariño.</p>
-                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong>. Avanza es el siguiente capítulo de ese camino.</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7 }}>
+                <p>Soy mamá de tres hijos. Tuve una cesárea y me he recuperado de tres embarazos y dos partos. Sé exactamente lo que sientes — no como experta desde un escenario, sino como madre que lo ha vivido desde dentro.</p>
+                <p>Eso es lo que me hace diferente. <strong style={{ color: 'var(--black)' }}>No soy una entrenadora más.</strong> Soy una madre que pasó por la cesárea, que tardó en reconocerse en el espejo, que tuvo que aprender a recuperarse — y que después se formó como especialista en recuperación postcesárea y postparto e instructora de pilates terapéutico para poder acompañar a otras madres desde ese mismo lugar.</p>
+                <p>Por eso Avanza está construido desde la cesárea hacia afuera — no como un programa genérico al que se le añade una nota sobre cicatrices, sino como un método específico que entiende tu cuerpo de madre desde la primera semana.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a recuperarse. Avanza es el programa donde voy más lejos contigo.</p>
               </div>
             </div>
           </div>
