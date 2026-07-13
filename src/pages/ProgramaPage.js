@@ -50,16 +50,16 @@ export default function ProgramaPage() {
 
       <Helmet>
         <title>Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre</title>
-        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97. Acceso 4 meses." />
+        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147. Acceso 4 meses." />
         <meta name="keywords" content="recuperación postcesárea, ejercicios después cesárea, recuperación postparto, rutinas madres sin experiencia, método esencial madre" />
         <link rel="canonical" href="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
-        <meta property="og:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97." />
+        <meta property="og:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147." />
         <meta property="og:url" content="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:type" content="product" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
-        <meta name="twitter:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €97." />
+        <meta name="twitter:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147." />
       </Helmet>
 
       {/* ── BARRA DE URGENCIA ── */}
@@ -95,12 +95,8 @@ export default function ProgramaPage() {
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', textDecoration: 'line-through', marginBottom: '0.15rem' }}>Valor total del programa: €527</p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.25rem' }}>
-                <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
-                <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
-              </div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--coral)', fontWeight: 600 }}>⚡ €97 solo para las 50 primeras · Después €147</p>
+              <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</span>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.25rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
             </div>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
               Apúntame — próxima edición 10-13 septiembre
@@ -416,10 +412,8 @@ export default function ProgramaPage() {
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through', marginBottom: '0.25rem' }}>Valor total del programa: €527</p>
-                <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
-<p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Precio especial garantizado al apuntarte a la lista de espera</p>                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ €97 solo para las 50 primeras plazas · Después €147 hasta completar 80</p>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</div>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
                 Apúntame — acceso prioritario septiembre
@@ -466,9 +460,7 @@ export default function ProgramaPage() {
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para septiembre?</h2>
           <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Próxima edición disponible del 10 al 13 de septiembre. Apúntate ahora para acceso prioritario.</p>
-          <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>⚡ Solo para las 50 primeras plazas</p>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Después €147</p>
+          <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.5rem' }}>€147</div>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
             Apúntame — acceso prioritario
           </button>
