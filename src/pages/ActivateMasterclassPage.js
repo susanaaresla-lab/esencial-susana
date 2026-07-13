@@ -4,10 +4,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTA FECHA CUANDO SEA NECESARIO ──────────────────
-const FECHA_CIERRE = '13 de junio a las 23:59h';
-// ── DURACIÓN DEL DESCUENTO EN HORAS ────────────────────────
-const HORAS_DESCUENTO = 48;
-// ───────────────────────────────────────────────────────────
+// const FECHA_CIERRE = '9 de septiembre a las 21:00h';// ───────────────────────────────────────────────────────────
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&src=masterclass-junio';
 
@@ -48,19 +45,14 @@ function FaqItem({ q, a }) {
   );
 }
 
+// ── FECHA FIJA DE EXPIRACIÓN DEL DESCUENTO ─────────────────
+// 9 de septiembre a las 21:00h hora España (UTC+2 en verano)
+const EXPIRY_DATE = new Date('2026-09-09T21:00:00+02:00');
+// ───────────────────────────────────────────────────────────
+
 function Countdown() {
-  const STORAGE_KEY = 'masterclass_discount_expiry';
-
-  const getExpiry = () => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return parseInt(stored, 10);
-    const expiry = Date.now() + HORAS_DESCUENTO * 60 * 60 * 1000;
-    localStorage.setItem(STORAGE_KEY, expiry.toString());
-    return expiry;
-  };
-
   const calcTimeLeft = () => {
-    const diff = getExpiry() - Date.now();
+    const diff = EXPIRY_DATE - Date.now();
     if (diff <= 0) return null;
     return {
       h: Math.floor(diff / 3600000),
@@ -71,9 +63,15 @@ function Countdown() {
 
   const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
 
-  useEffect(() => {
+useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calcTimeLeft());
+      const diff = EXPIRY_DATE - Date.now();
+      if (diff <= 0) { setTimeLeft(null); return; }
+      setTimeLeft({
+        h: Math.floor(diff / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000)
+      });
     }, 1000);
     return () => clearInterval(timer);
   }, []);
@@ -102,6 +100,7 @@ function Countdown() {
           </div>
         ))}
       </div>
+      <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.75rem' }}>Hasta el 9 de septiembre a las 21:00h</p>
     </div>
   );
 }
@@ -128,7 +127,7 @@ export default function ActivateMasterclassPage() {
             ✦ Acceso prioritario · Solo para asistentes a la masterclass
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Como has asistido a la masterclass, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — solo durante las próximas 48 horas.
+            Como has asistido a la masterclass, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — solo hasta el 9 de septiembre a las 21:00h.
           </p>
         </div>
       </div>
