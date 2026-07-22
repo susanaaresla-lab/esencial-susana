@@ -101,12 +101,6 @@ export default function ListaEsperaPage() {
                 <strong>Acceso prioritario</strong> — serás la primera en ser avisada cuando abra la próxima edición, disponible del 10 al 13 de septiembre.
               </p>
             </div>
-            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
-              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🎁</span>
-              <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Una semana de ejercicios gratis</strong> — rutinas de mis vídeos de YouTube adaptadas a cesárea y parto para que pruebes mi metodología y empieces a moverte ya.
-              </p>
-            </div>
           </div>
 
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
