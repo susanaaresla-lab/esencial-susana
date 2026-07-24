@@ -65,7 +65,7 @@ export default function ProgramaPage() {
       {/* ── BARRA DE URGENCIA ── */}
       <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
         <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
-          🗓️ Venta pública del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
+          🗓️ Disponible del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
         </p>
       </div>
 
