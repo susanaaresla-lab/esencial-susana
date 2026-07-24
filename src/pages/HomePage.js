@@ -124,10 +124,10 @@ export default function HomePage({ onVideoClick }) {
           </div>
           <div className="text-center">
             <button className="btn-coral" onClick={() => navigate('/programa-4-semanas')}>
-              Ver el método completo — €97
+              Ver el método completo — €147
             </button>
             <p className="text-sm text-muted" style={{ marginTop: '0.75rem' }}>
-              <span style={{ textDecoration: 'line-through', marginRight: '0.5rem' }}>€147</span>€97 · Próxima edición 11-14 de junio
+              Disponible del 3 al 6 de septiembre · El programa arranca el 7 de septiembre
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function HomePage({ onVideoClick }) {
               </div>
               <p className="text-sm text-muted">¿Te han gustado? El método completo tiene muchas más rutinas adaptadas a tu situación.</p>
               <div style={{ marginTop: '1.25rem' }}>
-                <button className="btn-coral" style={{ fontSize: '0.95rem', padding: '0.9rem 2rem' }} onClick={() => navigate('/lista-espera')}>
+                <button className="btn-coral" style={{ fontSize: '0.95rem', padding: '0.9rem 2rem' }} onClick={() => navigate('/programa-4-semanas')}>
                   Recibe una semana gratis
                 </button>
               </div>
@@ -239,10 +239,10 @@ export default function HomePage({ onVideoClick }) {
         <div className="container-narrow">
           <h2>¿Lista para empezar tu recuperación?</h2>
           <p>Empieza desde donde estás — con cesárea, parto vaginal, o aunque nunca hayas hecho ejercicio antes.</p>
-          <button className="btn-white" onClick={() => navigate('/lista-espera')}>
+          <button className="btn-white" onClick={() => navigate('/programa-4-semanas')}>
             Quiero empezar ahora
           </button>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', marginTop: '0.75rem' }}>Próxima edición 11-14 de junio · €97</p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', marginTop: '0.75rem' }}>Venta pública 3-6 septiembre · €147</p>
         </div>
       </div>
     </>

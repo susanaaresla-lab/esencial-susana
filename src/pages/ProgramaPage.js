@@ -43,7 +43,7 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goListaEspera = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
+  const goComprar = () => window.open('https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312', '_blank');
 
   return (
     <div style={{ paddingTop: 80 }}>
@@ -65,7 +65,7 @@ export default function ProgramaPage() {
       {/* ── BARRA DE URGENCIA ── */}
       <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
         <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
-          📅 Próxima edición disponible del <strong style={{ color: 'var(--coral)' }}>10 al 13 de septiembre</strong> · Apúntate para acceso prioritario
+          🗓️ Venta pública del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
         </p>
       </div>
 
@@ -96,10 +96,10 @@ export default function ProgramaPage() {
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</span>
-              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.25rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.25rem' }}>Precio de venta pública · Acceso inmediato al comprar</p>
             </div>
-            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
-              Apúntame — próxima edición 10-13 septiembre
+            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+              Apúntame — disponible del 3 al 6 de septiembre
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
               Sin equipamiento · Desde casa · 4 meses de acceso
@@ -167,7 +167,7 @@ export default function ProgramaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={goListaEspera}>Apúntame a la próxima edición</button>
+              <button className="btn-coral" onClick={goComprar}>Quiero empezar mi recuperación</button>
             </div>
           </div>
         </div>
@@ -373,10 +373,10 @@ export default function ProgramaPage() {
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
-              📅 Próxima edición · 10-13 de septiembre
+              📅 Nueva edición · Venta pública 3-6 de septiembre
             </div>
             <div style={label('var(--coral)')}>Apúntate con acceso prioritario</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Reserva tu plaza para septiembre</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza — arranca el 7 de septiembre</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -406,17 +406,17 @@ export default function ProgramaPage() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Próxima edición · 10-13 de septiembre</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Apúntate a la lista de espera para recibir acceso prioritario y precio especial antes de que abra al público.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Nueva edición · Venta pública 3-6 de septiembre</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Disponible para todo el público del 3 al 6 de septiembre. El programa arranca el 7 de septiembre.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Precio de venta pública · Acceso inmediato al comprar</p>
               </div>
-              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goListaEspera}>
-                Apúntame — acceso prioritario septiembre
+              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
+                Quiero empezar mi recuperación — €147
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -458,14 +458,14 @@ export default function ProgramaPage() {
       {/* ── FINAL CTA ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para septiembre?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Próxima edición disponible del 10 al 13 de septiembre. Apúntate ahora para acceso prioritario.</p>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar el 7 de septiembre?</h2>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Venta pública del 3 al 6 de septiembre · El programa arranca el 7 de septiembre.</p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.5rem' }}>€147</div>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goListaEspera}>
-            Apúntame — acceso prioritario
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+            Quiero empezar mi recuperación
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            10-13 septiembre · Sin equipamiento · Desde casa
+            3-6 septiembre · Sin equipamiento · Desde casa
           </p>
         </div>
       </div>
