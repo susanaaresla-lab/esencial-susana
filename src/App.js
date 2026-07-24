@@ -10,6 +10,7 @@ import ListaEsperaPage from './pages/ListaEsperaPage';
 import MasterclassPage from './pages/MasterclassPage';
 import ActivateMasterclassPage from './pages/ActivateMasterclassPage';
 import ListaEsperaAvanzaPage from './pages/ListaEsperaAvanzaPage';
+import ActivateListaEsperaPage from './pages/ActivateListaEsperaPage';
 import GraciasMasterclassPage from './pages/GraciasMasterclassPage';
 import GraciasListaEsperaPage from './pages/GraciasListaEsperaPage';
 import GraciasAvanzaPage from './pages/GraciasAvanzaPage';
@@ -28,7 +29,7 @@ function AppContent() {
     document.body.style.overflow = selectedVideo ? 'hidden' : '';
   }, [selectedVideo]);
 
-  const noHeaderFooter = ['/masterclass', '/gracias-masterclass', '/gracias-lista-espera', '/gracias-avanza'].includes(location.pathname);
+  const noHeaderFooter = ['/masterclass', '/gracias-masterclass', '/gracias-lista-espera', '/gracias-avanza', '/activate-lista-espera'].includes(location.pathname);
 
   const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
     : location.pathname === '/confirmacion' ? 'confirmacion'
@@ -48,6 +49,7 @@ function AppContent() {
           <Route path="/lista-espera" element={<ListaEsperaPage />} />
           <Route path="/masterclass" element={<MasterclassPage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
+          <Route path="/activate-lista-espera" element={<ActivateListaEsperaPage />} />
           <Route path="/lista-espera-avanza" element={<ListaEsperaAvanzaPage />} />
           <Route path="/gracias-masterclass" element={<GraciasMasterclassPage />} />
           <Route path="/gracias-lista-espera" element={<GraciasListaEsperaPage />} />
