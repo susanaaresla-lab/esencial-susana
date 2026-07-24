@@ -23,9 +23,9 @@ export default function ListaEsperaAvanzaPage() {
 
       <Helmet>
         <title>Lista de espera | Método Esencial Madre: Avanza | Esencial Susana Ares</title>
-        <meta name="description" content="Programa de transformación postparto de 12 semanas. Solo 30 plazas con selección previa. Cuerpo + mente. La continuación natural de Actívate." />
-        <meta property="og:title" content="Método Esencial Madre: Avanza — Solo 30 plazas" />
-        <meta property="og:description" content="12 semanas para transformar tu cuerpo y tu mente siendo madre. Programa exclusivo con selección previa. Disponible en octubre." />
+        <meta name="description" content="Programa de transformación postparto de 12 semanas. Única edición 2026. Solo 10 plazas. Precio especial de lanzamiento que no se repetirá." />
+        <meta property="og:title" content="Método Esencial Madre: Avanza — 10 plazas · 5 octubre 2026" />
+        <meta property="og:description" content="12 semanas para transformar tu cuerpo y tu mente siendo madre. Única edición 2026. Solo 10 plazas. Precio especial de lanzamiento." />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og.jpg" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-avanza" />
         <meta property="og:type" content="website" />
@@ -51,7 +51,7 @@ export default function ListaEsperaAvanzaPage() {
 
           <div style={{ maxWidth: 520 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 1rem', borderRadius: 999, marginBottom: '1.25rem' }}>
-              ✦ Octubre 2026 · Solo 30 plazas
+              ✦ 5 de octubre 2026 · Solo 10 plazas
             </div>
             <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Método Esencial Madre</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--black)', marginBottom: '1.25rem', fontWeight: 400 }}>
@@ -61,12 +61,12 @@ export default function ListaEsperaAvanzaPage() {
               "Porque reconectar fue el inicio. Ahora es el momento de transformarte."
             </p>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, marginBottom: '2rem' }}>
-              12 semanas de transformación profunda — cuerpo y mente juntos. <strong style={{ color: 'var(--black)' }}>Especialmente diseñado para recuperación postcesárea</strong>, aunque también para parto vaginal. Para la madre que ya sabe que puede, y quiere más. Programa exclusivo con selección previa. Solo 30 plazas.
+              12 semanas de transformación profunda — cuerpo y mente juntos. <strong style={{ color: 'var(--black)' }}>Especialmente diseñado para recuperación postcesárea</strong>, aunque también para parto vaginal. Para la madre que ya sabe que puede, y quiere más. <strong>Única edición de 2026. Solo 10 plazas. Precio especial de lanzamiento que no se repetirá.</strong>
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '1.25rem' }}>
               <span className="pill"><Clock />12 semanas · Online</span>
               <span className="pill"><Zap />Cuerpo + Mente</span>
-              <span className="pill"><Users />Solo 30 plazas</span>
+              <span className="pill"><Users />Solo 10 plazas</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
               ⏱ 3-4 sesiones por semana · Especializado en cesárea · Desde 5 meses postcesárea · Desde 2 meses parto vaginal
@@ -79,7 +79,7 @@ export default function ListaEsperaAvanzaPage() {
               Solicitar mi plaza
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
-              Disponible en octubre · Selección previa de participantes
+              Comienza el 5 de octubre · Solo 10 plazas · Única edición 2026
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function ListaEsperaAvanzaPage() {
               Un programa online de <strong style={{ color: 'var(--coral)' }}>12 semanas</strong> con 3-4 sesiones por semana — entrenamientos guiados progresivos y trabajo de mente semanal — para madres que quieren transformarse de verdad, por dentro y por fuera.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem' }}>
-              {['12 semanas · Online', 'Especializado en cesárea', 'Con y sin impacto', 'Abdomen y core', 'Suelo pélvico', 'Domingo de Mente', 'Sesiones Avanza en directo', 'Solo 30 plazas'].map((tag, i) => (
+              {['12 semanas · Online', 'Especializado en cesárea', 'Con y sin impacto', 'Abdomen y core', 'Suelo pélvico', 'Domingo de Mente', 'Sesiones Avanza en directo', 'Solo 10 plazas'].map((tag, i) => (
                 <span key={i} style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', padding: '0.35rem 0.85rem', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)' }}>
                   {tag}
                 </span>
@@ -121,12 +121,12 @@ export default function ListaEsperaAvanzaPage() {
       {/* ── EXCLUSIVIDAD ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-          <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Por qué solo 30 plazas</div>
+          <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Por qué solo 10 plazas</div>
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1.25rem' }}>
             Un programa exclusivo.<br />No es para todo el mundo.
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-            Avanza es un programa de alto nivel con acompañamiento real, <strong style={{ color: 'var(--black)' }}>especialmente diseñado para la recuperación postcesárea</strong>. Para garantizar la calidad y la atención que cada madre merece, las plazas son limitadas y hay una selección previa para asegurarnos de que es el momento adecuado para ti.
+            Avanza es la única edición de 2026 y arranca el 5 de octubre. Solo habrá 10 plazas — para garantizar la atención y el acompañamiento que cada madre merece. Las inscripciones requieren una selección previa para asegurarnos de que es el momento adecuado para ti.
           </p>
           <div style={{ background: 'rgba(232,115,90,0.08)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 6, padding: '0.75rem 1.25rem', display: 'inline-block', marginBottom: '2rem' }}>
             <p style={{ fontSize: '0.875rem', color: 'var(--coral)', fontWeight: 600, margin: 0 }}>
@@ -135,7 +135,7 @@ export default function ListaEsperaAvanzaPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
             {[
-              { emoji: '🎯', title: 'Solo 30 plazas', desc: 'Para garantizar la calidad del acompañamiento y la comunidad.' },
+              { emoji: '🎯', title: 'Solo 10 plazas', desc: 'Para garantizar la calidad del acompañamiento y la comunidad.' },
               { emoji: '✅', title: 'Selección previa', desc: 'Una conversación breve para asegurarnos de que Avanza es lo que necesitas ahora.' },
               { emoji: '🌟', title: 'Acompañamiento real', desc: '6 Sesiones Avanza en directo, email semanal y comunidad privada durante 12 semanas.' }
             ].map((item, i) => (
@@ -156,13 +156,13 @@ export default function ListaEsperaAvanzaPage() {
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
               <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>🔔</span>
               <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Acceso prioritario</strong> — serás la primera en ser informada cuando abran las solicitudes, con precio especial para la lista de espera.
+                <strong>Acceso prioritario</strong> — serás la primera en ser informada cuando abran las solicitudes, con el <strong style={{ color: 'var(--coral)' }}>precio especial de lanzamiento que nunca se repetirá</strong>.
               </p>
             </div>
             <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '1rem 1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textAlign: 'left' }}>
-              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>✦</span>
+              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>📅</span>
               <p style={{ fontSize: '0.95rem', color: 'var(--black)', lineHeight: 1.55, margin: 0 }}>
-                <strong>Proceso de selección</strong> — al abrir el programa contactaremos contigo para una breve conversación y confirmar que Avanza es el siguiente paso adecuado para ti.
+                <strong>Única edición de 2026</strong> — el programa comienza el lunes 5 de octubre. Solo 10 plazas con selección previa.
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function ListaEsperaAvanzaPage() {
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <h2 className="t-serif" style={{ fontSize: '1.75rem', color: 'var(--black)', marginBottom: '0.4rem', fontWeight: 400 }}>Quiero acceso prioritario</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              Disponible en octubre. Solo 30 plazas.
+              Comienza el 5 de octubre. Solo 10 plazas.
             </p>
             <div id="eo-form-avanza" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
@@ -386,7 +386,7 @@ export default function ListaEsperaAvanzaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2>Tu transformación no ha terminado.<br />Acaba de empezar.</h2>
-          <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Método Esencial Madre: Avanza — disponible en octubre. Solo 30 plazas con selección previa. Solicita la tuya ahora.</p>
+          <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Método Esencial Madre: Avanza — comienza el 5 de octubre. Solo 10 plazas. Precio especial de lanzamiento que no se repetirá. Solicita la tuya ahora.</p>
           <button className="btn-white" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
             Solicitar mi plaza
           </button>
