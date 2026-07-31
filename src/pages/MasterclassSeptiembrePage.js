@@ -3,7 +3,8 @@ import { Calendar, Clock, Check, Users } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTOS DATOS EN CADA LANZAMIENTO ──────────────────
-const MASTERCLASS_TITULO = 'Cesárea: los errores invisibles que están frenando tu recuperación (y cómo empezar de la forma correcta)';
+const MASTERCLASS_TITULO = 'Los errores invisibles que están frenando tu recuperación postcesárea';
+const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta';
 const MASTERCLASS_FECHA  = 'Lunes 31 de agosto a las 21:00h (hora España)';
 const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-septiembre';
 // ───────────────────────────────────────────────────────────
@@ -49,9 +50,12 @@ export default function MasterclassSeptiembrePage() {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '1.5rem' }}>
             ✦ Masterclass gratuita en directo
           </div>
-          <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1.5rem' }}>
+          <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>
             {MASTERCLASS_TITULO}
           </h1>
+          <p style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6, marginBottom: '1.5rem', fontStyle: 'italic' }}>
+            {MASTERCLASS_SUBTITULO}
+          </p>
           <p style={{ fontSize: '1.1rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
             <Calendar size={17} /> {MASTERCLASS_FECHA}
           </p>
@@ -179,15 +183,9 @@ export default function MasterclassSeptiembrePage() {
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: 'white', fontWeight: 400, lineHeight: 1.3, marginBottom: '1.5rem' }}>
             "No importa si hace dos meses o cinco años que tuviste la cesárea."
           </h2>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.8 }}>
             Lo importante no es el tiempo que ha pasado. Lo importante es si alguna vez has construido la base que tu cuerpo necesita para recuperarse de verdad.
           </p>
-          <div style={{ background: 'rgba(232,115,90,0.15)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 8, padding: '1.5rem' }}>
-            <p style={{ fontSize: '1rem', color: 'white', lineHeight: 1.75, margin: 0, fontStyle: 'italic' }}>
-              "Todas las madres intentan construir el tejado — abdominales, correr, HIIT — cuando todavía no existen los cimientos. Y eso es exactamente lo que vamos a cambiar en esta masterclass."
-            </p>
-            <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.75rem', marginBottom: 0 }}>— Susana Ares</p>
-          </div>
         </div>
       </section>
 
