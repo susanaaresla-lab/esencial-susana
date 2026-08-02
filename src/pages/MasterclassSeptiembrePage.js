@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 const MASTERCLASS_TITULO = 'Los errores invisibles que están frenando tu recuperación postcesárea';
 const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta';
 const MASTERCLASS_FECHA  = 'Lunes 31 de agosto a las 21:00h (hora España)';
-const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-septiembre';
+const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperacion';
 // ───────────────────────────────────────────────────────────
 
 export default function MasterclassSeptiembrePage() {
