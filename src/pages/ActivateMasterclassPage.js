@@ -20,7 +20,7 @@ const FAQS = [
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
-  { q: '¿En qué se diferencia de otros programas?', a: 'Especial foco en cesárea, módulo de fortaleza mental incluido, 1 sesión en directo en vivo y 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
+  { q: '¿En qué se diferencia de otros programas?', a: 'Especial foco en cesárea, módulo de fortaleza mental incluido, vídeo exclusivo de "Siguientes pasos" al terminar y 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
 ];
 
 const label = (color) => ({
@@ -376,7 +376,7 @@ export default function ActivateMasterclassPage() {
                 '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ 1 directo en vivo de resolución de dudas',
+                '🎙️ Vídeo "Siguientes pasos" con tus dudas más comunes resueltas',
                 'Sin equipamiento, desde casa, a tu ritmo',
                 '4 meses de acceso completo',
                 'BONUS: Recupera tu abdomen en tu día a día'

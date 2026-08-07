@@ -15,7 +15,7 @@ const FAQS = [
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Es el gran diferenciador. Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
-  { q: '¿En qué se diferencia de otros programas?', a: 'Primero, especial foco en cesárea y madres que empiezan desde cero. Segundo, módulo de fortaleza mental incluido. Tercero, 1 sesión en directo en vivo para resolver dudas. Y cuarto, 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
+  { q: '¿En qué se diferencia de otros programas?', a: 'Primero, especial foco en cesárea y madres que empiezan desde cero. Segundo, módulo de fortaleza mental incluido. Tercero, un vídeo exclusivo de "Siguientes pasos" al terminar el programa, con tus dudas más comunes resueltas. Y cuarto, 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
 ];
 
 const label = (color) => ({
@@ -223,7 +223,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
               { emoji: '💪', title: 'Rutinas 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
               { emoji: '🌟', title: 'Vídeo 4 — Tu mejor versión', desc: 'Estiramientos, hábitos de recuperación o trabajo de mente para construir tu mejor versión.' },
               { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. Exclusivo, el diferencial único del método.' },
-              { emoji: '🎙️', title: '1 sesión en directo', desc: 'En vivo con Susana para resolver tus dudas personalmente.' }
+              { emoji: '🎙️', title: 'Vídeo "Siguientes pasos"', desc: 'Al terminar el programa, resolvemos tus dudas más comunes y te contamos cómo continuar tu recuperación.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--white)', borderRadius: 4, padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -392,7 +392,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
                 '3 rutinas semanales sin impacto, adaptadas al cuerpo de madre',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ 1 directo en vivo de resolución de dudas',
+                '🎙️ Vídeo "Siguientes pasos" con tus dudas más comunes resueltas',
                 'Válido desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                 'Perfecto para madres que nunca han hecho ejercicio',
                 'Sin equipamiento, desde casa, a tu ritmo',

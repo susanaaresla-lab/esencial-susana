@@ -63,7 +63,7 @@ export default function ConfirmacionPage() {
                 'Videos on-demand: accede cuando quieras',
                 '🧠 Vídeo de motivación y confianza (Semana 2)',
                 '🎧 Audio de creencias: somos merecedoras (Semana 2)',
-                '💬 Sesión grupal en directo para resolver dudas y ver los siguientes pasos',
+                '💬 Vídeo "Siguientes pasos" con tus dudas más comunes resueltas',
                 'BONUS: Recupera tu abdomen en tu día a día',
                 'Acceso de por vida al contenido'
               ].map((t, i) => (
