@@ -137,7 +137,7 @@ export default function ListaEsperaAvanzaPage() {
             {[
               { emoji: '🎯', title: 'Solo 10 plazas', desc: 'Para garantizar la calidad del acompañamiento y la comunidad.' },
               { emoji: '✅', title: 'Selección previa', desc: 'Una conversación breve para asegurarnos de que Avanza es lo que necesitas ahora.' },
-              { emoji: '🌟', title: 'Acompañamiento real', desc: '6 Sesiones Avanza en directo, email semanal y comunidad privada durante 12 semanas.' }
+              { emoji: '🌟', title: 'Acompañamiento real', desc: '3 Sesiones Avanza en directo, email semanal y comunidad privada durante 12 semanas.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--beige)', borderRadius: 8, padding: '1.75rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -245,7 +245,7 @@ export default function ListaEsperaAvanzaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
               {[
-                { emoji: '🎙️', title: '6 Sesiones Avanza en directo', desc: 'Cada 2 semanas — formación, dudas y check-in de progreso integrado.' },
+                { emoji: '🎙️', title: '3 Sesiones Avanza en directo', desc: 'Cada mes — formación, dudas y check-in de progreso integrado.' },
                 { emoji: '👥', title: 'Comunidad privada', desc: 'Un espacio de apoyo entre madres durante las 12 semanas del programa.' },
                 { emoji: '🎁', title: '3 Bonus incluidos', desc: 'Alimentación postparto, autoevaluación de diástasis y suelo pélvico en movimiento.' }
               ].map((item, i) => (
