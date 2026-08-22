@@ -14,11 +14,11 @@ export default function ListaEsperaPage() {
       script.src = 'https://eocampaign1.com/form/bbfaed1a-513e-11f1-bf07-67defba4d3c4.js';
       script.setAttribute('data-form', 'bbfaed1a-513e-11f1-bf07-67defba4d3c4');
       script.async = true;
-      document.body.appendChild(script);
+      document.getElementById('eo-form-container')?.appendChild(script);
     }
     return () => {
-      const s = document.getElementById('eo-script-lista');
-      if (s) s.remove();
+      const container = document.getElementById('eo-form-container');
+      if (container) container.innerHTML = '';
     };
   }, []);
 
