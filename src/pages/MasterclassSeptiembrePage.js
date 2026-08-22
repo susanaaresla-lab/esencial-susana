@@ -11,19 +11,15 @@ const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperac
 
 export default function MasterclassSeptiembrePage() {
 
-  useEffect(() => {
-    const existing = document.getElementById('eo-script-masterclass-sep');
-    if (!existing) {
-      const script = document.createElement('script');
-      script.id = 'eo-script-masterclass-sep';
-      script.src = 'https://eocampaign1.com/form/dd3fa57e-8d0c-11f1-a151-b3814c2745b8.js';
-      script.setAttribute('data-form', 'dd3fa57e-8d0c-11f1-a151-b3814c2745b8');
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://eocampaign1.com/form/dd3fa57e-8d0c-11f1-a151-b3814c2745b8.js';
+    script.setAttribute('data-form', 'dd3fa57e-8d0c-11f1-a151-b3814c2745b8');
+    script.async = true;
+    document.getElementById('eo-form-masterclass-sep')?.appendChild(script);
     return () => {
-      const s = document.getElementById('eo-script-masterclass-sep');
-      if (s) s.remove();
+      const container = document.getElementById('eo-form-masterclass-sep');
+      if (container) container.innerHTML = '';
     };
   }, []);
 
@@ -146,7 +142,7 @@ export default function MasterclassSeptiembrePage() {
             {MASTERCLASS_FECHA}
           </p>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
-            <div id="eo-form-container" />
+            <div id="eo-form-masterclass-sep" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
               Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
             </p>
