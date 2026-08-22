@@ -1,26 +1,9 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Video, Users, Check, Heart, Target, Gift, Shield, Brain, Headphones } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function ListaEsperaPage() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const existing = document.getElementById('eo-script-lista');
-    if (!existing) {
-      const script = document.createElement('script');
-      script.id = 'eo-script-lista';
-      script.src = 'https://eocampaign1.com/form/bbfaed1a-513e-11f1-bf07-67defba4d3c4.js';
-      script.setAttribute('data-form', 'bbfaed1a-513e-11f1-bf07-67defba4d3c4');
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    return () => {
-      const s = document.getElementById('eo-script-lista');
-      if (s) s.remove();
-    };
-  }, []);
 
   const testimonios = [
     { name: 'Patricia A.', text: 'Sus rutinas me dieron claridad, seguridad y estructura. Son sesiones cortas, completas y fáciles de integrar en el día a día.' },
@@ -111,6 +94,7 @@ export default function ListaEsperaPage() {
               Al registrarte serás la primera en saber cuándo abre — del 31 de agosto al 2 de septiembre.
             </p>
             <div data-form="bbfaed1a-513e-11f1-bf07-67defba4d3c4"></div>
+            <script async src="https://eocampaign1.com/form/bbfaed1a-513e-11f1-bf07-67defba4d3c4.js" data-form="bbfaed1a-513e-11f1-bf07-67defba4d3c4"></script>
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
               <Shield size={12} /> Sin spam. Solo te avisaremos cuando abra el acceso prioritario.
             </p>
