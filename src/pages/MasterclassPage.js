@@ -9,15 +9,15 @@ const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass';
 
 export default function MasterclassPage() {
 
-    useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://eocampaign1.com/form/d20aeb38-5bfb-11f1-8f8b-d988b9c04363.js";
-    script.setAttribute("data-form", "d20aeb38-5bfb-11f1-8f8b-d988b9c04363");
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://eocampaign1.com/form/d20aeb38-5bfb-11f1-8f8b-d988b9c04363.js';
+    script.setAttribute('data-form', 'd20aeb38-5bfb-11f1-8f8b-d988b9c04363');
     script.async = true;
-    document.getElementById("eo-form-masterclass")?.appendChild(script);
+    document.getElementById('eo-form-masterclass')?.appendChild(script);
     return () => {
-      const container = document.getElementById("eo-form-masterclass");
-      if (container) container.innerHTML = "";
+      const container = document.getElementById('eo-form-masterclass');
+      if (container) container.innerHTML = '';
     };
   }, []);
 
