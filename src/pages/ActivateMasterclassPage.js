@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTA FECHA CUANDO SEA NECESARIO ──────────────────
-const FECHA_CIERRE = '2 de septiembre a las 23:59h';
+// const FECHA_CIERRE = '2 de septiembre a las 23:59h';
 // ───────────────────────────────────────────────────────────
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&src=masterclass-junio';
