@@ -9,13 +9,13 @@ const FAQS = [
   { q: '¿Puedo hacerlo si nunca he hecho ejercicio o llevo años sin hacer nada?', a: 'Sí, especialmente. Este método está diseñado para empezar desde cero, sin importar tu nivel previo. Las rutinas son sin impacto y progresivas para que tu cuerpo se adapte poco a poco.' },
   { q: '¿El método está adaptado para cesárea?', a: 'Sí, especialmente. Está diseñado teniendo muy en cuenta las particularidades de la recuperación postcesárea: la cicatriz, la diástasis, el suelo pélvico y la reconexión con el abdomen. Muchas de las más de 3.000 mamás que lo han hecho tuvieron cesárea.' },
   { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Están pensadas para hacerse desde casa y encajar en el día a día de una madre con poco tiempo.' },
-  { q: '¿Cuánto tiempo tengo acceso al programa?', a: '4 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
-  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'No pasa nada. Los vídeos son on-demand y tienes 4 meses de acceso, así que puedes seguir tu propio ritmo sin presión.' },
+  { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
+  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'No pasa nada. Los vídeos son on-demand y tienes 12 meses de acceso, así que puedes seguir tu propio ritmo sin presión.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Es el gran diferenciador. Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
-  { q: '¿En qué se diferencia de otros programas?', a: 'Primero, especial foco en cesárea y madres que empiezan desde cero. Segundo, módulo de fortaleza mental incluido. Tercero, un vídeo exclusivo de "Siguientes pasos" al terminar el programa, con tus dudas más comunes resueltas. Y cuarto, 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
+  { q: '¿En qué se diferencia de otros programas?', a: 'Primero, especial foco en cesárea y madres que empiezan desde cero. Segundo, módulo de fortaleza mental incluido. Tercero, 1 sesión en directo en vivo para resolver dudas. Y cuarto, 12 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
 ];
 
 const label = (color) => ({
@@ -43,7 +43,8 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
+  const goComprar = () => window.open('https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312', '_blank');
+
   return (
     <div style={{ paddingTop: 80 }}>
 
@@ -64,7 +65,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
       {/* ── BARRA DE URGENCIA ── */}
       <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
         <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
-          🗓️ Disponible del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
+          🗓️ Venta pública del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
         </p>
       </div>
 
@@ -101,7 +102,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
               Apúntame — disponible del 3 al 6 de septiembre
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Sin equipamiento · Desde casa · 4 meses de acceso
+              Sin equipamiento · Desde casa · 12 meses de acceso
             </p>
           </div>
         </div>
@@ -161,7 +162,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
                   'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                   'Perfecto si nunca has hecho ejercicio o llevas años sin hacer nada',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',
-                  '4 meses de acceso para empezar cuando estés lista'
+                  '12 meses de acceso para empezar cuando estés lista'
                 ].map((t, i) => (
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
@@ -223,7 +224,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
               { emoji: '💪', title: 'Rutinas 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
               { emoji: '🌟', title: 'Vídeo 4 — Tu mejor versión', desc: 'Estiramientos, hábitos de recuperación o trabajo de mente para construir tu mejor versión.' },
               { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. Exclusivo, el diferencial único del método.' },
-              { emoji: '🎙️', title: 'Vídeo "Siguientes pasos"', desc: 'Al terminar el programa, resolvemos tus dudas más comunes y te contamos cómo continuar tu recuperación.' }
+              { emoji: '🎙️', title: '1 sesión en directo', desc: 'En vivo con Susana para resolver tus dudas personalmente.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--white)', borderRadius: 4, padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -234,7 +235,7 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
           </div>
           <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
-              ✦ <strong style={{ color: 'var(--coral)' }}>4 meses de acceso completo</strong> para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.
+              ✦ <strong style={{ color: 'var(--coral)' }}>12 meses de acceso completo</strong> para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.
             </p>
           </div>
         </div>
@@ -392,11 +393,11 @@ const goComprar = () => { navigate('/lista-espera'); window.scrollTo(0, 0); };
                 '3 rutinas semanales sin impacto, adaptadas al cuerpo de madre',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ Vídeo "Siguientes pasos" con tus dudas más comunes resueltas',
+                '🎙️ 1 directo en vivo de resolución de dudas',
                 'Válido desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                 'Perfecto para madres que nunca han hecho ejercicio',
                 'Sin equipamiento, desde casa, a tu ritmo',
-                '4 meses de acceso completo',
+                '12 meses de acceso completo',
                 'BONUS: Recupera tu abdomen en tu día a día'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>

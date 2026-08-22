@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTA FECHA CUANDO SEA NECESARIO ──────────────────
-// const FECHA_CIERRE = '2 de septiembre a las 23:59h';
+const FECHA_CIERRE = '2 de septiembre a las 23:59h';
 // ───────────────────────────────────────────────────────────
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&src=masterclass-junio';
@@ -15,13 +15,13 @@ const FAQS = [
   { q: '¿Puedo hacerlo si nunca he hecho ejercicio o llevo años sin hacer nada?', a: 'Sí, especialmente. Este método está diseñado para empezar desde cero, sin importar tu nivel previo. Las rutinas son sin impacto y progresivas para que tu cuerpo se adapte poco a poco.' },
   { q: '¿El método está adaptado para cesárea?', a: 'Sí, especialmente. Está diseñado teniendo muy en cuenta las particularidades de la recuperación postcesárea: la cicatriz, la diástasis, el suelo pélvico y la reconexión con el abdomen.' },
   { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Están pensadas para hacerse desde casa y encajar en el día a día de una madre con poco tiempo.' },
-  { q: '¿Cuánto tiempo tengo acceso al programa?', a: '4 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
-  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'No pasa nada. Los vídeos son on-demand y tienes 4 meses de acceso, así que puedes seguir tu propio ritmo sin presión.' },
+  { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
+  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'No pasa nada. Los vídeos son on-demand y tienes 12 meses de acceso, así que puedes seguir tu propio ritmo sin presión.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
-  { q: '¿En qué se diferencia de otros programas?', a: 'Especial foco en cesárea, módulo de fortaleza mental incluido, vídeo exclusivo de "Siguientes pasos" al terminar y 4 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
+  { q: '¿En qué se diferencia de otros programas?', a: 'Especial foco en cesárea, módulo de fortaleza mental incluido, 1 sesión en directo en vivo y 12 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
 ];
 
 const label = (color) => ({
@@ -168,7 +168,7 @@ export default function ActivateListaEsperaPage() {
               Quiero empezar mi recuperación — €97
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Sin equipamiento · Desde casa · 4 meses de acceso
+              Sin equipamiento · Desde casa · 12 meses de acceso
             </p>
           </div>
         </div>
@@ -222,7 +222,7 @@ export default function ActivateListaEsperaPage() {
                   'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                   'Perfecto si nunca has hecho ejercicio',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',
-                  '4 meses de acceso para empezar cuando estés lista'
+                  '12 meses de acceso para empezar cuando estés lista'
                 ].map((t, i) => (
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
@@ -377,9 +377,9 @@ export default function ActivateListaEsperaPage() {
                 '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ Vídeo "Siguientes pasos" con tus dudas más comunes resueltas',
+                '🎙️ 1 directo en vivo de resolución de dudas',
                 'Sin equipamiento, desde casa, a tu ritmo',
-                '4 meses de acceso completo',
+                '12 meses de acceso completo',
                 'BONUS: Recupera tu abdomen en tu día a día'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>
@@ -403,7 +403,7 @@ export default function ActivateListaEsperaPage() {
               <div style={{ marginBottom: '1.5rem' }}>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 4 meses de acceso · Sin suscripción</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 12 meses de acceso · Sin suscripción</p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial lista prioritaria · Hasta el 2 de septiembre</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
@@ -448,7 +448,7 @@ export default function ActivateListaEsperaPage() {
             Quiero empezar mi recuperación
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            Sin equipamiento · Desde casa · 4 meses de acceso
+            Sin equipamiento · Desde casa · 12 meses de acceso
           </p>
         </div>
       </div>

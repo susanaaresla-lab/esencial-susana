@@ -170,11 +170,11 @@ export default function ListaEsperaPage() {
               { Icon: Target, title: '3 rutinas semanales sin impacto', desc: 'Grabadas, adaptadas al cuerpo de madre. Seguras desde los 40 días (parto) o 2 meses (cesárea).', highlight: false },
               { Icon: Heart, title: 'Suelo pélvico y abdomen', desc: 'Trabajo específico para recuperar y fortalecer de forma correcta y segura.', highlight: false },
               { Icon: Video, title: '1 vídeo semanal para tu mejor versión', desc: 'Estiramientos y hábitos de recuperación para integrar en tu día a día.', highlight: false },
-              { Icon: Clock, title: '4 meses de acceso', desc: 'Para empezar cuando tu cuerpo esté listo, sin prisas ni presión.', highlight: false },
+              { Icon: Clock, title: '12 meses de acceso', desc: 'Para empezar cuando tu cuerpo esté listo, sin prisas ni presión.', highlight: false },
               { Icon: Brain, title: '🧠 Módulo de fortaleza mental', desc: 'Exclusivo. Vídeo de motivación y confianza para trabajar la seguridad en ti misma. No está en YouTube.', highlight: true },
               { Icon: Headphones, title: '🎧 Audio de creencias', desc: 'Exclusivo. Para reforzar que eres merecedora y válida para recuperarte y conseguir lo que te propones.', highlight: true },
               { Icon: Gift, title: 'Bonus incluido', desc: 'Consejos prácticos para seguir recuperándote en tu día a día como madre.', highlight: false },
-              { Icon: Video, title: 'Vídeo "Siguientes pasos"', desc: 'Con Susana, al terminar el programa, para resolver tus dudas y contarte cómo continuar.', highlight: false }
+              { Icon: Users, title: '1 Directo en vivo', desc: 'Con Susana para resolver tus dudas personalmente.', highlight: false }
             ].map(({ Icon, title, desc, highlight }, i) => (
               <div key={i} style={{ background: highlight ? 'rgba(232,115,90,0.08)' : 'var(--beige)', borderRadius: 4, padding: '1.5rem', border: highlight ? '1px solid rgba(232,115,90,0.3)' : 'none' }}>
                 <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(232,115,90,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
