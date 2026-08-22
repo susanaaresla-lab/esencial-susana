@@ -6,15 +6,15 @@ import { Helmet } from 'react-helmet-async';
 export default function ListaEsperaAvanzaPage() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://eocampaign1.com/form/a5cac8e0-631c-11f1-9540-43fc2d9c895b.js';
-    script.setAttribute('data-form', 'a5cac8e0-631c-11f1-9540-43fc2d9c895b');
+    useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://eocampaign1.com/form/a5cac8e0-631c-11f1-9540-43fc2d9c895b.js";
+    script.setAttribute("data-form", "a5cac8e0-631c-11f1-9540-43fc2d9c895b");
     script.async = true;
-    document.getElementById('eo-form-avanza')?.appendChild(script);
+    document.getElementById("eo-form-avanza")?.appendChild(script);
     return () => {
-      const container = document.getElementById('eo-form-avanza');
-      if (container) container.innerHTML = '';
+      const container = document.getElementById("eo-form-avanza");
+      if (container) container.innerHTML = "";
     };
   }, []);
 
