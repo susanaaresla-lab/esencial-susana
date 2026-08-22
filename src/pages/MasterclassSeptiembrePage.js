@@ -12,18 +12,14 @@ const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperac
 export default function MasterclassSeptiembrePage() {
 
   useEffect(() => {
-    const existing = document.getElementById('eo-script-masterclass-sep');
-    if (!existing) {
-      const script = document.createElement('script');
-      script.id = 'eo-script-masterclass-sep';
-      script.src = 'https://eocampaign1.com/form/dd3fa57e-8d0c-11f1-a151-b3814c2745b8.js';
-      script.setAttribute('data-form', 'dd3fa57e-8d0c-11f1-a151-b3814c2745b8');
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const script = document.createElement('script');
+    script.src = 'https://eocampaign1.com/form/dd3fa57e-8d0c-11f1-a151-b3814c2745b8.js';
+    script.setAttribute('data-form', 'dd3fa57e-8d0c-11f1-a151-b3814c2745b8');
+    script.async = true;
+    document.getElementById('eo-form-masterclass-sep')?.appendChild(script);
     return () => {
-      const s = document.getElementById('eo-script-masterclass-sep');
-      if (s) s.remove();
+      const container = document.getElementById('eo-form-masterclass-sep');
+      if (container) container.innerHTML = '';
     };
   }, []);
 
