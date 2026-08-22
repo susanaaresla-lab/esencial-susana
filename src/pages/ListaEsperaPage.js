@@ -7,14 +7,18 @@ export default function ListaEsperaPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://eocampaign1.com/form/bbfaed1a-513e-11f1-bf07-67defba4d3c4.js';
-    script.setAttribute('data-form', 'bbfaed1a-513e-11f1-bf07-67defba4d3c4');
-    script.async = true;
-    document.getElementById('eo-form-container')?.appendChild(script);
+    const existing = document.getElementById('eo-script-lista');
+    if (!existing) {
+      const script = document.createElement('script');
+      script.id = 'eo-script-lista';
+      script.src = 'https://eocampaign1.com/form/bbfaed1a-513e-11f1-bf07-67defba4d3c4.js';
+      script.setAttribute('data-form', 'bbfaed1a-513e-11f1-bf07-67defba4d3c4');
+      script.async = true;
+      document.body.appendChild(script);
+    }
     return () => {
-      const container = document.getElementById('eo-form-container');
-      if (container) container.innerHTML = '';
+      const s = document.getElementById('eo-script-lista');
+      if (s) s.remove();
     };
   }, []);
 
