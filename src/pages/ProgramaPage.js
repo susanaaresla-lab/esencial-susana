@@ -50,7 +50,7 @@ export default function ProgramaPage() {
 
       <Helmet>
         <title>Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre</title>
-        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147. Acceso 4 meses." />
+        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147. Acceso 12 meses." />
         <meta name="keywords" content="recuperación postcesárea, ejercicios después cesárea, recuperación postparto, rutinas madres sin experiencia, método esencial madre" />
         <link rel="canonical" href="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
