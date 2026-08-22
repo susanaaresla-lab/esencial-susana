@@ -43,7 +43,7 @@ function FaqItem({ q, a }) {
 export default function ProgramaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goComprar = () => window.open('https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312', '_blank');
+  const goComprar = () => { navigate("/lista-espera"); window.scrollTo(0, 0); };
 
   return (
     <div style={{ paddingTop: 80 }}>
