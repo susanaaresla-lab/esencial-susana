@@ -147,7 +147,7 @@ export default function ActivateListaEsperaPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
-              <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-34%</span>
+              <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario · Hasta el 2 de septiembre a las 23:59h</p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
@@ -202,11 +202,12 @@ export default function ActivateListaEsperaPage() {
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
+                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
+                  'Desde los 40 días tras parto vaginal',
+                  'Sin equipamiento — solo necesitas tu cuerpo y un sitio en casa',
                   'Vídeos grabados — hazlos cuando puedas, a tu ritmo',
                   '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
-                  'Rutinas de 15-30 min sin impacto, desde casa',
-                  'Ejercicios específicos para cesárea y parto vaginal',
-                  'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
+                  'Rutinas de 15-30 min sin impacto',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',
                   '12 meses de acceso — sin prisas, a tu ritmo'
                 ].map((t, i) => (
@@ -289,17 +290,17 @@ export default function ActivateListaEsperaPage() {
               </div>
               <div>
                 <div style={{ ...label('var(--coral)'), marginBottom: '0.15rem' }}>Bonus especial incluido</div>
-                <h3 className="t-serif" style={{ fontSize: '1.3rem' }}>Vídeo "Siguientes pasos"</h3>
+                <h3 className="t-serif" style={{ fontSize: '1.3rem' }}>Recupera tu abdomen en tu día a día</h3>
               </div>
             </div>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75, marginBottom: '1rem' }}>
-              Al finalizar el programa recibirás automáticamente el vídeo de Siguientes Pasos — para que sepas exactamente cómo continuar tu recuperación después de las 4 semanas.
+              Consejos realistas adaptados a la vida postcesárea y postparto para seguir recuperando tu abdomen incluso cuando no estés haciendo las rutinas de ejercicio.
             </p>
             <ul className="check-list">
               {[
-                'Se entrega automáticamente al terminar el programa',
-                'Orientación clara sobre cómo seguir avanzando',
-                'Pensado para que no te quedes sin saber qué hacer después'
+                'Hábitos para integrar en tu día a día como madre',
+                'Pequeñas acciones que marcan la diferencia en tu recuperación',
+                'Pensado para mamás reales con poco tiempo'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '0.95rem' }}><Check size={14} />{t}</li>
               ))}
@@ -308,7 +309,7 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIOS FOTOS ── */}
+      {/* ── RESULTADOS + TESTIMONIOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
@@ -317,21 +318,31 @@ export default function ActivateListaEsperaPage() {
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
 
-          {/* Antes / después — 4 en fila */}
+          {/* Antes / después — 4 en fila del mismo tamaño */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '3rem' }}>
             {[1,2,3,4].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)', aspectRatio: '3/4' }}>
-                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)', aspectRatio: '1/1' }}>
+                <img
+                  src={`/images/antes-despues-${n}.jpg`}
+                  alt={`Resultado antes después ${n}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+                />
               </div>
             ))}
           </div>
 
-          {/* Testimonios escritos — grid homogéneo */}
-          <div style={label()}>Lo que dicen ellas</div>
+          {/* Testimonios escritos */}
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={label()}>Lo que dicen ellas</div>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4,5,6,7,8].map((n) => (
               <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
+                <img
+                  src={`/images/testimonial-${n}.jpg`}
+                  alt={`Testimonio clienta ${n}`}
+                  style={{ width: '100%', display: 'block' }}
+                />
               </div>
             ))}
           </div>
@@ -383,6 +394,44 @@ export default function ActivateListaEsperaPage() {
                 <li>• Tu médico te ha recomendado no hacer ejercicio todavía</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── VALOR DEL PROGRAMA ── */}
+      <section className="section" style={{ background: 'var(--beige)' }}>
+        <div className="container-narrow">
+          <div style={label()}>Todo lo que incluye tu programa</div>
+          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', marginBottom: '0.25rem' }}>Todo lo que incluye tu programa</h2>
+          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.5)', fontStyle: 'italic', marginBottom: '2rem' }}>Valor real de cada componente</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+            {[
+              { title: '3 rutinas/semana progresivas', sub: 'Adaptadas postcesárea · 4 semanas', price: '200 €' },
+              { title: 'Módulo de mentalidad', sub: '"Tu mente construye tu mejor versión"', price: '87 €' },
+              { title: 'Audio', sub: '"Desbloquea tu mejor versión"', price: '53 €' },
+              { title: 'Bonus', sub: '"Acelera tu recuperación con tus hábitos diarios"', price: '87 €' },
+              { title: 'Vídeo "Siguientes Pasos"', sub: '"Dudas + próximos pasos"', price: '100 €' },
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.1rem 0', borderBottom: '1px solid rgba(26,26,26,0.08)' }}>
+                <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--black)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Check size={14} color="white" />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <p style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--black)', margin: 0 }}>{item.title}</p>
+                  <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.55)', fontStyle: 'italic', margin: 0 }}>{item.sub}</p>
+                </div>
+                <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--coral)', flexShrink: 0 }}>{item.price}</span>
+              </div>
+            ))}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 0', borderTop: '2px solid var(--black)', marginTop: '0.5rem' }}>
+              <span style={{ fontWeight: 800, fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--black)' }}>TOTAL</span>
+              <span style={{ fontFamily: 'var(--serif)', fontSize: '2rem', fontWeight: 600, color: 'var(--black)' }}>527 €</span>
+            </div>
+          </div>
+          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center', marginTop: '1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'white', fontWeight: 600, margin: 0 }}>
+              Tu precio de acceso prioritario: <strong style={{ fontSize: '1.3rem' }}>€97</strong> — ahorras €50 y €430 respecto al valor real
+            </p>
           </div>
         </div>
       </section>
