@@ -224,7 +224,7 @@ export default function ProgramaPage() {
               { emoji: '💪', title: 'Rutinas 1, 2 y 3', desc: 'Ejercicios sin impacto adaptados al cuerpo de madre. De 15 a 30 minutos cada una.' },
               { emoji: '🌟', title: 'Vídeo 4 — Tu mejor versión', desc: 'Estiramientos, hábitos de recuperación o trabajo de mente para construir tu mejor versión.' },
               { emoji: '🧠', title: 'Módulo de fortaleza mental', desc: 'Vídeo de motivación + audio de creencias. Exclusivo, el diferencial único del método.' },
-              { emoji: '🎙️', title: '1 sesión en directo', desc: 'En vivo con Susana para resolver tus dudas personalmente.' }
+              { emoji: '🎬', title: 'Vídeo "Siguientes Pasos"', desc: 'Al finalizar el programa recibirás el vídeo de Siguientes Pasos para saber exactamente cómo continuar tu recuperación.' }
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--white)', borderRadius: 4, padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -334,6 +334,31 @@ export default function ProgramaPage() {
         </div>
       </section>
 
+      {/* ── ANTES / DESPUÉS + TESTIMONIOS ── */}
+      <section className="section" style={{ background: 'var(--white)' }}>
+        <div className="container-mid">
+          <div className="text-center" style={{ marginBottom: '2rem' }}>
+            <div style={label()}>Resultados reales</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            {[1,2,3,4].map((n) => (
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
+            {[1,2,3,4,5,6,7,8].map((n) => (
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── PARA QUIÉN ── */}
       <section className="section" style={{ background: 'var(--beige)' }}>
         <div className="container-narrow">
@@ -368,6 +393,19 @@ export default function ProgramaPage() {
         </div>
       </section>
 
+      {/* ── VALOR DEL PROGRAMA ── */}
+      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 620, margin: '0 auto' }}>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600 }}>El valor de este programa</p>
+          <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
+            El valor total de todo lo que incluye este programa de 4 semanas es de{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
+            {' '}El precio de venta al público es{' '}
+            <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€147</strong>.
+          </p>
+        </div>
+      </section>
+
       {/* ── PRICING CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
@@ -393,7 +431,7 @@ export default function ProgramaPage() {
                 '3 rutinas semanales sin impacto, adaptadas al cuerpo de madre',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ 1 directo en vivo de resolución de dudas',
+                '🎬 Vídeo "Siguientes Pasos" al finalizar el programa',
                 'Válido desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                 'Perfecto para madres que nunca han hecho ejercicio',
                 'Sin equipamiento, desde casa, a tu ritmo',
