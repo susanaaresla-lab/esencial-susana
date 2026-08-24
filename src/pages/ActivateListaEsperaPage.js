@@ -312,33 +312,25 @@ export default function ActivateListaEsperaPage() {
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
+            <div style={label()}>Resultados reales</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Así se transforman las mamás con el método</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
+
+          {/* Antes / después — 4 en fila */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '3rem' }}>
+            {[1,2,3,4].map((n) => (
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)', aspectRatio: '3/4' }}>
+                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+
+          {/* Testimonios escritos — grid homogéneo */}
+          <div style={label()}>Lo que dicen ellas</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
-            {[1,2].map((n) => (
-              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
-              </div>
-            ))}
-            {[1,2].map((n) => (
-              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
-              </div>
-            ))}
-            {[3,4,5,6].map((n) => (
-              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
-              </div>
-            ))}
-            {[3,4].map((n) => (
-              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
-              </div>
-            ))}
-            {[7,8].map((n) => (
-              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+            {[1,2,3,4,5,6,7,8].map((n) => (
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
                 <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
