@@ -303,36 +303,7 @@ export default function ProgramaPage() {
         </div>
       </section>
 
-      {/* ── VÍDEO TESTIMONIOS ── */}
-      <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <div className="text-center" style={{ marginBottom: '1.75rem' }}>
-            <div style={label()}>Ellas te lo cuentan</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Lo que dicen las mamás que ya lo han hecho</h2>
-          </div>
-          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 6, overflow: 'hidden', boxShadow: '0 6px 28px rgba(0,0,0,0.12)' }}>
-            <iframe src="https://www.youtube.com/embed/Ni7HROuAIq8" title="Testimonios del programa" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
-          </div>
-        </div>
-      </section>
 
-      {/* ── TESTIMONIOS FOTOS ── */}
-      <section className="section" style={{ background: 'var(--white)' }}>
-        <div className="container-mid">
-          <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Mensajes reales de clientas reales</h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método — muchas de ellas con cesárea o sin experiencia previa</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
-            {[1,2,3,4,5,6,7,8].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── ANTES / DESPUÉS + TESTIMONIOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
