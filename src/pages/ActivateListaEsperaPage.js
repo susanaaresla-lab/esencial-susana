@@ -323,7 +323,7 @@ export default function ActivateListaEsperaPage() {
             {[1,2,3,4].map((n) => (
               <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)', aspectRatio: '1/1' }}>
                 <img
-                  src={`/images/antes-despues-${n}.jpg`}
+                  src={`/images/antes-despues-${n}.png`}
                   alt={`Resultado antes después ${n}`}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
                 />
@@ -360,7 +360,7 @@ export default function ActivateListaEsperaPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4].map((n) => (
               <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado real mamá ${n}`} style={{ width: '100%', display: 'block' }} />
+                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado real mamá ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
