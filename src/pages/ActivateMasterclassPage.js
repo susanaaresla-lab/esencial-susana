@@ -3,34 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-// ── EDITA ESTA FECHA CUANDO SEA NECESARIO ──────────────────
-// const FECHA_CIERRE = '2 de septiembre a las 23:59h';
-// ───────────────────────────────────────────────────────────
-
-const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&src=masterclass-junio';
+const EXPIRY_DATE = new Date('2026-09-02T23:59:00+02:00');
+const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312&src=masterclass';
 
 const FAQS = [
   { q: '¿Cuándo puedo empezar después de la cesárea?', a: 'Puedes empezar desde los 2 meses después de una cesárea. Los ejercicios de las primeras semanas son especialmente suaves y están pensados para respetar tu cicatriz y tu recuperación.' },
   { q: '¿Cuándo puedo empezar después de un parto vaginal?', a: 'Puedes empezar desde los 40 días después de un parto vaginal. Si tienes dudas, consulta antes con tu médico o matrona.' },
   { q: '¿Puedo hacerlo si nunca he hecho ejercicio o llevo años sin hacer nada?', a: 'Sí, especialmente. Este método está diseñado para empezar desde cero, sin importar tu nivel previo. Las rutinas son sin impacto y progresivas para que tu cuerpo se adapte poco a poco.' },
   { q: '¿El método está adaptado para cesárea?', a: 'Sí, especialmente. Está diseñado teniendo muy en cuenta las particularidades de la recuperación postcesárea: la cicatriz, la diástasis, el suelo pélvico y la reconexión con el abdomen.' },
-  { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Están pensadas para hacerse desde casa y encajar en el día a día de una madre con poco tiempo.' },
+  { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Son vídeos grabados que puedes hacer cuando quieras — si un día no puedes, lo haces al día siguiente. A tu ritmo.' },
   { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
-  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'No pasa nada. Los vídeos son on-demand y tienes 12 meses de acceso, así que puedes seguir tu propio ritmo sin presión.' },
+  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente. Es tuyo, a tu ritmo.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
-  { q: '¿En qué se diferencia de otros programas?', a: 'Especial foco en cesárea, módulo de fortaleza mental incluido, 1 sesión en directo en vivo y 12 meses de acceso para que empieces cuando tu cuerpo esté listo.' }
 ];
 
 const label = (color) => ({
-  fontSize: '0.9rem',
-  fontWeight: 700,
-  letterSpacing: '0.15em',
-  textTransform: 'uppercase',
-  color: color || 'rgba(26,26,26,0.5)',
-  marginBottom: '0.75rem'
+  fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.15em',
+  textTransform: 'uppercase', color: color || 'rgba(26,26,26,0.5)', marginBottom: '0.75rem'
 });
 
 function FaqItem({ q, a }) {
@@ -46,17 +38,13 @@ function FaqItem({ q, a }) {
   );
 }
 
-// ── FECHA FIJA DE EXPIRACIÓN DEL DESCUENTO ─────────────────
-// 2 de septiembre a las 23:59h hora España (UTC+2 en verano)
-const EXPIRY_DATE = new Date('2026-09-02T23:59:00+02:00');
-// ───────────────────────────────────────────────────────────
-
 function Countdown() {
   const calcTimeLeft = () => {
     const diff = EXPIRY_DATE - Date.now();
     if (diff <= 0) return null;
     return {
-      h: Math.floor(diff / 3600000),
+      d: Math.floor(diff / 86400000),
+      h: Math.floor((diff % 86400000) / 3600000),
       m: Math.floor((diff % 3600000) / 60000),
       s: Math.floor((diff % 60000) / 1000)
     };
@@ -65,9 +53,7 @@ function Countdown() {
   const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calcTimeLeft());
-    }, 1000);
+    const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -85,13 +71,13 @@ function Countdown() {
         ⚡ Precio especial de masterclass caduca en
       </p>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
-        {[{ val: pad(timeLeft.h), label: 'horas' }, { val: pad(timeLeft.m), label: 'min' }, { val: pad(timeLeft.s), label: 'seg' }].map((item, i) => (
+        {[{ val: pad(timeLeft.d), label: 'días' }, { val: pad(timeLeft.h), label: 'horas' }, { val: pad(timeLeft.m), label: 'min' }, { val: pad(timeLeft.s), label: 'seg' }].map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', lineHeight: 1, fontWeight: 600 }}>{item.val}</div>
               <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>{item.label}</div>
             </div>
-            {i < 2 && <span style={{ fontSize: '2rem', color: 'var(--coral)', fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>:</span>}
+            {i < 3 && <span style={{ fontSize: '2rem', color: 'var(--coral)', fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>:</span>}
           </div>
         ))}
       </div>
@@ -109,8 +95,8 @@ export default function ActivateMasterclassPage() {
     <div style={{ paddingTop: 80 }}>
 
       <Helmet>
-        <title>Acceso prioritario masterclass | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Acceso prioritario exclusivo para asistentes a la masterclass. Método Esencial Madre: Actívate." />
+        <title>Acceso Masterclass | Método Esencial Madre: Actívate</title>
+        <meta name="description" content="Precio especial de masterclass para el Método Esencial Madre: Actívate." />
         <meta name="robots" content="noindex, nofollow" />
         <meta property="og:url" content="https://esencialsusanaares.com/activate-masterclass" />
       </Helmet>
@@ -119,10 +105,10 @@ export default function ActivateMasterclassPage() {
       <div style={{ background: 'var(--black)', borderTop: '4px solid var(--coral)', padding: '1.25rem 1.5rem' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
-            ✦ Acceso prioritario · Solo para asistentes a la masterclass
+            ✦ Acceso masterclass · Precio especial hasta el 2 de septiembre
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Como has asistido a la masterclass, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — solo hasta el 2 de septiembre a las 23:59h.
+            Por haber asistido a la masterclass, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — solo hasta el 2 de septiembre a las 23:59h.
           </p>
         </div>
       </div>
@@ -145,11 +131,11 @@ export default function ActivateMasterclassPage() {
               "Para volver a reconocerte, sentirte fuerte y empezar desde donde estás"
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para empezar a trabajar tu cuerpo — y también tu confianza y motivación.
+              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal. Vídeos grabados, a tu ritmo — hazlos cuando puedas, sin presión.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Online</span>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />Sin impacto</span>
+              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Grabado</span>
+              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />A tu ritmo</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
 
@@ -161,9 +147,9 @@ export default function ActivateMasterclassPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
-              <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-34%</span>
+              <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial por asistir a la masterclass · Solo 48h</p>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de masterclass · Hasta el 2 de septiembre a las 23:59h</p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
               Quiero empezar mi recuperación — €97
             </button>
@@ -187,9 +173,8 @@ export default function ActivateMasterclassPage() {
             {[
               { emoji: '🪞', title: 'Tu cuerpo no es el mismo desde la cesárea o el parto', desc: 'Tu abdomen, tu cicatriz, tu suelo pélvico, tu postura... todo ha cambiado. Y sientes que has perdido la conexión con tu cuerpo.' },
               { emoji: '⚠️', title: 'No sabes cómo empezar sin hacerte daño', desc: 'Tienes miedo de hacer ejercicios que no sean seguros para tu cicatriz, tu diástasis o tu suelo pélvico.' },
-              { emoji: '⏰', title: 'No tienes tiempo, pero necesitas cuidarte', desc: 'Entre el bebé, el trabajo y la casa, apenas tienes un momento para ti. Pero sabes que necesitas hacer algo por tu cuerpo.' },
+              { emoji: '⏰', title: 'No tienes tiempo, pero necesitas cuidarte', desc: 'Entre el bebé, el trabajo y la casa, apenas tienes un momento para ti. Las rutinas son de 15-30 min y las haces cuando puedas.' },
               { emoji: '💔', title: 'No te reconoces en el espejo', desc: 'Sabes que mereces recuperarte, pero no sabes por dónde empezar de forma segura.' },
-              { emoji: '🎯', title: 'Necesitas una guía clara y adaptada', desc: 'Diseñada específicamente para tu tipo de cuerpo, tu tipo de parto y tu momento vital.' }
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', background: 'var(--white)', borderRadius: 6, padding: '1.25rem 1.5rem', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: '1.75rem', lineHeight: 1, flexShrink: 0, marginTop: '0.1rem' }}>{item.emoji}</div>
@@ -217,12 +202,14 @@ export default function ActivateMasterclassPage() {
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
-                  '4 semanas · Online · Sin equipamiento',
-                  'Ejercicios específicos para cesárea y parto vaginal',
-                  'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
-                  'Perfecto si nunca has hecho ejercicio',
+                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
+                  'Desde los 40 días tras parto vaginal',
+                  'Sin equipamiento — solo necesitas tu cuerpo y un sitio en casa',
+                  'Vídeos grabados — hazlos cuando puedas, a tu ritmo',
+                  '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
+                  'Rutinas de 15-30 min sin impacto',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',
-                  '12 meses de acceso para empezar cuando estés lista'
+                  '12 meses de acceso — sin prisas, a tu ritmo'
                 ].map((t, i) => (
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
@@ -261,12 +248,15 @@ export default function ActivateMasterclassPage() {
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
             <div style={label()}>Las 4 semanas</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Un plan progresivo semana a semana</h2>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem', maxWidth: 520, margin: '0.75rem auto 0' }}>
+              4 vídeos por semana — 3 rutinas grabadas + 1 vídeo para tu mejor versión. Hazlos cuando puedas, sin presión.
+            </p>
           </div>
           <div className="week-steps">
             {[
-              { week: 'Semana 1', title: 'Conexión', desc: 'Reconecta con tu cuerpo y tu cicatriz. Rutinas muy suaves para empezar desde donde estás.', highlight: false },
-              { week: 'Semana 2', title: 'Activación + Mente', desc: 'Activa abdomen y suelo pélvico. Incluye módulo de fortaleza mental exclusivo.', highlight: true },
-              { week: 'Semana 3', title: 'Fortalecimiento', desc: 'Aumenta la intensidad respetando tu recuperación. Empiezas a notar los cambios.', highlight: false },
+              { week: 'Semana 1', title: 'Conexión', desc: 'Reconecta con tu cuerpo y tu cicatriz. Rutinas muy suaves grabadas para empezar desde donde estás, sin forzar.', highlight: false },
+              { week: 'Semana 2', title: 'Activación + Mente', desc: 'Activa abdomen y suelo pélvico. Incluye módulo de fortaleza mental exclusivo con vídeo de motivación y audio de creencias.', highlight: true },
+              { week: 'Semana 3', title: 'Fortalecimiento', desc: 'Aumenta la intensidad respetando tu recuperación. Empiezas a notar los cambios en tu cuerpo.', highlight: false },
               { week: 'Semana 4', title: 'Consolidación', desc: 'Integra todo lo aprendido y celebra los resultados en tu cuerpo y tu confianza.', highlight: false }
             ].map((item, i) => (
               <div key={i} className="week-step" style={item.highlight ? { border: '2px solid var(--coral)', borderRadius: 4, position: 'relative' } : {}}>
@@ -281,6 +271,11 @@ export default function ActivateMasterclassPage() {
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             ))}
+          </div>
+          <div style={{ background: 'var(--black)', borderRadius: 4, padding: '1.25rem 1.5rem', textAlign: 'center', marginTop: '1.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: 'white', lineHeight: 1.65, margin: 0 }}>
+              ✦ Todos los vídeos son <strong style={{ color: 'var(--coral)' }}>grabados y on-demand</strong> — si un día no puedes, lo haces al día siguiente. <strong style={{ color: 'var(--coral)' }}>12 meses de acceso</strong>, sin presión.
+            </p>
           </div>
         </div>
       </section>
@@ -298,8 +293,15 @@ export default function ActivateMasterclassPage() {
                 <h3 className="t-serif" style={{ fontSize: '1.3rem' }}>Recupera tu abdomen en tu día a día</h3>
               </div>
             </div>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75, marginBottom: '1rem' }}>
+              Consejos realistas adaptados a la vida postcesárea y postparto para seguir recuperando tu abdomen incluso cuando no estés haciendo las rutinas de ejercicio.
+            </p>
             <ul className="check-list">
-              {['Hábitos para integrar en tu día a día como madre', 'Pequeñas acciones que marcan la diferencia', 'Pensado para mamás reales con poco tiempo'].map((t, i) => (
+              {[
+                'Hábitos para integrar en tu día a día como madre',
+                'Pequeñas acciones que marcan la diferencia en tu recuperación',
+                'Pensado para mamás reales con poco tiempo'
+              ].map((t, i) => (
                 <li key={i} style={{ fontSize: '0.95rem' }}><Check size={14} />{t}</li>
               ))}
             </ul>
@@ -312,12 +314,21 @@ export default function ActivateMasterclassPage() {
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Mensajes reales de clientas reales</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
+          {/* Antes / después — 4 en fila */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            {[1,2,3,4].map((n) => (
+              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+          {/* Testimonios escritos */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4,5,6,7,8].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
                 <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
@@ -336,7 +347,7 @@ export default function ActivateMasterclassPage() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)' }}>
                 <li>• Tienes más de 40 días tras parto vaginal</li>
                 <li>• Tienes más de 2 meses tras cesárea</li>
-                <li>• Nunca has hecho ejercicio o llevas años sin hacer nada</li>
+                <li>• Quieres hacer ejercicio a tu ritmo, cuando puedas</li>
                 <li>• Tu cicatriz de cesárea te genera inseguridad</li>
                 <li>• Quieres recuperar tu cuerpo y también tu confianza</li>
               </ul>
@@ -356,11 +367,26 @@ export default function ActivateMasterclassPage() {
         </div>
       </section>
 
+      {/* ── VALOR DEL PROGRAMA ── */}
+      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 620, margin: '0 auto' }}>
+          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600, fontSize: '0.8rem' }}>El valor de este programa</p>
+          <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
+            El valor total de todo lo que incluye este programa de 4 semanas es de{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
+            {' '}El precio de venta al público es{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
+            {' '}Y para ti, por haber asistido a la masterclass:{' '}
+            <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
+          </p>
+        </div>
+      </section>
+
       {/* ── PRICING CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Acceso prioritario masterclass</div>
+            <div style={label('var(--coral)')}>Acceso masterclass</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza ahora</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
@@ -373,14 +399,14 @@ export default function ActivateMasterclassPage() {
             </div>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
               {[
-                'Programa online de 4 semanas · Ejercicios para cesárea y parto',
-                '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
+                'Programa online de 4 semanas · Vídeos grabados, a tu ritmo',
+                '3 rutinas semanales grabadas de 15-30 min sin impacto',
+                '1 vídeo semanal para tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
                 '🎧 Audio de creencias: somos merecedoras',
-                '🎙️ 1 directo en vivo de resolución de dudas',
-                'Sin equipamiento, desde casa, a tu ritmo',
+                '🎬 Vídeo "Siguientes Pasos" al finalizar el programa',
+                'Sin equipamiento, desde casa, cuando puedas',
                 '12 meses de acceso completo',
-                'BONUS: Recupera tu abdomen en tu día a día'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>
               ))}
@@ -394,8 +420,8 @@ export default function ActivateMasterclassPage() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial exclusivo para asistentes a la masterclass</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Este precio de €97 es exclusivo para asistentes a la masterclass y caduca el 2 de septiembre a las 23:59h. Del 3 al 6 de septiembre el programa estará disponible al precio general de €147.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial de masterclass</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Este precio de €97 es exclusivo para asistentes a la masterclass y caduca el 2 de septiembre a las 23:59h. Después el programa vuelve a su precio habitual de €147.</p>
               </div>
             </div>
 
@@ -404,7 +430,7 @@ export default function ActivateMasterclassPage() {
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 12 meses de acceso · Sin suscripción</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial masterclass · Solo 48h</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial hasta el 2 de septiembre a las 23:59h</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
                 Quiero empezar mi recuperación — €97
@@ -438,7 +464,7 @@ export default function ActivateMasterclassPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Tu precio especial de masterclass caduca en 48h.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Tu precio especial de masterclass caduca el 2 de septiembre a las 23:59h.</p>
           <div style={{ maxWidth: 380, margin: '0 auto 1.5rem' }}>
             <Countdown />
           </div>
