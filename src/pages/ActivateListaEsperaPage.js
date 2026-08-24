@@ -314,12 +314,21 @@ export default function ActivateListaEsperaPage() {
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Mensajes reales de clientas reales</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
+          {/* Antes / después — 4 en fila */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            {[1,2,3,4].map((n) => (
+              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+          {/* Testimonios escritos */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4,5,6,7,8].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
                 <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
@@ -359,10 +368,18 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── VALOR DEL PROGRAMA ── */}
-      <section style={{ background: 'var(--beige)', padding: '1.5rem 1.5rem', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.7)', margin: 0 }}>
-          El valor total del programa es de <strong style={{ color: 'var(--black)' }}>€527</strong> — tu precio de acceso prioritario es <strong style={{ color: 'var(--coral)' }}>€97</strong>.
-        </p>
+      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 620, margin: '0 auto' }}>
+          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600, fontSize: '0.8rem' }}>El valor de este programa</p>
+          <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
+            El valor total de todo lo que incluye este programa de 4 semanas es de{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
+            {' '}El precio de venta al público es{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
+            {' '}Y para ti, por tener acceso prioritario:{' '}
+            <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
+          </p>
+        </div>
       </section>
 
       {/* ── PRICING CTA ── */}
