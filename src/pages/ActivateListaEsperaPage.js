@@ -313,13 +313,51 @@ export default function ActivateListaEsperaPage() {
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Mensajes reales de clientas reales</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
-            {[1,2,3,4,5,6,7,8].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+            {[1,2].map((n) => (
+              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
                 <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+            {[1,2].map((n) => (
+              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+            {[3,4,5,6].map((n) => (
+              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+            {[3,4].map((n) => (
+              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+            {[7,8].map((n) => (
+              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ANTES / DESPUÉS ── */}
+      <section className="section" style={{ background: 'var(--beige)' }}>
+        <div className="container-mid">
+          <div className="text-center" style={{ marginBottom: '2rem' }}>
+            <div style={label()}>Resultados reales</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Así se transforman las mamás con el método</h2>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>Resultados reales de madres reales — sin filtros, sin trucos.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
+            {[1,2,3,4].map((n) => (
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.jpg`} alt={`Resultado real mamá ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
