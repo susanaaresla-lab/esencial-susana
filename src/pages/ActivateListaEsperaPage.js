@@ -309,58 +309,18 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── RESULTADOS + TESTIMONIOS ── */}
+      {/* ── TESTIMONIOS FOTOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label()}>Resultados reales</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Así se transforman las mamás con el método</h2>
+            <div style={label()}>Lo que dicen las mamás</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Mensajes reales de clientas reales</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
-          </div>
-
-          {/* Antes / después — 4 en fila del mismo tamaño */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '3rem' }}>
-            {[1,2,3,4].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)', aspectRatio: '1/1' }}>
-                <img
-                  src={`/images/antes-despues-${n}.png`}
-                  alt={`Resultado antes después ${n}`}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Testimonios escritos */}
-          <div style={{ marginBottom: '1rem' }}>
-            <div style={label()}>Lo que dicen ellas</div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4,5,6,7,8].map((n) => (
               <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img
-                  src={`/images/testimonial-${n}.jpg`}
-                  alt={`Testimonio clienta ${n}`}
-                  style={{ width: '100%', display: 'block' }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ANTES / DESPUÉS ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
-        <div className="container-mid">
-          <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label()}>Resultados reales</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Así se transforman las mamás con el método</h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>Resultados reales de madres reales — sin filtros, sin trucos.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
-            {[1,2,3,4].map((n) => (
-              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado real mamá ${n}`} style={{ width: '100%', display: 'block' }} />
+                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
@@ -399,41 +359,10 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── VALOR DEL PROGRAMA ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
-        <div className="container-narrow">
-          <div style={label()}>Todo lo que incluye tu programa</div>
-          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', marginBottom: '0.25rem' }}>Todo lo que incluye tu programa</h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.5)', fontStyle: 'italic', marginBottom: '2rem' }}>Valor real de cada componente</p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {[
-              { title: '3 rutinas/semana progresivas', sub: 'Adaptadas postcesárea · 4 semanas', price: '200 €' },
-              { title: 'Módulo de mentalidad', sub: '"Tu mente construye tu mejor versión"', price: '87 €' },
-              { title: 'Audio', sub: '"Desbloquea tu mejor versión"', price: '53 €' },
-              { title: 'Bonus', sub: '"Acelera tu recuperación con tus hábitos diarios"', price: '87 €' },
-              { title: 'Vídeo "Siguientes Pasos"', sub: '"Dudas + próximos pasos"', price: '100 €' },
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.1rem 0', borderBottom: '1px solid rgba(26,26,26,0.08)' }}>
-                <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--black)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Check size={14} color="white" />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--black)', margin: 0 }}>{item.title}</p>
-                  <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.55)', fontStyle: 'italic', margin: 0 }}>{item.sub}</p>
-                </div>
-                <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--coral)', flexShrink: 0 }}>{item.price}</span>
-              </div>
-            ))}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 0', borderTop: '2px solid var(--black)', marginTop: '0.5rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--black)' }}>TOTAL</span>
-              <span style={{ fontFamily: 'var(--serif)', fontSize: '2rem', fontWeight: 600, color: 'var(--black)' }}>527 €</span>
-            </div>
-          </div>
-          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center', marginTop: '1.5rem' }}>
-            <p style={{ fontSize: '1rem', color: 'white', fontWeight: 600, margin: 0 }}>
-              Tu precio de acceso prioritario: <strong style={{ fontSize: '1.3rem' }}>€97</strong> — ahorras €50 y €430 respecto al valor real
-            </p>
-          </div>
-        </div>
+      <section style={{ background: 'var(--beige)', padding: '1.5rem 1.5rem', textAlign: 'center' }}>
+        <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.7)', margin: 0 }}>
+          El valor total del programa es de <strong style={{ color: 'var(--black)' }}>€527</strong> — tu precio de acceso prioritario es <strong style={{ color: 'var(--coral)' }}>€97</strong>.
+        </p>
       </section>
 
       {/* ── PRICING CTA ── */}
