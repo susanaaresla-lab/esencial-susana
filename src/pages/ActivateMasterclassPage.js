@@ -154,7 +154,7 @@ export default function ActivateMasterclassPage() {
               Quiero empezar mi recuperación — €97
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Sin equipamiento · Desde casa · 12 meses de acceso
+              Pago único · Sin equipamiento · 12 meses de acceso
             </p>
           </div>
         </div>
@@ -474,7 +474,7 @@ export default function ActivateMasterclassPage() {
             Quiero empezar mi recuperación
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            Sin equipamiento · Desde casa · 12 meses de acceso
+            Pago único · Sin equipamiento · 12 meses de acceso
           </p>
         </div>
       </div>

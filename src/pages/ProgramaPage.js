@@ -102,7 +102,7 @@ export default function ProgramaPage() {
               Apúntame — disponible del 3 al 6 de septiembre
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Sin equipamiento · Desde casa · 12 meses de acceso
+              Pago único · Sin equipamiento · 12 meses de acceso
             </p>
           </div>
         </div>
