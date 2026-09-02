@@ -89,7 +89,7 @@ function Countdown() {
 export default function ActivateMasterclassPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goComprar = () => window.open(CHECKOUT_URL, '_blank');
+  const goComprar = () => { localStorage.setItem('activate_purchase_price', '97'); localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Masterclass'); window.open(CHECKOUT_URL, '_blank'); };
 
   return (
     <div style={{ paddingTop: 80 }}>
@@ -370,7 +370,7 @@ export default function ActivateMasterclassPage() {
       {/* ── VALOR DEL PROGRAMA ── */}
       <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
         <div style={{ maxWidth: 620, margin: '0 auto' }}>
-          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600 }}>El valor de este programa</p>
+          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600, fontSize: '0.8rem' }}>El valor de este programa</p>
           <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
             El valor total de todo lo que incluye este programa de 4 semanas es de{' '}
             <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
