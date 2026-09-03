@@ -104,7 +104,7 @@ export default function ActivateListaEsperaPage() {
             ✦ Acceso prioritario 
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Por haberte apuntado a la lista prioritaria tienes acceso a este precio especial.
+            
           </p>
         </div>
       </div>
