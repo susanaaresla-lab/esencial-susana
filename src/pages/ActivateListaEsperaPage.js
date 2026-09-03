@@ -81,7 +81,7 @@ function Countdown() {
           </div>
         ))}
       </div>
-      <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.75rem' }}>Hasta el 2 de septiembre a las 23:59h</p>
+      <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.75rem' }}></p>
     </div>
   );
 }
@@ -105,10 +105,10 @@ export default function ActivateListaEsperaPage() {
       <div style={{ background: 'var(--black)', borderTop: '4px solid var(--coral)', padding: '1.25rem 1.5rem' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
-            ✦ Acceso prioritario · Precio especial hasta el 2 de septiembre
+            ✦ Acceso prioritario 
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Por haberte apuntado a la lista prioritaria, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — solo hasta el 2 de septiembre a las 23:59h.
+            Por haberte apuntado a la lista prioritaria, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — 
           </p>
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function ActivateListaEsperaPage() {
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
               <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario · Hasta el 2 de septiembre a las 23:59h</p>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario · </p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
               Quiero empezar mi recuperación — €97
             </button>
@@ -421,7 +421,7 @@ export default function ActivateListaEsperaPage() {
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial de acceso prioritario</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Este precio de €97 caduca el 2 de septiembre a las 23:59h. Después el programa vuelve a su precio habitual de €147.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Precio especial exclusivo para la lista prioritaria.</p>
               </div>
             </div>
 
@@ -430,7 +430,7 @@ export default function ActivateListaEsperaPage() {
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 12 meses de acceso · Sin suscripción</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial hasta el 2 de septiembre a las 23:59h</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial </p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
                 Quiero empezar mi recuperación — €97
@@ -464,7 +464,7 @@ export default function ActivateListaEsperaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Tu precio especial de acceso prioritario caduca el 2 de septiembre a las 23:59h.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}></p>
           <div style={{ maxWidth: 380, margin: '0 auto 1.5rem' }}>
             <Countdown />
           </div>
