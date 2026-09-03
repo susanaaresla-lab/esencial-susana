@@ -57,11 +57,7 @@ function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  if (!timeLeft) return (
-    <div style={{ background: 'rgba(26,26,26,0.08)', borderRadius: 6, padding: '0.75rem 1.25rem', textAlign: 'center' }}>
-      <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', margin: 0 }}>El precio especial ha expirado.</p>
-    </div>
-  );
+  if (!timeLeft) return null;
 
   const pad = (n) => String(n).padStart(2, '0');
 
@@ -108,7 +104,7 @@ export default function ActivateListaEsperaPage() {
             ✦ Acceso prioritario 
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Por haberte apuntado a la lista prioritaria, tienes acceso a <strong style={{ color: 'var(--coral)' }}>€97</strong> en lugar de €147 — 
+            Por haberte apuntado a la lista prioritaria tienes acceso a este precio especial.
           </p>
         </div>
       </div>
@@ -154,7 +150,7 @@ export default function ActivateListaEsperaPage() {
               Quiero empezar mi recuperación
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
-              Pago único · Sin equipamiento · 12 meses de acceso
+              ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
             </p>
           </div>
         </div>
@@ -421,7 +417,7 @@ export default function ActivateListaEsperaPage() {
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial de acceso prioritario</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Precio especial exclusivo para la lista prioritaria.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Este precio de €97  Después el programa vuelve a su precio habitual de €147.</p>
               </div>
             </div>
 
@@ -430,7 +426,7 @@ export default function ActivateListaEsperaPage() {
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial </p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}></p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
                 Quiero empezar mi recuperación
@@ -464,7 +460,7 @@ export default function ActivateListaEsperaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}></p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Tu precio especial de acceso prioritario </p>
           <div style={{ maxWidth: 380, margin: '0 auto 1.5rem' }}>
             <Countdown />
           </div>
@@ -474,7 +470,7 @@ export default function ActivateListaEsperaPage() {
             Quiero empezar mi recuperación
           </button>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            Pago único · Sin equipamiento · 12 meses de acceso
+            ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
           </p>
         </div>
       </div>
