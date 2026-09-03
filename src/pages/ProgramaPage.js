@@ -50,7 +50,7 @@ export default function ProgramaPage() {
 
       <Helmet>
         <title>Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre</title>
-        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas. Pago único de €147, 12 meses de acceso. Ejercicios adaptados a cesárea y parto." />
+        <meta name="description" content="Método Esencial Madre: Actívate. Programa online de 4 semanas. Pago único, 12 meses de acceso. Ejercicios adaptados a cesárea y parto." />
         <meta name="keywords" content="recuperación postcesárea, ejercicios después cesárea, recuperación postparto, rutinas madres sin experiencia, método esencial madre" />
         <link rel="canonical" href="https://esencialsusanaares.com/programa-4-semanas" />
         <meta property="og:title" content="Método Esencial Madre: Actívate | Recupera tu cuerpo siendo madre" />
@@ -62,13 +62,7 @@ export default function ProgramaPage() {
         <meta name="twitter:description" content="Programa online de 4 semanas con ejercicios adaptados a cesárea y parto para trabajar tu cuerpo, confianza y motivación. €147." />
       </Helmet>
 
-      {/* ── BARRA DE URGENCIA ── */}
-      <div style={{ background: 'var(--black)', padding: '0.65rem 1.5rem', textAlign: 'center', position: 'sticky', top: 80, zIndex: 10 }}>
-        <p style={{ fontSize: '0.85rem', color: 'white', margin: 0 }}>
-          🗓️ Venta pública del <strong style={{ color: 'var(--coral)' }}>3 al 6 de septiembre</strong> · El programa arranca el 7 de septiembre
-        </p>
-      </div>
-
+      
       {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-photo-bleed">
@@ -97,9 +91,16 @@ export default function ProgramaPage() {
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</span>
             </div>
+            <div style={{ background: 'rgba(232,115,90,0.1)', border: '1px solid rgba(232,115,90,0.3)', borderRadius: 6, padding: '0.75rem 1.25rem', marginBottom: '1.5rem', display: 'inline-block' }}>
+              <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--black)', fontWeight: 600 }}>
+                ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
+              </p>
+            </div>
+            <div style={{ display: 'block' }}>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-              Quiero empezar mi recuperación — €147
+              Quiero empezar mi recuperación
             </button>
+            </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
               Pago único · Sin equipamiento · 12 meses de acceso
             </p>
@@ -382,8 +383,8 @@ export default function ProgramaPage() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
               📅 Disponible ahora
             </div>
-            <div style={label('var(--coral)')}>Apúntate con acceso prioritario</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza — arranca el 7 de septiembre</h2>
+            <div style={label('var(--coral)')}>Disponible ahora</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Empieza tu recuperación</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -414,7 +415,7 @@ export default function ProgramaPage() {
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Disponible ahora</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Acceso inmediato al comprar. Pago único de €147, sin suscripción, con 12 meses de acceso completo.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Acceso inmediato al comprar. Pago único, sin suscripción, con 12 meses de acceso completo.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
@@ -422,7 +423,7 @@ export default function ProgramaPage() {
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€147</div>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
-                Quiero empezar mi recuperación — €147
+                Quiero empezar mi recuperación
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -465,7 +466,7 @@ export default function ProgramaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}>Acceso inmediato · Pago único · 12 meses de acceso completo.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1rem', opacity: 0.9 }}></p>
           <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.5rem' }}>€147</div>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
             Quiero empezar mi recuperación
