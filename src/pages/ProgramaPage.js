@@ -81,7 +81,7 @@ export default function ProgramaPage() {
               "Para volver a reconocerte, sentirte fuerte y empezar desde donde estás"
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para empezar a trabajar tu cuerpo — y también tu confianza y motivación. El primer paso para reconectar contigo misma.
+              Programa online de <strong>4 semanas</strong> con ejercicios específicos adaptados a cesárea y parto vaginal para empezar a trabajar tu cuerpo — y también tu confianza y motivación. El primer paso para reconectar contigo misma.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Online</span>
