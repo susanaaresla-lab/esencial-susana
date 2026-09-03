@@ -151,7 +151,7 @@ export default function ActivateListaEsperaPage() {
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario · </p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-              Quiero empezar mi recuperación — €97
+              Quiero empezar mi recuperación
             </button>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
               Pago único · Sin equipamiento · 12 meses de acceso
@@ -429,11 +429,11 @@ export default function ActivateListaEsperaPage() {
               <div style={{ marginBottom: '1.5rem' }}>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Pago único · 12 meses de acceso · Sin suscripción</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}>⚡ Precio especial </p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
-                Quiero empezar mi recuperación — €97
+                Quiero empezar mi recuperación
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Pago seguro</span>
