@@ -88,7 +88,7 @@ export default function ActivateListaEsperaPage() {
   const goComprar = () => { localStorage.setItem('activate_purchase_price', '97'); localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario'); window.open(CHECKOUT_URL, '_blank'); };
 
   return (
-    <div style={{ paddingTop: 80 }}>
+    <div>
 
       <Helmet>
         <title>Acceso Prioritario | Método Esencial Madre: Actívate</title>
@@ -98,7 +98,7 @@ export default function ActivateListaEsperaPage() {
       </Helmet>
 
       {/* ── BARRA ACCESO PRIORITARIO ── */}
-      <div style={{ background: 'var(--black)', borderTop: '4px solid var(--coral)', padding: '1.25rem 1.5rem' }}>
+      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.5rem 1.5rem' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
             ✦ Acceso prioritario 
