@@ -53,8 +53,7 @@ function AppContent() {
           <Route path="/masterclass-recuperacion" element={<MasterclassSeptiembrePage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
           <Route path="/acceso-prioritario" element={<ActivateListaEsperaPage />} />
-          <Route path="/lista-espera-avanza" element={<ListaEsperaAvanzaPage />} />
-          <Route path="/gracias-masterclass" element={<GraciasMasterclassPage />} />
+          <Route path="/programa-avanza" element={<ListaEsperaAvanzaPage />} />          <Route path="/gracias-masterclass" element={<GraciasMasterclassPage />} />
           <Route path="/gracias-lista-espera" element={<GraciasListaEsperaPage />} />
           <Route path="/gracias-avanza" element={<GraciasAvanzaPage />} />
           <Route path="/gracias-avanza-compra" element={<GraciasAvanzaCompraPage />} />
