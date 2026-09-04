@@ -99,7 +99,11 @@ export default function ListaEsperaAvanzaPage() {
               Especializado en cesárea · Contenido 100% diferente a Actívate 
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>≈ €1.650</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€499</span>
+              <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-70%</span>
+            </div>
               <span style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)' }}>o €699 con asesorías 1:1</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
@@ -337,7 +341,11 @@ export default function ListaEsperaAvanzaPage() {
             <div className="card" style={{ padding: '2rem' }}>
               <div style={label()}>Programa completo</div>
               <h3 className="t-serif" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Avanza</h3>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: '3rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginBottom: '0.25rem' }}>€499</div>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through', marginBottom: '0.15rem' }}>Valor real ≈ €1.650</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.25rem' }}>
+                <span style={{ fontFamily: 'var(--serif)', fontSize: '3rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€499</span>
+                <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-70%</span>
+              </div>
               <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
               <ul className="check-list" style={{ marginBottom: '1.5rem' }}>
                 {['3 meses de programa completo', '3-4 sesiones semanales grabadas', 'Domingo de Mente semanal', '1 directo mensual + replays', 'Comunidad privada', '3 bonus integrados'].map((t, i) => (
@@ -354,7 +362,11 @@ export default function ListaEsperaAvanzaPage() {
               </div>
               <div style={label('var(--coral)')}>Con asesorías 1:1</div>
               <h3 className="t-serif" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Avanza + Asesorías</h3>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: '3rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginBottom: '0.25rem' }}>€699</div>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through', marginBottom: '0.15rem' }}>Valor real ≈ €1.850</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.25rem' }}>
+                <span style={{ fontFamily: 'var(--serif)', fontSize: '3rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€699</span>
+                <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-62%</span>
+              </div>
               <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
               <ul className="check-list" style={{ marginBottom: '1.5rem' }}>
                 {['Todo lo incluido en Avanza', '2 asesorías 1:1 con Susana', 'Sesión de inicio personalizada', 'Sesión de seguimiento a mitad'].map((t, i) => (
