@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/B106868973I?off=sc34hatr';
+const CHECKOUT_URL_1TO1 = 'https://pay.hotmart.com/B106868973I?off=2qrh0bwb';
 
 const FAQS = [
   { q: '¿Necesito haber hecho Actívate para poder hacer Avanza?', a: 'Sí, Avanza está diseñado como continuación de Actívate. Necesitas tener la base de recuperación postparto antes de introducir rutinas de impacto.' },
@@ -77,7 +78,7 @@ export default function ListaEsperaAvanzaPage() {
 
           <div style={{ maxWidth: 520 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 1rem', borderRadius: 999, marginBottom: '1.25rem' }}>
-              ✦ El siguiente nivel · Continuación de Actívate
+              ✦ Método 4-3-2 · La continuación de Actívate
             </div>
             <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Método Esencial Madre</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--black)', marginBottom: '1.25rem', fontWeight: 400 }}>
@@ -95,7 +96,7 @@ export default function ListaEsperaAvanzaPage() {
               <span className="pill"><Users />Desde 5 meses postparto</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-              Especializado en cesárea · Contenido 100% diferente a Actívate · Modelo evergreen
+              Especializado en cesárea · Contenido 100% diferente a Actívate 
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€499</span>
@@ -106,7 +107,7 @@ export default function ListaEsperaAvanzaPage() {
               Quiero empezar Avanza
             </button>
             <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
-              ✅ Pago único o a plazos · ✅ Acceso inmediato · ✅ Modelo evergreen
+              ✅ Pago único o a plazos · ✅ Acceso inmediato · ✅ Método 4-3-2
             </p>
           </div>
         </div>
@@ -129,7 +130,7 @@ export default function ListaEsperaAvanzaPage() {
             </div>
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
-            Modelo evergreen — empieza Avanza justo al terminar Actívate, sin esperar a ninguna cohorte.
+            La continuación natural de Actívate. Empieza cuando termines.
           </p>
         </div>
       </section>
