@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Users, Check, X, ChevronDown, Brain, Heart, Zap, ShieldCheck, Star } from 'lucide-react';
+import { ArrowLeft, Clock, Users, Check, X, ChevronDown, Zap, ShieldCheck, Star } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 
