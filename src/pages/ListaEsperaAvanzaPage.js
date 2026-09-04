@@ -78,7 +78,7 @@ export default function ListaEsperaAvanzaPage() {
 
           <div style={{ maxWidth: 520 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 1rem', borderRadius: 999, marginBottom: '1.25rem' }}>
-              ✦ Método 4-3-2 · La continuación de Actívate
+              ✦ El siguiente nivel · Continuación de Actívate
             </div>
             <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Método Esencial Madre</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--black)', marginBottom: '1.25rem', fontWeight: 400 }}>
@@ -111,7 +111,7 @@ export default function ListaEsperaAvanzaPage() {
               Quiero empezar Avanza
             </button>
             <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
-              ✅ Pago único o a plazos · ✅ Acceso inmediato · ✅ Método 4-3-2
+              ✅ Pago único o a plazos · ✅ Acceso inmediato
             </p>
           </div>
         </div>
