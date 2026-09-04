@@ -248,7 +248,7 @@ export default function ActivateListaEsperaPage() {
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
-                  'Desde los 40 días tras parto vaginal · Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
+                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
                   'Desde los 40 días tras parto vaginal',
                   'Sin equipamiento — solo necesitas tu cuerpo y un sitio en casa',
                   'Vídeos grabados — hazlos cuando puedas, a tu ritmo',
