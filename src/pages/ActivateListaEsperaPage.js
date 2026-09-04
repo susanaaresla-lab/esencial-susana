@@ -88,7 +88,7 @@ export default function ActivateListaEsperaPage() {
   const goComprar = () => { localStorage.setItem('activate_purchase_price', '97'); localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario'); window.open(CHECKOUT_URL, '_blank'); };
 
   return (
-    <div style={{ paddingTop: 80 }}>
+    <div>
 
       <Helmet>
         <title>Acceso Prioritario | Método Esencial Madre: Actívate</title>
@@ -104,7 +104,7 @@ export default function ActivateListaEsperaPage() {
             ✦ Acceso prioritario 
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            Por haberte apuntado a la lista prioritaria tienes acceso a este precio especial.
+            
           </p>
         </div>
       </div>
@@ -248,7 +248,7 @@ export default function ActivateListaEsperaPage() {
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
-                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
+                  'Desde los 40 días tras parto vaginal · Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
                   'Desde los 40 días tras parto vaginal',
                   'Sin equipamiento — solo necesitas tu cuerpo y un sitio en casa',
                   'Vídeos grabados — hazlos cuando puedas, a tu ritmo',
