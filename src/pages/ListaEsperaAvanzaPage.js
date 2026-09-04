@@ -347,7 +347,7 @@ export default function ListaEsperaAvanzaPage() {
                 <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-70%</span>
               </div>
               <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
-              <ul className="check-list" style={{ marginBottom: '1.5rem' }}>
+              <ul className="check-list" style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
                 {['3 meses de programa completo', '3-4 sesiones semanales grabadas', 'Domingo de Mente semanal', '1 directo mensual + replays', 'Comunidad privada', '3 bonus integrados'].map((t, i) => (
                   <li key={i} style={{ fontSize: '0.9rem' }}><Check size={14} />{t}</li>
                 ))}
@@ -368,7 +368,7 @@ export default function ListaEsperaAvanzaPage() {
                 <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-62%</span>
               </div>
               <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
-              <ul className="check-list" style={{ marginBottom: 'auto' }}>
+              <ul className="check-list" style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
                 {['Todo lo incluido en Avanza', '2 asesorías 1:1 con Susana', 'Sesión de inicio personalizada', 'Sesión de seguimiento a mitad'].map((t, i) => (
                   <li key={i} style={{ fontSize: '0.9rem' }}><Check size={14} />{t}</li>
                 ))}
