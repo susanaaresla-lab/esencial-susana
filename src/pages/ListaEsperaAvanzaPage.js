@@ -104,7 +104,7 @@ export default function ListaEsperaAvanzaPage() {
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€499</span>
               <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-70%</span>
             </div>
-              <span style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)' }}>o €699 con asesorías 1:1</span>
+              
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
@@ -368,12 +368,12 @@ export default function ListaEsperaAvanzaPage() {
                 <span style={{ fontSize: '0.85rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>-62%</span>
               </div>
               <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
-              <ul className="check-list" style={{ marginBottom: '1.5rem' }}>
+              <ul className="check-list" style={{ marginBottom: 'auto' }}>
                 {['Todo lo incluido en Avanza', '2 asesorías 1:1 con Susana', 'Sesión de inicio personalizada', 'Sesión de seguimiento a mitad'].map((t, i) => (
                   <li key={i} style={{ fontSize: '0.9rem' }}><Check size={14} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={goComprar}>
+              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={() => { localStorage.setItem('avanza_purchase_price', '699'); window.open('https://pay.hotmart.com/B106868973I?off=2qrh0bwb', '_blank'); }}>
                 Quiero Avanza + Asesorías
               </button>
             </div>
