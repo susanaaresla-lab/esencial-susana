@@ -88,7 +88,7 @@ export default function ActivateListaEsperaPage() {
   const goComprar = () => { localStorage.setItem('activate_purchase_price', '97'); localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario'); window.open(CHECKOUT_URL, '_blank'); };
 
   return (
-    <div>
+    <div style={{ paddingTop: 80 }}>
 
       <Helmet>
         <title>Acceso Prioritario | Método Esencial Madre: Actívate</title>
@@ -98,13 +98,13 @@ export default function ActivateListaEsperaPage() {
       </Helmet>
 
       {/* ── BARRA ACCESO PRIORITARIO ── */}
-      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.5rem 1.5rem' }}>
+      <div style={{ background: 'var(--black)', borderTop: '4px solid var(--coral)', padding: '1.25rem 1.5rem' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
             ✦ Acceso prioritario 
           </div>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            
+            Por haberte apuntado a la lista prioritaria tienes acceso a este precio especial.
           </p>
         </div>
       </div>
@@ -181,6 +181,56 @@ export default function ActivateListaEsperaPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── OBJECIONES ELIMINADAS ── */}
+      <section className="section" style={{ background: 'var(--white)' }}>
+        <div className="container-narrow">
+          <div className="text-center" style={{ marginBottom: '2rem' }}>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>
+              No necesitas ninguna de estas cosas para empezar
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem' }}>
+            {[
+              '❌ Experiencia previa haciendo ejercicio',
+              '❌ Haber empezado antes de tiempo',
+              '❌ Equipamiento ni materiales',
+              '❌ Horas libres en el día',
+              '❌ Tener el cuerpo "preparado"',
+              '❌ Haber parido de forma natural',
+              '❌ Saber por dónde empezar',
+              '❌ Que haya pasado poco tiempo desde el parto',
+            ].map((t, i) => (
+              <div key={i} style={{ background: 'var(--beige)', borderRadius: 6, padding: '0.9rem 1.25rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', fontWeight: 500 }}>
+                {t}
+              </div>
+            ))}
+          </div>
+          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center', marginTop: '1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'white', fontWeight: 600, margin: 0 }}>
+              Solo necesitas querer empezar. El método hace el resto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA INTERMEDIO ── */}
+      <section style={{ background: 'var(--peach)', padding: '2.5rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--black)', fontWeight: 600, marginBottom: '0.5rem' }}>
+            Precio especial de acceso prioritario
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
+            <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+            <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600 }}>€97</span>
+            <span style={{ fontSize: '0.85rem', background: 'var(--coral)', color: 'white', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
+          </div>
+          <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={goComprar}>
+            Quiero empezar mi recuperación
+          </button>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
         </div>
       </section>
 
@@ -273,6 +323,21 @@ export default function ActivateListaEsperaPage() {
               ✦ Todos los vídeos son <strong style={{ color: 'var(--coral)' }}>grabados y on-demand</strong> — si un día no puedes, lo haces al día siguiente. <strong style={{ color: 'var(--coral)' }}>12 meses de acceso</strong>, sin presión.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── CTA INTERMEDIO 2 ── */}
+      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto' }}>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>Acceso prioritario · Precio especial</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
+            <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'line-through' }}>€147</span>
+            <span style={{ fontFamily: 'var(--serif)', fontSize: '2.25rem', color: 'var(--coral)', fontWeight: 600 }}>€97</span>
+          </div>
+          <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={goComprar}>
+            Quiero empezar mi recuperación
+          </button>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.75rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
         </div>
       </section>
 
@@ -453,6 +518,21 @@ export default function ActivateListaEsperaPage() {
             <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '0.75rem' }}>¿Tienes alguna pregunta más?</p>
             <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)', fontWeight: 600, fontSize: '1rem' }}>info@esencialsusanaares.com</a>
           </div>
+        </div>
+      </section>
+
+      {/* ── CIERRE DE OBJECIÓN ── */}
+      <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
+        <div style={{ maxWidth: 580, margin: '0 auto', textAlign: 'center' }}>
+          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1.25rem' }}>
+            "Ya lo intenté antes y no funcionó."
+          </h2>
+          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+            Si lo intentaste antes y no funcionó, no es porque tú hayas fallado. Es porque el método no estaba adaptado a tu cuerpo de madre. <strong style={{ color: 'var(--black)' }}>Este sí lo está.</strong>
+          </p>
+          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8 }}>
+            Rutinas sin impacto, desde cero, pensadas para cesárea y parto vaginal. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
+          </p>
         </div>
       </section>
 
