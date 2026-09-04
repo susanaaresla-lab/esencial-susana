@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/B106868973I?off=sc34hatr';
-const CHECKOUT_URL_1TO1 = 'https://pay.hotmart.com/B106868973I?off=2qrh0bwb';
+// const CHECKOUT_URL_1TO1 = 'https://pay.hotmart.com/B106868973I?off=2qrh0bwb';
 
 const FAQS = [
   { q: '¿Necesito haber hecho Actívate para poder hacer Avanza?', a: 'Sí, Avanza está diseñado como continuación de Actívate. Necesitas tener la base de recuperación postparto antes de introducir rutinas de impacto.' },
