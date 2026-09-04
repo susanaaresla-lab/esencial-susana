@@ -96,7 +96,7 @@ export default function ListaEsperaAvanzaPage() {
               <span className="pill"><Users />Desde 5 meses postparto</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-              Especializado en cesárea · Contenido 100% diferente a Actívate 
+              Especializado en cesárea y parto vaginal · Contenido 100% diferente a Actívate 
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
