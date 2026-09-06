@@ -55,6 +55,32 @@ function getVisitorDeadline() {
   }
 }
 
+function CountdownBar() {
+  const [deadline] = useState(getVisitorDeadline);
+  const calcTimeLeft = () => {
+    const diff = deadline - Date.now();
+    if (diff <= 0) return null;
+    return {
+      h: Math.floor(diff / 3600000),
+      m: Math.floor((diff % 3600000) / 60000),
+      s: Math.floor((diff % 60000) / 1000)
+    };
+  };
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
+  useEffect(() => {
+    const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
+    return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deadline]);
+  if (!timeLeft) return null;
+  const pad = (n) => String(n).padStart(2, '0');
+  return (
+    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>
+      ⚡ Precio especial caduca en {pad(timeLeft.h)} horas : {pad(timeLeft.m)} min : {pad(timeLeft.s)} seg
+    </span>
+  );
+}
+
 function Countdown() {
   const [deadline] = useState(getVisitorDeadline);
   const calcTimeLeft = () => {
@@ -138,7 +164,7 @@ export default function ActivateListaEsperaPage() {
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: 999, marginRight: '0.75rem' }}>
           ✦ Acceso prioritario
         </span>
-        <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>Precio especial exclusivo para la lista prioritaria</span>
+        <CountdownBar />
       </div>
 
       {/* ── HERO ── */}
