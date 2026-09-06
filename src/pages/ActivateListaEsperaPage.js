@@ -119,13 +119,15 @@ export default function ActivateListaEsperaPage() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      {/* ── BARRA TOP ── */}
-      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center', position: 'sticky', top: 0, zIndex: 50 }}>
+      {/* ── BARRA TOP (fija) ── */}
+      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: 999, marginRight: '0.75rem' }}>
           ✦ Acceso prioritario
         </span>
         <CountdownBar />
       </div>
+      {/* Espaciador para compensar la barra fija */}
+      <div style={{ height: '54px' }} />
 
       {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
