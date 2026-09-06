@@ -186,7 +186,7 @@ export default function ActivateListaEsperaPage() {
               Solo necesitas querer empezar. El método hace el resto.
             </p>
           </div>
-          <p className="t-serif-italic" style={{ fontSize: '1.15rem', color: 'var(--black)', textAlign: 'center', marginTop: '1.5rem', lineHeight: 1.6 }}>
+          <p className="t-serif-italic" style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.7)', textAlign: 'center', marginTop: '1.5rem', lineHeight: 1.6 }}>
             Vuelve a sentirte tú, después de ser madre.
           </p>
         </div>
