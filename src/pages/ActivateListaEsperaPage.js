@@ -169,7 +169,7 @@ export default function ActivateListaEsperaPage() {
               No necesitas ninguna de estas cosas para empezar
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
             {[
               '❌ Experiencia previa haciendo ejercicio',
               '❌ Equipamiento o materiales',
