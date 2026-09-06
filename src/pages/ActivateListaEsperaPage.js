@@ -1,9 +1,10 @@
-import { ArrowLeft, Clock, Video, Users, Check, X, Gift, ChevronDown, Brain, Heart, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowLeft, Users, Check, X, Gift, ChevronDown, Brain, Heart, ShieldCheck, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const EXPIRY_DATE = new Date('2026-09-02T23:59:00+02:00');
+const COUNTDOWN_HOURS = 48;
+const COUNTDOWN_STORAGE_KEY = 'ap_countdown_deadline';
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312&src=acceso-prioritario';
 
 const FAQS = [
@@ -38,9 +39,26 @@ function FaqItem({ q, a }) {
   );
 }
 
+function getVisitorDeadline() {
+  try {
+    const stored = localStorage.getItem(COUNTDOWN_STORAGE_KEY);
+    if (stored) {
+      const deadline = parseInt(stored, 10);
+      if (!isNaN(deadline)) return deadline;
+    }
+    const newDeadline = Date.now() + COUNTDOWN_HOURS * 3600000;
+    localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(newDeadline));
+    return newDeadline;
+  } catch (e) {
+    // Si localStorage no está disponible, usar cuenta atrás fija de sesión
+    return Date.now() + COUNTDOWN_HOURS * 3600000;
+  }
+}
+
 function Countdown() {
+  const [deadline] = useState(getVisitorDeadline);
   const calcTimeLeft = () => {
-    const diff = EXPIRY_DATE - Date.now();
+    const diff = deadline - Date.now();
     if (diff <= 0) return null;
     return {
       d: Math.floor(diff / 86400000),
@@ -53,7 +71,8 @@ function Countdown() {
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deadline]);
   if (!timeLeft) return null;
   const pad = (n) => String(n).padStart(2, '0');
   return (
@@ -140,8 +159,6 @@ export default function ActivateListaEsperaPage() {
               Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Grabado</span>
-              <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />A tu ritmo</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
             <Countdown />
@@ -389,6 +406,27 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── SOBRE MÍ ── */}
+      <section className="section" style={{ background: 'var(--white)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '3rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            <div style={{ flex: '0 0 400px', maxWidth: 400 }}>
+              <img src="/images/susana-cercana.JPG" alt="Susana Ares" style={{ width: '100%', borderRadius: 2, boxShadow: '0 4px 24px rgba(0,0,0,0.1)', objectFit: 'cover' }} />
+            </div>
+            <div style={{ flex: 1, minWidth: 280 }}>
+              <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Sobre mí</div>
+              <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--black)', marginBottom: '1.25rem' }}>Soy Susana Ares</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.925rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.7 }}>
+                <p>Mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces. Sé exactamente cómo se siente porque yo también lo viví.</p>
+                <p>No soy solo una instructora. Soy una madre real que se transformó, que se formó como <strong style={{ color: 'var(--black)' }}>instructora de pilates terapéutico</strong> y que ha trabajado profundamente la fortaleza mental — no para darte teoría, sino para acompañarte desde dentro.</p>
+                <p>Mi forma de trabajar no es la de un gimnasio ni la de una psicóloga. Es algo diferente: un acompañamiento cálido, real, adaptado a ti, donde el objetivo no es que seas la de antes sino que descubras que ahora eres más.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a recuperarse — muchas de ellas sin experiencia previa en ejercicio y tras una cesárea.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PRICING CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
@@ -397,13 +435,6 @@ export default function ActivateListaEsperaPage() {
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza ahora</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', alignItems: 'center', background: 'var(--beige)', borderRadius: 4, padding: '1.5rem', marginBottom: '2rem' }}>
-              <img src="/images/susana-cercana.JPG" alt="Susana Ares" style={{ width: 110, height: 110, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 2px 12px rgba(0,0,0,0.12)' }} />
-              <p className="t-serif-italic" style={{ fontSize: '1.2rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.7 }}>
-                "He acompañado a más de 3.000 mamás a recuperarse. Sé que tú también puedes."
-                <span style={{ display: 'block', fontStyle: 'normal', fontWeight: 700, fontSize: '1rem', marginTop: '0.5rem', color: 'var(--coral)' }}>— Susana Ares</span>
-              </p>
-            </div>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
               {[
                 'Programa online de 4 semanas · Vídeos grabados, a tu ritmo',
