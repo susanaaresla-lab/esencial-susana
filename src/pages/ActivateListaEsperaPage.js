@@ -1,4 +1,4 @@
-import { ArrowLeft, Users, Check, X, Gift, ChevronDown, Brain, Heart, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowLeft, Users, Check, X, Gift, ChevronDown, Brain, ShieldCheck, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -81,46 +81,6 @@ function CountdownBar() {
   );
 }
 
-function Countdown() {
-  const [deadline] = useState(getVisitorDeadline);
-  const calcTimeLeft = () => {
-    const diff = deadline - Date.now();
-    if (diff <= 0) return null;
-    return {
-      d: Math.floor(diff / 86400000),
-      h: Math.floor((diff % 86400000) / 3600000),
-      m: Math.floor((diff % 3600000) / 60000),
-      s: Math.floor((diff % 60000) / 1000)
-    };
-  };
-  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
-    return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deadline]);
-  if (!timeLeft) return null;
-  const pad = (n) => String(n).padStart(2, '0');
-  return (
-    <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1rem 1.5rem', textAlign: 'center', marginBottom: '1.5rem' }}>
-      <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: '0.75rem' }}>
-        ⚡ Precio especial caduca en
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
-        {[{ val: pad(timeLeft.d), label: 'días' }, { val: pad(timeLeft.h), label: 'horas' }, { val: pad(timeLeft.m), label: 'min' }, { val: pad(timeLeft.s), label: 'seg' }].map((item, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: '2rem', color: 'var(--coral)', lineHeight: 1, fontWeight: 600 }}>{item.val}</div>
-              <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>{item.label}</div>
-            </div>
-            {i < 3 && <span style={{ fontSize: '1.75rem', color: 'var(--coral)', fontWeight: 700, lineHeight: 1, marginBottom: 12 }}>:</span>}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function PriceCTA({ goComprar, dark = false }) {
   return (
     <div style={{ textAlign: 'center', padding: '2rem 1.5rem', background: dark ? 'var(--black)' : 'var(--peach)' }}>
@@ -160,7 +120,7 @@ export default function ActivateListaEsperaPage() {
       </Helmet>
 
       {/* ── BARRA TOP ── */}
-      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center' }}>
+      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center', position: 'sticky', top: 0, zIndex: 50 }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: 999, marginRight: '0.75rem' }}>
           ✦ Acceso prioritario
         </span>
@@ -187,7 +147,6 @@ export default function ActivateListaEsperaPage() {
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
-            <Countdown />
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
@@ -276,16 +235,11 @@ export default function ActivateListaEsperaPage() {
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'white', marginBottom: '1.25rem', lineHeight: 1.2 }}>
             No es solo recuperar el cuerpo.<br />Es recuperarte a ti.
           </h2>
-          <div className="grid-2" style={{ gap: '1rem' }}>
+          <div style={{ maxWidth: 420, margin: '0 auto' }}>
             <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
               <Brain size={20} color="white" style={{ marginBottom: '0.75rem' }} />
               <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Vídeo de motivación y confianza</h3>
               <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>Exclusivo. Para trabajar la confianza en ti misma y en tu cuerpo.</p>
-            </div>
-            <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 4, padding: '1.75rem', textAlign: 'left' }}>
-              <Heart size={20} color="white" style={{ marginBottom: '0.75rem' }} />
-              <h3 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'white', marginBottom: '0.6rem' }}>Audio de creencias</h3>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>Exclusivo. Para reforzar que eres merecedora y válida para recuperarte.</p>
             </div>
           </div>
         </div>
@@ -433,7 +387,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── SOBRE MÍ ── */}
-      <section className="section" style={{ background: 'var(--white)' }}>
+      <section className="section" style={{ background: 'var(--white)', paddingBottom: '2rem' }}>
         <div className="container">
           <div style={{ display: 'flex', flexDirection: 'row', gap: '3rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div style={{ flex: '0 0 400px', maxWidth: 400 }}>
@@ -454,7 +408,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── PRICING CTA ── */}
-      <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
+      <section id="comprar" className="section" style={{ background: 'var(--beige)', paddingTop: '2rem' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={label('var(--coral)')}>Acceso prioritario</div>
@@ -476,7 +430,6 @@ export default function ActivateListaEsperaPage() {
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>
               ))}
             </ul>
-            <Countdown />
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
