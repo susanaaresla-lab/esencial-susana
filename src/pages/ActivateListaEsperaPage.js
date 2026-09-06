@@ -140,7 +140,7 @@ export default function ActivateListaEsperaPage() {
               "Para volver a reconocerte — y empezar desde donde estás."
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              <strong>4 semanas.</strong> Sin experiencia previa. Sin equipamiento. Desde casa, a tu ritmo.
+              Programa online de <strong>4 semanas</strong> con ejercicios específicos adaptados a cesárea y parto vaginal. Sin experiencia previa. Sin equipamiento. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Grabado</span>
