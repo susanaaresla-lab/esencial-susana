@@ -127,16 +127,16 @@ export default function ActivateListaEsperaPage() {
         <div className="hero-photo-bleed">
           <img src="/images/susana-hero.JPG" alt="Susana Ares — Método Esencial Madre Actívate" />
         </div>
-        <div className="container-mid" style={{ position: 'relative', zIndex: 2, paddingTop: '2rem', paddingBottom: '4rem' }}>
+        <div className="container-mid" style={{ position: 'relative', zIndex: 2, paddingTop: '1.25rem', paddingBottom: '2.5rem' }}>
           <div className="hero-text-wrap">
             <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={goBack}>
               <ArrowLeft size={15} /> Volver al inicio
             </button>
             <div style={label('var(--coral)')}>Método Esencial Madre · Actívate</div>
-            <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '1rem' }}>
+            <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '0.75rem' }}>
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '1.25rem', lineHeight: 1.65 }}>
               Programa online de <strong>4 semanas</strong> con ejercicios específicos adaptados a cesárea y parto vaginal. Sin experiencia previa. Sin equipamiento. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
