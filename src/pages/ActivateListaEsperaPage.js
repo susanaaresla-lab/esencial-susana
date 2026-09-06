@@ -181,7 +181,7 @@ export default function ActivateListaEsperaPage() {
               </div>
             ))}
           </div>
-          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
+          <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '1rem', color: 'white', fontWeight: 600, margin: 0 }}>
               Solo necesitas querer empezar. El método hace el resto.
             </p>
