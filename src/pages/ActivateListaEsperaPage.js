@@ -13,7 +13,7 @@ const FAQS = [
   { q: '¿El método está adaptado para cesárea?', a: 'Sí, especialmente. Está diseñado teniendo muy en cuenta las particularidades de la recuperación postcesárea: la cicatriz, la diástasis, el suelo pélvico y la reconexión con el abdomen.' },
   { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Son vídeos grabados que puedes hacer cuando quieras — si un día no puedes, lo haces al día siguiente. A tu ritmo.' },
   { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
-  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente. Es tuyo, a tu ritmo.' },
+  { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
   { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
@@ -49,35 +49,49 @@ function Countdown() {
       s: Math.floor((diff % 60000) / 1000)
     };
   };
-
   const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
-
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
-
   if (!timeLeft) return null;
-
   const pad = (n) => String(n).padStart(2, '0');
-
   return (
-    <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
+    <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1rem 1.5rem', textAlign: 'center', marginBottom: '1.5rem' }}>
       <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: '0.75rem' }}>
-        ⚡ Precio especial de acceso prioritario caduca en
+        ⚡ Precio especial caduca en
       </p>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
         {[{ val: pad(timeLeft.d), label: 'días' }, { val: pad(timeLeft.h), label: 'horas' }, { val: pad(timeLeft.m), label: 'min' }, { val: pad(timeLeft.s), label: 'seg' }].map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', lineHeight: 1, fontWeight: 600 }}>{item.val}</div>
-              <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>{item.label}</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '2rem', color: 'var(--coral)', lineHeight: 1, fontWeight: 600 }}>{item.val}</div>
+              <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>{item.label}</div>
             </div>
-            {i < 3 && <span style={{ fontSize: '2rem', color: 'var(--coral)', fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>:</span>}
+            {i < 3 && <span style={{ fontSize: '1.75rem', color: 'var(--coral)', fontWeight: 700, lineHeight: 1, marginBottom: 12 }}>:</span>}
           </div>
         ))}
       </div>
-      <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.75rem' }}></p>
+    </div>
+  );
+}
+
+function PriceCTA({ goComprar, dark = false }) {
+  return (
+    <div style={{ textAlign: 'center', padding: '2rem 1.5rem', background: dark ? 'var(--black)' : 'var(--peach)' }}>
+      <div style={{ maxWidth: 420, margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '1rem', color: dark ? 'rgba(255,255,255,0.3)' : 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+          <span style={{ fontFamily: 'var(--serif)', fontSize: '2.25rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
+          <span style={{ fontSize: '0.8rem', background: 'var(--coral)', color: 'white', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: 4 }}>Ahorras €50</span>
+        </div>
+        <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={goComprar}>
+          Quiero empezar mi recuperación
+        </button>
+        <p style={{ fontSize: '0.8rem', color: dark ? 'rgba(255,255,255,0.4)' : 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
+          ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
+        </p>
+      </div>
     </div>
   );
 }
@@ -85,28 +99,27 @@ function Countdown() {
 export default function ActivateListaEsperaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const goComprar = () => { localStorage.setItem('activate_purchase_price', '97'); localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario'); window.open(CHECKOUT_URL, '_blank'); };
+  const goComprar = () => {
+    localStorage.setItem('activate_purchase_price', '97');
+    localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario');
+    window.open(CHECKOUT_URL, '_blank');
+  };
 
   return (
     <div>
 
       <Helmet>
         <title>Acceso Prioritario | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Precio especial de acceso prioritario para el Método Esencial Madre: Actívate." />
+        <meta name="description" content="Precio especial de acceso prioritario para el Método Esencial Madre: Actívate. €97 en lugar de €147." />
         <meta name="robots" content="noindex, nofollow" />
-        <meta property="og:url" content="https://esencialsusanaares.com/acceso-prioritario" />
       </Helmet>
 
-      {/* ── BARRA ACCESO PRIORITARIO ── */}
-      <div style={{ background: 'var(--black)', borderTop: '4px solid var(--coral)', padding: '1.25rem 1.5rem' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '0.75rem' }}>
-            ✦ Acceso prioritario 
-          </div>
-          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-            
-          </p>
-        </div>
+      {/* ── BARRA TOP ── */}
+      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: 999, marginRight: '0.75rem' }}>
+          ✦ Acceso prioritario
+        </span>
+        <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>Precio especial exclusivo para la lista prioritaria</span>
       </div>
 
       {/* ── HERO ── */}
@@ -127,59 +140,26 @@ export default function ActivateListaEsperaPage() {
               "Para volver a reconocerte, sentirte fuerte y empezar desde donde estás"
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal. Vídeos grabados, a tu ritmo — hazlos cuando puedas, sin presión.
+              Programa online de <strong>4 semanas</strong> con ejercicios específicos adaptados a cesárea y parto vaginal. Vídeos grabados, a tu ritmo — hazlos cuando puedas, sin presión.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Grabado</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Clock />A tu ritmo</span>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
-
-            {/* Contador hero */}
-            <div style={{ maxWidth: 420, marginBottom: '1.5rem' }}>
-              <Countdown />
-            </div>
-
+            <Countdown />
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
               <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
               <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario · </p>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario</p>
             <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
               Quiero empezar mi recuperación
             </button>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.75rem' }}>
+            <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
               ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PAIN POINTS ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
-        <div className="container-narrow">
-          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
-            <div style={label()}>¿Te sientes identificada?</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2 }}>
-              Sé que estás aquí porque <em className="text-coral">algo ha cambiado</em>
-            </h2>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {[
-              { emoji: '🪞', title: 'Tu cuerpo no es el mismo desde la cesárea o el parto', desc: 'Tu abdomen, tu cicatriz, tu suelo pélvico, tu postura... todo ha cambiado. Y sientes que has perdido la conexión con tu cuerpo.' },
-              { emoji: '⚠️', title: 'No sabes cómo empezar sin hacerte daño', desc: 'Tienes miedo de hacer ejercicios que no sean seguros para tu cicatriz, tu diástasis o tu suelo pélvico.' },
-              { emoji: '⏰', title: 'No tienes tiempo, pero necesitas cuidarte', desc: 'Entre el bebé, el trabajo y la casa, apenas tienes un momento para ti. Las rutinas son de 15-30 min y las haces cuando puedas.' },
-              { emoji: '💔', title: 'No te reconoces en el espejo', desc: 'Sabes que mereces recuperarte, pero no sabes por dónde empezar de forma segura.' },
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', background: 'var(--white)', borderRadius: 6, padding: '1.25rem 1.5rem', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}>
-                <div style={{ fontSize: '1.75rem', lineHeight: 1, flexShrink: 0, marginTop: '0.1rem' }}>{item.emoji}</div>
-                <div>
-                  <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--black)', marginBottom: '0.4rem', lineHeight: 1.3 }}>{item.title}</h4>
-                  <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -192,13 +172,13 @@ export default function ActivateListaEsperaPage() {
               No necesitas ninguna de estas cosas para empezar
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
             {[
               '❌ Experiencia previa haciendo ejercicio',
               '❌ Haber empezado antes de tiempo',
               '❌ Equipamiento ni materiales',
               '❌ Horas libres en el día',
-              '❌ Tener el cuerpo "preparado"',
+              '❌ Que tu cuerpo esté "preparado"',
               '❌ Haber parido de forma natural',
               '❌ Saber por dónde empezar',
               '❌ Que haya pasado poco tiempo desde el parto',
@@ -208,7 +188,7 @@ export default function ActivateListaEsperaPage() {
               </div>
             ))}
           </div>
-          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center', marginTop: '1.5rem' }}>
+          <div style={{ background: 'var(--coral)', borderRadius: 8, padding: '1.25rem 1.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '1rem', color: 'white', fontWeight: 600, margin: 0 }}>
               Solo necesitas querer empezar. El método hace el resto.
             </p>
@@ -216,23 +196,8 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── CTA INTERMEDIO ── */}
-      <section style={{ background: 'var(--peach)', padding: '2.5rem 1.5rem', textAlign: 'center' }}>
-        <div style={{ maxWidth: 520, margin: '0 auto' }}>
-          <p style={{ fontSize: '1.1rem', color: 'var(--black)', fontWeight: 600, marginBottom: '0.5rem' }}>
-            Precio especial de acceso prioritario
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
-            <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
-            <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600 }}>€97</span>
-            <span style={{ fontSize: '0.85rem', background: 'var(--coral)', color: 'white', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
-          </div>
-          <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={goComprar}>
-            Quiero empezar mi recuperación
-          </button>
-          <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
-        </div>
-      </section>
+      {/* ── CTA INTERMEDIO 1 ── */}
+      <PriceCTA goComprar={goComprar} />
 
       {/* ── FOTO + SOLUCIÓN ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
@@ -242,18 +207,17 @@ export default function ActivateListaEsperaPage() {
               <img src="/images/susana-ejercicio.JPG" alt="Susana Ares" style={{ width: '100%', maxHeight: 500, objectFit: 'cover', objectPosition: 'top', borderRadius: 4, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }} />
             </div>
             <div>
-              <div style={label('var(--coral)')}>La solución</div>
+              <div style={label('var(--coral)')}>Diseñado para empezar desde donde estás</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-                Diseñado para empezar desde donde estás
+                Especializado en cesárea y parto vaginal
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
-                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
                   'Desde los 40 días tras parto vaginal',
-                  'Sin equipamiento — solo necesitas tu cuerpo y un sitio en casa',
+                  'Desde los 2 meses tras cesárea — aunque haya pasado más tiempo, nunca es tarde',
+                  'Sin equipamiento — solo tu cuerpo y un sitio en casa',
                   'Vídeos grabados — hazlos cuando puedas, a tu ritmo',
                   '4 vídeos por semana: 3 rutinas + 1 vídeo para tu mejor versión',
-                  'Rutinas de 15-30 min sin impacto',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',
                   '12 meses de acceso — sin prisas, a tu ritmo'
                 ].map((t, i) => (
@@ -327,19 +291,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── CTA INTERMEDIO 2 ── */}
-      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
-        <div style={{ maxWidth: 520, margin: '0 auto' }}>
-          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>Acceso prioritario · Precio especial</p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
-            <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'line-through' }}>€147</span>
-            <span style={{ fontFamily: 'var(--serif)', fontSize: '2.25rem', color: 'var(--coral)', fontWeight: 600 }}>€97</span>
-          </div>
-          <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={goComprar}>
-            Quiero empezar mi recuperación
-          </button>
-          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.75rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
-        </div>
-      </section>
+      <PriceCTA goComprar={goComprar} dark={true} />
 
       {/* ── BONUS ── */}
       <section className="section" style={{ background: 'var(--peach)' }}>
@@ -370,27 +322,40 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIOS FOTOS ── */}
+      {/* ── VALOR DEL PROGRAMA ── */}
+      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 620, margin: '0 auto' }}>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600 }}>El valor de este programa</p>
+          <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
+            El valor total de todo lo que incluye es de{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
+            {' '}El precio de venta al público es{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
+            {' '}Tu precio de acceso prioritario:{' '}
+            <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
+          </p>
+        </div>
+      </section>
+
+      {/* ── RESULTADOS + TESTIMONIOS ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container-mid">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label()}>Lo que dicen las mamás</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Resultados y mensajes reales</h2>
+            <div style={label()}>Resultados reales</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.65rem, 3vw, 2.25rem)', color: 'var(--black)' }}>Así se transforman las mamás con el método</h2>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.5rem' }}>+3.000 mamás ya han completado el método</p>
           </div>
-          {/* Antes / después — 4 en fila */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', marginBottom: '0.75rem' }}>
             {[1,2,3,4].map((n) => (
-              <div key={`ad${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado antes después ${n}`} style={{ width: '100%', display: 'block' }} />
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/antes-despues-${n}.png`} alt={`Resultado ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
-          {/* Testimonios escritos */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[1,2,3,4,5,6,7,8].map((n) => (
-              <div key={`t${n}`} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
-                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio clienta ${n}`} style={{ width: '100%', display: 'block' }} />
+              <div key={n} style={{ borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+                <img src={`/images/testimonial-${n}.jpg`} alt={`Testimonio ${n}`} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
@@ -428,21 +393,6 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── VALOR DEL PROGRAMA ── */}
-      <section style={{ background: 'var(--black)', padding: '2rem 1.5rem', textAlign: 'center' }}>
-        <div style={{ maxWidth: 620, margin: '0 auto' }}>
-          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600 }}>El valor de este programa</p>
-          <p style={{ fontSize: '1.15rem', color: 'white', lineHeight: 1.8, margin: 0 }}>
-            El valor total de todo lo que incluye este programa de 4 semanas es de{' '}
-            <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
-            {' '}El precio de venta al público es{' '}
-            <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
-            {' '}Y para ti, por tener acceso prioritario:{' '}
-            <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
-          </p>
-        </div>
-      </section>
-
       {/* ── PRICING CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--white)' }}>
         <div className="container-narrow">
@@ -468,30 +418,24 @@ export default function ActivateListaEsperaPage() {
                 '🎬 Vídeo "Siguientes Pasos" al finalizar el programa',
                 'Sin equipamiento, desde casa, cuando puedas',
                 '12 meses de acceso completo',
+                'BONUS: Recupera tu abdomen en tu día a día'
               ].map((t, i) => (
                 <li key={i} style={{ fontSize: '1rem', paddingBottom: '0.3rem' }}><Check size={16} />{t}</li>
               ))}
             </ul>
-
-            {/* Contador en pricing */}
-            <div style={{ marginBottom: '2rem' }}>
-              <Countdown />
-            </div>
-
+            <Countdown />
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial de acceso prioritario</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Este precio de €97  Después el programa vuelve a su precio habitual de €147.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Precio especial exclusivo para la lista prioritaria.</p>
               </div>
             </div>
-
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--coral)', fontWeight: 600, marginTop: '0.4rem' }}></p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
                 Quiero empezar mi recuperación
@@ -502,21 +446,6 @@ export default function ActivateListaEsperaPage() {
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Users size={13} /> +3.000 mamás</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQs ── */}
-      <section className="section" style={{ background: 'var(--beige)' }}>
-        <div className="container-narrow">
-          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
-            <div style={label()}>Resolvemos tus dudas</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Preguntas frecuentes</h2>
-          </div>
-          <div>{FAQS.map((faq, i) => <FaqItem key={i} q={faq.q} a={faq.a} />)}</div>
-          <div className="text-center" style={{ marginTop: '2.5rem' }}>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '0.75rem' }}>¿Tienes alguna pregunta más?</p>
-            <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)', fontWeight: 600, fontSize: '1rem' }}>info@esencialsusanaares.com</a>
           </div>
         </div>
       </section>
@@ -536,22 +465,35 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
+      {/* ── FAQs ── */}
+      <section className="section" style={{ background: 'var(--beige)' }}>
+        <div className="container-narrow">
+          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+            <div style={label()}>Resolvemos tus dudas</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Preguntas frecuentes</h2>
+          </div>
+          <div>{FAQS.map((faq, i) => <FaqItem key={i} q={faq.q} a={faq.a} />)}</div>
+          <div className="text-center" style={{ marginTop: '2.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '0.75rem' }}>¿Tienes alguna pregunta más?</p>
+            <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)', fontWeight: 600, fontSize: '1rem' }}>info@esencialsusanaares.com</a>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ── */}
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Tu precio especial de acceso prioritario </p>
-          <div style={{ maxWidth: 380, margin: '0 auto 1.5rem' }}>
-            <Countdown />
+          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Precio especial de acceso prioritario.</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+            <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>€147</span>
+            <span style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white' }}>€97</span>
+            <span style={{ fontSize: '0.8rem', background: 'white', color: 'var(--coral)', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: 4 }}>Ahorras €50</span>
           </div>
-          <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white', marginBottom: '0.25rem' }}>€97</div>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem', textDecoration: 'line-through' }}>Antes €147</p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>✅ Pago único · ✅ 12 meses · ✅ Sin suscripción</p>
           <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
             Quiero empezar mi recuperación
           </button>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
-          </p>
         </div>
       </div>
 
