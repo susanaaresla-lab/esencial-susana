@@ -137,7 +137,7 @@ export default function ActivateListaEsperaPage() {
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '1.25rem', lineHeight: 1.65 }}>
-              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años.
+              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Grabado</span>
