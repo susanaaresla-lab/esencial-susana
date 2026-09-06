@@ -136,9 +136,6 @@ export default function ActivateListaEsperaPage() {
             <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '1rem' }}>
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
-            <p style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.75)', maxWidth: 520, marginBottom: '0.75rem', lineHeight: 1.7, fontStyle: 'italic' }}>
-              "Para volver a reconocerte — y empezar desde donde estás."
-            </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
               Programa online de <strong>4 semanas</strong> con ejercicios específicos adaptados a cesárea y parto vaginal. Sin experiencia previa. Sin equipamiento. Desde casa, a tu ritmo.
             </p>
