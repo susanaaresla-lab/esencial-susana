@@ -127,7 +127,7 @@ export default function ActivateListaEsperaPage() {
         <div className="hero-photo-bleed">
           <img src="/images/susana-hero.JPG" alt="Susana Ares — Método Esencial Madre Actívate" />
         </div>
-        <div className="container-mid" style={{ position: 'relative', zIndex: 2, paddingTop: '1.25rem', paddingBottom: '2.5rem' }}>
+        <div className="container-mid" style={{ position: 'relative', zIndex: 2, paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
           <div className="hero-text-wrap">
             <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={goBack}>
               <ArrowLeft size={15} /> Volver al inicio
@@ -162,7 +162,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── OBJECIONES ELIMINADAS ── */}
-      <section className="section" style={{ background: 'var(--white)' }}>
+      <section className="section" style={{ background: 'var(--white)', paddingTop: '2rem' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>
