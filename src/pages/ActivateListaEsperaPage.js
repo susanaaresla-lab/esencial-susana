@@ -132,7 +132,7 @@ export default function ActivateListaEsperaPage() {
             <button className="btn-back" style={{ marginBottom: '2rem' }} onClick={goBack}>
               <ArrowLeft size={15} /> Volver al inicio
             </button>
-            <div style={label('var(--coral)')}>Método Esencial Madre · Actívate</div>
+            <div style={label('var(--coral)')}>Método Actívate</div>
             <h1 className="t-serif" style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '0.75rem' }}>
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
@@ -172,13 +172,9 @@ export default function ActivateListaEsperaPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
             {[
               '❌ Experiencia previa haciendo ejercicio',
-              '❌ Haber empezado antes de tiempo',
-              '❌ Equipamiento ni materiales',
-              '❌ Horas libres en el día',
+              '❌ Equipamiento o materiales',
               '❌ Que tu cuerpo esté "preparado"',
-              '❌ Haber parido de forma natural',
-              '❌ Saber por dónde empezar',
-              '❌ Que haya pasado poco tiempo desde el parto',
+              '❌ Horas fijas en el día',
             ].map((t, i) => (
               <div key={i} style={{ background: 'var(--beige)', borderRadius: 6, padding: '0.9rem 1.25rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', fontWeight: 500 }}>
                 {t}
@@ -190,6 +186,9 @@ export default function ActivateListaEsperaPage() {
               Solo necesitas querer empezar. El método hace el resto.
             </p>
           </div>
+          <p className="t-serif-italic" style={{ fontSize: '1.15rem', color: 'var(--black)', textAlign: 'center', marginTop: '1.5rem', lineHeight: 1.6 }}>
+            Vuelve a sentirte tú, después de ser madre.
+          </p>
         </div>
       </section>
 
