@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Check, Mail } from 'lucide-react';
 
+const VIDEO_ID = 'q0hSQVz4z8o';
+
 export default function GraciasMasterclassPage() {
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ export default function GraciasMasterclassPage() {
 
       {/* ── CONTENIDO ── */}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem 1.5rem' }}>
-        <div style={{ maxWidth: 520, width: '100%', textAlign: 'center' }}>
+        <div style={{ maxWidth: 680, width: '100%', textAlign: 'center' }}>
 
           {/* Icono */}
           <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'rgba(232,115,90,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
@@ -32,9 +34,21 @@ export default function GraciasMasterclassPage() {
           <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', color: 'var(--black)', fontWeight: 400, lineHeight: 1.2, marginBottom: '1.25rem' }}>
             ¡Ya estás registrada!
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, marginBottom: '2.5rem' }}>
-            En unos minutos recibirás un email con el enlace de acceso a la masterclass. Revisa tu bandeja de entrada — y también la carpeta de spam por si acaso.
+          <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, marginBottom: '2rem' }}>
+            Ya puedes ver la masterclass aquí abajo. También te hemos enviado el enlace por email por si quieres verla más tarde.
           </p>
+
+          {/* Vídeo incrustado */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', marginBottom: '2.5rem' }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+              title="Masterclass - Susana Ares"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+          </div>
 
           {/* Caja email */}
           <div style={{ background: 'var(--peach)', borderRadius: 8, padding: '1.5rem', marginBottom: '2.5rem', display: 'flex', alignItems: 'flex-start', gap: '1rem', textAlign: 'left' }}>
@@ -44,7 +58,7 @@ export default function GraciasMasterclassPage() {
             <div>
               <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--black)', marginBottom: '0.25rem' }}>Revisa tu email</p>
               <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.6 }}>
-                Te he enviado el enlace de acceso. Si no lo ves en los próximos minutos, revisa la carpeta de spam o escríbeme a <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)', fontWeight: 600 }}>info@esencialsusanaares.com</a>
+                Te hemos enviado el enlace de acceso por si prefieres verla más tarde. Si no lo ves en los próximos minutos, revisa la carpeta de spam o escríbeme a <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)', fontWeight: 600 }}>info@esencialsusanaares.com</a>
               </p>
             </div>
           </div>
