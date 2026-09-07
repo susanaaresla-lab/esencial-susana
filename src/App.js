@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import VideoModal from './components/VideoModal';
@@ -7,7 +7,8 @@ import ConfirmacionPage from './pages/ConfirmacionPage';
 import HomePage from './pages/HomePage';
 import ProgramaPage from './pages/ProgramaPage';
 import ListaEsperaPage from './pages/ListaEsperaPage';
-import MasterclassPage from './pages/MasterclassPage';
+// Masterclass "Cesárea" retirada — solo se mantiene la de "los errores"
+// import MasterclassPage from './pages/MasterclassPage';
 import ActivateMasterclassPage from './pages/ActivateMasterclassPage';
 import ListaEsperaAvanzaPage from './pages/ListaEsperaAvanzaPage';
 import ActivateListaEsperaPage from './pages/ActivateListaEsperaPage';
@@ -49,7 +50,8 @@ function AppContent() {
           <Route path="/programa-4-semanas" element={<ProgramaPage />} />
           <Route path="/confirmacion" element={<ConfirmacionPage />} />
           <Route path="/lista-espera" element={<ListaEsperaPage />} />
-          <Route path="/masterclass" element={<MasterclassPage />} />
+          {/* Masterclass "Cesárea" retirada — redirige a la masterclass activa */}
+          <Route path="/masterclass" element={<Navigate to="/masterclass-recuperacion" replace />} />
           <Route path="/masterclass-recuperacion" element={<MasterclassSeptiembrePage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
           <Route path="/acceso-prioritario" element={<ActivateListaEsperaPage />} />

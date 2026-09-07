@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 
-import { Calendar, Clock, Check, Users } from 'lucide-react';
+import { Clock, Check, Users, Zap } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTOS DATOS EN CADA LANZAMIENTO ──────────────────
-const MASTERCLASS_TITULO = 'Los errores invisibles que están frenando tu recuperación postcesárea';
-const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta';
-const MASTERCLASS_FECHA  = 'Lunes 31 de agosto a las 21:00h (hora España)';
+const MASTERCLASS_TITULO = 'Los errores invisibles que están frenando tu recuperación después de ser madre';
+const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta — tuvieras cesárea o parto vaginal';
 const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperacion';
 // ───────────────────────────────────────────────────────────
 
@@ -30,9 +29,9 @@ export default function MasterclassSeptiembrePage() {
 
       <Helmet>
         <title>{MASTERCLASS_TITULO} | Esencial Susana Ares</title>
-        <meta name="description" content={`Masterclass gratuita en directo — ${MASTERCLASS_FECHA}. Descubre los errores que frenan tu recuperación postcesárea y cómo construir la base correcta.`} />
+        <meta name="description" content={`Masterclass gratuita — descubre los errores que frenan tu recuperación después de ser madre (cesárea o parto vaginal) y cómo construir la base correcta.`} />
         <meta property="og:title" content={MASTERCLASS_TITULO} />
-        <meta property="og:description" content={`Masterclass gratuita — ${MASTERCLASS_FECHA}`} />
+        <meta property="og:description" content="Masterclass gratuita — accede al instante" />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og-new.jpg" />
         <meta property="og:url" content={MASTERCLASS_URL} />
         <meta property="og:type" content="website" />
@@ -50,7 +49,7 @@ export default function MasterclassSeptiembrePage() {
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '3rem 1.5rem 3.5rem' }}>
         <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '1.5rem' }}>
-            ✦ Masterclass gratuita en directo
+            ✦ Masterclass gratuita
           </div>
           <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>
             {MASTERCLASS_TITULO}
@@ -59,12 +58,12 @@ export default function MasterclassSeptiembrePage() {
             {MASTERCLASS_SUBTITULO}
           </p>
           <p style={{ fontSize: '1.1rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            <Calendar size={17} /> {MASTERCLASS_FECHA}
+            <Zap size={17} /> Acceso inmediato al registrarte
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem', marginBottom: '2.5rem' }}>
-            <span className="pill"><Clock size={14} />En directo · Online</span>
+            <span className="pill"><Clock size={14} />Acceso inmediato · Online</span>
             <span className="pill">Gratuita</span>
-            <span className="pill"><Users size={14} />Para madres postcesárea</span>
+            <span className="pill"><Users size={14} />Para toda madre: cesárea o parto vaginal</span>
           </div>
           <button
             className="btn-coral"
@@ -93,7 +92,7 @@ export default function MasterclassSeptiembrePage() {
                 ¿Por qué algunas madres se recuperan y otras no?
               </h2>
               <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Después de acompañar a más de <strong>3.000 mamás</strong> en su recuperación postcesárea, descubrí algo que nadie habla: <strong style={{ color: 'var(--coral)' }}>no estás estancada porque tu cuerpo no pueda. Estás estancada porque nadie te enseñó a construir la base.</strong>
+                Después de acompañar a más de <strong>3.000 mamás</strong> en su recuperación después de ser madre, descubrí algo que nadie habla: <strong style={{ color: 'var(--coral)' }}>no estás estancada porque tu cuerpo no pueda. Estás estancada porque nadie te enseñó a construir la base.</strong>
               </p>
               <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.8 }}>
                 En esta masterclass te voy a revelar los errores invisibles que están frenando tu recuperación — y el método exacto para empezar de la forma correcta.
@@ -135,13 +134,13 @@ export default function MasterclassSeptiembrePage() {
 
       {/* ── FORMULARIO ── */}
       <section id="registro" style={{ background: 'var(--peach)', padding: '4rem 1.5rem' }}>
-        <div style={{ maxWidth: 500, margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita en directo</p>
-          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.5rem' }}>
-            Reserva tu plaza
+        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</p>
+          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>
+            Regístrate ahora y accede a la masterclass inmediatamente
           </h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '2rem', lineHeight: 1.6 }}>
-            {MASTERCLASS_FECHA}
+          <p style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.75)', marginBottom: '2rem', lineHeight: 1.7 }}>
+            Es gratis para ti. En ella aprenderás de verdad y haremos el trabajo juntas para identificar qué te está frenando ahora y qué puedes hacer desde hoy para recuperarte como te mereces.
           </p>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
             <div id="eo-form-container-mc" />
@@ -149,6 +148,9 @@ export default function MasterclassSeptiembrePage() {
               Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
             </p>
           </div>
+          <p className="t-serif-italic" style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.65)', marginTop: '1.75rem', lineHeight: 1.6 }}>
+            A continuación, en la página de gracias vas a poder ver el vídeo y te vas a llevar un valor increíble con lo que voy a compartir contigo.
+          </p>
         </div>
       </section>
 
@@ -183,7 +185,7 @@ export default function MasterclassSeptiembrePage() {
         <div style={{ maxWidth: 620, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '1rem' }}>La idea que lo cambia todo</div>
           <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: 'white', fontWeight: 400, lineHeight: 1.3, marginBottom: '1.5rem' }}>
-            "No importa si hace dos meses o cinco años que tuviste la cesárea."
+            "No importa si hace dos meses o cinco años que fuiste madre."
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.8 }}>
             Lo importante no es el tiempo que ha pasado. Lo importante es si alguna vez has construido la base que tu cuerpo necesita para recuperarse de verdad.
@@ -199,7 +201,7 @@ export default function MasterclassSeptiembrePage() {
           </h2>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
             {[
-              'Tuviste una cesárea y no sabes por dónde empezar a recuperarte sin miedo',
+              'Tuviste una cesárea o un parto vaginal y no sabes por dónde empezar a recuperarte sin miedo',
               'Has intentado hacer ejercicio pero sientes que no avanzas o que algo no va bien',
               'Han pasado meses o años y crees que ya es tarde — (spoiler: no lo es)',
               'No te reconoces en el espejo y quieres volver a sentirte fuerte y tú misma',
@@ -232,8 +234,8 @@ export default function MasterclassSeptiembrePage() {
             <div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75 }}>
                 <p>Soy mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces.</p>
-                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postcesárea y postparto</strong> e instructora de pilates terapéutico.</p>
-                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
+                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postparto (cesárea y parto vaginal)</strong> e instructora de pilates terapéutico.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad, tuvieran cesárea o parto vaginal. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
               </div>
             </div>
           </div>
@@ -247,10 +249,10 @@ export default function MasterclassSeptiembrePage() {
             ¿Te apuntas?
           </h2>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)', marginBottom: '0.75rem', lineHeight: 1.65 }}>
-            Es gratuita. En directo. El 31 de agosto a las 21:00h.
+            Es gratuita y accedes al instante.
           </p>
           <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginBottom: '2rem' }}>
-            Solo necesitas reservar tu plaza.
+            Solo necesitas dejarnos tu email.
           </p>
           <button
             style={{ background: 'white', color: 'var(--coral)', fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '1.05rem', padding: '1.1rem 2.5rem', borderRadius: 4, border: 'none', cursor: 'pointer' }}
@@ -258,9 +260,6 @@ export default function MasterclassSeptiembrePage() {
           >
             Quiero mi plaza gratuita
           </button>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', marginTop: '1rem' }}>
-            {MASTERCLASS_FECHA}
-          </p>
         </div>
       </section>
 

@@ -31,7 +31,7 @@ export default function Header() {
 
   const goMasterclass = (e) => {
     e.preventDefault();
-    navigate('/masterclass');
+    navigate('/masterclass-recuperacion');
     setMenuOpen(false);
     window.scrollTo(0, 0);
   };
@@ -67,7 +67,7 @@ export default function Header() {
         <nav className="nav-desktop">
           <a href="/" onClick={goHome}>Inicio</a>
           <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
-          <a href="/masterclass" onClick={goMasterclass} style={{ color: currentPage === '/masterclass' ? 'var(--coral)' : '' }}>Masterclass</a>
+          <a href="/masterclass-recuperacion" onClick={goMasterclass} style={{ color: currentPage === '/masterclass-recuperacion' ? 'var(--coral)' : '' }}>Masterclass</a>
           <a href="/acceso-prioritario" onClick={goOferta} style={{ color: currentPage === '/acceso-prioritario' ? 'var(--coral)' : '', fontWeight: 700 }}>Oferta Actívate</a>
           <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </nav>
@@ -82,7 +82,7 @@ export default function Header() {
         <div className="nav-mobile-menu">
           <a href="/" onClick={goHome}>Inicio</a>
           <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
-          <a href="/masterclass" onClick={goMasterclass} style={{ color: currentPage === '/masterclass' ? 'var(--coral)' : '' }}>Masterclass</a>
+          <a href="/masterclass-recuperacion" onClick={goMasterclass} style={{ color: currentPage === '/masterclass-recuperacion' ? 'var(--coral)' : '' }}>Masterclass</a>
           <a href="/acceso-prioritario" onClick={goOferta} style={{ color: currentPage === '/acceso-prioritario' ? 'var(--coral)' : '', fontWeight: 700 }}>Oferta Actívate</a>
           <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </div>
