@@ -77,9 +77,12 @@ export default function GraciasMasterclassPage() {
         <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
 
           <div className="t-label" style={{ color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</div>
-          <h1 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--black)', fontWeight: 400, lineHeight: 1.2, marginBottom: '1.5rem' }}>
+          <h1 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--black)', fontWeight: 400, lineHeight: 1.2, marginBottom: '0.5rem' }}>
             Ya puedes ver tu masterclass
           </h1>
+          <p style={{ fontSize: '0.95rem', color: 'rgba(26,26,26,0.6)', marginBottom: '1.5rem' }}>
+            Haz clic en el vídeo para verla
+          </p>
 
           {/* Vídeo incrustado */}
           <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', marginBottom: '1.75rem' }}>
