@@ -11,7 +11,6 @@ const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperac
 
 export default function MasterclassSeptiembrePage() {
 
-  
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://eocampaign1.com/form/dd3fa57e-8d0c-11f1-a151-b3814c2745b8.js';
@@ -40,13 +39,13 @@ export default function MasterclassSeptiembrePage() {
       </Helmet>
 
       {/* ── HEADER mínimo ── */}
-      <div style={{ textAlign: 'center', padding: '2rem 1.5rem 0' }}>
+      <div style={{ textAlign: 'center', padding: '1.5rem 1.5rem 0' }}>
         <div style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', letterSpacing: '0.2em', color: 'var(--black)', lineHeight: 1 }}>ESENCIAL</div>
         <div style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--coral)', marginTop: 2 }}>Susana Ares</div>
       </div>
 
       {/* ── HERO ── */}
-      <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '3rem 1.5rem 3.5rem' }}>
+      <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', padding: '1.75rem 1.5rem 0' }}>
         <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.45rem 1.1rem', borderRadius: 999, marginBottom: '1.5rem' }}>
             ✦ Masterclass gratuita
@@ -54,51 +53,96 @@ export default function MasterclassSeptiembrePage() {
           <h1 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', lineHeight: 1.15, color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>
             {MASTERCLASS_TITULO}
           </h1>
-          <p style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6, marginBottom: '1.5rem', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.6, marginBottom: '1.25rem', fontStyle: 'italic' }}>
             {MASTERCLASS_SUBTITULO}
           </p>
-          <p style={{ fontSize: '1.1rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--coral)', fontWeight: 600, marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
             <Zap size={17} /> Acceso inmediato al registrarte
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem', marginBottom: '2.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem' }}>
             <span className="pill"><Clock size={14} />Acceso inmediato · Online</span>
             <span className="pill">Gratuita</span>
             <span className="pill"><Users size={14} />Para toda madre: cesárea o parto vaginal</span>
           </div>
-          <button
-            className="btn-coral"
-            style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
-            onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Quiero mi plaza gratuita
-          </button>
         </div>
       </section>
 
-      {/* ── FORMULARIO (arriba, para móvil) ── */}
-      <section id="registro" style={{ background: 'var(--peach)', padding: '3rem 1.5rem' }}>
-        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.5rem' }}>Masterclass gratuita</p>
-          <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1rem' }}>
-            Regístrate ahora y accede a la masterclass inmediatamente
-          </h2>
-          <p style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.75)', marginBottom: '2rem', lineHeight: 1.7 }}>
-            Es gratis para ti. En ella aprenderás de verdad y haremos el trabajo juntas para identificar qué te está frenando ahora y qué puedes hacer desde hoy para recuperarte como te mereces.
-          </p>
-          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)' }}>
+      {/* ── FORMULARIO (justo debajo del hero, sin fricción) ── */}
+      <section id="registro" style={{ background: 'linear-gradient(to bottom, var(--white) 0%, var(--peach) 100%)', padding: '1.75rem 1.5rem 3rem' }}>
+        <div style={{ maxWidth: 500, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.1)' }}>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.75rem' }}>
+              Regístrate y accede ahora mismo
+            </h2>
+            <p style={{ fontSize: '0.925rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
+              Es gratis para ti. Aprenderás de verdad y haremos el trabajo juntas para identificar qué te está frenando y qué puedes hacer desde hoy para recuperarte como te mereces.
+            </p>
             <div id="eo-form-container-mc" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
               Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
             </p>
           </div>
-          <p className="t-serif-italic" style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.65)', marginTop: '1.75rem', lineHeight: 1.6 }}>
+          <p className="t-serif-italic" style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.6)', marginTop: '1.5rem', lineHeight: 1.6 }}>
             A continuación, en la página de gracias vas a poder ver el vídeo y te vas a llevar un valor increíble con lo que voy a compartir contigo.
           </p>
         </div>
       </section>
 
+      {/* ── QUÉ VAS A APRENDER ── */}
+      <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Lo que vas a descubrir</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>
+              Esto es lo que vas a aprender
+            </h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {[
+              { n: '01', text: 'Qué significa realmente recuperarse — y por qué la mayoría de madres lo están haciendo al revés' },
+              { n: '02', text: 'La metáfora que lo cambia todo: por qué intentar fortalecer el abdomen sin construir la base es como levantar el tejado sin cimientos' },
+              { n: '03', text: 'Los 5 errores invisibles que frenan la recuperación — y que nadie te ha explicado hasta ahora' },
+              { n: '04', text: 'Las cinco bases que tu cuerpo necesita construir antes de cualquier ejercicio' },
+              { n: '05', text: 'El paso que te falta — y que convierte la recuperación en algo posible, ahora, independientemente de cuánto tiempo lleves' }
+            ].map((item) => (
+              <div key={item.n} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', background: 'var(--beige)', borderRadius: 6, padding: '1.25rem 1.5rem' }}>
+                <span style={{ fontFamily: 'var(--serif)', fontSize: '1.75rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, flexShrink: 0, minWidth: 36 }}>{item.n}</span>
+                <p style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.65, margin: 0 }}>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── QUIÉN SOY YO ── */}
+      <section style={{ background: 'var(--beige)', padding: '3.5rem 1.5rem' }}>
+        <div style={{ maxWidth: 720, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', textAlign: 'center' }}>
+              <img
+                src="/images/susana-cercana.JPG"
+                alt="Susana Ares"
+                style={{ width: 180, height: 180, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}
+              />
+              <div>
+                <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.45)', marginBottom: '0.3rem' }}>Tu instructora</p>
+                <h3 className="t-serif" style={{ fontSize: '1.6rem', color: 'var(--black)', fontWeight: 400 }}>Susana Ares</h3>
+              </div>
+            </div>
+            <div>
+              <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Quién soy yo</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75 }}>
+                <p>Soy mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces.</p>
+                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postparto (cesárea y parto vaginal)</strong> e instructora de pilates terapéutico.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad, tuvieran cesárea o parto vaginal. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FOTO + PREGUNTA POTENTE ── */}
-      <section style={{ background: 'var(--white)', padding: '3rem 1.5rem' }}>
+      <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
             <div>
@@ -154,32 +198,6 @@ export default function MasterclassSeptiembrePage() {
         </div>
       </section>
 
-
-      <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <div className="text-center" style={{ marginBottom: '2.5rem' }}>
-            <div className="t-label text-muted" style={{ marginBottom: '0.5rem' }}>Lo que vas a descubrir</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: 'var(--black)', fontWeight: 400 }}>
-              Esto es lo que vas a aprender
-            </h2>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {[
-              { n: '01', text: 'Qué significa realmente recuperarse — y por qué la mayoría de madres lo están haciendo al revés' },
-              { n: '02', text: 'La metáfora que lo cambia todo: por qué intentar fortalecer el abdomen sin construir la base es como levantar el tejado sin cimientos' },
-              { n: '03', text: 'Los 5 errores invisibles que frenan la recuperación — y que nadie te ha explicado hasta ahora' },
-              { n: '04', text: 'Las cinco bases que tu cuerpo necesita construir antes de cualquier ejercicio' },
-              { n: '05', text: 'El paso que te falta — y que convierte la recuperación en algo posible, ahora, independientemente de cuánto tiempo lleves' }
-            ].map((item) => (
-              <div key={item.n} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', background: 'var(--beige)', borderRadius: 6, padding: '1.25rem 1.5rem' }}>
-                <span style={{ fontFamily: 'var(--serif)', fontSize: '1.75rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, flexShrink: 0, minWidth: 36 }}>{item.n}</span>
-                <p style={{ fontSize: '0.975rem', color: 'rgba(26,26,26,0.85)', lineHeight: 1.65, margin: 0 }}>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── LA METÁFORA ── */}
       <section style={{ background: 'var(--black)', padding: '3.5rem 1.5rem' }}>
         <div style={{ maxWidth: 620, margin: '0 auto', textAlign: 'center' }}>
@@ -213,32 +231,6 @@ export default function MasterclassSeptiembrePage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* ── FOTO SUSANA + SOBRE ELLA ── */}
-      <section style={{ background: 'var(--white)', padding: '3.5rem 1.5rem' }}>
-        <div style={{ maxWidth: 720, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3rem', alignItems: 'center' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', textAlign: 'center' }}>
-              <img
-                src="/images/susana-cercana.JPG"
-                alt="Susana Ares"
-                style={{ width: 180, height: 180, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}
-              />
-              <div>
-                <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.45)', marginBottom: '0.3rem' }}>Tu instructora</p>
-                <h3 className="t-serif" style={{ fontSize: '1.6rem', color: 'var(--black)', fontWeight: 400 }}>Susana Ares</h3>
-              </div>
-            </div>
-            <div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75 }}>
-                <p>Soy mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces.</p>
-                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postparto (cesárea y parto vaginal)</strong> e instructora de pilates terapéutico.</p>
-                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad, tuvieran cesárea o parto vaginal. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
