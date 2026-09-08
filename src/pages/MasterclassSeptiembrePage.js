@@ -71,12 +71,9 @@ export default function MasterclassSeptiembrePage() {
       <section id="registro" style={{ background: 'linear-gradient(to bottom, var(--white) 0%, var(--peach) 100%)', padding: '1.75rem 1.5rem 3rem' }}>
         <div style={{ maxWidth: 500, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ background: 'var(--white)', borderRadius: 8, padding: '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.1)' }}>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '0.75rem' }}>
-              Regístrate y accede ahora mismo
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', color: 'var(--black)', fontWeight: 400, marginBottom: '1.5rem' }}>
+              Regístrate y accede gratis ahora mismo
             </h2>
-            <p style={{ fontSize: '0.925rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-              Es gratis para ti. Aprenderás de verdad y haremos el trabajo juntas para identificar qué te está frenando y qué puedes hacer desde hoy para recuperarte como te mereces.
-            </p>
             <div id="eo-form-container-mc" />
             <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem' }}>
               Sin spam. Solo te enviaremos el enlace de acceso a la masterclass.
