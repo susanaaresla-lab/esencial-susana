@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Check, ChevronDown, ShieldCheck, Zap, Users } from 'lucide-react';
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312&src=venta-activate';
@@ -98,6 +98,18 @@ function FaqItem({ q, a }) {
 }
 
 export default function ActivateVentaPage() {
+  const barRef = useRef(null);
+  const [barHeight, setBarHeight] = useState(56);
+
+  useEffect(() => {
+    const measure = () => {
+      if (barRef.current) setBarHeight(barRef.current.offsetHeight);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
   const goComprar = () => {
     localStorage.setItem('activate_purchase_price', '97');
     localStorage.setItem('activate_purchase_product', 'Método Actívate - Página de Venta');
@@ -108,13 +120,13 @@ export default function ActivateVentaPage() {
     <div style={{ fontFamily: 'var(--sans)' }}>
 
       {/* ── 1. BARRA SUPERIOR (fija) ── */}
-      <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.65rem 1.25rem', textAlign: 'center', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+      <div ref={barRef} style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.65rem 1.25rem', textAlign: 'center', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.35rem 1rem', borderRadius: 999 }}>
           ✦ Acceso Prioritario
         </span>
         <CountdownBar />
       </div>
-      <div style={{ height: '56px' }} />
+      <div style={{ height: barHeight + 16 }} />
 
       {/* ── 2. HOOK DE DOLOR (sin CTA) ── */}
       <section style={{ background: 'var(--peach)', padding: '2.5rem 1.25rem 0.5rem', textAlign: 'center' }}>
@@ -124,11 +136,11 @@ export default function ActivateVentaPage() {
       </section>
 
       {/* ── 3. IMAGEN DEL PRODUCTO ── */}
-      <section style={{ background: 'var(--peach)', padding: '1.5rem 1rem 0.5rem' }}>
+      <section style={{ background: 'var(--peach)', padding: '1.25rem 0 0.5rem' }}>
         <img
           src="/images/hero-venta-activate.png"
           alt="Todo lo que incluye Método Actívate"
-          style={{ display: 'block', width: '100%', maxWidth: 920, margin: '0 auto' }}
+          style={{ display: 'block', width: '100%', maxWidth: 1000, margin: '0 auto' }}
         />
       </section>
 
