@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const COUNTDOWN_HOURS = 48;
-const COUNTDOWN_STORAGE_KEY = 'ap_countdown_deadline';
+const COUNTDOWN_STORAGE_KEY = 'ap_countdown_deadline_v2';
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?off=4ngusnje&bid=1781083829312&src=acceso-prioritario';
 
 const FAQS = [
