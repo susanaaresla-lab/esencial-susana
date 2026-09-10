@@ -57,7 +57,7 @@ function BigCTA({ onClick, small = false, text = 'Quiero empezar mi recuperació
       onMouseLeave={() => setHover(false)}
       style={{
         display: 'block', width: '100%', maxWidth: 480, margin: '0 auto',
-        background: hover ? '#d4644c' : 'var(--coral)', color: 'white', fontFamily: 'var(--sans)',
+        background: hover ? 'var(--black)' : 'var(--coral)', color: 'white', fontFamily: 'var(--sans)',
         fontWeight: 800, fontSize: small ? '1.05rem' : '1.25rem', lineHeight: 1.3,
         padding: small ? '1.1rem 1.5rem' : '1.4rem 1.75rem', borderRadius: 8, border: 'none',
         cursor: 'pointer', boxShadow: hover ? '0 10px 30px rgba(232,115,90,0.45)' : '0 6px 24px rgba(232,115,90,0.35)',
@@ -118,7 +118,7 @@ export default function ActivateVentaPage() {
 
       {/* ── 2. HOOK DE DOLOR (sin CTA) ── */}
       <section style={{ background: 'var(--peach)', padding: '2.5rem 1.25rem 0.5rem', textAlign: 'center' }}>
-        <p style={{ maxWidth: 680, margin: '0 auto', fontSize: 'clamp(1.6rem, 6vw, 2.5rem)', color: 'var(--coral)', fontWeight: 800, lineHeight: 1.2, letterSpacing: '-0.01em' }}>
+        <p style={{ maxWidth: 620, margin: '0 auto', fontSize: 'clamp(1.15rem, 4vw, 1.6rem)', color: 'var(--coral)', fontWeight: 800, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
           Sin rutinas imposibles, sin esperar a "estar lista", sin depender de tener tiempo libre
         </p>
       </section>
@@ -128,7 +128,7 @@ export default function ActivateVentaPage() {
         <img
           src="/images/hero-venta-activate.png"
           alt="Todo lo que incluye Método Actívate"
-          style={{ display: 'block', width: '100%', maxWidth: 720, margin: '0 auto' }}
+          style={{ display: 'block', width: '100%', maxWidth: 920, margin: '0 auto' }}
         />
       </section>
 
@@ -216,8 +216,8 @@ export default function ActivateVentaPage() {
           </p>
           <button
             onClick={goComprar}
-            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--peach)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.22)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.15)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--black)'; e.currentTarget.style.color = 'white'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--coral)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.15)'; }}
             style={{ display: 'block', width: '100%', maxWidth: 480, margin: '0 auto', background: 'white', color: 'var(--coral)', fontFamily: 'var(--sans)', fontWeight: 800, fontSize: '1.25rem', padding: '1.4rem 1.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', boxShadow: '0 6px 24px rgba(0,0,0,0.15)', transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s' }}
           >
             Quiero unirme ahora
