@@ -136,11 +136,11 @@ export default function ActivateVentaPage() {
       </section>
 
       {/* ── 3. IMAGEN DEL PRODUCTO ── */}
-      <section style={{ background: 'var(--peach)', padding: '1.25rem 0 0.5rem' }}>
+      <section style={{ background: 'var(--peach)', padding: '1.25rem 0 0.5rem', overflow: 'hidden' }}>
         <img
           src="/images/hero-venta-activate.png"
           alt="Todo lo que incluye Método Actívate"
-          style={{ display: 'block', width: '100%', maxWidth: 1000, margin: '0 auto' }}
+          style={{ display: 'block', width: '100%', maxWidth: 1000, margin: '0 auto', transform: 'scale(1.18)' }}
         />
       </section>
 
