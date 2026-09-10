@@ -283,7 +283,7 @@ export default function ActivateVentaPage() {
                 '3 rutinas semanales grabadas de 15-30 min, sin impacto',
                 '1 vídeo semanal para tu mejor versión',
                 '🧠 Módulo de fortaleza mental: vídeo de motivación y confianza',
-                '🎧 Audio de creencias: somos merecedoras',
+                '💬 Acceso a la Comunidad privada Actívate en WhatsApp (para estar acompañada conmigo y por otras mamás)',
                 '12 meses de acceso completo',
                 'BONUS: Recupera tu abdomen en tu día a día',
               ].map((t, i) => (
