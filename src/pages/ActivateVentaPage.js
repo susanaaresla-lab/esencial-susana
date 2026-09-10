@@ -48,19 +48,24 @@ function CountdownBar() {
   );
 }
 
-function BigCTA({ onClick, small = false }) {
+function BigCTA({ onClick, small = false, text = 'Quiero empezar mi recuperación' }) {
+  const [hover, setHover] = useState(false);
   return (
     <button
       onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       style={{
         display: 'block', width: '100%', maxWidth: 480, margin: '0 auto',
-        background: 'var(--coral)', color: 'white', fontFamily: 'var(--sans)',
+        background: hover ? '#d4644c' : 'var(--coral)', color: 'white', fontFamily: 'var(--sans)',
         fontWeight: 800, fontSize: small ? '1.05rem' : '1.25rem', lineHeight: 1.3,
         padding: small ? '1.1rem 1.5rem' : '1.4rem 1.75rem', borderRadius: 8, border: 'none',
-        cursor: 'pointer', boxShadow: '0 6px 24px rgba(232,115,90,0.35)', letterSpacing: '0.01em'
+        cursor: 'pointer', boxShadow: hover ? '0 10px 30px rgba(232,115,90,0.45)' : '0 6px 24px rgba(232,115,90,0.35)',
+        letterSpacing: '0.01em', transform: hover ? 'translateY(-2px)' : 'translateY(0)',
+        transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s'
       }}
     >
-      Quiero empezar mi recuperación
+      {text}
     </button>
   );
 }
@@ -112,18 +117,18 @@ export default function ActivateVentaPage() {
       <div style={{ height: '56px' }} />
 
       {/* ── 2. HOOK DE DOLOR (sin CTA) ── */}
-      <section style={{ background: 'var(--black)', padding: '2.5rem 1.5rem 2rem', textAlign: 'center' }}>
-        <p style={{ maxWidth: 620, margin: '0 auto', fontSize: 'clamp(1.35rem, 4.5vw, 1.85rem)', color: 'white', fontWeight: 700, lineHeight: 1.35 }}>
+      <section style={{ background: 'var(--peach)', padding: '2.5rem 1.25rem 0.5rem', textAlign: 'center' }}>
+        <p style={{ maxWidth: 680, margin: '0 auto', fontSize: 'clamp(1.6rem, 6vw, 2.5rem)', color: 'var(--coral)', fontWeight: 800, lineHeight: 1.2, letterSpacing: '-0.01em' }}>
           Sin rutinas imposibles, sin esperar a "estar lista", sin depender de tener tiempo libre
         </p>
       </section>
 
       {/* ── 3. IMAGEN DEL PRODUCTO ── */}
-      <section style={{ background: 'var(--peach)', padding: '2rem 1.25rem' }}>
+      <section style={{ background: 'var(--peach)', padding: '1.5rem 1rem 0.5rem' }}>
         <img
           src="/images/hero-venta-activate.png"
           alt="Todo lo que incluye Método Actívate"
-          style={{ display: 'block', width: '100%', maxWidth: 560, margin: '0 auto', borderRadius: 8, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}
+          style={{ display: 'block', width: '100%', maxWidth: 720, margin: '0 auto' }}
         />
       </section>
 
@@ -139,7 +144,7 @@ export default function ActivateVentaPage() {
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
             <span className="pill" style={{ fontSize: '1rem', padding: '0.55rem 1.1rem' }}><Users size={16} />+3.000 mamás</span>
           </div>
-          <BigCTA onClick={goComprar} />
+          <BigCTA onClick={goComprar} text="Quiero empezar mi recuperación" />
         </div>
       </section>
 
@@ -162,7 +167,7 @@ export default function ActivateVentaPage() {
               </div>
             ))}
           </div>
-          <BigCTA onClick={goComprar} />
+          <BigCTA onClick={goComprar} text="Sí, quiero conseguirlo" />
         </div>
       </section>
 
@@ -196,7 +201,7 @@ export default function ActivateVentaPage() {
               ✦ Todos los vídeos son <strong style={{ color: 'var(--coral)' }}>grabados y on-demand</strong> — si un día no puedes, lo haces al día siguiente.
             </p>
           </div>
-          <BigCTA onClick={goComprar} />
+          <BigCTA onClick={goComprar} text="Empezar mi plan de 4 semanas" />
         </div>
       </section>
 
@@ -211,9 +216,11 @@ export default function ActivateVentaPage() {
           </p>
           <button
             onClick={goComprar}
-            style={{ display: 'block', width: '100%', maxWidth: 480, margin: '0 auto', background: 'white', color: 'var(--coral)', fontFamily: 'var(--sans)', fontWeight: 800, fontSize: '1.25rem', padding: '1.4rem 1.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', boxShadow: '0 6px 24px rgba(0,0,0,0.15)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--peach)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.22)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.15)'; }}
+            style={{ display: 'block', width: '100%', maxWidth: 480, margin: '0 auto', background: 'white', color: 'var(--coral)', fontFamily: 'var(--sans)', fontWeight: 800, fontSize: '1.25rem', padding: '1.4rem 1.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', boxShadow: '0 6px 24px rgba(0,0,0,0.15)', transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s' }}
           >
-            Quiero empezar mi recuperación
+            Quiero unirme ahora
           </button>
         </div>
       </section>
@@ -230,7 +237,7 @@ export default function ActivateVentaPage() {
           <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75, marginBottom: '2rem' }}>
             Rutinas sin impacto, desde cero, pensadas para cesárea y parto vaginal. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
           </p>
-          <BigCTA onClick={goComprar} />
+          <BigCTA onClick={goComprar} text="Quiero mi transformación" />
         </div>
       </section>
 
@@ -255,7 +262,7 @@ export default function ActivateVentaPage() {
           <p style={{ fontSize: '1.2rem', color: 'var(--black)', fontWeight: 700, marginBottom: '2rem' }}>
             Solo necesitas querer empezar. El método hace el resto.
           </p>
-          <BigCTA onClick={goComprar} />
+          <BigCTA onClick={goComprar} text="Estoy lista, quiero empezar" />
         </div>
       </section>
 
@@ -301,7 +308,7 @@ export default function ActivateVentaPage() {
               </p>
             </div>
 
-            <BigCTA onClick={goComprar} />
+            <BigCTA onClick={goComprar} text="Quiero mi acceso — 97€" />
 
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', textAlign: 'center', marginTop: '1rem' }}>
               ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción · ✅ Garantía 15 días
@@ -410,7 +417,7 @@ export default function ActivateVentaPage() {
             <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.55)', marginBottom: '1.5rem' }}>
               ✅ Pago único · ✅ 12 meses · ✅ Sin suscripción · ✅ Garantía 15 días
             </p>
-            <BigCTA onClick={goComprar} />
+            <BigCTA onClick={goComprar} text="Quiero empezar mi recuperación" />
           </div>
         </div>
       </section>
