@@ -64,9 +64,10 @@ function CountdownBar() {
   );
 }
 
-function EOForm({ compact = false }) {
+function EOForm({ compact = false, instanceId = 'default' }) {
+  const containerId = `eo-form-container-activate-${instanceId}`;
   useEffect(() => {
-    const container = document.getElementById('eo-form-container-activate');
+    const container = document.getElementById(containerId);
     if (!container) return;
     const script = document.createElement('script');
     script.src = `https://eocampaign1.com/form/${EO_FORM_ID}.js`;
@@ -74,11 +75,11 @@ function EOForm({ compact = false }) {
     script.async = true;
     container.appendChild(script);
     return () => { container.innerHTML = ''; };
-  }, []);
+  }, [containerId]);
 
   return (
     <div style={{ background: 'var(--white)', borderRadius: 8, padding: compact ? '1.5rem' : '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto' }}>
-      <div id="eo-form-container-activate" />
+      <div id={containerId} />
       <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>
         Sin spam. Solo te avisaremos cuando se abra el acceso prioritario.
       </p>
@@ -162,7 +163,7 @@ export default function ActivateListaEsperaPage() {
             </div>
 
             <div id="lista-espera">
-              <EOForm />
+              <EOForm instanceId="hero" />
             </div>
           </div>
         </div>
@@ -448,7 +449,7 @@ export default function ActivateListaEsperaPage() {
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Solo durante las primeras 48h desde la apertura</p>
               </div>
-              <EOForm />
+              <EOForm instanceId="bottom" />
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Sin compromiso</span>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Users size={13} /> +3.000 mamás</span>
