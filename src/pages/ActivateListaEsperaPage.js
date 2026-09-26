@@ -213,7 +213,7 @@ export default function ActivateListaEsperaPage() {
             <div>
               <div style={label('var(--coral)')}>Diseñado para empezar desde donde estás</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-                Especializado en cesárea y parto vaginal
+                Especializado en cesárea, parto vaginal e histerectomía
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
