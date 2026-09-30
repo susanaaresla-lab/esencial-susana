@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const COUNTDOWN_HOURS = 48;
-const COUNTDOWN_STORAGE_KEY = 'ap_countdown_deadline_v2';
+const OFFER_END = new Date('2026-10-03T00:00:00+02:00'); // 00h del 1 oct + 48h
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?checkoutMode=10';
 
 const FAQS = [
@@ -39,44 +38,28 @@ function FaqItem({ q, a }) {
   );
 }
 
-function getVisitorDeadline() {
-  try {
-    const stored = localStorage.getItem(COUNTDOWN_STORAGE_KEY);
-    if (stored) {
-      const deadline = parseInt(stored, 10);
-      if (!isNaN(deadline)) return deadline;
-    }
-    const newDeadline = Date.now() + COUNTDOWN_HOURS * 3600000;
-    localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(newDeadline));
-    return newDeadline;
-  } catch (e) {
-    // Si localStorage no está disponible, usar cuenta atrás fija de sesión
-    return Date.now() + COUNTDOWN_HOURS * 3600000;
-  }
+function calcTimeLeft() {
+  const diff = OFFER_END - Date.now();
+  if (diff <= 0) return null;
+  return {
+    d: Math.floor(diff / 86400000),
+    h: Math.floor((diff % 86400000) / 3600000),
+    m: Math.floor((diff % 3600000) / 60000),
+    s: Math.floor((diff % 60000) / 1000)
+  };
 }
 
 function CountdownBar() {
-  const [deadline] = useState(getVisitorDeadline);
-  const calcTimeLeft = () => {
-    const diff = deadline - Date.now();
-    if (diff <= 0) return null;
-    return {
-      h: Math.floor(diff / 3600000),
-      m: Math.floor((diff % 3600000) / 60000),
-      s: Math.floor((diff % 60000) / 1000)
-    };
-  };
   const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deadline]);
+  }, []);
   if (!timeLeft) return null;
   const pad = (n) => String(n).padStart(2, '0');
   return (
     <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>
-      ⚡ Precio especial caduca en {pad(timeLeft.h)} horas : {pad(timeLeft.m)} min : {pad(timeLeft.s)} seg
+      ⚡ Precio especial caduca en {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s
     </span>
   );
 }
@@ -144,7 +127,7 @@ export default function ActivateListaEsperaPage() {
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '1.25rem', lineHeight: 1.65 }}>
-              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea, parto vaginal o histerectomía; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
+              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
@@ -209,7 +192,7 @@ export default function ActivateListaEsperaPage() {
             <div>
               <div style={label('var(--coral)')}>Diseñado para empezar desde donde estás</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-                Especializado en cesárea, parto vaginal o histerectomía
+                Especializado en cesárea y parto vaginal
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
@@ -468,7 +451,7 @@ export default function ActivateListaEsperaPage() {
             Si lo intentaste antes y no funcionó, no es porque tú hayas fallado. Es porque el método no estaba adaptado a tu cuerpo de madre. <strong style={{ color: 'var(--black)' }}>Este sí lo está.</strong>
           </p>
           <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8 }}>
-            Rutinas sin impacto, desde cero, pensadas para cesárea, parto vaginal o histerectomía. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
+            Rutinas sin impacto, desde cero, pensadas para cesárea y parto vaginal. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
           </p>
         </div>
       </section>
