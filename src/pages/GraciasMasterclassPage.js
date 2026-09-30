@@ -126,7 +126,7 @@ export default function GraciasMasterclassPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
             {[
               { t: 'Construye la base real', d: 'No más tejado sin cimientos: Actívate trabaja respiración, activación y suelo pélvico desde la semana 1.' },
-              { t: 'Adaptado a tu cuerpo', d: 'Específico para cesárea y parto vaginal, sin importar si fue hace meses o años.' },
+              { t: 'Adaptado a tu cuerpo', d: 'Específico para cesárea, parto vaginal o histerectomía, sin importar si fue hace meses o años.' },
               { t: 'A tu ritmo, desde casa', d: '4 semanas de vídeos grabados, sin equipamiento, 12 meses de acceso.' },
               { t: 'Cuerpo + mente', d: 'Incluye trabajo de fortaleza mental para recuperar también la confianza en ti misma.' },
             ].map((item, i) => (

@@ -151,7 +151,7 @@ export default function ActivateVentaPage() {
             Vuelve a sentirte tú, después de ser madre
           </h1>
           <p style={{ fontSize: '1.15rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
-            Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
+            Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea, parto vaginal o histerectomía; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
             <span className="pill" style={{ fontSize: '1rem', padding: '0.55rem 1.1rem' }}><Users size={16} />+3.000 mamás</span>
@@ -247,7 +247,7 @@ export default function ActivateVentaPage() {
             Si lo intentaste antes y no funcionó, no es porque tú hayas fallado. Es porque el método no estaba adaptado a tu cuerpo de madre. <strong style={{ color: 'var(--black)' }}>Este sí lo está.</strong>
           </p>
           <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75, marginBottom: '2rem' }}>
-            Rutinas sin impacto, desde cero, pensadas para cesárea y parto vaginal. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
+            Rutinas sin impacto, desde cero, pensadas para cesárea, parto vaginal o histerectomía. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
           </p>
           <BigCTA onClick={goComprar} text="Quiero mi transformación" />
         </div>

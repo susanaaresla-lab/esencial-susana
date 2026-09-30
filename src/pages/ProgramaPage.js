@@ -81,7 +81,7 @@ export default function ProgramaPage() {
               "Para volver a reconocerte, sentirte fuerte y empezar desde donde estás"
             </p>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '2rem', lineHeight: 1.7 }}>
-              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea y parto vaginal para empezar a trabajar tu cuerpo — y también tu confianza y motivación. El primer paso para reconectar contigo.
+              Programa online de 4 semanas con ejercicios específicos adaptados a cesárea, parto vaginal o histerectomía para empezar a trabajar tu cuerpo — y también tu confianza y motivación. El primer paso para reconectar contigo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Video />4 semanas · Online</span>
@@ -153,12 +153,12 @@ export default function ProgramaPage() {
                 Diseñado para empezar desde donde estás
               </h2>
               <p style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75, marginBottom: '1.75rem' }}>
-                Rutinas sin impacto, adaptadas a cesárea y parto vaginal, pensadas para madres que empiezan desde cero — aunque nunca hayas hecho ejercicio antes.
+                Rutinas sin impacto, adaptadas a cesárea, parto vaginal o histerectomía, pensadas para madres que empiezan desde cero — aunque nunca hayas hecho ejercicio antes.
               </p>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
                   '4 semanas · Online · Sin equipamiento',
-                  'Ejercicios específicos para cesárea y parto vaginal',
+                  'Ejercicios específicos para cesárea, parto vaginal o histerectomía',
                   'Desde los 40 días (parto vaginal) o 2 meses (cesárea)',
                   'Perfecto si nunca has hecho ejercicio o llevas años sin hacer nada',
                   'Trabaja tu cuerpo, tu confianza y tu motivación',

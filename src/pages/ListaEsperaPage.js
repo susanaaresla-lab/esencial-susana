@@ -66,7 +66,7 @@ export default function ListaEsperaPage() {
               Sé la primera en acceder al Método Esencial Madre: Actívate
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, maxWidth: 560, margin: '0 auto 1.5rem' }}>
-              Programa online de 4 semanas adaptado a cesárea y parto vaginal.<br />
+              Programa online de 4 semanas adaptado a cesárea, parto vaginal o histerectomía.<br />
               <span style={{ color: 'rgba(255,255,255,0.7)' }}>Cuerpo · Confianza · Motivación</span>
             </p>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, maxWidth: 480, margin: '0 auto 1.5rem' }}>

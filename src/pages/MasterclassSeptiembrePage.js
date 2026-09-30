@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 
 // ── EDITA ESTOS DATOS EN CADA LANZAMIENTO ──────────────────
 const MASTERCLASS_TITULO = 'Los errores invisibles que están frenando tu recuperación después de ser madre';
-const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta — tuvieras cesárea o parto vaginal';
+const MASTERCLASS_SUBTITULO = 'Te explico qué está pasando y cómo empezar de la forma correcta — tuvieras cesárea, parto vaginal o histerectomía';
 const MASTERCLASS_URL    = 'https://esencialsusanaares.com/masterclass-recuperacion';
 // ───────────────────────────────────────────────────────────
 
@@ -28,7 +28,7 @@ export default function MasterclassSeptiembrePage() {
 
       <Helmet>
         <title>{MASTERCLASS_TITULO} | Esencial Susana Ares</title>
-        <meta name="description" content={`Masterclass gratuita — descubre los errores que frenan tu recuperación después de ser madre (cesárea o parto vaginal) y cómo construir la base correcta.`} />
+        <meta name="description" content={`Masterclass gratuita — descubre los errores que frenan tu recuperación después de ser madre (cesárea, parto vaginal o histerectomía) y cómo construir la base correcta.`} />
         <meta property="og:title" content={MASTERCLASS_TITULO} />
         <meta property="og:description" content="Masterclass gratuita — accede al instante" />
         <meta property="og:image" content="https://esencialsusanaares.com/images/susana-og-new.jpg" />
@@ -62,7 +62,7 @@ export default function MasterclassSeptiembrePage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem' }}>
             <span className="pill"><Clock size={14} />Acceso inmediato · Online</span>
             <span className="pill">Gratuita</span>
-            <span className="pill"><Users size={14} />Para toda madre: cesárea o parto vaginal</span>
+            <span className="pill"><Users size={14} />Para toda madre: cesárea, parto vaginal o histerectomía</span>
           </div>
         </div>
       </section>
@@ -130,8 +130,8 @@ export default function MasterclassSeptiembrePage() {
               <div className="t-label text-muted" style={{ marginBottom: '0.75rem' }}>Quién soy yo</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.95rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.75 }}>
                 <p>Soy mamá de tres hijos. Pasé por la cesárea, el postparto y ese momento en el que te miras al espejo y no te reconoces.</p>
-                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postparto (cesárea y parto vaginal)</strong> e instructora de pilates terapéutico.</p>
-                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad, tuvieran cesárea o parto vaginal. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
+                <p>No soy una entrenadora más. Soy una madre real que vivió exactamente lo que tú estás viviendo — y que después se formó como <strong style={{ color: 'var(--black)' }}>especialista en recuperación postparto (cesárea, parto vaginal o histerectomía)</strong> e instructora de pilates terapéutico.</p>
+                <p>He acompañado a más de <strong style={{ color: 'var(--coral)' }}>3.000 mamás</strong> a construir la base que su cuerpo necesitaba para recuperarse de verdad, tuvieran cesárea, parto vaginal o histerectomía. En esta masterclass comparto contigo lo más importante que he aprendido.</p>
               </div>
             </div>
           </div>

@@ -144,7 +144,7 @@ export default function ActivateListaEsperaPage() {
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '1.25rem', lineHeight: 1.65 }}>
-              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
+              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea, parto vaginal o histerectomía; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
@@ -209,7 +209,7 @@ export default function ActivateListaEsperaPage() {
             <div>
               <div style={label('var(--coral)')}>Diseñado para empezar desde donde estás</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-                Especializado en cesárea y parto vaginal
+                Especializado en cesárea, parto vaginal o histerectomía
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
@@ -468,7 +468,7 @@ export default function ActivateListaEsperaPage() {
             Si lo intentaste antes y no funcionó, no es porque tú hayas fallado. Es porque el método no estaba adaptado a tu cuerpo de madre. <strong style={{ color: 'var(--black)' }}>Este sí lo está.</strong>
           </p>
           <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.8 }}>
-            Rutinas sin impacto, desde cero, pensadas para cesárea y parto vaginal. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
+            Rutinas sin impacto, desde cero, pensadas para cesárea, parto vaginal o histerectomía. Para madres sin experiencia previa. Para madres con poco tiempo. Para madres que están hartas de no saber por dónde empezar.
           </p>
         </div>
       </section>
