@@ -1,10 +1,11 @@
-import { ArrowLeft, Users, Check, X, Gift, ChevronDown, Brain, ShieldCheck, Calendar } from 'lucide-react';
+import { ArrowLeft, Users, Check, X, Gift, ChevronDown, Brain, ShieldCheck, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const LAUNCH_DATE = new Date('2026-10-01T00:00:00+02:00');
-const EO_FORM_ID = 'bbfaed1a-513e-11f1-bf07-67defba4d3c4';
+const COUNTDOWN_HOURS = 48;
+const COUNTDOWN_STORAGE_KEY = 'ap_countdown_deadline_v2';
+const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?checkoutMode=10';
 
 const FAQS = [
   { q: '¿Cuándo puedo empezar después de la cesárea?', a: 'Puedes empezar desde los 2 meses después de una cesárea. Los ejercicios de las primeras semanas son especialmente suaves y están pensados para respetar tu cicatriz y tu recuperación.' },
@@ -15,7 +16,7 @@ const FAQS = [
   { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
   { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
-  { q: '¿Cómo accedo al programa después de apuntarme?', a: 'El 1 de octubre te avisaremos por email de que ya puedes acceder al acceso prioritario, con un enlace directo a tu área privada.' },
+  { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Nada más comprar recibirás un email con el enlace a tu área privada donde encontrarás todos los vídeos organizados.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
 ];
@@ -38,72 +39,62 @@ function FaqItem({ q, a }) {
   );
 }
 
-function calcTimeToLaunch() {
-  const diff = LAUNCH_DATE - Date.now();
-  if (diff <= 0) return null;
-  return {
-    d: Math.floor(diff / 86400000),
-    h: Math.floor((diff % 86400000) / 3600000),
-    m: Math.floor((diff % 3600000) / 60000),
-    s: Math.floor((diff % 60000) / 1000)
-  };
+function getVisitorDeadline() {
+  try {
+    const stored = localStorage.getItem(COUNTDOWN_STORAGE_KEY);
+    if (stored) {
+      const deadline = parseInt(stored, 10);
+      if (!isNaN(deadline)) return deadline;
+    }
+    const newDeadline = Date.now() + COUNTDOWN_HOURS * 3600000;
+    localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(newDeadline));
+    return newDeadline;
+  } catch (e) {
+    // Si localStorage no está disponible, usar cuenta atrás fija de sesión
+    return Date.now() + COUNTDOWN_HOURS * 3600000;
+  }
 }
 
 function CountdownBar() {
-  const [timeLeft, setTimeLeft] = useState(calcTimeToLaunch);
+  const [deadline] = useState(getVisitorDeadline);
+  const calcTimeLeft = () => {
+    const diff = deadline - Date.now();
+    if (diff <= 0) return null;
+    return {
+      h: Math.floor(diff / 3600000),
+      m: Math.floor((diff % 3600000) / 60000),
+      s: Math.floor((diff % 60000) / 1000)
+    };
+  };
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calcTimeToLaunch()), 1000);
+    const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deadline]);
   if (!timeLeft) return null;
   const pad = (n) => String(n).padStart(2, '0');
   return (
     <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>
-      Próxima edición en {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s
+      ⚡ Precio especial caduca en {pad(timeLeft.h)} horas : {pad(timeLeft.m)} min : {pad(timeLeft.s)} seg
     </span>
   );
 }
 
-function EOForm({ compact = false, instanceId = 'default' }) {
-  const containerId = `eo-form-container-activate-${instanceId}`;
-  useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const script = document.createElement('script');
-    script.src = `https://eocampaign1.com/form/${EO_FORM_ID}.js`;
-    script.setAttribute('data-form', EO_FORM_ID);
-    script.async = true;
-    container.appendChild(script);
-    return () => { container.innerHTML = ''; };
-  }, [containerId]);
-
-  return (
-    <div style={{ background: 'var(--white)', borderRadius: 8, padding: compact ? '1.5rem' : '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto' }}>
-      <div id={containerId} />
-      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>
-        Sin spam. Solo te avisaremos cuando se abra el acceso prioritario.
-      </p>
-    </div>
-  );
-}
-
-function WaitlistCTA({ dark = false }) {
-  const scrollToForm = () => document.getElementById('lista-espera')?.scrollIntoView({ behavior: 'smooth' });
+function PriceCTA({ goComprar, dark = false }) {
   return (
     <div style={{ textAlign: 'center', padding: '2rem 1.5rem', background: dark ? 'var(--black)' : 'var(--peach)' }}>
       <div style={{ maxWidth: 420, margin: '0 auto' }}>
-        <p style={{ fontSize: '0.95rem', color: dark ? 'rgba(255,255,255,0.75)' : 'rgba(26,26,26,0.7)', marginBottom: '0.5rem', fontWeight: 600 }}>
-          📅 Próxima edición: 1 de octubre
-        </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
-          <span style={{ fontFamily: 'var(--serif)', fontSize: '2rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>97€</span>
-          <span style={{ fontSize: '0.85rem', color: dark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)' }}>solo 48h · luego 147€</span>
+          <span style={{ fontSize: '1rem', color: dark ? 'rgba(255,255,255,0.3)' : 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+          <span style={{ fontFamily: 'var(--serif)', fontSize: '2.25rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
+          <span style={{ fontSize: '0.8rem', background: 'var(--coral)', color: 'white', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: 4 }}>Ahorras €50</span>
         </div>
-        <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={scrollToForm}>
-          Apúntame a la lista de acceso prioritario
+        <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={goComprar}>
+          Quiero empezar mi recuperación
         </button>
         <p style={{ fontSize: '0.8rem', color: dark ? 'rgba(255,255,255,0.4)' : 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
-          ✅ Sin compromiso · ✅ Te avisamos por email
+          ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
         </p>
       </div>
     </div>
@@ -113,28 +104,32 @@ function WaitlistCTA({ dark = false }) {
 export default function ActivateListaEsperaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const scrollToForm = () => document.getElementById('lista-espera')?.scrollIntoView({ behavior: 'smooth' });
+  const goComprar = () => {
+    localStorage.setItem('activate_purchase_price', '97');
+    localStorage.setItem('activate_purchase_product', 'Método Esencial Madre: Actívate - Acceso Prioritario');
+    window.open(CHECKOUT_URL, '_blank');
+  };
 
   return (
     <div>
 
       <Helmet>
-        <title>Lista de Acceso Prioritario | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Apúntate a la lista de acceso prioritario. Próxima edición: 1 de octubre. Precio especial de 97€ solo durante las primeras 48h." />
+        <title>Acceso Prioritario | Método Esencial Madre: Actívate</title>
+        <meta name="description" content="Precio especial de acceso prioritario para el Método Esencial Madre: Actívate. €97 en lugar de €147." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       {/* ── BARRA TOP (fija) ── */}
       <div style={{ background: 'var(--black)', borderTop: '3px solid var(--coral)', padding: '0.6rem 1.5rem', textAlign: 'center', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--coral)', color: 'white', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: 999, marginRight: '0.75rem' }}>
-          ✦ Lista de acceso prioritario
+          ✦ Acceso prioritario
         </span>
         <CountdownBar />
       </div>
       {/* Espaciador para compensar la barra fija */}
       <div style={{ height: '54px' }} />
 
-      {/* ── HERO + FORMULARIO ── */}
+      {/* ── HERO ── */}
       <section style={{ background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-photo-bleed">
           <img src="/images/susana-hero.JPG" alt="Susana Ares — Método Esencial Madre Actívate" />
@@ -149,22 +144,23 @@ export default function ActivateListaEsperaPage() {
               Rutinas adaptadas a tu cuerpo de madre
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.8)', maxWidth: 520, marginBottom: '1.25rem', lineHeight: 1.65 }}>
-              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea, parto vaginal e histerectomía; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
+              Programa online de <strong>4 semanas</strong> para madres. Ejercicios adaptados a cesárea y parto vaginal; sin importar si fue hace meses o años. Desde casa, a tu ritmo.
             </p>
-            <div className="flex flex-wrap gap-3" style={{ marginBottom: '1.5rem' }}>
+            <div className="flex flex-wrap gap-3" style={{ marginBottom: '2rem' }}>
               <span className="pill" style={{ fontSize: '0.95rem', padding: '0.5rem 1rem' }}><Users />+3.000 mamás</span>
             </div>
-
-            <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1rem 1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem' }}>
-              <Calendar size={18} style={{ color: 'var(--coral)', flexShrink: 0 }} />
-              <p style={{ fontSize: '0.9rem', color: 'white', margin: 0 }}>
-                Próxima edición: <strong>1 de octubre</strong> · Acceso prioritario solo <strong style={{ color: 'var(--coral)' }}>48h a 97€</strong>, después sube a 147€
-              </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+              <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+              <span style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>€97</span>
+              <span style={{ fontSize: '0.8rem', background: 'rgba(232,115,90,0.12)', color: 'var(--coral)', fontWeight: 700, padding: '0.3rem 0.7rem', borderRadius: 4 }}>Ahorras €50</span>
             </div>
-
-            <div id="lista-espera">
-              <EOForm instanceId="hero" />
-            </div>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Precio especial de acceso prioritario</p>
+            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+              Quiero empezar mi recuperación
+            </button>
+            <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
+              ✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción
+            </p>
           </div>
         </div>
       </section>
@@ -201,7 +197,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── CTA INTERMEDIO 1 ── */}
-      <WaitlistCTA />
+      <PriceCTA goComprar={goComprar} />
 
       {/* ── FOTO + SOLUCIÓN ── */}
       <section className="section" style={{ background: 'var(--white)' }}>
@@ -213,7 +209,7 @@ export default function ActivateListaEsperaPage() {
             <div>
               <div style={label('var(--coral)')}>Diseñado para empezar desde donde estás</div>
               <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-                Especializado en cesárea, parto vaginal e histerectomía
+                Especializado en cesárea y parto vaginal
               </h2>
               <ul className="check-list" style={{ marginBottom: '2rem' }}>
                 {[
@@ -228,7 +224,7 @@ export default function ActivateListaEsperaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={scrollToForm}>Apúntame a la lista — 97€</button>
+              <button className="btn-coral" onClick={goComprar}>Quiero empezar — €97</button>
             </div>
           </div>
         </div>
@@ -290,7 +286,7 @@ export default function ActivateListaEsperaPage() {
       </section>
 
       {/* ── CTA INTERMEDIO 2 ── */}
-      <WaitlistCTA dark={true} />
+      <PriceCTA goComprar={goComprar} dark={true} />
 
       {/* ── BONUS ── */}
       <section className="section" style={{ background: 'var(--peach)' }}>
@@ -330,7 +326,7 @@ export default function ActivateListaEsperaPage() {
             <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
             {' '}El precio de venta al público es{' '}
             <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
-            {' '}Tu precio de acceso prioritario (primeras 48h):{' '}
+            {' '}Tu precio de acceso prioritario:{' '}
             <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
           </p>
         </div>
@@ -413,12 +409,12 @@ export default function ActivateListaEsperaPage() {
         </div>
       </section>
 
-      {/* ── LISTA DE ESPERA (cierre) ── */}
+      {/* ── PRICING CTA ── */}
       <section id="comprar" className="section" style={{ background: 'var(--beige)', paddingTop: '2rem' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Lista de acceso prioritario</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate ahora</h2>
+            <div style={label('var(--coral)')}>Acceso prioritario</div>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Consigue tu plaza ahora</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
@@ -439,19 +435,22 @@ export default function ActivateListaEsperaPage() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Próxima edición: 1 de octubre</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Las primeras 48h tras la apertura, el acceso prioritario cuesta 97€. Después sube a 147€.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Precio especial de acceso prioritario</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Precio especial exclusivo para la lista prioritaria.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Solo durante las primeras 48h desde la apertura</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>✅ Pago único · ✅ 12 meses de acceso · ✅ Sin suscripción</p>
               </div>
-              <EOForm instanceId="bottom" />
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Sin compromiso</span>
+              <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.2rem 3rem', width: '100%', maxWidth: 420 }} onClick={goComprar}>
+                Quiero empezar mi recuperación
+              </button>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Pago seguro</span>
+                <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Zap size={13} /> Acceso inmediato</span>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Users size={13} /> +3.000 mamás</span>
               </div>
             </div>
@@ -493,14 +492,15 @@ export default function ActivateListaEsperaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '0.75rem', opacity: 0.9 }}>Próxima edición: 1 de octubre. Acceso prioritario solo 48h.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem', opacity: 0.9 }}>Precio especial de acceso prioritario.</p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>€147</span>
             <span style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white' }}>€97</span>
+            <span style={{ fontSize: '0.8rem', background: 'white', color: 'var(--coral)', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: 4 }}>Ahorras €50</span>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>✅ Sin compromiso · ✅ Te avisamos por email</p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={scrollToForm}>
-            Apúntame a la lista de acceso prioritario
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>✅ Pago único · ✅ 12 meses · ✅ Sin suscripción</p>
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+            Quiero empezar mi recuperación
           </button>
         </div>
       </div>
