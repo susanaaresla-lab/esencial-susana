@@ -2,17 +2,36 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Users, Check, X, ChevronDown, Zap, ShieldCheck, Star } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const CHECKOUT_URL = 'https://pay.hotmart.com/B106868973I?off=sc34hatr';
-// const CHECKOUT_URL_1TO1 = 'https://pay.hotmart.com/B106868973I?off=2qrh0bwb';
+const EO_FORM_ID = 'a5cac8e0-631c-11f1-9540-43fc2d9c895b';
+
+function EOForm({ instanceId = 'default' }) {
+  const containerId = `eo-form-container-avanza-${instanceId}`;
+  useEffect(() => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const script = document.createElement('script');
+    script.src = `https://eocampaign1.com/form/${EO_FORM_ID}.js`;
+    script.setAttribute('data-form', EO_FORM_ID);
+    script.async = true;
+    container.appendChild(script);
+    return () => { container.innerHTML = ''; };
+  }, [containerId]);
+  return (
+    <div style={{ background: 'var(--white)', borderRadius: 8, padding: '1.5rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto', textAlign: 'left' }}>
+      <div id={containerId} />
+      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>Sin spam. Solo te avisaremos cuando se abra la inscripción.</p>
+    </div>
+  );
+}
 
 const FAQS = [
   { q: '¿Necesito haber hecho Actívate para poder hacer Avanza?', a: 'Sí, Avanza está diseñado como continuación de Actívate. Necesitas tener la base de recuperación postparto antes de introducir rutinas de impacto.' },
-  { q: '¿Desde cuándo puedo empezar?', a: 'Desde los 5 meses postparto. Avanza tiene mayor intensidad con rutinas de impacto, por lo que tu cuerpo necesita esa base previa.' },
-  { q: '¿Cuándo puedo empezar después de terminar Actívate?', a: 'Puedes empezar justo al terminar Actívate, siempre que hayas cumplido los 5 meses postparto. Es modelo evergreen — sin esperar a una cohorte.' },
+  { q: '¿Desde cuándo puedo empezar?', a: 'La próxima edición de Avanza empieza el 8 de febrero. Para apuntarte, necesitas haber cumplido 5 meses postparto: Avanza tiene mayor intensidad con rutinas de impacto, por lo que tu cuerpo necesita esa base previa.' },
+  { q: '¿Cuándo puedo empezar después de terminar Actívate?', a: 'Puedes empezar en la próxima edición (8 de febrero) siempre que hayas terminado Actívate y hayas cumplido los 5 meses postparto. Apúntate a la lista y te avisamos cuando se abra la inscripción.' },
   { q: '¿En qué se diferencia de Actívate?', a: 'El contenido es 100% diferente. Actívate es sin impacto, para empezar desde cero. Avanza introduce rutinas de impacto progresivo, mayor intensidad y trabajo de mente más profundo. Sin contenido duplicado.' },
-  { q: '¿Puedo pagar a plazos?', a: 'Sí. Al hacer clic en el botón puedes elegir entre pago único o pago a plazos según lo que mejor se adapte a ti.' },
+  { q: '¿Puedo pagar a plazos?', a: 'Sí. Sí. Cuando se abra la inscripción podrás elegir entre pago único o pago a plazos según lo que mejor se adapte a ti.' },
   { q: '¿Qué es el Domingo de Mente?', a: 'Una sesión semanal de trabajo mental — identifica tus limitaciones, procesa lo que pesa y construye tu mejor versión. Es el diferencial único de Avanza.' },
   { q: '¿Hay directos en vivo?', a: 'Sí, 1 directo mensual con calendario fijo. Siempre se graba y se añade a una biblioteca de replays para que no te pierdas nada.' },
   { q: '¿Las asesorías 1:1 están incluidas?', a: 'Las 2 asesorías 1:1 son opcionales — disponibles en el paquete de €699. El programa base es €499 sin asesorías.' },
@@ -39,10 +58,9 @@ function FaqItem({ q, a }) {
 export default function ListaEsperaAvanzaPage() {
   const navigate = useNavigate();
 
-  const goComprar = () => {
-    localStorage.setItem('avanza_purchase_price', '499');
-    localStorage.setItem('avanza_purchase_product', 'Método Esencial Madre: Avanza');
-    window.open(CHECKOUT_URL, '_blank');
+  const goForm = () => {
+    const el = document.getElementById('lista-espera');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   return (
@@ -106,13 +124,16 @@ export default function ListaEsperaAvanzaPage() {
             </div>
               
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.5rem' }}>Pago único o a plazos</p>
-            <button className="btn-coral" style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-              Quiero empezar Avanza
-            </button>
-            <p style={{ fontSize: '0.875rem', color: 'rgba(26,26,26,0.6)', marginTop: '0.75rem' }}>
-              ✅ Pago único o a plazos · ✅ Acceso inmediato
+            <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.25rem' }}>Pago único o a plazos</p>
+            <div style={{ display: 'inline-block', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.45rem 1rem', borderRadius: 999, marginBottom: '1rem' }}>
+              Próxima edición: 8 de febrero
+            </div>
+            <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.6, marginBottom: '1rem', fontWeight: 600 }}>
+              Apúntate y te avisamos antes que a nadie cuando se abra la inscripción.
             </p>
+            <div id="lista-espera">
+              <EOForm instanceId="hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -331,10 +352,10 @@ export default function ListaEsperaAvanzaPage() {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="comprar" className="section" style={{ background: 'var(--beige)' }}>
+      <section id="precios" className="section" style={{ background: 'var(--beige)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Empieza Avanza</div>
+            <div style={label('var(--coral)')}>Próxima edición: 8 de febrero</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Elige tu opción</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
@@ -352,8 +373,8 @@ export default function ListaEsperaAvanzaPage() {
                   <li key={i} style={{ fontSize: '0.9rem' }}><Check size={14} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={goComprar}>
-                Quiero empezar Avanza
+              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={goForm}>
+                Apuntarme a la lista de Avanza
               </button>
             </div>
             <div className="card" style={{ padding: '2rem', border: '2px solid var(--coral)', position: 'relative' }}>
@@ -373,15 +394,15 @@ export default function ListaEsperaAvanzaPage() {
                   <li key={i} style={{ fontSize: '0.9rem' }}><Check size={14} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={() => { localStorage.setItem('avanza_purchase_price', '699'); window.open('https://pay.hotmart.com/B106868973I?off=2qrh0bwb', '_blank'); }}>
-                Quiero Avanza + Asesorías
+              <button className="btn-coral" style={{ width: '100%', fontSize: '1rem', padding: '1rem' }} onClick={goForm}>
+                Apuntarme a la lista (con asesorías)
               </button>
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(232,115,90,0.06)', border: '1px solid rgba(232,115,90,0.2)', borderRadius: 4, padding: '1rem' }}>
             <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
             <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>
-              <strong style={{ color: 'var(--coral)' }}>Requisito:</strong> haber completado Actívate y llevar al menos 5 meses desde el parto. Si tienes dudas, escríbeme a <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)' }}>info@esencialsusanaares.com</a> antes de comprar.
+              <strong style={{ color: 'var(--coral)' }}>Requisito:</strong> haber completado Actívate y llevar al menos 5 meses desde el parto. Si tienes dudas, escríbeme a <a href="mailto:info@esencialsusanaares.com" style={{ color: 'var(--coral)' }}>info@esencialsusanaares.com</a> antes de apuntarte.
             </p>
           </div>
         </div>
@@ -407,12 +428,10 @@ export default function ListaEsperaAvanzaPage() {
         <div className="container-narrow text-center">
           <Star size={28} style={{ color: 'white', margin: '0 auto 1rem', display: 'block', opacity: 0.8 }} />
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para el siguiente nivel?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '2rem', opacity: 0.9 }}>Empieza Avanza justo al terminar Actívate. Sin esperas, a tu ritmo.</p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
-            Quiero empezar Avanza
-          </button>
+          <p style={{ fontSize: '1.15rem', marginBottom: '2rem', opacity: 0.9 }}>La próxima edición de Avanza empieza el 8 de febrero. Apúntate y sé la primera en enterarte.</p>
+          <EOForm instanceId="bottom" />
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
-            ✅ Pago único o a plazos · ✅ Acceso inmediato · ✅ 3 meses de transformación
+            ✅ Pago único o a plazos · ✅ 3 meses de transformación
           </p>
         </div>
       </div>
