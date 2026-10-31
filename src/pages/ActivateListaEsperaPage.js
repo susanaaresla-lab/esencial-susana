@@ -4,7 +4,13 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const LAUNCH_DATE = new Date('2026-11-05T00:00:00+01:00');
-const EO_FORM_ID = 'bbfaed1a-513e-11f1-bf07-67defba4d3c4';
+const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?checkoutMode=10';
+
+const goComprar = () => {
+  localStorage.setItem('activate_purchase_price', '97');
+  localStorage.setItem('activate_purchase_product', 'Método Actívate');
+  window.open(CHECKOUT_URL, '_blank');
+};
 
 const FAQS = [
   { q: '¿Cuándo puedo empezar después de la cesárea?', a: 'Puedes empezar desde los 2 meses después de una cesárea. Los ejercicios de las primeras semanas son especialmente suaves y están pensados para respetar tu cicatriz y tu recuperación.' },
@@ -15,7 +21,7 @@ const FAQS = [
   { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
   { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
-  { q: '¿Cómo accedo al programa después de apuntarme?', a: 'El 5 de noviembre te avisaremos por email de que ya puedes acceder al acceso prioritario, con un enlace directo para empezar.' },
+  { q: '¿Cómo accedo al programa después de comprarlo?', a: 'Recibirás un email con tu acceso inmediatamente después de la compra, con un enlace directo para empezar.' },
   { q: '¿Cuándo empezaré a notar resultados?', a: 'La mayoría de las mamás notan los primeros cambios durante las primeras 2 semanas. Los resultados más visibles llegan al completar las 4 semanas.' },
   { q: '¿Este método solo trabaja el cuerpo o también la mente?', a: 'Incluye un módulo completo de fortaleza mental con vídeo de motivación y confianza, y audio de creencias — contenidos exclusivos que no encontrarás en YouTube.' },
 ];
@@ -64,31 +70,22 @@ function CountdownBar() {
   );
 }
 
-function EOForm({ compact = false, instanceId = 'default' }) {
-  const containerId = `eo-form-container-activate-${instanceId}`;
-  useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const script = document.createElement('script');
-    script.src = `https://eocampaign1.com/form/${EO_FORM_ID}.js`;
-    script.setAttribute('data-form', EO_FORM_ID);
-    script.async = true;
-    container.appendChild(script);
-    return () => { container.innerHTML = ''; };
-  }, [containerId]);
-
+function BuyBox({ compact = false }) {
   return (
-    <div style={{ background: 'var(--white)', borderRadius: 8, padding: compact ? '1.5rem' : '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto' }}>
-      <div id={containerId} />
-      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>
-        Sin spam. Solo te avisaremos cuando se abra el acceso prioritario.
+    <div style={{ background: 'var(--white)', borderRadius: 8, padding: compact ? '1.5rem' : '2rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto', textAlign: 'center' }}>
+      <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
+      <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem', marginBottom: '1.25rem' }}>€97</div>
+      <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={goComprar}>
+        Quiero acceso prioritario a Actívate
+      </button>
+      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.5)', marginTop: '1rem' }}>
+        ✅ Acceso inmediato · ✅ 12 meses de acceso · ✅ Pago seguro
       </p>
     </div>
   );
 }
 
 function WaitlistCTA({ dark = false }) {
-  const scrollToForm = () => document.getElementById('lista-espera')?.scrollIntoView({ behavior: 'smooth' });
   return (
     <div style={{ textAlign: 'center', padding: '2rem 1.5rem', background: dark ? 'var(--black)' : 'var(--peach)' }}>
       <div style={{ maxWidth: 420, margin: '0 auto' }}>
@@ -99,11 +96,11 @@ function WaitlistCTA({ dark = false }) {
           <span style={{ fontFamily: 'var(--serif)', fontSize: '2rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>97€</span>
           <span style={{ fontSize: '0.85rem', color: dark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)' }}>solo 48h · luego 147€</span>
         </div>
-        <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={scrollToForm}>
-          Apúntame a la lista de acceso prioritario
+        <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={goComprar}>
+          Quiero acceso prioritario a Actívate
         </button>
         <p style={{ fontSize: '0.8rem', color: dark ? 'rgba(255,255,255,0.4)' : 'rgba(26,26,26,0.5)', marginTop: '0.75rem' }}>
-          ✅ Sin compromiso · ✅ Te avisamos por email
+          ✅ Acceso inmediato · ✅ Pago seguro
         </p>
       </div>
     </div>
@@ -113,14 +110,13 @@ function WaitlistCTA({ dark = false }) {
 export default function ActivateListaEsperaPage() {
   const navigate = useNavigate();
   const goBack = () => { navigate('/'); window.scrollTo(0, 0); };
-  const scrollToForm = () => document.getElementById('lista-espera')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <div>
 
       <Helmet>
         <title>Lista de Acceso Prioritario | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Apúntate a la lista de acceso prioritario. Próxima edición: 5 de noviembre. Precio especial de 97€ solo durante las primeras 48h." />
+        <meta name="description" content="Acceso prioritario a Actívate. Próxima edición: 5 de noviembre. Precio especial de 97€ solo durante las primeras 48h." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -162,9 +158,7 @@ export default function ActivateListaEsperaPage() {
               </p>
             </div>
 
-            <div id="lista-espera">
-              <EOForm instanceId="hero" />
-            </div>
+            <BuyBox />
           </div>
         </div>
       </section>
@@ -228,7 +222,7 @@ export default function ActivateListaEsperaPage() {
                   <li key={i} style={{ fontSize: '1rem' }}><Check size={15} />{t}</li>
                 ))}
               </ul>
-              <button className="btn-coral" onClick={scrollToForm}>Apúntame a la lista — 97€</button>
+              <button className="btn-coral" onClick={goComprar}>Quiero acceso prioritario — 97€</button>
             </div>
           </div>
         </div>
@@ -418,7 +412,7 @@ export default function ActivateListaEsperaPage() {
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <div style={label('var(--coral)')}>Lista de acceso prioritario</div>
-            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Apúntate ahora</h2>
+            <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Empieza ahora</h2>
           </div>
           <div className="card" style={{ padding: '2.5rem' }}>
             <ul className="check-list" style={{ marginBottom: '2rem' }}>
@@ -449,9 +443,11 @@ export default function ActivateListaEsperaPage() {
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Solo durante las primeras 48h desde la apertura</p>
               </div>
-              <EOForm instanceId="bottom" />
+              <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%', maxWidth: 460 }} onClick={goComprar}>
+                Quiero acceso prioritario a Actívate
+              </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Sin compromiso</span>
+                <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><ShieldCheck size={13} /> Pago seguro</span>
                 <span style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.45)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Users size={13} /> +3.000 mamás</span>
               </div>
             </div>
@@ -498,9 +494,9 @@ export default function ActivateListaEsperaPage() {
             <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>€147</span>
             <span style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white' }}>€97</span>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>✅ Sin compromiso · ✅ Te avisamos por email</p>
-          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={scrollToForm}>
-            Apúntame a la lista de acceso prioritario
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>✅ Acceso inmediato · ✅ Pago seguro</p>
+          <button className="btn-white" style={{ fontSize: '1.05rem', padding: '1.1rem 2.5rem' }} onClick={goComprar}>
+            Quiero acceso prioritario a Actívate
           </button>
         </div>
       </div>
