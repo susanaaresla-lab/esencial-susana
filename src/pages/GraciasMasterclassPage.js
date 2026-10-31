@@ -56,7 +56,7 @@ function CountdownInline() {
 
 export default function GraciasMasterclassPage() {
   const navigate = useNavigate();
-  const goAccesoPrioritario = () => { navigate('/acceso-prioritario'); window.scrollTo(0, 0); };
+  const goAccesoPrioritario = () => { navigate('/lista-espera-activate'); window.scrollTo(0, 0); };
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--white)', fontFamily: 'var(--sans)' }}>

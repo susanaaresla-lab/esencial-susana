@@ -38,7 +38,7 @@ export default function Header() {
 
   const goOferta = (e) => {
     e.preventDefault();
-    navigate('/acceso-prioritario');
+    navigate('/lista-espera-activate');
     setMenuOpen(false);
     window.scrollTo(0, 0);
   };
@@ -68,7 +68,7 @@ export default function Header() {
           <a href="/" onClick={goHome}>Inicio</a>
           <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
           <a href="/masterclass-recuperacion" onClick={goMasterclass} style={{ color: currentPage === '/masterclass-recuperacion' ? 'var(--coral)' : '' }}>Masterclass</a>
-          <a href="/acceso-prioritario" onClick={goOferta} style={{ color: currentPage === '/acceso-prioritario' ? 'var(--coral)' : '', fontWeight: 700 }}>Oferta Actívate</a>
+          <a href="/lista-espera-activate" onClick={goOferta} style={{ color: currentPage === '/lista-espera-activate' ? 'var(--coral)' : '', fontWeight: 700 }}>Lista de espera Actívate</a>
           <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </nav>
 
@@ -83,7 +83,7 @@ export default function Header() {
           <a href="/" onClick={goHome}>Inicio</a>
           <a href="/programa-4-semanas" onClick={goPrograma} style={{ color: currentPage === '/programa-4-semanas' ? 'var(--coral)' : '' }}>Programa</a>
           <a href="/masterclass-recuperacion" onClick={goMasterclass} style={{ color: currentPage === '/masterclass-recuperacion' ? 'var(--coral)' : '' }}>Masterclass</a>
-          <a href="/acceso-prioritario" onClick={goOferta} style={{ color: currentPage === '/acceso-prioritario' ? 'var(--coral)' : '', fontWeight: 700 }}>Oferta Actívate</a>
+          <a href="/lista-espera-activate" onClick={goOferta} style={{ color: currentPage === '/lista-espera-activate' ? 'var(--coral)' : '', fontWeight: 700 }}>Lista de espera Actívate</a>
           <a href="#quien-soy" onClick={(e) => scrollTo(e, 'quien-soy')}>Sobre mí</a>
         </div>
       )}
