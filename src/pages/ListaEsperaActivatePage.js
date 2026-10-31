@@ -18,7 +18,7 @@ function calcTimeLeft() {
   };
 }
 
-function Countdown() {
+export function Countdown() {
   const [t, setT] = useState(calcTimeLeft);
   useEffect(() => {
     const timer = setInterval(() => setT(calcTimeLeft()), 1000);
