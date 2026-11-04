@@ -12,6 +12,7 @@ import ListaEsperaPage from './pages/ListaEsperaPage';
 import ActivateMasterclassPage from './pages/ActivateMasterclassPage';
 import ListaEsperaAvanzaPage from './pages/ListaEsperaAvanzaPage';
 import ListaEsperaActivatePage from './pages/ListaEsperaActivatePage';
+import ActivateListaEsperaPage from './pages/ActivateListaEsperaPage';
 import GraciasListaEsperaActivatePage from './pages/GraciasListaEsperaActivatePage';
 import ActivateVentaPage from './pages/ActivateVentaPage';
 import MasterclassSeptiembrePage from './pages/MasterclassSeptiembrePage';
@@ -34,7 +35,7 @@ function AppContent() {
     document.body.style.overflow = selectedVideo ? 'hidden' : '';
   }, [selectedVideo]);
 
-  const noHeaderFooter = ['/masterclass', '/masterclass-recuperacion', '/gracias-masterclass', '/gracias-lista-espera', '/gracias-avanza', '/lista-espera-activate', '/gracias-lista-espera-activate', '/venta-activate'].includes(location.pathname);
+  const noHeaderFooter = ['/masterclass', '/masterclass-recuperacion', '/gracias-masterclass', '/gracias-lista-espera', '/gracias-avanza', '/lista-espera-activate', '/acceso-prioritario', '/gracias-lista-espera-activate', '/venta-activate'].includes(location.pathname);
 
   const currentPage = location.pathname === '/programa-4-semanas' ? 'programa'
     : location.pathname === '/confirmacion' ? 'confirmacion'
@@ -57,8 +58,7 @@ function AppContent() {
           <Route path="/masterclass-recuperacion" element={<MasterclassSeptiembrePage />} />
           <Route path="/activate-masterclass" element={<ActivateMasterclassPage />} />
           <Route path="/lista-espera-activate" element={<ListaEsperaActivatePage />} />
-          {/* Acceso prioritario retirado — redirige a la lista de espera */}
-          <Route path="/acceso-prioritario" element={<Navigate to="/lista-espera-activate" replace />} />
+          <Route path="/acceso-prioritario" element={<ActivateListaEsperaPage />} />
           <Route path="/venta-activate" element={<ActivateVentaPage />} />
           <Route path="/programa-avanza" element={<ListaEsperaAvanzaPage />} />          <Route path="/gracias-masterclass" element={<GraciasMasterclassPage />} />
           <Route path="/gracias-lista-espera" element={<GraciasListaEsperaPage />} />
