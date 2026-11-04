@@ -64,8 +64,9 @@ function CountdownBar() {
   if (!timeLeft) return null;
   const pad = (n) => String(n).padStart(2, '0');
   return (
-    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>
-      Precio especial disponible durante {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s
+    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)', textAlign: 'center', lineHeight: 1.4 }}>
+      <strong>Actívate disponible hasta el 7 de noviembre a las 23:59 h</strong>
+      <span style={{ display: 'block' }}>Quedan {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s</span>
     </span>
   );
 }
