@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const LAUNCH_DATE = new Date('2026-11-05T00:00:00+01:00');
+const DEADLINE = new Date('2026-11-07T23:59:00+01:00');
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?checkoutMode=10';
 
 const goComprar = () => {
@@ -44,8 +44,8 @@ function FaqItem({ q, a }) {
   );
 }
 
-function calcTimeToLaunch() {
-  const diff = LAUNCH_DATE - Date.now();
+function calcTimeLeft() {
+  const diff = DEADLINE - Date.now();
   if (diff <= 0) return null;
   return {
     d: Math.floor(diff / 86400000),
@@ -56,16 +56,16 @@ function calcTimeToLaunch() {
 }
 
 function CountdownBar() {
-  const [timeLeft, setTimeLeft] = useState(calcTimeToLaunch);
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calcTimeToLaunch()), 1000);
+    const timer = setInterval(() => setTimeLeft(calcTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
   if (!timeLeft) return null;
   const pad = (n) => String(n).padStart(2, '0');
   return (
     <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)' }}>
-      Próxima edición en {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s
+      Precio especial disponible durante {timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s
     </span>
   );
 }
@@ -90,11 +90,11 @@ function WaitlistCTA({ dark = false }) {
     <div style={{ textAlign: 'center', padding: '2rem 1.5rem', background: dark ? 'var(--black)' : 'var(--peach)' }}>
       <div style={{ maxWidth: 420, margin: '0 auto' }}>
         <p style={{ fontSize: '0.95rem', color: dark ? 'rgba(255,255,255,0.75)' : 'rgba(26,26,26,0.7)', marginBottom: '0.5rem', fontWeight: 600 }}>
-          📅 Próxima edición: 5 de noviembre
+          📅 Disponible hasta el 7 de noviembre
         </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
           <span style={{ fontFamily: 'var(--serif)', fontSize: '2rem', color: 'var(--coral)', fontWeight: 600, lineHeight: 1 }}>97€</span>
-          <span style={{ fontSize: '0.85rem', color: dark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)' }}>solo 48h · luego 147€</span>
+          <span style={{ fontSize: '0.85rem', color: dark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)' }}>hasta el 7 nov · luego 147€</span>
         </div>
         <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%' }} onClick={goComprar}>
           Quiero acceso prioritario a Actívate
@@ -116,7 +116,7 @@ export default function ActivateListaEsperaPage() {
 
       <Helmet>
         <title>Lista de Acceso Prioritario | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Acceso prioritario a Actívate. Próxima edición: 5 de noviembre. Precio especial de 97€ solo durante las primeras 48h." />
+        <meta name="description" content="Acceso prioritario a Actívate. Precio especial de 97€ disponible hasta el 7 de noviembre a las 23:59." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -154,7 +154,7 @@ export default function ActivateListaEsperaPage() {
             <div style={{ background: 'var(--black)', borderRadius: 8, padding: '1rem 1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem' }}>
               <Calendar size={18} style={{ color: 'var(--coral)', flexShrink: 0 }} />
               <p style={{ fontSize: '0.9rem', color: 'white', margin: 0 }}>
-                Próxima edición: <strong>5 de noviembre</strong> · Acceso prioritario solo <strong style={{ color: 'var(--coral)' }}>48h a 97€</strong>, después sube a 147€
+                Acceso prioritario <strong style={{ color: 'var(--coral)' }}>97€ hasta el 7 de noviembre</strong> a las 23:59, después sube a 147€
               </p>
             </div>
 
@@ -324,7 +324,7 @@ export default function ActivateListaEsperaPage() {
             <strong style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'line-through' }}>€527</strong>.
             {' '}El precio de venta al público es{' '}
             <strong style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'line-through' }}>€147</strong>.
-            {' '}Tu precio de acceso prioritario (primeras 48h):{' '}
+            {' '}Tu precio de acceso prioritario (hasta el 7 de noviembre):{' '}
             <strong style={{ color: 'var(--coral)', fontSize: '1.4rem' }}>€97</strong>.
           </p>
         </div>
@@ -433,15 +433,15 @@ export default function ActivateListaEsperaPage() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.12)', borderRadius: 4, padding: '1rem', marginBottom: '2rem' }}>
               <ShieldCheck size={20} style={{ color: 'var(--coral)', flexShrink: 0, marginTop: 2 }} />
               <div>
-                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Próxima edición: 5 de noviembre</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Las primeras 48h tras la apertura, el acceso prioritario cuesta 97€. Después sube a 147€.</p>
+                <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--coral)', marginBottom: '0.25rem' }}>Disponible hasta el 7 de noviembre a las 23:59</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.65)', lineHeight: 1.65 }}>Hasta el 7 de noviembre a las 23:59, el acceso prioritario cuesta 97€. Después sube a 147€.</p>
               </div>
             </div>
             <div className="text-center" style={{ borderTop: '1px solid var(--pearl)', paddingTop: '2rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
                 <span style={{ fontSize: '1.1rem', color: 'rgba(26,26,26,0.35)', textDecoration: 'line-through' }}>€147</span>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem, 8vw, 4rem)', color: 'var(--coral)', fontWeight: 600, lineHeight: 1, marginTop: '0.25rem' }}>€97</div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Solo durante las primeras 48h desde la apertura</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.45)', marginTop: '0.4rem' }}>Solo hasta el 7 de noviembre a las 23:59</p>
               </div>
               <button className="btn-coral" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem', width: '100%', maxWidth: 460 }} onClick={goComprar}>
                 Quiero acceso prioritario a Actívate
@@ -489,7 +489,7 @@ export default function ActivateListaEsperaPage() {
       <div className="cta-band">
         <div className="container-narrow text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para empezar?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '0.75rem', opacity: 0.9 }}>Próxima edición: 5 de noviembre. Acceso prioritario solo 48h.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '0.75rem', opacity: 0.9 }}>Acceso prioritario a 97€ hasta el 7 de noviembre a las 23:59.</p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>€147</span>
             <span style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '2rem', color: 'white' }}>€97</span>
