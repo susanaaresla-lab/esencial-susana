@@ -1,9 +1,31 @@
+import { useEffect } from 'react';
 import { ArrowLeft, Check, Mail, CheckCircle, PartyPopper } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 export default function ConfirmacionPage() {
   const navigate = useNavigate();
+
+  // Avisa a Google Tag Manager / Analytics de que se ha producido una compra
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem('purchase_tracked')) return; // evita contar dos veces al recargar
+      const programa = localStorage.getItem('activate_purchase_product') || localStorage.getItem('avanza_purchase_product') || 'Programa Esencial Susana Ares';
+      const price = Number(localStorage.getItem('activate_purchase_price') || localStorage.getItem('avanza_purchase_price') || 0);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ ecommerce: null });
+      window.dataLayer.push({
+        event: 'purchase',
+        ecommerce: {
+          transaction_id: 'hm-' + Date.now(),
+          value: price,
+          currency: 'EUR',
+          items: [{ item_name: programa, price: price, quantity: 1 }]
+        }
+      });
+      sessionStorage.setItem('purchase_tracked', '1');
+    } catch (e) {}
+  }, []);
 
   return (
     <div style={{ paddingTop: 80, minHeight: '100vh', background: 'linear-gradient(to bottom, var(--peach) 0%, var(--white) 30%)' }}>
