@@ -231,7 +231,7 @@ export default function ActivateListaEsperaPage() {
       <section style={{ ...sectionPad, background: 'var(--black)', color: 'white' }}>
         <div style={{ maxWidth: 1040, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '2.5rem' }}>
           <img
-            src="/images/susana-antes-despues.JPG"
+            src="/images/susana-antes-despues-2.jpg"
             alt="Susana antes y después de su recuperación postcesárea"
             style={{ flex: '1 1 300px', minWidth: 0, width: '100%', maxWidth: 420, height: 'auto', borderRadius: 16, display: 'block', margin: '0 auto' }}
           />
