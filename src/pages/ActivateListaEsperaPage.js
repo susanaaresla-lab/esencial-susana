@@ -229,23 +229,25 @@ export default function ActivateListaEsperaPage() {
 
       {/* ── 3 · HISTORIA PERSONAL ── */}
       <section style={{ ...sectionPad, background: 'var(--black)', color: 'white' }}>
-        <div style={{ maxWidth: 760, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.1rem' }}>
+        <div style={{ maxWidth: 1040, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '2.5rem' }}>
           <img
             src="/images/susana-antes-despues.JPG"
             alt="Susana antes y después de su recuperación postcesárea"
-            style={{ width: '100%', maxWidth: 420, height: 'auto', borderRadius: 16, display: 'block' }}
+            style={{ flex: '1 1 300px', minWidth: 0, width: '100%', maxWidth: 420, height: 'auto', borderRadius: 16, display: 'block', margin: '0 auto' }}
           />
-          <p style={{ margin: '0 0 0.5rem', fontSize: '0.95rem', color: '#F2A08D', fontWeight: 700, letterSpacing: '0.04em' }}>
-            SUSANA ARES · Mamá de 3 · Instructora de pilates terapéutico
-          </p>
-          <h2 className="t-serif" style={h2Style('white')}>Si llevas meses (o años) sin saber por dónde empezar, no es culpa tuya</h2>
-          <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)', lineHeight: 1.75 }}>
-            Soy Susana Ares y yo también me miré al espejo después de mi cesárea y no me reconocí. Con este mismo método me recuperé y he acompañado a <strong style={{ color: '#F2A08D' }}>más de 3.000 mamás</strong>, muchas sin haber hecho ejercicio nunca.
-          </p>
-          <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)' }}>Sin gimnasio, sin material, sin rutinas de una hora y sin tener que "estar preparada".</p>
-          <p className="t-serif" style={{ margin: '0.5rem 0 0', fontSize: '1.75rem', color: '#F2A08D', lineHeight: 1.3 }}>
-            Tu cuerpo no está roto. Solo necesitaba un método pensado para tu cuerpo de madre.
-          </p>
+          <div style={{ flex: '1.3 1 340px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <p style={{ margin: 0, fontSize: '0.95rem', color: '#F2A08D', fontWeight: 700, letterSpacing: '0.04em' }}>
+              SUSANA ARES · Mamá de 3 · Instructora de pilates terapéutico
+            </p>
+            <h2 className="t-serif" style={{ ...h2Style('white'), fontSize: 'clamp(1.75rem, 3.5vw, 2.4rem)' }}>Si llevas meses (o años) sin saber por dónde empezar, no es culpa tuya</h2>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)', lineHeight: 1.75 }}>
+              Soy Susana Ares y yo también me miré al espejo después de mi cesárea y no me reconocí. Con este mismo método me recuperé y he acompañado a <strong style={{ color: '#F2A08D' }}>más de 3.000 mamás</strong>, muchas sin haber hecho ejercicio nunca.
+            </p>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)' }}>Sin gimnasio, sin material, sin rutinas de una hora y sin tener que "estar preparada".</p>
+            <p className="t-serif" style={{ margin: '0.25rem 0 0', fontSize: '1.5rem', color: '#F2A08D', lineHeight: 1.3 }}>
+              Tu cuerpo no está roto. Solo necesitaba un método pensado para tu cuerpo de madre.
+            </p>
+          </div>
         </div>
       </section>
 
