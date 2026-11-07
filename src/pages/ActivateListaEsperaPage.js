@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const DEADLINE = new Date('2026-11-07T23:59:00+01:00');
+const DEADLINE = new Date('2026-11-08T23:59:00+01:00');
 const CHECKOUT_URL = 'https://pay.hotmart.com/M106127773H?checkoutMode=10';
 
 const goComprar = () => {
@@ -172,7 +172,7 @@ function CountdownBar() {
   const pad = (n) => String(n).padStart(2, '0');
   return (
     <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.9)', textAlign: 'center', lineHeight: 1.4 }}>
-      97€ solo hasta el <strong>7 de noviembre a las 23:59</strong> · Quedan{' '}
+      97€ solo hasta el <strong>8 de noviembre a las 23:59</strong> · Quedan{' '}
       <strong>{timeLeft.d}d : {pad(timeLeft.h)}h : {pad(timeLeft.m)}m : {pad(timeLeft.s)}s</strong>
     </span>
   );
@@ -188,7 +188,7 @@ export default function ActivateListaEsperaPage() {
     <div style={{ background: 'var(--white)', color: 'var(--black)' }}>
       <Helmet>
         <title>Lista de Acceso Prioritario | Método Esencial Madre: Actívate</title>
-        <meta name="description" content="Vuelve a sentirte tú. Recupera tu abdomen y tu suelo pélvico después de ser madre. Acceso prioritario a 97€ hasta el 7 de noviembre." />
+        <meta name="description" content="Vuelve a sentirte tú. Recupera tu abdomen y tu suelo pélvico después de ser madre. Acceso prioritario a 97€ hasta el 8 de noviembre." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <style>{RESPONSIVE_CSS}</style>
@@ -265,7 +265,7 @@ export default function ActivateListaEsperaPage() {
           </div>
           <p style={{ margin: 0, fontWeight: 700, textAlign: 'center' }}>Con Actívate vas a recuperarte sin necesitar nada de esto</p>
           <div id="precio" style={{ width: '100%', maxWidth: 520, border: '2px solid var(--black)', borderRadius: 20, padding: '2rem 1.5rem', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem', textAlign: 'center' }}>
-            <span style={{ ...label(ACCENT_DARK), marginBottom: 0 }}>Solo hasta el 7 de noviembre</span>
+            <span style={{ ...label(ACCENT_DARK), marginBottom: 0 }}>Solo hasta el 8 de noviembre</span>
             <div className="t-serif" style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1 }}>97€</div>
             <span style={{ color: '#555' }}>Precio regular: <s>147€</s></span>
             <div style={{ marginTop: '0.5rem' }}>
@@ -363,7 +363,7 @@ export default function ActivateListaEsperaPage() {
             </div>
           </div>
           <div style={{ flex: '2 1 340px', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <span style={{ ...label(ACCENT_DARK), marginBottom: 0 }}>Bonus solo hasta el 7 de noviembre</span>
+            <span style={{ ...label(ACCENT_DARK), marginBottom: 0 }}>Bonus solo hasta el 8 de noviembre</span>
             <h3 className="t-serif" style={{ margin: 0, fontSize: '2.25rem', lineHeight: 1.1 }}>Recupera tu abdomen en tu día a día</h3>
             <span style={{ fontSize: '1.4rem' }}><s style={{ color: '#555' }}>27€</s> <strong>GRATIS</strong></span>
             <p style={{ margin: 0, lineHeight: 1.7 }}>
@@ -417,7 +417,7 @@ export default function ActivateListaEsperaPage() {
       <section id="comprar" style={sectionPad}>
         <div style={{ maxWidth: 760, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.75rem' }}>
           <div style={{ width: '100%', borderRadius: 24, background: 'var(--black)', color: 'white', padding: '2.5rem 1.75rem', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem', textAlign: 'center' }}>
-            <span style={{ ...label('#F2A08D'), marginBottom: 0 }}>Cierra el 7 de noviembre a las 23:59</span>
+            <span style={{ ...label('#F2A08D'), marginBottom: 0 }}>Cierra el 8 de noviembre a las 23:59</span>
             <h2 className="t-serif" style={h2Style('white')}>¿Lista para volver a sentirte tú?</h2>
             <div className="t-serif" style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1 }}>97€</div>
             <span style={{ color: 'rgba(255,255,255,0.75)' }}>Después sube a <s>147€</s> · Incluye el bonus</span>
