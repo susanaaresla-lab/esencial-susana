@@ -35,7 +35,7 @@ const BENEFITS = [
   { t: 'Volver a confiar en ti y en tu cuerpo', d: 'con el módulo de mente: vídeo y audio de motivación para cambiar cómo te hablas.' },
   { t: 'Hacerlo encajar en tu vida de madre', d: 'vídeos grabados que haces cuando puedas, sin presión.' },
   { t: 'Empezar desde donde estás', d: 'tras cesárea, parto vaginal o histerectomía, aunque hayan pasado años.' },
-  { t: 'Ir a tu ritmo, sin prisas', d: 'con 12 meses de acceso completo.' },
+  { t: 'Ir a tu ritmo, sin prisas', d: 'programa de 4 semanas con 12 meses de acceso a la plataforma.' },
 ];
 
 const INCLUDES = [
@@ -43,7 +43,7 @@ const INCLUDES = [
   { t: 'Módulo de mente', d: 'Vídeo de motivación y confianza + audio de motivación.' },
   { t: 'Comunidad privada Actívate', d: 'Donde comparto yo personalmente píldoras de motivación para que no lo dejes.' },
   { t: 'BONUS: Recupera tu abdomen en tu día a día', d: 'Hábitos reales para mamás con poco tiempo.' },
-  { t: '12 meses de acceso', d: 'Desde el móvil o el ordenador, a tu ritmo.' },
+  { t: '12 meses de acceso a la plataforma', d: 'El programa dura 4 semanas, pero la plataforma es tuya durante 12 meses: desde el móvil o el ordenador, a tu ritmo.' },
 ];
 
 const CREDS = [
@@ -76,7 +76,8 @@ const FAQS = [
   { q: '¿El método está adaptado para cesárea?', a: 'Sí, especialmente. Está diseñado teniendo muy en cuenta las particularidades de la recuperación postcesárea: la cicatriz, la diástasis, el suelo pélvico y la reconexión con el abdomen.' },
   { q: '¿Cuánto tiempo necesito al día?', a: 'Las rutinas duran entre 15 y 30 minutos. Son vídeos grabados que puedes hacer cuando quieras — si un día no puedes, lo haces al día siguiente. A tu ritmo.' },
   { q: '¿Y si no soy constante?', a: 'Por eso existe la comunidad privada Actívate: comparto personalmente píldoras de motivación para que no lo dejes. Además, el plan te dice qué hacer cada semana y si un día fallas, sigues al siguiente sin culpa.' },
-  { q: '¿Cuánto tiempo tengo acceso al programa?', a: '12 meses de acceso completo para que puedas empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
+  { q: '¿Cuánto dura el programa?', a: 'El programa dura 4 semanas, con 3 rutinas y 1 vídeo para tu mejor versión cada semana. Lo haces a tu ritmo, sin horarios fijos.' },
+  { q: '¿Cuánto tiempo tengo acceso a la plataforma?', a: 'Tienes 12 meses de acceso completo a la plataforma, aunque el programa dure 4 semanas. Así puedes empezar cuando tu cuerpo esté listo, sin prisas y sin presión.' },
   { q: '¿Qué pasa si un día no puedo hacer la rutina?', a: 'Absolutamente nada. Los vídeos son grabados y tienes 12 meses de acceso. Si un lunes no puedes, lo haces el martes. Si una semana no puedes, la recuperas la siguiente.' },
   { q: '¿Necesito material o equipamiento?', a: 'No. Todas las rutinas son sin impacto y se hacen con el peso de tu propio cuerpo, desde casa.' },
   { q: '¿Es un único pago?', a: 'Sí. Pagas una sola vez y tienes 12 meses de acceso completo. Sin suscripciones.' },
@@ -221,9 +222,9 @@ export default function ActivateListaEsperaPage() {
             style={{ width: '100%', maxWidth: 920, height: 'auto', display: 'block', marginTop: '0.5rem' }}
           />
           <p style={{ maxWidth: 720, margin: 0, lineHeight: 1.7 }}>
-            Un programa online paso a paso, adaptado a <strong>cesárea o parto</strong>, aunque haya pasado mucho tiempo. Sin gimnasio, sin horarios y sin sentir que vas tarde.
+            Un programa online de <strong>4 semanas</strong>, paso a paso, adaptado a <strong>cesárea o parto</strong>, aunque haya pasado mucho tiempo. Pagas una vez y tienes <strong>12 meses de acceso</strong> a la plataforma para hacerlo a tu ritmo. Sin gimnasio, sin horarios y sin sentir que vas tarde.
           </p>
-          <CTA note="+3.000 mamás ya lo han hecho · Un único pago · Acceso inmediato · 12 meses" />
+          <CTA note="Programa de 4 semanas · 12 meses de acceso a la plataforma · Un único pago · Acceso inmediato" />
         </div>
       </section>
 
@@ -269,7 +270,7 @@ export default function ActivateListaEsperaPage() {
             <div className="t-serif" style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1 }}>97€</div>
             <span style={{ color: '#555' }}>Precio regular: <s>147€</s></span>
             <div style={{ marginTop: '0.5rem' }}>
-              <CTA note="Un único pago · Acceso inmediato · Pago seguro · 12 meses">Quiero mi acceso prioritario</CTA>
+              <CTA note="Programa de 4 semanas · 12 meses de acceso · Un único pago · Pago seguro">Quiero mi acceso prioritario</CTA>
             </div>
           </div>
         </div>
@@ -422,7 +423,7 @@ export default function ActivateListaEsperaPage() {
             <div className="t-serif" style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1 }}>97€</div>
             <span style={{ color: 'rgba(255,255,255,0.75)' }}>Después sube a <s>147€</s> · Incluye el bonus</span>
             <div style={{ marginTop: '0.5rem' }}>
-              <CTA variant="white" note="Un único pago · Acceso inmediato · Pago seguro · 12 meses de acceso">Quiero mi acceso prioritario</CTA>
+              <CTA variant="white" note="Programa de 4 semanas · 12 meses de acceso a la plataforma · Un único pago · Pago seguro">Quiero mi acceso prioritario</CTA>
             </div>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>
               <ShieldCheck size={14} /> Pago seguro con Hotmart
