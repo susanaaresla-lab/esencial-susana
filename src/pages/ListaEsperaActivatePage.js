@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const LAUNCH_DATE = new Date('2026-11-05T00:00:00+01:00');
+const LAUNCH_DATE = new Date('2026-12-03T00:00:00+01:00');
 const EO_FORM_ID = 'bbfaed1a-513e-11f1-bf07-67defba4d3c4';
 
 const serif = { fontFamily: 'var(--serif)' };
@@ -68,14 +68,14 @@ export default function ListaEsperaActivatePage() {
     <div style={{ fontSize: '1.1rem', lineHeight: 1.6 }}>
       <Helmet>
         <title>Lista de espera Actívate | Esencial Susana Ares</title>
-        <meta name="description" content="Únete a la lista de espera de Actívate. Las inscripciones abren el 5 de noviembre." />
+        <meta name="description" content="Únete a la lista de espera de Actívate. Las inscripciones abren el 3 de diciembre." />
         <meta property="og:title" content="Lista de espera Actívate" />
         <meta property="og:url" content="https://esencialsusanaares.com/lista-espera-activate" />
       </Helmet>
 
       {/* ── Barra superior fija con cuenta atrás ── */}
       <div style={{ background: 'var(--black)', color: 'white', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '0.7rem 1rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '0.5rem 1.75rem' }}>
-        <p style={{ ...eyebrow, fontSize: '0.75rem' }}>Abrimos el 5 de noviembre · Hora España</p>
+        <p style={{ ...eyebrow, fontSize: '0.75rem' }}>Abrimos el 3 de diciembre · Hora España</p>
         <Countdown />
       </div>
       <div className="lea-spacer" style={{ height: 76 }} />
@@ -87,7 +87,7 @@ export default function ListaEsperaActivatePage() {
             <p style={{ ...serif, fontStyle: 'italic', fontSize: '1.5rem', color: 'var(--coral)' }}>Actívate está a punto de abrir sus puertas…</p>
             <h1 style={{ ...serif, fontWeight: 600, fontSize: 'clamp(2.4rem, 6vw, 3.9rem)', lineHeight: 1.05, textWrap: 'balance' }}>Reconstruye la base de tu cuerpo después de la cesárea.</h1>
             <p style={{ maxWidth: '34em', color: 'rgba(26,26,26,0.78)' }}>Sin dietas ni bebidas milagro. Con rutinas cortas, de 15 a 30 minutos, adaptadas a tu proceso y grabadas para que las hagas a tu ritmo, cuando puedas, como necesita una madre. Estamos preparando la nueva apertura de Actívate: 4 semanas para volver a confiar en tu cuerpo, paso a paso.</p>
-            <p style={{ fontWeight: 700 }}>Las inscripciones abren el 5 de noviembre.</p>
+            <p style={{ fontWeight: 700 }}>Las inscripciones abren el 3 de diciembre.</p>
           </div>
           <div id="lista" style={{ flex: '1 1 340px', minWidth: 0, background: 'white', borderRadius: 8, padding: '2rem 1.75rem', boxShadow: '0 4px 32px rgba(0,0,0,0.1)', borderTop: '4px solid var(--coral)', scrollMarginTop: 100 }}>
             <p style={{ ...eyebrow, color: 'var(--coral)', marginBottom: '1rem' }}>Únete a la lista de espera</p>
@@ -172,7 +172,7 @@ export default function ListaEsperaActivatePage() {
 
       {/* ── Pie ── */}
       <section style={{ background: 'white', padding: '3rem 1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', textAlign: 'center' }}>
-        <p style={{ fontWeight: 700 }}>Abrimos el 5 de noviembre de 2026</p>
+        <p style={{ fontWeight: 700 }}>Abrimos el 3 de diciembre de 2026</p>
         <p style={{ fontSize: '0.9rem', color: 'rgba(26,26,26,0.6)' }}>Hora España</p>
         <p style={{ ...serif, fontStyle: 'italic', fontSize: '1.4rem', marginTop: '1rem' }}>Con cariño, Susana</p>
         <p style={{ ...eyebrow, fontSize: '0.75rem', color: 'rgba(26,26,26,0.6)' }}>Esencial Susana Ares</p>
