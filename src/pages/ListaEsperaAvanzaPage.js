@@ -20,17 +20,17 @@ function EOForm({ instanceId = 'default' }) {
   return (
     <div style={{ background: 'var(--white)', borderRadius: 8, padding: '1.5rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', maxWidth: 460, margin: '0 auto', textAlign: 'left' }}>
       <div id={containerId} />
-      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>Sin spam. Solo te avisaremos cuando se abra la inscripción.</p>
+      <p style={{ fontSize: '0.8rem', color: 'rgba(26,26,26,0.4)', marginTop: '1rem', textAlign: 'center' }}>Sin spam. Solo te avisaremos cuando esté disponible.</p>
     </div>
   );
 }
 
 const FAQS = [
   { q: '¿Necesito haber hecho Actívate para poder hacer Avanza?', a: 'Sí, Avanza está diseñado como continuación de Actívate. Necesitas tener la base de recuperación postparto antes de introducir rutinas de impacto.' },
-  { q: '¿Desde cuándo puedo empezar?', a: 'La próxima edición de Avanza empieza el lunes 1 de febrero, y la inscripción estará abierta del 25 al 30 de enero. Para apuntarte, necesitas haber cumplido 5 meses postparto: Avanza tiene mayor intensidad con rutinas de impacto, por lo que tu cuerpo necesita esa base previa.' },
-  { q: '¿Cuándo puedo empezar después de terminar Actívate?', a: 'Puedes empezar en la próxima edición (lunes 1 de febrero) siempre que hayas terminado Actívate y hayas cumplido los 5 meses postparto. Apúntate a la lista y te avisamos cuando se abra la inscripción, del 25 al 30 de enero.' },
+  { q: '¿Desde cuándo puedo empezar?', a: 'La próxima edición de Avanza estará disponible del 25 al 30 de enero. Para apuntarte, necesitas haber cumplido 5 meses postparto: Avanza tiene mayor intensidad con rutinas de impacto, por lo que tu cuerpo necesita esa base previa.' },
+  { q: '¿Cuándo puedo empezar después de terminar Actívate?', a: 'Puedes apuntarte a la próxima edición siempre que hayas terminado Actívate y hayas cumplido los 5 meses postparto. Apúntate a la lista y te avisamos cuando esté disponible, del 25 al 30 de enero.' },
   { q: '¿En qué se diferencia de Actívate?', a: 'El contenido es 100% diferente. Actívate es sin impacto, para empezar desde cero. Avanza introduce rutinas de impacto progresivo, mayor intensidad y trabajo de mente más profundo. Sin contenido duplicado.' },
-  { q: '¿Puedo pagar a plazos?', a: 'Sí. Cuando se abra la inscripción podrás elegir entre pago único o pago a plazos según lo que mejor se adapte a ti.' },
+  { q: '¿Puedo pagar a plazos?', a: 'Sí. Cuando esté disponible podrás elegir entre pago único o pago a plazos según lo que mejor se adapte a ti.' },
   { q: '¿Qué es el Domingo de Mente?', a: 'Una sesión semanal de trabajo mental — identifica tus limitaciones, procesa lo que pesa y construye tu mejor versión. Es el diferencial único de Avanza.' },
   { q: '¿Hay directos en vivo?', a: 'Sí, 1 directo mensual con calendario fijo. Siempre se graba y se añade a una biblioteca de replays para que no te pierdas nada.' },
   { q: '¿Las asesorías 1:1 están incluidas?', a: 'Las 2 asesorías 1:1 son opcionales — disponibles en el paquete de €699. El programa base es €499 sin asesorías.' },
@@ -105,7 +105,7 @@ export default function ListaEsperaAvanzaPage() {
               "Porque reconectar fue el inicio. Ahora es el momento de transformarte."
             </p>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.7)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              3 meses de programa online con rutinas de impacto progresivo y trabajo de mente semanal. Contenido 100% diferente a Actívate. Próxima edición: lunes 1 de febrero.
+              3 meses de programa online con rutinas de impacto progresivo y trabajo de mente semanal. Contenido 100% diferente a Actívate. Disponible del 25 al 30 de enero.
             </p>
             <div className="flex flex-wrap gap-3" style={{ marginBottom: '1.25rem' }}>
               <span className="pill"><Clock />3 meses · Online</span>
@@ -125,10 +125,10 @@ export default function ListaEsperaAvanzaPage() {
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.5)', marginBottom: '1.25rem' }}>Pago único o a plazos</p>
             <div style={{ display: 'inline-block', background: 'var(--black)', color: 'white', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.45rem 1rem', borderRadius: 999, marginBottom: '1rem' }}>
-              Próxima edición: 1 de febrero
+              Disponible del 25 al 30 de enero
             </div>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.8)', lineHeight: 1.6, marginBottom: '1rem', fontWeight: 600 }}>
-              Inscripción del 25 al 30 de enero. Apúntate y te avisamos antes que a nadie cuando se abra.
+              Apúntate y te avisamos antes que a nadie cuando esté disponible.
             </p>
             <div id="lista-espera">
               <EOForm instanceId="hero" />
@@ -172,7 +172,7 @@ export default function ListaEsperaAvanzaPage() {
             {[
               { emoji: '💪', title: 'Quieres subir la intensidad de forma segura', desc: 'Ya tienes la base. Avanza introduce rutinas de impacto progresivo para que tu cuerpo siga evolucionando sin riesgo.' },
               { emoji: '🧠', title: 'Hay trabajo de mente pendiente', desc: 'Hay cosas que el cuerpo no puede sanar solo. El Domingo de Mente te acompaña cada semana durante los 3 meses.' },
-              { emoji: '🔄', title: 'No quieres esperar meses para empezar', desc: 'Empiezas Avanza en la siguiente edición, el 1 de febrero, en cuanto hayas terminado Actívate y cumplas el requisito de los 5 meses postparto.' },
+              { emoji: '🔄', title: 'No quieres esperar meses para empezar', desc: 'Empiezas Avanza en la siguiente edición, en cuanto hayas terminado Actívate y cumplas el requisito de los 5 meses postparto.' },
               { emoji: '🎯', title: 'Quieres contenido nuevo, no repetir lo mismo', desc: 'El contenido de Avanza es 100% diferente al de Actívate. Diseñado a propósito para que sigas progresando.' },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', background: 'var(--white)', borderRadius: 6, padding: '1.25rem 1.5rem', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}>
@@ -354,7 +354,7 @@ export default function ListaEsperaAvanzaPage() {
       <section id="precios" className="section" style={{ background: 'var(--beige)' }}>
         <div className="container-narrow">
           <div className="text-center" style={{ marginBottom: '2rem' }}>
-            <div style={label('var(--coral)')}>Próxima edición: 1 de febrero · Inscripción del 25 al 30 de enero</div>
+            <div style={label('var(--coral)')}>Disponible del 25 al 30 de enero</div>
             <h2 className="t-serif" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)' }}>Elige tu opción</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
@@ -427,7 +427,7 @@ export default function ListaEsperaAvanzaPage() {
         <div className="container-narrow text-center">
           <Star size={28} style={{ color: 'white', margin: '0 auto 1rem', display: 'block', opacity: 0.8 }} />
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>¿Lista para el siguiente nivel?</h2>
-          <p style={{ fontSize: '1.15rem', marginBottom: '2rem', opacity: 0.9 }}>La próxima edición de Avanza empieza el lunes 1 de febrero y la inscripción es del 25 al 30 de enero. Apúntate y sé la primera en enterarte.</p>
+          <p style={{ fontSize: '1.15rem', marginBottom: '2rem', opacity: 0.9 }}>La próxima edición de Avanza estará disponible del 25 al 30 de enero. Apúntate y sé la primera en enterarte.</p>
           <EOForm instanceId="bottom" />
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.75rem' }}>
             ✅ Pago único o a plazos · ✅ 3 meses de transformación

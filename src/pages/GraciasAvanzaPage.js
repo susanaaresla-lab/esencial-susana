@@ -33,7 +33,7 @@ export default function GraciasAvanzaPage() {
             ¡Ya estás en la lista!
           </h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(26,26,26,0.75)', lineHeight: 1.75, marginBottom: '2.5rem' }}>
-            La próxima edición de Avanza empieza el lunes 1 de febrero. La inscripción estará abierta del 25 al 30 de enero y serás la primera en saberlo, con acceso prioritario y precio especial. Mientras tanto, te iré contando más sobre el programa.
+            La próxima edición de Avanza estará disponible del 25 al 30 de enero y serás la primera en saberlo, con acceso prioritario y precio especial. Mientras tanto, te iré contando más sobre el programa.
           </p>
 
           {/* Confirmar email */}
